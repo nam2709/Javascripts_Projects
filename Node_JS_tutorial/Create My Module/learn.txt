@@ -1,0 +1,9 @@
+CommonJS modules mostly know in node or database MongoDB
+ECMAScript module import * as myModules from '/modules.js'
+
+index.js can make it connect
+
+package is more like an collections of modules
+
+Nếu bạn gọi response() (như là một hàm), đó sẽ gây ra lỗi vì response không phải là một hàm.
+Trong ngữ cảnh này, response là một biến đối tượng chứa thông tin kết quả của yêu cầu HTTP, và bạn có thể truy cập các thuộc tính của nó như data, status, headers, v.v. Bạn không cần gọi response() để lấy giá trị của nó.

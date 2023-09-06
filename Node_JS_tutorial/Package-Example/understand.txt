@@ -1,0 +1,9 @@
+node_modules folder node get axios in this folder, other folder not name axios is "dependencies": for that folder axios or the folder is "dependencies" to the folder( or it call library ) to the axios's folder.
+
+MAJOR version make incompatible API changes, MINOR add fucntionlity in a backwards compatible maner, PATH make backwards compatible bug fixea
+
+package-lock.json file is more information to package.json and it make sure the version right between two when share with other coworkers
+
+NPM Semantic Versioning Calculator - https://semver.npmjs.com/ ~ for PATCH version ^ for MINOR
+
+Share project with package-lock.json and package.json
