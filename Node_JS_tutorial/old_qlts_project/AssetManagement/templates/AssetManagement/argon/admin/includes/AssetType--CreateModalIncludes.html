@@ -1,0 +1,49 @@
+
+{% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+           
+<div class="modal fade" id="AssetTypeCreatemodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="AssetTypeCreatemodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content" >
+        <form method="POST" action="" enctype="multipart/form-data" id="AssetTypeCreateModalsFormId" data-uuid="">
+            <div class="modal-header bg-info border-primary">
+                <h3 class="modal-title">Thêm thông tin loại tài sản</h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <h6 class="heading-small text-muted mb-4">Thông tin chung</h6><div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-6" style="display: inline-block;">
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Mã loại tài tản
+                            </label>
+                            <input id="codeAssetTypeCreateModalInputId"  name="code" class="mps_required form-control username-account-account-input" placeholder="Nhập Code" type="text">
+                                </div>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Tên loại tài tản
+                            </label>
+                            <input id="nameAssetTypeCreateModalInputId" name="name" class="mps_required form-control -account-account-input" placeholder="Nhập " type="text">
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Loại hình tài tản
+                            </label>
+                            <select id="asset_of_typeAssetTypeCreateModalInputId" name="asset_of_type" class="mps_required form-control -account-account-input" placeholder="Nhập " type="text">
+                            </select>
+                        </div>
+                    </div>
+                    <br>{% include 'AssetManagement/argon/admin/includes/AssetOfType--CreateInlineTable.html' %}
+                </div>
+            <div class="modal-footer">
+                <button id="AssetTypeCancelModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                <button id="AssetTypeCreateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                
+                <button id="AssetTypeTestModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+            </div>
+        
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+            
+            

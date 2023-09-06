@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load l10n %}
+
+<head>
+
+{% include 'Logger/'|add:website_template|add:'/admin/header.html' %}
+
+</head>
+
+<body id="page-top">
+
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+      {% include 'Logger/'|add:website_template|add:'/admin/sidebar.html' %}
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+      {% include 'Logger/'|add:website_template|add:'/admin/topbar.html' %}
+
+{% block content %}
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+        {% include 'Logger/'|add:website_template|add:'/admin/includes/search-box.html' %}
+
+          <!-- DataTales Example -->
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">
+                  <a href="{% url 'Logger:AllLogsView' %}">
+                    All Logs
+                  </a>
+              </h6>
+              <h6 class="m-0 font-weight-bold text-primary text-right">
+                    <span class="step-links">
+                        {% if all_logs.has_previous %}
+                            <a href="?page=1">&laquo; {% trans 'first ' %}</a>
+                            <a class="paginate_button previous" href="?page={{ all_logs.previous_page_number }}">{% trans 'previous' %}</a>
+                        {% endif %}
+
+                        <span class="current">
+                            {% trans 'Page ' %}{{ all_logs.number }} {% trans 'of ' %}{{ all_logs.paginator.num_pages }}.
+                        </span>
+
+                        {% if all_logs.has_next %}
+                            <a href="?page={{ all_logs.next_page_number }}">{% trans 'next' %}</a>
+                            <a href="?page={{ all_logs.paginator.num_pages }}">{% trans 'last ' %}&raquo;</a>
+                        {% endif %}
+                    </span>
+              </h6>
+            </div>
+
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped w-auto table-fit" id="logDataTableId" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Time</th>
+                      <th>Level</th>
+                      <th class="tnd-wrap">Message</th>
+
+                      <th>App</th>
+                      <th>Owner</th>
+                      <th>Session</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Time</th>
+                      <th>Level</th>
+                      <th>Message</th>
+                      <th>App</th>
+                      <th>Owner</th>
+                      <th>Session</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                  {% if all_logs %}
+                  {% for s in all_logs %}
+                    <tr>
+                      <td class="tnd-fit">
+                              {{ s.created_at|date:'Y-m-d H:i:s' }}
+                      </td>
+                      <td>
+                          <a href="{% url 'Logger:AllLogsByLevelView' slug=s.level %}">
+                            {{ s.level }}
+                          </a>
+
+                      </td>
+                      <td class="tnd-wrap">
+                          <a>
+                              {{ s.name }}
+                          </a>
+                      </td>
+                      <td class="tnd-fit">
+                          {% if s.app_name %}
+                          App: <a href="{% url 'Logger:AllLogsByAppView' slug=s.app_name %}">
+                            {{ s.app_name }}
+                          </a>
+                          {% endif %}
+                      <hr>
+                          Class: <a href="{% url 'Logger:AllLogsByClassView' slug=s.class_name %}">
+                            {{ s.class_name }}
+                          </a>
+                      <hr>
+                          Function: <a href="{% url 'Logger:AllLogsByFunctionView' slug=s.func_name %}">
+                          {{ s.func_name }}
+                          </a>
+                      </td>
+                      <td>
+                          {% if s.owner_tndid %}
+                              <a href="{% url 'Logger:AllLogsByUserView' slug=s.owner_tndid %}">
+                              {{ s.owner_tndid }}
+                              </a>
+                          {% endif %}
+                      </td>
+
+                      <td class="tnd-wrap tnd-wrap-fix">
+                          {{ s.session_id }}
+                      </td>
+
+                    </tr>
+                  {% endfor %}
+                  {% endif %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+<style>
+.tnd-fit {
+    width: 100%;
+}
+</style>
+{% endblock %}
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2019</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+{% include 'Logger/'|add:website_template|add:'/admin/footer.html' %}
+
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a href="{% url 'Website:ConfigEditView' slug=current_config.uuid %}">
+            Current Config: {{ current_config.name|title }}
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_config.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="WebsiteconfigEditFormId" data-uuid="{{ current_config.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="WebsiteconfigEditFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+            
+<div class="form-group input-group d-none">
+<div class="input-group-prepend">
+<span class="input-group-text">
+Id
+</span>
+</div>
+<input id="idConfigWebsiteInputId" name="id" class="form-control id-config-website-input" placeholder="Id of Config" type="text" value="{{ current_config.id}}">
+</div>
+            
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameConfigWebsiteInputId" name="name" class="form-control name-config-website-input" placeholder="Name of Config" type="text" value="{{ current_config.name}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidConfigWebsiteInputId" name="uuid" class="form-control uuid-config-website-input" placeholder="Uuid of Config" type="text" value="{{ current_config.uuid}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Value
+        </span>
+    </div>
+    <input id="valueConfigWebsiteInputId" name="value" class="form-control value-config-website-input" placeholder="Value of Config" type="text" value="{{ current_config.value}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_config.active == True %}
+        <input id="activeConfigWebsiteInputId" name="active" type="checkbox" class="form-check-input active-config-website-input" placeholder="Active of Config" value="{{ current_config.active}}" checked>
+        {% else %}
+        <input id="activeConfigWebsiteInputId" name="active" type="checkbox" class="form-check-input active-config-website-input" placeholder="Active of Config" value="{{ current_config.active}}">
+        {% endif %}
+        <label class="form-check-label" for="activeConfigWebsiteInputId">
+            Active
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_config.default == True %}
+        <input id="defaultConfigWebsiteInputId" name="default" type="checkbox" class="form-check-input default-config-website-input" placeholder="Default of Config" value="{{ current_config.default}}" checked>
+        {% else %}
+        <input id="defaultConfigWebsiteInputId" name="default" type="checkbox" class="form-check-input default-config-website-input" placeholder="Default of Config" value="{{ current_config.default}}">
+        {% endif %}
+        <label class="form-check-label" for="defaultConfigWebsiteInputId">
+            Default
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated_At
+        </span>
+    </div>
+    <input id="updated_atConfigWebsiteInputId" name="updated_at" class="form-control updated_at-config-website-input" placeholder="Updated_At of Config" type="datetime-local" value="{{ current_config.updated_at}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created_At
+        </span>
+    </div>
+    <input id="created_atConfigWebsiteInputId" name="created_at" class="form-control created_at-config-website-input" placeholder="Created_At of Config" type="datetime-local" value="{{ current_config.created_at}}">
+</div>
+                        
+<div class="form-group">
+    <button id="configWebsiteSaveAndNewBtnId" type="button" class="btn btn-secondary btn-lg">Create New</button>
+    <button id="configWebsiteEditBtnId" type="button" class="btn btn-primary btn-lg">Edit</button>
+    <button id="configWebsiteSaveBtnId" type="button" class="btn btn-primary btn-lg">Save</button>
+    <button id="configWebsiteDeleteBtnId" type="button" class="btn btn-danger btn-lg">Delete</button>
+    <button id="configWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

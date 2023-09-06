@@ -1,0 +1,189 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+            Create New AdminMenuGroup
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_adminmenugroup.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="adminmenugroupWebsiteCreateFormId" data-uuid="{{ current_adminmenugroup.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="adminmenugroupWebsiteCreateFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            
+<div class="form-group input-group d-none">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Id
+        </span>
+    </div>
+    <input id="idAdminMenuGroupWebsiteInputId" name="id" class="form-control id-adminmenugroup-website-input" placeholder="Id of AdminMenuGroup" type="text" value="">
+</div>
+            
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameAdminMenuGroupWebsiteInputId" name="name" class="form-control name-adminmenugroup-website-input" placeholder="Name of AdminMenuGroup" type="text" value="">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidAdminMenuGroupWebsiteInputId" name="uuid" class="form-control uuid-adminmenugroup-website-input" placeholder="Uuid of AdminMenuGroup" type="text" value="{{ current_uuid}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Title
+        </span>
+    </div>
+    <input id="titleAdminMenuGroupWebsiteInputId" name="title" class="form-control title-adminmenugroup-website-input" placeholder="Title of AdminMenuGroup" type="text" value="">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Icon_Class
+        </span>
+    </div>
+    <input id="icon_classAdminMenuGroupWebsiteInputId" name="icon_class" class="form-control icon_class-adminmenugroup-website-input" placeholder="Icon_Class of AdminMenuGroup" type="text" value="">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Desc
+        </span>
+    </div>
+    <textarea id="descAdminMenuGroupWebsiteInputId" name="desc" class="form-control desc-adminmenugroup-website-input" placeholder="Desc of AdminMenuGroup" type="text"></textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Order
+        </span>
+    </div>
+    <input id="orderAdminMenuGroupWebsiteInputId" name="order" class="form-control order-adminmenugroup-website-input" placeholder="Order of AdminMenuGroup" type="text" value="{{ current_adminmenugroup.order}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_adminmenugroup.active == True %}
+        <input id="activeAdminMenuGroupWebsiteInputId" name="active" type="checkbox" class="form-check-input active-adminmenugroup-website-input" placeholder="Active of AdminMenuGroup" value="" checked>
+        {% else %}
+        <input id="activeAdminMenuGroupWebsiteInputId" name="active" type="checkbox" class="form-check-input active-adminmenugroup-website-input" placeholder="Active of AdminMenuGroup" value="">
+        {% endif %}
+        <label class="form-check-label" for="activeAdminMenuGroupWebsiteInputId">
+            Active
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_adminmenugroup.is_base == True %}
+        <input id="is_baseAdminMenuGroupWebsiteInputId" name="is_base" type="checkbox" class="form-check-input is_base-adminmenugroup-website-input" placeholder="Is_Base of AdminMenuGroup" value="" checked>
+        {% else %}
+        <input id="is_baseAdminMenuGroupWebsiteInputId" name="is_base" type="checkbox" class="form-check-input is_base-adminmenugroup-website-input" placeholder="Is_Base of AdminMenuGroup" value="">
+        {% endif %}
+        <label class="form-check-label" for="is_baseAdminMenuGroupWebsiteInputId">
+            Is_Base
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_adminmenugroup.staff_only == True %}
+        <input id="staff_onlyAdminMenuGroupWebsiteInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-adminmenugroup-website-input" placeholder="Staff_Only of AdminMenuGroup" value="" checked>
+        {% else %}
+        <input id="staff_onlyAdminMenuGroupWebsiteInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-adminmenugroup-website-input" placeholder="Staff_Only of AdminMenuGroup" value="">
+        {% endif %}
+        <label class="form-check-label" for="staff_onlyAdminMenuGroupWebsiteInputId">
+            Staff_Only
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_adminmenugroup.superuser_only == True %}
+        <input id="superuser_onlyAdminMenuGroupWebsiteInputId" name="superuser_only" type="checkbox" class="form-check-input superuser_only-adminmenugroup-website-input" placeholder="Superuser_Only of AdminMenuGroup" value="" checked>
+        {% else %}
+        <input id="superuser_onlyAdminMenuGroupWebsiteInputId" name="superuser_only" type="checkbox" class="form-check-input superuser_only-adminmenugroup-website-input" placeholder="Superuser_Only of AdminMenuGroup" value="">
+        {% endif %}
+        <label class="form-check-label" for="superuser_onlyAdminMenuGroupWebsiteInputId">
+            Superuser_Only
+        </label>
+    </div>
+</div>
+                        
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="appAllAppAdminMenuGroupWebsiteInputId">{% trans 'Allapp' %}</label>
+  </div>
+  <select class="custom-select allapp-website-select" name="app" id="appAllAppAdminMenuGroupWebsiteInputId">
+    <option selected>Choose...</option>
+  </select>
+</div>
+                        
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="related_appsAllAppAdminMenuGroupWebsiteInputId">{% trans 'Allapp' %}</label>
+  </div>
+  <select class="custom-select allapp-website-select" name="related_apps" id="related_appsAllAppAdminMenuGroupWebsiteInputId">
+    <option selected>Choose...</option>
+  </select>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated_At
+        </span>
+    </div>
+    <input id="updated_atAdminMenuGroupWebsiteInputId" name="updated_at" class="form-control updated_at-adminmenugroup-website-input" placeholder="Updated_At of AdminMenuGroup" type="datetime-local" value="">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created_At
+        </span>
+    </div>
+    <input id="created_atAdminMenuGroupWebsiteInputId" name="created_at" class="form-control created_at-adminmenugroup-website-input" placeholder="Created_At of AdminMenuGroup" type="datetime-local" value="">
+</div>
+                        
+<div class="form-group">
+    <button id="adminmenugroupWebsiteSaveBtnId" type="button" class="btn btn-primary btn-lg">Save</button>
+    <button id="adminmenugroupWebsiteSaveAndNewBtnId" type="button" class="btn btn-secondary btn-lg">Save and Create New</button>
+    <button id="adminmenugroupWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

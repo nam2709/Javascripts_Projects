@@ -1,0 +1,85 @@
+
+{% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+           
+<div class="modal fade" id="DepreciationDepreciationCreatemodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="DepreciationDepreciationCreatemodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content" >
+        <form method="POST" action="" enctype="multipart/form-data" id="DepreciationDepreciationCreateModalsFormId" data-uuid="">
+            <div class="modal-header bg-info border-primary">
+                <h3 class="modal-title">Chỉnh sửa Thông tin người dùng</h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class=" mb-1 col-xl-12" style="display: inline-block;">
+                    <div class="mb-1 col-xl-12 d-none">
+                        <label class="small mb-1">Uuid
+                        </label>
+                        <input id="uuidDepreciationDepreciationCreateModalInputId" name="uuid" class="form-control uuid-account-account-input" placeholder="Nhập Uuid of Account" type="text" value="">
+                    </div>
+                    <h6 class="heading-small text-muted mb-4">Thông tin chung</h6><div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-6" style="display: inline-block;">
+                        <div class=" mb-1 col-xl-12">
+                            <label class="small mb-1">Tài Sản
+                                <!-- <button type="button" style="padding: 1rem;" id="btn-create-DepreciationDepreciation" class="btn btn-outline-primary btn-sm " > -->
+                                <a onclick='myFunction()' type="button" style="padding: 0.2rem;" id="btn-create-DepreciationDepreciation" class="btn btn-outline-primary btn-sm ">
+                                    <i class="fas fa-plus"></i> &nbsp;
+                                </a>
+                                <!-- </button> -->
+                            </label>
+                            <select id="asetnameDepreciationDepreciationCreateModalInputId" name="aset" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" ></select>
+                        </div>
+                        <script>
+                            function myFunction() {
+                                window.open("http://127.0.0.1:1500/AssetManagement/CreateAsset/", "popup", "width=1024,height=786");
+                            }
+                        </script>
+                        <div class=" mb-1 col-xl-12">
+                            <label class="small mb-1"> Kieu Tai San
+                                <button type="button" style="padding: 0.2rem;" id="btn-create-DepreciationDepreciation" class="btn btn-outline-primary btn-sm " data-bs-toggle="modal">
+                                    &nbsp; <i class="fas fa-plus"></i> &nbsp;
+                                </button>
+                            </label>
+                            <select id="typedepreciationDepreciationDepreciationCreateModalInputId" name="type_depreciation" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" ></select>
+                        </div>
+                        <div class=" mb-1 col-xl-12">
+                                <label class="small mb-1"> Kiểu Khấu Hao  
+                                </label>
+                            <select id="preioddetailDepreciationDepreciationCreateModalInputId" name="preiod_detail" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" ></select>
+                        </div>
+                        <div class=" mb-1 col-xl-12">
+                            <label class="small mb-1">Giá trị tăng hoặc giảm ban đầu
+                            </label>
+                            <input id="addvalueDepreciationDepreciationCreateModalInputId" name="add_value" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" >
+                        </div>
+                    </div>
+                    <div class=" mb-1 col-xl-6" style="display: inline-block;">
+                        <label class="small mb-1"> <h5>Đánh giá lại tài sản </h5>
+                            <a onclick='myFunction11()' type="button" style="padding: 0.2rem;" id="btn-create-DepreciationDepreciation11" class="btn btn-outline-primary btn-sm ">
+                                <i class="fas fa-plus"></i> &nbsp;
+                            </a>
+                        </label>
+                        <select id="assetrevaluationDepreciationDepreciationCreateModalInputId"  class="form-select" multiple aria-label="multiple select example" name="revaluation">
+                        </select>
+                    </div>
+                    <script>
+                        function myFunction11() {
+                            window.open("http://127.0.0.1:1500/depre/revaluationcreate/", "popup", "width=1024,height=786");
+                        }
+                    </script>
+                </div> 
+            </div>
+            <div class="modal-footer">
+                <button id="DepreciationDepreciationCancelCreateModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                <button id="DepreciationDepreciationCreateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                
+                <button id="DepreciationDepreciationTestCreateModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+            </div>
+            
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+            
+            

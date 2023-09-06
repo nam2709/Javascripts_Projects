@@ -1,0 +1,76 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<div class="row">
+    <div class="col-sm-12 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="mb-3">Tìm kiếm Thông tin tài sản theo phiếu</h5>
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-quick-search-tab" data-bs-toggle="pill" href="#pills-quick-search" role="tab" aria-controls="pills-quick" aria-selected="true">Tìm kiếm nhanh</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-filter-search-tab" data-bs-toggle="pill" href="#pills-filter-search" role="tab" aria-controls="pills-filter" aria-selected="false">Bộ lọc</a>
+                    </li>
+
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-quick-search" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <!-- Tìm kiếm nhanh -->
+                        <div class="row gx-2 mb-2 d-flex align-items-center justify-content-center">
+                            <div class="col-xl-8">
+                                <div class="input-group input-group-joined input-group-solid">
+                                    <input class="form-control pe-0" type="text"  id="assetByFormFormManagementQuickSearchInputId" placeholder="Nhập 'giá trị tìm kiếm'" aria-label="Search" readonly>
+                                    <button class="input-group-text" id="assetByFormFormManagementQuickSearchBtnId">
+                                        <i class="fas fa-search" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-filter-search" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    <!-- Tìm kiếm bộ lọc -->
+                    <div class="row gx-2 mb-2 d-flex align-items-center justify-content-center">
+                        <div class="mb-1 col-xl-12">
+                            <div class="input-group input-group-joined input-group-solid">
+                                <div class=" mb-1 col-xl-1"></div>
+                                <div class=" mb-1 col-xl-3">
+                                    
+                                    <input class="form-control pe-0" type="text"  id="nameAssetByFormFormManagementFilterSearchInputId" placeholder="Nhập 'giá trị lọc tên loại phiếu'" aria-label="Filter"> 
+                                </div>
+                                <div >&nbsp;&nbsp;</div>
+
+                                <div class=" mb-1 col-xl-3">
+                                    <select id="codeFormAssetByFormFormManagementFilterSearchInputId"  class="form-control form-select pe-0" placeholder=" Phiếu" type="text" aria-label="Filter" value="">
+                                        <option selected value="">Chọn Phiếu...</option> 
+                                    </select>  
+                                </div> 
+                                <div class=" mb-1 col-xl-3">
+                                    <select id="assetAssetByFormFormManagementFilterSearchInputId"  class="form-control form-select pe-0" placeholder=" Phiếu" type="text" aria-label="Filter" value="">
+                                        <option selected value="">Chọn tài sản ...</option> 
+                                    </select>  
+                                </div> 
+                                <div> &nbsp;&nbsp;</div>
+                                <div class=" mb-1 col-xl-1">
+                                    <button class="input-group-text" id="AssetByFormFormManagementFilterSearchBtnId">
+                                        &nbsp; Filter <i class="fas fa-filter" aria-hidden="true"></i> 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- End Search Form -->
+            
+            

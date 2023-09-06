@@ -1,0 +1,113 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a href="{% url 'Website:RobotsArg_EditView' slug=current_robotsarg.uuid %}">
+            Current RobotsArg: {{ current_robotsarg.name|title }}
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_robotsarg.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="WebsiterobotsargEditFormId" data-uuid="{{ current_robotsarg.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="WebsiterobotsargEditFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+            
+<div class="form-group input-group d-none">
+<div class="input-group-prepend">
+<span class="input-group-text">
+Id
+</span>
+</div>
+<input id="idRobotsArgWebsiteInputId" name="id" class="form-control id-robotsarg-website-input" placeholder="Id of RobotsArg" type="text" value="{{ current_robotsarg.id}}">
+</div>
+            
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameRobotsArgWebsiteInputId" name="name" class="form-control name-robotsarg-website-input" placeholder="Name of RobotsArg" type="text" value="{{ current_robotsarg.name}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidRobotsArgWebsiteInputId" name="uuid" class="form-control uuid-robotsarg-website-input" placeholder="Uuid of RobotsArg" type="text" value="{{ current_robotsarg.uuid}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Value
+        </span>
+    </div>
+    <textarea id="valueRobotsArgWebsiteInputId" name="value" class="form-control value-robotsarg-website-input" placeholder="Value of RobotsArg" type="text">{{ current_robotsarg.value}}</textarea>
+</div>
+                        
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="uaBotUARobotsArgWebsiteInputId">{% trans 'Ua' %}</label>
+  </div>
+  <select class="custom-select botua-website-select" name="ua" id="uaBotUARobotsArgWebsiteInputId">
+    <option selected>Choose...Botua</option>
+  </select>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_robotsarg.active == True %}
+        <input id="activeRobotsArgWebsiteInputId" name="active" type="checkbox" class="form-check-input active-robotsarg-website-input" placeholder="Active of RobotsArg" value="{{ current_robotsarg.active}}" checked>
+        {% else %}
+        <input id="activeRobotsArgWebsiteInputId" name="active" type="checkbox" class="form-check-input active-robotsarg-website-input" placeholder="Active of RobotsArg" value="{{ current_robotsarg.active}}">
+        {% endif %}
+        <label class="form-check-label" for="activeRobotsArgWebsiteInputId">
+            Active
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    <input id="updated_atRobotsArgWebsiteInputId" name="updated_at" class="form-control updated_at-robotsarg-website-input" placeholder="Updated_At of RobotsArg" type="datetime-local" value="{{ current_robotsarg.updated_at}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    <input id="created_atRobotsArgWebsiteInputId" name="created_at" class="form-control created_at-robotsarg-website-input" placeholder="Created_At of RobotsArg" type="datetime-local" value="{{ current_robotsarg.created_at}}">
+</div>
+                        
+<div class="form-group">
+    <button id="robotsargWebsiteSaveBtnId" type="button" class="btn btn-primary btn-lg">Save</button>
+    <button id="robotsargWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

@@ -1,0 +1,114 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+            Create New RobotsArg
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_robotsarg.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="robotsargWebsiteCreateFormId" data-uuid="{{ current_robotsarg.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="robotsargWebsiteCreateFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            
+<div class="form-group input-group d-none">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Id
+        </span>
+    </div>
+    <input id="idRobotsArgWebsiteInputId" name="id" class="form-control id-robotsarg-website-input" placeholder="Id of RobotsArg" type="text" value="">
+</div>
+            
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameRobotsArgWebsiteInputId" name="name" class="form-control name-robotsarg-website-input" placeholder="Name of RobotsArg" type="text" value="">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidRobotsArgWebsiteInputId" name="uuid" class="form-control uuid-robotsarg-website-input" placeholder="Uuid of RobotsArg" type="text" value="{{ current_uuid}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Value
+        </span>
+    </div>
+    <textarea id="valueRobotsArgWebsiteInputId" name="value" class="form-control value-robotsarg-website-input" placeholder="Value of RobotsArg" type="text"></textarea>
+</div>
+                        
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="uaBotUARobotsArgWebsiteInputId">{% trans 'Botua' %}</label>
+  </div>
+  <select class="custom-select botua-website-select" name="ua" id="uaBotUARobotsArgWebsiteInputId">
+    <option selected>Choose...</option>
+  </select>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_robotsarg.active == True %}
+        <input id="activeRobotsArgWebsiteInputId" name="active" type="checkbox" class="form-check-input active-robotsarg-website-input" placeholder="Active of RobotsArg" value="" checked>
+        {% else %}
+        <input id="activeRobotsArgWebsiteInputId" name="active" type="checkbox" class="form-check-input active-robotsarg-website-input" placeholder="Active of RobotsArg" value="">
+        {% endif %}
+        <label class="form-check-label" for="activeRobotsArgWebsiteInputId">
+            Active
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated_At
+        </span>
+    </div>
+    <input id="updated_atRobotsArgWebsiteInputId" name="updated_at" class="form-control updated_at-robotsarg-website-input" placeholder="Updated_At of RobotsArg" type="datetime-local" value="">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created_At
+        </span>
+    </div>
+    <input id="created_atRobotsArgWebsiteInputId" name="created_at" class="form-control created_at-robotsarg-website-input" placeholder="Created_At of RobotsArg" type="datetime-local" value="">
+</div>
+                        
+<div class="form-group">
+    <button id="robotsargWebsiteSaveBtnId" type="button" class="btn btn-primary btn-lg">Save</button>
+    <button id="robotsargWebsiteSaveAndNewBtnId" type="button" class="btn btn-secondary btn-lg">Save and Create New</button>
+    <button id="robotsargWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

@@ -1,0 +1,175 @@
+
+            {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+           
+<div class="modal fade" id="alladminmenuWorkspaceEditmodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="alladminmenuWorkspaceEditmodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="alladminmenuWorkspaceEditModalsFormId" data-uuid="">
+            <div class="modal-header">
+                <h3 class="modal-title">Chỉnh sửa   Admin Menu </h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group px-lg-5 text-start">
+            
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Id</label>
+    <input id="idAllAdminMenuWorkspaceEditModalInputId" name="id" class="form-control id-alladminmenu-workspace-input" placeholder="Điền thông tin Id of AllAdminMenu" type="text" value="">
+</div>
+            
+<div class="mb-1 col-xl-6 d-none">
+    <label class="small mb-1">Uuid</label>
+    <input id="uuidAllAdminMenuWorkspaceEditModalInputId" name="uuid" class="form-control uuid-alladminmenu-workspace-input" placeholder="Điền thông tin Uuid of AllAdminMenu" type="text" value="">
+</div>
+            
+<div class="mb-1 col-xl-6 d-none">
+    <label class="small mb-1">Uuid</label>
+    <input id="uuidAllAdminMenuWorkspaceEditModalInputId" name="uuid" class="form-control uuid-alladminmenu-workspace-input" placeholder="Điền thông tin Uuid of AllAdminMenu" type="text" value="">
+</div>
+            <div class="row gx-2 mb-2">
+        <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Name</label>
+                                    
+            <input id="nameAllAdminMenuWorkspaceEditModalInputId"  name="name" class=" form-control name-alladminmenu-workspace-input" placeholder="Điền thông tin Name" type="text" value="{{ current_alladminmenu.name}}">
+                                </div>
+                                
+        <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Title</label>
+                                    
+            <input id="titleAllAdminMenuWorkspaceEditModalInputId"  name="title" class=" form-control title-alladminmenu-workspace-input" placeholder="Điền thông tin Title" type="text" value="{{ current_alladminmenu.title}}">
+                                </div>
+                                </div><div class="row gx-2 mb-2">
+        <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Icon_Class</label>
+                                    
+            <input id="icon_classAllAdminMenuWorkspaceEditModalInputId"  name="icon_class" class=" form-control icon_class-alladminmenu-workspace-input" placeholder="Điền thông tin Icon_Class" type="text" value="{{ current_alladminmenu.icon_class}}">
+                                </div>
+                                
+        <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Data_Feather</label>
+                                    
+            <input id="data_featherAllAdminMenuWorkspaceEditModalInputId"  name="data_feather" class=" form-control data_feather-alladminmenu-workspace-input" placeholder="Điền thông tin Data_Feather" type="text" value="{{ current_alladminmenu.data_feather}}">
+                                </div>
+                                </div><div class="row gx-2 mb-2">
+        <div class="mb-1 col-xl-6">
+            <div class="form-check mt-4">
+                {% if current_alladminmenu.active == True %}
+                <input id="activeAllAdminMenuWorkspaceEditModalInputId"  name="active" type="checkbox" class="  form-check-input active-alladminmenu-workspace-input" placeholder="Điền thông tin Active" value="{{ current_alladminmenu.active}}" checked>
+                {% else %}
+                <input id="activeAllAdminMenuWorkspaceEditModalInputId"  name="active" type="checkbox" class=" form-check-input active-alladminmenu-workspace-input" placeholder="Điền thông tin Active" value="{{ current_alladminmenu.active}}">
+                {% endif %}
+                <label class="form-check-label" for="activeAllAdminMenuWorkspaceEditModalInputId">
+                    Active
+                </label>
+            </div>
+        </div>
+                                </div><div class="row gx-2 mb-2">
+
+                <div class="mb-1 col-xl-4">
+                    <label class="small mb-1">Desc</label>
+                    <textarea id="descAllAdminMenuWorkspaceEditModalInputId"  name="desc" class=" form-control desc-alladminmenu-workspace-input ckeditor-input" placeholder="Điền thông tin Desc" type="text" rows="4" cols="80">{{ current_alladminmenu.desc}}</textarea>
+
+                </div>
+                                
+        <div class="mb-1 col-xl-4">
+            <div class="form-check mt-4">
+                {% if current_alladminmenu.in_main_menu == True %}
+                <input id="in_main_menuAllAdminMenuWorkspaceEditModalInputId"  name="in_main_menu" type="checkbox" class="  form-check-input in_main_menu-alladminmenu-workspace-input" placeholder="Điền thông tin In_Main_Menu" value="{{ current_alladminmenu.in_main_menu}}" checked>
+                {% else %}
+                <input id="in_main_menuAllAdminMenuWorkspaceEditModalInputId"  name="in_main_menu" type="checkbox" class=" form-check-input in_main_menu-alladminmenu-workspace-input" placeholder="Điền thông tin In_Main_Menu" value="{{ current_alladminmenu.in_main_menu}}">
+                {% endif %}
+                <label class="form-check-label" for="in_main_menuAllAdminMenuWorkspaceEditModalInputId">
+                    In_Main_Menu
+                </label>
+            </div>
+        </div>
+                                
+
+         <div class=" mb-1 col-xl-4">
+            <label class="small mb-1">Order</label>
+            <input id="orderAllAdminMenuWorkspaceEditModalInputId"  name="order" class=" form-control order-alladminmenu-workspace-input" placeholder="Điền thông tin Order" type="text" value="{{ current_alladminmenu.order}}">
+        </div>
+                                </div><div class="row gx-2 mb-2">
+                <div class="mb-1 col-xl-6">
+                    <label  for="menu_groupAdminMenuGroupAllAdminMenuWorkspaceEditModalInputId">{% trans 'Menu Group' %}</label>
+                    <select  style="width: 100%;" class="   form-control adminmenugroup-workspace-select" name="menu_group" id="menu_groupAdminMenuGroupAllAdminMenuWorkspaceEditModalInputId">
+                        <option selected value="">Lựa chọn</option>
+                    </select>
+                </div>
+                                
+                <div class="mb-1 col-xl-6">
+                    <label  for="parent_menuAllAdminMenuAllAdminMenuWorkspaceEditModalInputId">{% trans 'Parent Menu' %}</label>
+                    <select  style="width: 100%;" class="   form-control alladminmenu-workspace-select" name="parent_menu" id="parent_menuAllAdminMenuAllAdminMenuWorkspaceEditModalInputId">
+                        <option selected value="">Lựa chọn</option>
+                    </select>
+                </div>
+                                </div><div class="row gx-2 mb-2">
+        <div class="mb-1 col-xl-12">
+            <div class="form-check mt-4">
+                {% if current_alladminmenu.login_redirect == True %}
+                <input id="login_redirectAllAdminMenuWorkspaceEditModalInputId"  name="login_redirect" type="checkbox" class="  form-check-input login_redirect-alladminmenu-workspace-input" placeholder="Điền thông tin Redirect To This Link After Login..." value="{{ current_alladminmenu.login_redirect}}" checked>
+                {% else %}
+                <input id="login_redirectAllAdminMenuWorkspaceEditModalInputId"  name="login_redirect" type="checkbox" class=" form-check-input login_redirect-alladminmenu-workspace-input" placeholder="Điền thông tin Redirect To This Link After Login..." value="{{ current_alladminmenu.login_redirect}}">
+                {% endif %}
+                <label class="form-check-label" for="login_redirectAllAdminMenuWorkspaceEditModalInputId">
+                    Redirect To This Link After Login...
+                </label>
+            </div>
+        </div>
+                                </div><div class="row gx-2 mb-2">
+        <div class="mb-1 col-xl-12">
+            <div class="form-check mt-4">
+                {% if current_alladminmenu.active == True %}
+                <input id="activeAllAdminMenuWorkspaceEditModalInputId"  name="active" type="checkbox" class="  form-check-input active-alladminmenu-workspace-input" placeholder="Điền thông tin Active" value="{{ current_alladminmenu.active}}" checked>
+                {% else %}
+                <input id="activeAllAdminMenuWorkspaceEditModalInputId"  name="active" type="checkbox" class=" form-check-input active-alladminmenu-workspace-input" placeholder="Điền thông tin Active" value="{{ current_alladminmenu.active}}">
+                {% endif %}
+                <label class="form-check-label" for="activeAllAdminMenuWorkspaceEditModalInputId">
+                    Active
+                </label>
+            </div>
+        </div>
+                                </div><div class="row gx-2 mb-2">
+        <div class="mb-1 col-xl-6">
+            <div class="form-check mt-4">
+                {% if current_alladminmenu.superuser_only == True %}
+                <input id="superuser_onlyAllAdminMenuWorkspaceEditModalInputId"  name="superuser_only" type="checkbox" class="  form-check-input superuser_only-alladminmenu-workspace-input" placeholder="Điền thông tin Superuser_Only" value="{{ current_alladminmenu.superuser_only}}" checked>
+                {% else %}
+                <input id="superuser_onlyAllAdminMenuWorkspaceEditModalInputId"  name="superuser_only" type="checkbox" class=" form-check-input superuser_only-alladminmenu-workspace-input" placeholder="Điền thông tin Superuser_Only" value="{{ current_alladminmenu.superuser_only}}">
+                {% endif %}
+                <label class="form-check-label" for="superuser_onlyAllAdminMenuWorkspaceEditModalInputId">
+                    Superuser_Only
+                </label>
+            </div>
+        </div>
+                                
+        <div class="mb-1 col-xl-6">
+            <div class="form-check mt-4">
+                {% if current_alladminmenu.staff_only == True %}
+                <input id="staff_onlyAllAdminMenuWorkspaceEditModalInputId"  name="staff_only" type="checkbox" class="  form-check-input staff_only-alladminmenu-workspace-input" placeholder="Điền thông tin Staff_Only" value="{{ current_alladminmenu.staff_only}}" checked>
+                {% else %}
+                <input id="staff_onlyAllAdminMenuWorkspaceEditModalInputId"  name="staff_only" type="checkbox" class=" form-check-input staff_only-alladminmenu-workspace-input" placeholder="Điền thông tin Staff_Only" value="{{ current_alladminmenu.staff_only}}">
+                {% endif %}
+                <label class="form-check-label" for="staff_onlyAllAdminMenuWorkspaceEditModalInputId">
+                    Staff_Only
+                </label>
+            </div>
+        </div>
+                                </div>
+             </div> </div>
+                    <div class="modal-footer">
+                        <button id="alladminmenuWorkspaceCancelEditModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="alladminmenuWorkspaceUpdateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                        
+                        <button id="alladminmenuWorkspaceTestEditModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+            </div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+            
+            

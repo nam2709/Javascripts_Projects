@@ -1,0 +1,85 @@
+
+            {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+            
+<div class="modal fade" id="logoimagesWorkspaceCreatemodalsId" tabindex="-1" data-backdrop="static" data-keyboard="true"  role="dialog" aria-labelledby="logoimagesWorkspaceCreatemodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="logoimagesWorkspaceCreateModalsFormId" data-uuid="">
+            <div class="modal-header">
+                <h3 class="modal-title">Tạo mới   LogoImages </h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group px-lg-5 text-start">
+            
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Id</label>
+    <input id="idLogoImagesWorkspaceCreateModalInputId" name="id" class="form-control id-logoimages-workspace-input" placeholder="Điền thông tin Id of LogoImages" type="text" value="">
+</div>
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Uuid</label>
+    <input id="uuidLogoImagesWorkspaceCreateModalInputId" name="uuid" class="form-control uuid-logoimages-workspace-input" placeholder="Điền thông tin Uuid of LogoImages" type="text" value="">
+</div>
+            <div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-12">
+                        <label class="small mb-1">Name</label>
+                        <input id="nameLogoImagesWorkspaceCreateModalInputId"  name="name" class="form-control name-logoimages-workspace-input " placeholder="Điền thông tin Name" type="text" value="">
+                        
+                    </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                        <label for="fileLogoImagesWorkspaceCreateModalInputId"><i class="fas fa-paperclip"></i>&nbsp;{% trans 'file' %}</label>
+                                <input class=" logoimages-workspace form-control-file form-control logoimages-workspace-file file-logoimages-workspace-file-input" type="file" name="file"  class="" id="fileLogoImagesWorkspaceCreateModalInputId">
+                            <div class="col-xl-12" id="fileLogoImagesWorkspaceCreateModalFileAreaId">    
+                            {% if current_logoimages.file %}
+  
+                                <div class="form-group row col-xl-8 table-hover mt-1" style="background-color:gainsboro;height: 25px;" id="{{ current_logoimages.uuid }}AttachmentDivId">
+                                    <div class="col-xl-10 " >
+                                        <span><a style="color:cornflowerblue" target="_blank"  href="{{ current_logoimages.file.url }}"><p><b> {{ current_logoimages.file_filename|title }}</b></p></a></span>
+                                    </div>
+                                    <div class="col-xl-2 text-end">
+                                        <i class="fas fa-times" style="color:gray" file-uuid="{{ current_logoimages.uuid }}" onclick="filelogoimagesWorkspaceDeletedAttacthment(this)"></i>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                        </div>
+
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <div class="form-check mt-4">
+                                {% if current_logoimages.is_favicon == True %}
+                                <input id="is_faviconLogoImagesWorkspaceCreateModalInputId"  name="is_favicon" type="checkbox" class="form-check-input is_favicon-logoimages-workspace-input" placeholder="Điền thông tin Is_Favicon of LogoImages" value="" checked>
+                                {% else %}
+                                <input id="is_faviconLogoImagesWorkspaceCreateModalInputId"  name="is_favicon" type="checkbox" class="form-check-input is_favicon-logoimages-workspace-input" placeholder="Điền thông tin Is_Favicon of LogoImages" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="is_faviconLogoImagesWorkspaceCreateModalInputId">
+                                    Is_Favicon
+                                </label>
+                            </div>
+                        </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                        <label class="small mb-1">Desc</label>
+                            <textarea id="descLogoImagesWorkspaceCreateModalInputId"  name="desc" class=" form-control desc-logoimages-workspace-input ckeditor-input" placeholder="Điền thông tin Desc" type="text"></textarea>
+                        </div>
+                    </div>
+              </div>
+                    <div class="modal-footer">
+                        <button id="logoimagesWorkspaceCancelCreateModalBtnId" type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="logoimagesWorkspaceCreateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                        
+                        <button id="logoimagesWorkspaceSaveAndNewModalBtnId" type="button" class="d-none btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu và thêm mới</button>
+                        <button id="logoimagesWorkspaceTestCreateModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+            </div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+            
+            

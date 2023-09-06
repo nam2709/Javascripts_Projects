@@ -1,0 +1,252 @@
+[
+    {
+        "uuid": "5962d5c7-3a56-4f5e-906b-cbea6f65b532",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "GĐ/PGĐ CN Đa năng - KHDN",
+        "friendly_code": "ABG"
+    },
+    {
+        "uuid": "2a9c46b0-9b25-433d-a02f-30d7aff4110d",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "TP/PP KHDN CN Đa năng",
+        "friendly_code": "ABF"
+    },
+    {
+        "uuid": "8b93dc11-c109-48d3-8929-8db0c36558b8",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "GĐ phát triển KH Upper SME",
+        "friendly_code": "ABE"
+    },
+    {
+        "uuid": "9edbcf51-63c4-4ec7-9ef1-b88ea1ee6595",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "SRM KHDN (CN Đa năng & Upper)",
+        "friendly_code": "ABD"
+    },
+    {
+        "uuid": "073e10b2-26e9-4da5-8043-45b0df8323aa",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "RM KHDN (CN Đa năng & Upper)",
+        "friendly_code": "ABC"
+    },
+    {
+        "uuid": "a529098a-1c40-47e0-a906-ca14603462bb",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Nhân viên lắp đặt MPT",
+        "friendly_code": "LĐMPT"
+    },
+    {
+        "uuid": "7a1041f2-fe21-4268-9e16-d3b086859595",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Nhân viên tester MPT",
+        "friendly_code": "TESTERMPT"
+    },
+    {
+        "uuid": "f874f0e8-edae-4a99-97d0-3472f1edd4bb",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Nhân viên BA MPT",
+        "friendly_code": "BAMPT"
+    },
+    {
+        "uuid": "462b1b64-0dea-4744-9532-9935a3b869fa",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Nhân viên dev MPT",
+        "friendly_code": "DEVMPT"
+    },
+    {
+        "uuid": "9487dcba-f58b-414f-b6d8-98b74e62bfb2",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Trưởng phòng dev MPT",
+        "friendly_code": "TPDEVMPT"
+    },
+    {
+        "uuid": "86853c8f-6349-47ad-87ba-1eaa10d233a0",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Phó giám đốc MPT",
+        "friendly_code": "PGĐMPT"
+    },
+    {
+        "uuid": "c2743ff7-2aed-4311-a42e-da8d776663ee",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Giám đốc MPT",
+        "friendly_code": "GĐMPT"
+    },
+    {
+        "uuid": "55e6891e-998b-4d13-867b-d0d82c207685",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Nhân viên kinh doanh",
+        "friendly_code": "SALE"
+    },
+    {
+        "uuid": "bc720ad9-2e98-40bd-b085-32a0f2d7f774",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Tổng Giám đốc",
+        "friendly_code": "TGĐ"
+    },
+    {
+        "uuid": "b85f5fc7-41f6-4f7e-ad6a-cc4afa3d1036",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Phân tích nghiệp vụ",
+        "friendly_code": "BA"
+    },
+    {
+        "uuid": "f16cdf48-df6b-4475-bbb3-840331dd4368",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Tester",
+        "friendly_code": "TEST"
+    },
+    {
+        "uuid": "44666dae-eead-420c-b4a9-1bf5f5ad030e",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Trưởng phòng IT",
+        "friendly_code": "L-IT"
+    },
+    {
+        "uuid": "810dc6b8-e620-4f6d-91bd-94a9b38b8413",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Giám đốc",
+        "friendly_code": "GĐ"
+    },
+    {
+        "uuid": "5ea8a1b6-dfc7-439c-9eb7-a206bbc33618",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Chuyên viên kiểm soát tín dụng đơn vị",
+        "friendly_code": "CVKSTD"
+    },
+    {
+        "uuid": "82b7d219-3145-4683-a0cb-b9ef5eed9ac6",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Chuyên viên phân tích và hỗ trợ kinh doanh",
+        "friendly_code": "CVPTHTKD"
+    },
+    {
+        "uuid": "82597308-ffcb-49f9-be7f-930e479322b9",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Chuyên viên cao cấp phân tích và hỗ trợ kinh doanh",
+        "friendly_code": "CVCCPTHTKD"
+    },
+    {
+        "uuid": "665d376e-ab13-4581-be40-aa72e4e02174",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Chuyên viên cao cấp phát triển khách hàng",
+        "friendly_code": "CVCCPTKH"
+    },
+    {
+        "uuid": "04565fca-c7e1-43e4-be82-db6a2d5e21e8",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "PGĐ Khối KHDNL",
+        "friendly_code": "PGD.DNL"
+    },
+    {
+        "uuid": "bfbcf908-9be0-4911-b80e-26dbba8a9884",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Giám đốc Khối KHDNL",
+        "friendly_code": "GĐ.DNL"
+    },
+    {
+        "uuid": "c3234bcd-9e98-482e-a829-1d383969543c",
+        "organization": {
+            "code": "mps",
+            "uuid": "7da2f4b3-ed4d-4b1e-a8be-5f590200656e",
+            "name": "Ngân hàng TMCP Đại Chúng Việt Nam-PVcomBank"
+        },
+        "name": "Giám đốc kinh doanh",
+        "friendly_code": "GĐ.KD"
+    }
+]

@@ -1,0 +1,75 @@
+{% load static %} 
+{% load i18n %} 
+{% load humanize %} 
+{% load tz %}
+            
+<div class="modal fade" id="AssetDetail1modalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="accountAccountDetailmodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="AssetDetail1ModalsFormId" data-uuid="">
+            <div class="modal-header">
+                <h3 class="modal-title">Xem chi tiết Thông số kỹ thuật tài sản</h3>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group px-lg-5 text-start">
+            
+                <div class="mb-1 col-xl-6 d-none">
+                    <label class="small mb-1">Uuid</label>
+                    <input id="uuidAssetAssetDetailModalInputId" name="uuid" class="form-control uuid-account-account-input" placeholder="Nhập Uuid of Asset" type="text" value="">
+                </div>
+                <h6 class="heading-small text-muted mb-4">Thông tin chung</h6><div class="row gx-2 mb-2">
+                    <div class="mb-1 col-xl-6">
+                        <label class="small mb-1">Mã tài sản</label>
+                         <input id="dcodeAssetAssetDetailDetailModalInputId" name="dcode" class="form-control id-account-account-input" type="text" disabled>
+                     </div>
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Tên tài sản</label>
+                        <input id="nameAssetAssetDetailDetailModalInputId" name="name" class="form-control email-account-account-input" type="text" disabled>
+                    </div>
+                                
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Loại tài sản</label>
+                        <input id="name_asset_typeAssetAssetDetailDetailModalInputId" name="asset_type" class="form-control full_name-account-account-input" type="text" disabled>
+                    </div>
+                    </div>
+                    <hr>
+                    
+                    
+                    <div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <div class="col-xl-12" id="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <table style="min-height: 210px;" class="table table-success table-striped" id="AssetDetailTemplateDataTableId" width="100%" cellspacing="0">
+                <thead class="thead-light">
+                    <tr class="text-center">
+            
+                        <th attr-name="stt">STT</th>
+
+                        <th attr-name="name">Name</th>
+            
+                        <th attr-name="value">Value</th>
+                    
+                    </tr>
+                </thead>
+                
+                <tbody id="AssetDetailTemplateTableBodyId" class="text-center"> 
+                </tbody>
+            </table>
+
+            
+            <div class="modal-footer">
+                <button id="AssetDetailCancelDetailModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+            </div>  
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+            
+            

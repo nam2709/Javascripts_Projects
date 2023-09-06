@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Cards</title>
+
+    {% include "Workspace/"|add:website_template|add:"/admin/header.html" %}
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+{% include "Workspace/"|add:website_template|add:"/admin/sidebar.html" %}
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column">
+
+<!-- Main Content -->
+<div id="content">
+
+{% include "Workspace/"|add:website_template|add:"/admin/topbar.html" %}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Cards</h1>
+</div>
+
+<div class="row">
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (Annual)</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-auto">
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                            </div>
+                            <div class="col">
+                                <div class="progress progress-sm mr-2">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%"
+                                         aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pending Requests Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending Requests</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-lg-6">
+
+        <!-- Default Card Example -->
+        <div class="card mb-4">
+            <div class="card-header">
+                Default Card Example
+            </div>
+            <div class="card-body">
+                This card uses Bootstrap's default styling with no utility classes added. Global styles are the only
+                things modifying the look and feel of this default card example.
+            </div>
+        </div>
+
+        <!-- Basic Card Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Basic Card Example</h6>
+            </div>
+            <div class="card-body">
+                The styling for this basic card example is created by using default Bootstrap utility classes. By using
+                utility classes, the style of the card component can be easily modified with no need for any custom CSS!
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-lg-6">
+
+        <!-- Dropdown Card Example -->
+        <div class="card shadow mb-4">
+            <!-- Card Header - Dropdown -->
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Dropdown Card Example</h6>
+
+                <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                         aria-labelledby="dropdownMenuLink">
+                        <div class="dropdown-header">Dropdown Header:</div>
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                Dropdown menus can be placed in the card header in order to extend the functionality of a basic card. In
+                this dropdown card example, the Font Awesome vertical ellipsis icon in the card header can be clicked on
+                in order to toggle a dropdown menu.
+            </div>
+        </div>
+
+        <!-- Collapsable Card Example -->
+        <div class="card shadow mb-4">
+            <!-- Card Header - Accordion -->
+            <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button"
+               aria-expanded="true" aria-controls="collapseCardExample">
+                <h6 class="m-0 font-weight-bold text-primary">Collapsable Card Example</h6>
+            </a>
+            <!-- Card Content - Collapse -->
+            <div class="collapse show" id="collapseCardExample">
+                <div class="card-body">
+                    This is a collapsable card example using Bootstrap's built in collapse functionality. <strong>Click
+                    on the card header</strong> to see the card body collapse and expand!
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="w3-col l10 m12" id="main">
+<div id="mainLeaderboard" style="overflow:hidden;">
+    <!-- MainLeaderboard-->
+
+    <!--<pre>main_leaderboard, all: [728,90][970,90][320,50][468,60]</pre>-->
+    <div id="snhb-main_leaderboard-0" data-google-query-id="CKW7wZGqv-UCFUZ7iwodYqkAwg">
+        <div id="google_ads_iframe_/22152718/sws-hb//w3schools.com//main_leaderboard_0__container__"
+             style="border: 0pt none;">
+            <iframe id="google_ads_iframe_/22152718/sws-hb//w3schools.com//main_leaderboard_0"
+                    title="3rd party ad content"
+                    name="google_ads_iframe_/22152718/sws-hb//w3schools.com//main_leaderboard_0" width="468" height="60"
+                    scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc=""
+                    style="border: 0px; vertical-align: bottom;" data-google-container-id="d"
+                    data-load-complete="true"></iframe>
+        </div>
+    </div>
+    <!-- adspace leaderboard -->
+
+</div>
+<h1>Bootstrap 4 <span class="color_h1">Cards</span></h1>
+
+<div class="w3-clear nextprev">
+    <a class="w3-left w3-btn" href="bootstrap_list_groups.asp">❮ Previous</a>
+    <a class="w3-right w3-btn" href="bootstrap_dropdowns.asp">Next ❯</a>
+</div>
+<hr>
+<h2>Cards</h2>
+
+<p>A card in Bootstrap 4 is a bordered box with some padding around its content. It includes options for headers,
+    footers, content, colors, etc.</p>
+
+<div class="card" style="width:20rem;margin:20px 0 24px 0">
+    <img class="card-img-top" src="https://www.thoughtco.com/thmb/8qDCvM_B5SqQeIfOzaW4O19MxWM=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/beautiful-woman-with-natural-make-up-897056188-5c2d3aff4cedfd000165bdef.jpg" alt="image" style="width:100%">
+
+    <div class="card-body">
+        <h4 class="card-title">John Doe</h4>
+
+        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+        <a href="javascript:void(0)" class="btn btn-primary">See Profile</a>
+    </div>
+</div>
+<hr>
+
+<h2>Basic Card</h2>
+
+<p>A basic card is created with the <code class="w3-codespan">.card</code> class, and content inside the
+    card has a <code class="w3-codespan">.card-body</code> class:</p>
+
+<div class="card">
+    <div class="card-body">Basic card</div>
+</div>
+<div class="w3-example">
+    <h3>Example</h3>
+
+    <div class="w3-code notranslate htmlHigh">
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                             style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span
+            class="attributevaluecolor" style="color:mediumblue">="card-body"</span></span><span class="tagcolor"
+                                                                                                 style="color:mediumblue">&gt;</span></span>Basic
+        card<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor"
+                                                                                  style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+    </div>
+    <a target="_blank" href="tryit.asp?filename=trybs_card&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it
+        Yourself »</a>
+</div>
+<div class="w3-panel w3-note">
+    <p style="margin-bottom:8px">If you are familiar with Bootstrap 3, cards replace old panels, wells, and
+        thumbnails.</p>
+</div>
+<hr>
+
+<h2>Header and Footer</h2>
+
+<div class="card" style="margin:16px 0 24px 0">
+    <div class="card-header">
+        Header
+    </div>
+    <div class="card-body">
+        Content
+    </div>
+    <div class="card-footer">
+        Footer
+    </div>
+</div>
+
+<p>The <code class="w3-codespan">.card-header</code> class adds a heading to the card and the <code class="w3-codespan">.card-footer</code>
+    class adds a footer to the card:</p>
+
+<div class="w3-example">
+    <h3>Example</h3>
+
+    <div class="w3-code notranslate htmlHigh">
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                             style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span
+            class="attributevaluecolor" style="color:mediumblue">="card-header"</span></span><span class="tagcolor"
+                                                                                                   style="color:mediumblue">&gt;</span></span>Header<span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-body"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span>Content<span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span>
+        <br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                                        style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card-footer"</span></span><span class="tagcolor"
+                                                                                                    style="color:mediumblue">&gt;</span></span>Footer<span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor"
+                                                                                  style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+    </div>
+    <a target="_blank" href="tryit.asp?filename=trybs_card_header&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it
+        Yourself »</a>
+</div>
+
+<hr>
+
+<h2>Contextual Cards</h2>
+
+<p>To add a background color the card, use contextual classes (<code class="w3-codespan">.bg-primary</code>, <code
+        class="w3-codespan">
+    .bg-success</code>, <code class="w3-codespan">.bg-info</code>, <code class="w3-codespan">.bg-warning</code>, <code
+        class="w3-codespan">.bg-danger</code>, <code class="w3-codespan">.bg-secondary</code>, <code
+        class="w3-codespan">.bg-dark</code> and <code class="w3-codespan">.bg-light</code>.</p>
+
+<div class="w3-example">
+    <h3>Example</h3>
+
+    <div class="w3-padding w3-white notranslate">
+        <div class="card">
+            <div class="card-body">Basic card</div>
+        </div>
+        <br>
+
+        <div class="card bg-primary text-white">
+            <div class="card-body">Primary card</div>
+        </div>
+        <br>
+
+        <div class="card bg-success text-white">
+            <div class="card-body">Success card</div>
+        </div>
+        <br>
+
+        <div class="card bg-info text-white">
+            <div class="card-body">Info card</div>
+        </div>
+        <br>
+
+        <div class="card bg-warning text-white">
+            <div class="card-body">Warning card</div>
+        </div>
+        <br>
+
+        <div class="card bg-danger text-white">
+            <div class="card-body">Danger card</div>
+        </div>
+        <br>
+
+        <div class="card bg-secondary text-white">
+            <div class="card-body">Secondary card</div>
+        </div>
+        <br>
+
+        <div class="card bg-dark text-white">
+            <div class="card-body">Dark card</div>
+        </div>
+        <br>
+
+        <div class="card bg-light text-dark">
+            <div class="card-body">Light card</div>
+        </div>
+
+    </div>
+
+    <a target="_blank" href="tryit.asp?filename=trybs_card_contextual&amp;stacked=h"
+       class="w3-btn w3-margin-top w3-margin-bottom">Try it Yourself »</a>
+
+</div>
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+    <!-- MidContent -->
+
+    <!--<pre>mid_content, all: [300,250][336,280][728,90][970,250][970,90][320,50][468,60]</pre>-->
+    <div id="snhb-mid_content-0" data-google-query-id="CKe7wZGqv-UCFUZ7iwodYqkAwg">
+        <div id="google_ads_iframe_/22152718/sws-hb//w3schools.com//mid_content_0__container__"
+             style="border: 0pt none;">
+            <iframe id="google_ads_iframe_/22152718/sws-hb//w3schools.com//mid_content_0" title="3rd party ad content"
+                    name="google_ads_iframe_/22152718/sws-hb//w3schools.com//mid_content_0" width="336" height="280"
+                    scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc=""
+                    style="border: 0px; vertical-align: bottom;" data-google-container-id="f"></iframe>
+        </div>
+    </div>
+
+</div>
+<hr>
+
+<h2>Titles, text, and links</h2>
+
+<div class="card" style="margin:16px 0 24px 0">
+    <div class="card-body">
+        <h4 class="card-title" style="margin-top:2px;font-weight:500;font-size: 1.5rem;line-height:1.1">Card title</h4>
+
+        <p class="card-text" style="margin:14px 0 16px 0">Some example text. Some example text.</p>
+        <a href="javascript:void(0)" class="card-link">Card link</a>
+        <a href="javascript:void(0)" class="card-link">Another link</a>
+    </div>
+</div>
+<p>Use <code class="w3-codespan">.card-title</code> to add card titles to any
+    heading element.
+    The <code class="w3-codespan">.card-text</code> class is used to remove bottom margins for a &lt;p&gt; element if it
+    is
+    the last child (or the only one) inside <code class="w3-codespan">.card-body</code>. The <code class="w3-codespan">.card-link</code>
+    class adds a blue
+    color to any link, and a hover effect.</p>
+
+<div class="w3-example">
+    <h3>Example</h3>
+
+    <div class="w3-code notranslate htmlHigh">
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                             style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span
+            class="attributevaluecolor" style="color:mediumblue">="card-body"</span></span><span class="tagcolor"
+                                                                                                 style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>h4<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-title"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span>Card title<span class="tagnamecolor"
+                                                                                            style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/h4<span class="tagcolor"
+                                                                          style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card-text"</span></span><span class="tagcolor"
+                                                                                                  style="color:mediumblue">&gt;</span></span>Some
+        example text. Some example text.<span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                                                             style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span
+                class="attributecolor" style="color:red"> href<span class="attributevaluecolor"
+                                                                    style="color:mediumblue">="#"</span> class<span
+                class="attributevaluecolor" style="color:mediumblue">="card-link"</span></span><span class="tagcolor"
+                                                                                                     style="color:mediumblue">&gt;</span></span>Card
+        link<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span
+            class="attributecolor" style="color:red"> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span>
+  class<span class="attributevaluecolor" style="color:mediumblue">="card-link"</span></span><span class="tagcolor"
+                                                                                                  style="color:mediumblue">&gt;</span></span>Another
+        link<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br></div>
+    <a target="_blank" href="tryit.asp?filename=trybs_card_title&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it
+        Yourself »</a>
+</div>
+<hr>
+
+<h2>Card Images</h2>
+
+<div class="w3-row" style="margin:20px 0 24px 0">
+    <div class="w3-half">
+        <div class="card" style="width:70%;">
+            <img class="card-img-top" src="https://www.thoughtco.com/thmb/8qDCvM_B5SqQeIfOzaW4O19MxWM=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/beautiful-woman-with-natural-make-up-897056188-5c2d3aff4cedfd000165bdef.jpg" alt="Card image" style="width:100%;margin-bottom:0">
+
+            <div class="card-body">
+                <h4 class="card-title" style="margin-top:0">John Doe</h4>
+
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                <a href="javascript:void(0)" class="btn btn-primary">See Profile</a>
+            </div>
+        </div>
+    </div>
+    <div class="w3-half w3-hide-small">
+        <div class="card" style="width:70%;">
+            <div class="card-body">
+                <h4 class="card-title" style="margin-top:0">Jane Doe</h4>
+
+                <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
+                <a href="javascript:void(0)" class="btn btn-primary">See Profile</a>
+            </div>
+            <img class="card-img-bottom w3-grayscale-min" src="https://www.thoughtco.com/thmb/8qDCvM_B5SqQeIfOzaW4O19MxWM=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/beautiful-woman-with-natural-make-up-897056188-5c2d3aff4cedfd000165bdef.jpg" alt="Card image"
+                 style="width:100%;margin-bottom:0">
+        </div>
+    </div>
+</div>
+
+<p>Add <code class="w3-codespan">.card-img-top</code> or <code class="w3-codespan">.card-img-bottom</code> to an <code
+        class="w3-codespan">
+    &lt;img&gt;</code> to place the image at the top or at the bottom inside the card. Note
+    that we have added the image outside of the <code class="w3-codespan">.card-body</code> to span the entire width:
+</p>
+
+<div class="w3-example">
+    <h3>Example</h3>
+
+    <div class="w3-code notranslate htmlHigh">
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card"</span> style<span
+                class="attributevaluecolor" style="color:mediumblue">="width:400px"</span></span><span class="tagcolor"
+                                                                                                       style="color:mediumblue">&gt;</span></span><br>&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>img<span
+            class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="card-img-top"</span> src<span
+            class="attributevaluecolor" style="color:mediumblue">="img_avatar1.png"</span>
+  alt<span class="attributevaluecolor" style="color:mediumblue">="Card image"</span></span><span class="tagcolor"
+                                                                                                 style="color:mediumblue">&gt;</span></span><br>&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-body"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>h4<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card-title"</span></span><span class="tagcolor"
+                                                                                                   style="color:mediumblue">&gt;</span></span>John
+        Doe<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/h4<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card-text"</span></span><span class="tagcolor"
+                                                                                                  style="color:mediumblue">&gt;</span></span>Some
+        example text.<span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                                          style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span
+            class="attributecolor" style="color:red"> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span>
+  class<span class="attributevaluecolor" style="color:mediumblue">="btn btn-primary"</span></span><span class="tagcolor"
+                                                                                                        style="color:mediumblue">&gt;</span></span>See
+        Profile<span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                                    style="color:mediumblue">&lt;</span>/a<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br></div>
+    <a target="_blank" href="tryit.asp?filename=trybs_card_image&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it
+        Yourself »</a>
+</div>
+<hr>
+
+<h2>Stretched Link</h2>
+
+<p>Add the <code class="w3-codespan">.stretched-link</code> class to a link inside the card, and it will make the whole
+    card clickable and hoverable (the card will act as a link):</p>
+
+<div class="w3-row" style="margin:20px 0 24px 0">
+    <div class="w3-half">
+        <div class="card" style="width:70%;">
+            <img class="card-img-top" src="https://www.thoughtco.com/thmb/8qDCvM_B5SqQeIfOzaW4O19MxWM=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/beautiful-woman-with-natural-make-up-897056188-5c2d3aff4cedfd000165bdef.jpg" alt="Card image" style="width:100%;margin-bottom:0">
+
+            <div class="card-body">
+                <h4 class="card-title" style="margin-top:0">John Doe</h4>
+
+                <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                <a href="javascript:void(0)" class="btn btn-primary stretched-link">See Profile</a>
+            </div>
+        </div>
+    </div>
+    <div class="w3-half w3-hide-small">
+        <div class="card" style="width:70%;">
+            <div class="card-body">
+                <h4 class="card-title" style="margin-top:0">Jane Doe</h4>
+
+                <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
+                <a href="javascript:void(0)" class="btn btn-primary stretched-link">See Profile</a>
+            </div>
+            <img class="card-img-bottom w3-grayscale-min" src="https://www.thoughtco.com/thmb/8qDCvM_B5SqQeIfOzaW4O19MxWM=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/beautiful-woman-with-natural-make-up-897056188-5c2d3aff4cedfd000165bdef.jpg" alt="Card image"
+                 style="width:100%;margin-bottom:0">
+        </div>
+    </div>
+</div>
+<div class="w3-example">
+    <h3>Example</h3>
+
+    <div class="w3-code notranslate htmlHigh">
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span
+                class="attributecolor" style="color:red"> href<span class="attributevaluecolor"
+                                                                    style="color:mediumblue">="#"</span> class<span
+                class="attributevaluecolor"
+                style="color:mediumblue">="btn btn-primary stretched-link"</span></span><span class="tagcolor"
+                                                                                              style="color:mediumblue">&gt;</span></span>See
+        Profile<span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                                    style="color:mediumblue">&lt;</span>/a<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br></div>
+    <a target="_blank" href="tryit.asp?filename=trybs_card_link&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it
+        Yourself »</a>
+</div>
+<hr>
+
+<h2>Card Image Overlays</h2>
+
+<div class="card img-fluid" style="width:500px;margin:16px 0 24px 0">
+    <img class="card-img-top" src="https://www.thoughtco.com/thmb/8qDCvM_B5SqQeIfOzaW4O19MxWM=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/beautiful-woman-with-natural-make-up-897056188-5c2d3aff4cedfd000165bdef.jpg" alt="Card image" style="width:100%">
+
+    <div class="card-img-overlay">
+        <h4 class="card-title">John Doe</h4>
+
+        <p class="card-text">Some example text some example text. Some example text some example text. Some example text
+            some example text. Some example text some example text.</p>
+        <a href="javascript:void(0)" class="btn btn-primary">See Profile</a>
+    </div>
+</div>
+
+<p>Turn an image into a card background and use <code class="w3-codespan">.card-img-overlay</code>
+    to add text on top of the image:</p>
+
+<div class="w3-example">
+    <h3>Example</h3>
+
+    <div class="w3-code notranslate htmlHigh">
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card"</span> style<span
+                class="attributevaluecolor" style="color:mediumblue">="width:500px"</span></span><span class="tagcolor"
+                                                                                                       style="color:mediumblue">&gt;</span></span><br>&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>img<span
+            class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="card-img-top"</span> src<span
+            class="attributevaluecolor" style="color:mediumblue">="img_avatar1.png"</span>
+  alt<span class="attributevaluecolor" style="color:mediumblue">="Card image"</span></span><span class="tagcolor"
+                                                                                                 style="color:mediumblue">&gt;</span></span><br>&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-img-overlay"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>h4<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card-title"</span></span><span class="tagcolor"
+                                                                                                   style="color:mediumblue">&gt;</span></span>John
+        Doe<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/h4<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card-text"</span></span><span class="tagcolor"
+                                                                                                  style="color:mediumblue">&gt;</span></span>Some
+        example text.<span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                                          style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span
+            class="attributecolor" style="color:red"> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span>
+  class<span class="attributevaluecolor" style="color:mediumblue">="btn btn-primary"</span></span><span class="tagcolor"
+                                                                                                        style="color:mediumblue">&gt;</span></span>See
+        Profile<span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                                    style="color:mediumblue">&lt;</span>/a<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br></div>
+    <a target="_blank" href="tryit.asp?filename=trybs_card_image_overlay&amp;stacked=h" class="w3-btn w3-margin-bottom">Try
+        it Yourself »</a>
+</div>
+<hr>
+
+<h2>Card Columns</h2>
+
+<div class="card-columns">
+    <div class="card bg-primary pt-3">
+        <div class="card-body text-center">
+            <p>Some text inside the first card</p>
+        </div>
+    </div>
+    <div class="card bg-warning pt-3">
+        <div class="card-body text-center">
+            <p>Some text inside the second card</p>
+        </div>
+    </div>
+    <div class="card bg-success pt-3">
+        <div class="card-body text-center">
+            <p>Some text inside the third card</p>
+        </div>
+    </div>
+    <div class="card bg-danger pt-3">
+        <div class="card-body text-center">
+            <p>Some text inside the fourth card</p>
+        </div>
+    </div>
+    <div class="card bg-light pt-3">
+        <div class="card-body text-center">
+            <p>Some text inside the fifth card</p>
+        </div>
+    </div>
+    <div class="card bg-info pt-3">
+        <div class="card-body text-center">
+            <p>Some text inside the sixth card</p>
+        </div>
+    </div>
+</div>
+
+<p>The <code class="w3-codespan">.card-columns</code> class creates a masonry-like grid of cards (like pinterest). The
+    layout will automatically adjust as you insert more cards.</p>
+
+<p><strong>Note:</strong> The cards are displayed vertically on small screens (less than 576px):</p>
+
+<div class="w3-example">
+    <h3>Example</h3>
+
+    <div class="w3-code notranslate htmlHigh">
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-columns"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                             style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span
+            class="attributevaluecolor" style="color:mediumblue">="card bg-primary"</span></span><span class="tagcolor"
+                                                                                                       style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-body text-center"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card-text"</span></span><span class="tagcolor"
+                                                                                                  style="color:mediumblue">&gt;</span></span>Some
+        text inside the first card<span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                                                       style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card bg-warning"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="card-body
+  text-center"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-text"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span>Some text inside the second
+        card<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card bg-success"</span></span><span class="tagcolor"
+                                                                                                        style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="card-body
+  text-center"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-text"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span>Some text inside the third
+        card<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card bg-danger"</span></span><span class="tagcolor"
+                                                                                                       style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="card-body
+  text-center"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-text"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span>Some text inside the fourth
+        card<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span>
+        <br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                                        style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card bg-light"</span></span><span class="tagcolor"
+                                                                                                      style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="card-body
+  text-center"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-text"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span>Some text inside the fifth
+        card<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card bg-info"</span></span><span class="tagcolor"
+                                                                                                     style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="card-body
+  text-center"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-text"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span>Some text inside the sixth
+        card<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br></div>
+    <a target="_blank" href="tryit.asp?filename=trybs_card_columns&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it
+        Yourself »</a>
+</div>
+<hr>
+
+<h2>Card Deck</h2>
+
+<div class="card-deck mb-4">
+    <div class="card bg-primary pt-3">
+        <div class="card-body text-center">
+            <p>Some text inside the first card</p>
+
+            <p>Some more text to increase the height</p>
+
+            <p>Some more text to increase the height</p>
+
+            <p>Some more text to increase the height</p>
+        </div>
+    </div>
+    <div class="card bg-warning pt-3">
+        <div class="card-body text-center">
+            <p>Some text inside the second card</p>
+        </div>
+    </div>
+    <div class="card bg-success pt-3">
+        <div class="card-body text-center">
+            <p>Some text inside the third card</p>
+        </div>
+    </div>
+    <div class="card bg-danger pt-3">
+        <div class="card-body text-center">
+            <p>Some text inside the fourth card</p>
+        </div>
+    </div>
+</div>
+
+<p>The <code class="w3-codespan">.card-deck</code> class creates a grid of cards that are of <strong>equal height and
+    width</strong>. The layout will automatically adjust as you insert more cards.</p>
+
+<p><strong>Note:</strong> The cards are displayed vertically on small screens (less than 576px):</p>
+
+<div class="w3-example">
+    <h3>Example</h3>
+
+    <div class="w3-code notranslate htmlHigh">
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-deck"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                             style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span
+            class="attributevaluecolor" style="color:mediumblue">="card bg-primary"</span></span><span class="tagcolor"
+                                                                                                       style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-body text-center"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card-text"</span></span><span class="tagcolor"
+                                                                                                  style="color:mediumblue">&gt;</span></span>Some
+        text inside the first card<span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                                                       style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card bg-warning"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="card-body
+  text-center"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-text"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span>Some text inside the second
+        card<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card bg-success"</span></span><span class="tagcolor"
+                                                                                                        style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="card-body
+  text-center"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-text"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span>Some text inside the third
+        card<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card bg-danger"</span></span><span class="tagcolor"
+                                                                                                       style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="card-body
+  text-center"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-text"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span>Some text inside the fourth
+        card<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span>
+        <br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br></div>
+    <a target="_blank" href="tryit.asp?filename=trybs_card_deck&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it
+        Yourself »</a>
+</div>
+<hr>
+
+<h2>Card Group</h2>
+
+<div class="card-group mb-4">
+    <div class="card bg-primary pt-3">
+        <div class="card-body text-center">
+            <p>Some text inside the first card</p>
+
+            <p>Some more text to increase the height</p>
+
+            <p>Some more text to increase the height</p>
+
+            <p>Some more text to increase the height</p>
+        </div>
+    </div>
+    <div class="card bg-warning pt-3">
+        <div class="card-body text-center">
+            <p>Some text inside the second card</p>
+        </div>
+    </div>
+    <div class="card bg-success pt-3">
+        <div class="card-body text-center">
+            <p>Some text inside the third card</p>
+        </div>
+    </div>
+    <div class="card bg-danger pt-3">
+        <div class="card-body text-center">
+            <p>Some text inside the fourth card</p>
+        </div>
+    </div>
+</div>
+
+<p>The <code class="w3-codespan">.card-group</code> class is similar to <code class="w3-codespan">.card-deck</code>. The
+    only difference is that the <code class="w3-codespan">.card-group</code> class removes left and right margins
+    between each card.</p>
+
+<p><strong>Note:</strong> The cards are displayed vertically on small screens (less than 576px), <strong>WITH</strong>
+    top and bottom margin:</p>
+
+<div class="w3-example">
+    <h3>Example</h3>
+
+    <div class="w3-code notranslate htmlHigh">
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-group"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                             style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span
+            class="attributevaluecolor" style="color:mediumblue">="card bg-primary"</span></span><span class="tagcolor"
+                                                                                                       style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-body text-center"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card-text"</span></span><span class="tagcolor"
+                                                                                                  style="color:mediumblue">&gt;</span></span>Some
+        text inside the first card<span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                                                       style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                             style="color:mediumblue">&lt;</span>div<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card bg-warning"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="card-body
+  text-center"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-text"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span>Some text inside the second
+        card<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card bg-success"</span></span><span class="tagcolor"
+                                                                                                        style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="card-body
+  text-center"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-text"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span>Some text inside the third
+        card<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="card bg-danger"</span></span><span class="tagcolor"
+                                                                                                       style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span
+            class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="card-body
+  text-center"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span
+                class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                     style="color:mediumblue">="card-text"</span></span><span
+                class="tagcolor" style="color:mediumblue">&gt;</span></span>Some text inside the fourth
+        card<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span
+            class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                           style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor"
+                                                                                         style="color:brown"><span
+            class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span>
+        <br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span
+            class="tagcolor" style="color:mediumblue">&gt;</span></span><br></div>
+    <a target="_blank" href="tryit.asp?filename=trybs_card_group&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it
+        Yourself »</a>
+</div>
+
+<br>
+
+<div class="w3-clear nextprev">
+    <a class="w3-left w3-btn" href="bootstrap_list_groups.asp">❮ Previous</a>
+    <a class="w3-right w3-btn" href="bootstrap_dropdowns.asp">Next ❯</a>
+</div>
+</div>
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+      <!-- Footer -->
+
+
+        {% with "Workspace/"|add:website_template|add:"/admin/footer.html" as template %}
+            {% include template %}
+        {% endwith %}
+      <!-- End of Footer -->
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+
+            {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+<div class="modal fade" id="footeritemWorkspaceDetailmodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="footeritemWorkspaceDetailmodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="footeritemWorkspaceDetailModalsFormId" data-uuid="">
+            <div class="modal-header">
+                <h3 class="modal-title">Xem chi tiết   FooterItem </h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group px-lg-5 text-start">
+            
+                <div class="mb-1 col-xl-6 d-none">
+                   <label class="small mb-1">Id</label>
+                    <input id="idFooterItemWorkspaceDetailModalInputId" name="id" class="form-control id-footeritem-workspace-input" placeholder="Điền thông tin Id of FooterItem" type="text" value="">
+                </div>
+            
+                <div class="mb-1 col-xl-6 d-none">
+                    <label class="small mb-1">Uuid</label>
+                    <input id="uuidFooterItemWorkspaceDetailModalInputId" name="uuid" class="form-control uuid-footeritem-workspace-input" placeholder="Điền thông tin Uuid of FooterItem" type="text" value="">
+                </div>
+            <div class="row gx-2 mb-2">
+                                    <div class=" mb-1 col-xl-12">
+                                     <label class="small mb-1">Name</label>
+                                    <input id="nameFooterItemWorkspaceDetailModalInputId" name="name" class="form-control name-footeritem-workspace-input" placeholder="Điền thông tin Name" type="text" value="{{ current_footeritem.name}}" readonly>
+                                </div>
+                                </div><div class="row gx-2 mb-2"></div><div class="row gx-2 mb-2">
+                                <div class="mb-1 col-xl-6">
+                                <label class="small mb-1">Desc</label>
+                                    <textarea id="descFooterItemWorkspaceDetailModalInputId" name="desc" class="form-control desc-footeritem-workspace-input ckeditor-input" placeholder="Điền thông tin Desc" type="text" rows="4" cols="80" readonly>{{ current_footeritem.desc}}</textarea>
+                                </div>
+                                
+                                <div class="mb-1 col-xl-6">
+                                    <label class="small mb-1">Order</label>
+                                    
+                                    <input id="orderFooterItemWorkspaceDetailModalInputId" name="order" class="form-control order-footeritem-workspace-input" placeholder="Điền thông tin Order" type="text" value="{{ current_footeritem.order}}" readonly>
+                                </div>
+                                </div><div class="row gx-2 mb-2">
+                                <div class="mb-1 col-xl-12">
+                                    <div class="form-check mt-4">
+                                        {% if current_footeritem.active == True %}
+                                        <input id="activeFooterItemWorkspaceDetailModalInputId" name="active" type="checkbox" class="form-check-input active-footeritem-workspace-input" placeholder="Điền thông tin Active" value="{{ current_footeritem.active}}" checked  disabled="true">
+                                        {% else %}
+                                        <input id="activeFooterItemWorkspaceDetailModalInputId" name="active" type="checkbox" class="form-check-input active-footeritem-workspace-input" placeholder="Điền thông tin Active" value="{{ current_footeritem.active}}"  disabled="true">
+                                        {% endif %}
+                                        <label class="form-check-label" for="activeFooterItemWorkspaceDetailModalInputId">
+                                            Active
+                                        </label>
+                                    </div>
+                                </div>
+                                </div>
+             </div> </div>
+                    <div class="modal-footer">
+                        <button id="footeritemWorkspaceCancelDetailModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                    </div>
+            
+            </div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+            
+            

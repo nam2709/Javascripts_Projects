@@ -1,0 +1,50 @@
+{% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+<div class="modal fade" id="StatusStatusEditmodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="StatusStatusEditmodalsId" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+         <form method="POST" action="" enctype="multipart/form-data" id="StatusStatusEditModalsFormId" data-uuid="">
+            <div class="modal-header">
+               <h3 class="modal-title">Chỉnh sửa Thông tin</h3>
+               <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <div class="form-group px-lg-5 text-start">
+                  <div class="mb-1 col-xl-6 d-none">
+                     <label class="small mb-1">Id</label>
+                     <input id="idStatusStatusEditModalInputId" name="id" class="form-control id-Status-Status-input" placeholder="Nhập Id of Status" type="text" value="">
+                  </div>
+                  <input id="uuidStatusStatusEditModalInputId"  name="uuid" class=" form-control uuid-Status-Status-input d-none" placeholder="Nhập mã uuid" type="text" value="">
+                  <h6 class="heading-small text-muted mb-4">Thông tin chung</h6>
+                  <div class="row gx-2 mb-2">
+                     <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Tên Trạng Thái</label>
+                        <input id="nameStatusStatusEditModalInputId"  name="name" class=" form-control name-Status-Status-input" placeholder="Nhập Trạng Thái" type="text" value="">
+                     </div>
+                     <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Mã Trạng Thái</label>
+                        <input id="codeStatusStatusEditModalInputId"  name="code" class=" form-control code-Status-Status-input" placeholder="Nhập Mã Trạng Thái" type="text" value="">
+                       
+                        
+                     </div>
+                  </div>
+                  
+                  <div class="row gx-2 mb-2">
+                    
+                     
+                        <label class="small mb-1">Mô Tả</label>
+                        <input id="descStatusStatusEditModalInputId" name="desc" class=" form-control desc-Status-Status-input ckeditor-input" placeholder="Mô Tả" type="text">
+                     
+                  </div>
+                  
+            <div class="modal-footer">
+               <button id="StatusStatusCancelEditModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+               <button id="StatusStatusUpdateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+               {% comment %} <button id="StatusStatusTestEditModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button> {% endcomment %}
+            </div>
+      </div>
+      </form>
+   </div>
+</div>
+</div>
+</div>
+</div>

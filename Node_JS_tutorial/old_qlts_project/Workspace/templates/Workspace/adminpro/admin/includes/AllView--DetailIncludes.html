@@ -1,0 +1,298 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+        
+
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a class="btn btn-primary" href="{% url 'Website:AllViewView' %}">
+            All AllViews
+          </a>
+          <a href="{% url 'Website:AllView_DetailView' slug=current_allview.uuid %}">
+            Current AllView: {{ current_allview.name|title }}
+          </a>
+          <a class="btn btn-primary" href="{% url 'Website:AllView_EditView' slug=current_allview.uuid %}">
+            Edit
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_allview.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="allviewWebsiteDetailFormId" data-uuid="{{ current_allview.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="allviewWebsiteDetailFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            {% if current_allview.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="allviewWebsiteDetailFormId" data-uuid="{{ current_allview.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="allviewWebsiteDetailFormId" data-uuid="">
+            {% endif %}
+                {% csrf_token %}
+    
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    {% if current_allview %}
+        <input id="nameAllViewWebsiteDetailInputId" name="name" class="form-control name-allview-website-input" placeholder="Name" type="text" value="{{ current_allview.name}}" readonly >
+    {% else %}
+        <input id="nameAllViewWebsiteDetailInputId" name="name" class="form-control name-allview-website-input" placeholder="Name" type="text" value="" readonly >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    {% if current_allview %}
+        <input id="uuidAllViewWebsiteDetailInputId" name="uuid" class="form-control uuid-allview-website-input" placeholder="Uuid" type="text" value="{{ current_allview.uuid}}" readonly >
+    {% else %}
+        <input id="uuidAllViewWebsiteDetailInputId" name="uuid" class="form-control uuid-allview-website-input" placeholder="Uuid" type="text" value="" readonly >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Short Name
+        </span>
+    </div>
+    {% if current_allview %}
+        <input id="short_nameAllViewWebsiteDetailInputId" name="short_name" class="form-control short_name-allview-website-input" placeholder="Short Name" type="text" value="{{ current_allview.short_name}}" readonly >
+    {% else %}
+        <input id="short_nameAllViewWebsiteDetailInputId" name="short_name" class="form-control short_name-allview-website-input" placeholder="Short Name" type="text" value="" readonly >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Pattern
+        </span>
+    </div>
+    {% if current_allview %}
+        <input id="patternAllViewWebsiteDetailInputId" name="pattern" class="form-control pattern-allview-website-input" placeholder="Pattern" type="text" value="{{ current_allview.pattern}}" readonly >
+    {% else %}
+        <input id="patternAllViewWebsiteDetailInputId" name="pattern" class="form-control pattern-allview-website-input" placeholder="Pattern" type="text" value="" readonly >
+    {% endif %}
+</div>
+
+<hr>
+<div>
+<!--
+    {% if current_allview.icon %}
+        <span>
+         Current: <a href="{{ current_allview.icon.url }}" target="_blank">{{ current_allview.icon.name}}</a>
+        </span>
+    {% endif %}
+-->
+    <div class="form-group input-group  border" old-class="">
+        <div class="input-group-prepend w-20">
+            <span class="input-group-text">
+            Icon
+            </span>
+        </div>
+        <div class="input-group-content ml-3 w-75">
+            {% if current_allview and current_allview.icon %}
+                <div class="">
+                    {% trans 'Current: ' %}<a id="iconAllViewWebsiteDetailInputId" name="icon" old-class="form-control" class="icon-allview-website-input current-file-preview tnd-file-path" data-toggle="modal" data-target="#FilePreviewModalFormId" placeholder="Icon" type="file" href="{{ current_allview.icon.url}}" target="_blank" disabled > {{ current_allview.icon.name}}</a>
+                </div>
+        <!--
+                    <a class="current-file-preview border-left"  url="{{ current_allview.icon.url}}" data-toggle="modal" data-target="#FilePreviewModalFormId" >Preview</a>
+        -->
+                <div class="form-check border-left">
+                    <input id="iconAllViewWebsiteDetailInputIdClearId" name="icon-clear" class="icon-allview-website-input" placeholder="Icon" type="checkbox" value="" disabled />
+                    <label class="form-check-label" for="iconAllViewWebsiteDetailInputId">
+                        {% trans 'Remove' %}
+                    </label>
+                </div>
+                <hr>
+            {% else %}
+                Current: <a id="iconAllViewWebsiteDetailInputIdCurrentFileId" name="icon" class="" data-target="#FilePreviewModalFormId" url="" href="">None
+                </a>
+                <hr>
+            {% endif %}
+            <div class="input-group w-100">
+                <input id="iconAllViewWebsiteDetailInputId" name="icon" class="form-control icon-allview-website-input" placeholder="Icon" type="file" value="" disabled />
+                <div class="input-group-append w-20">
+                    <span class="input-group-text">
+                    {% trans 'Change' %}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="form-group input-group card  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        
+        </span>
+    </div>
+    {% if current_allview %}
+        <textarea rows="10" id="icon_base64AllViewWebsiteDetailInputId" name="icon_base64" class="form-control ckeditor-input w-100 icon_base64-allview-website-input" placeholder="" type="text" value="" readonly>{{  current_allview.icon_base64 }}</textarea>
+    {% else %}
+        <textarea rows="10" id="icon_base64AllViewWebsiteDetailInputId" name="icon_base64" class="form-control ckeditor-input w-100 icon_base64-allview-website-input" placeholder="" type="text" value="" readonly></textarea>
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_allview.active == True %}
+            <input id="activeAllViewWebsiteDetailInputId" name="active" type="checkbox" class="form-check-input active-allview-website-input" placeholder="Active" checked disabled>
+        {% else %}
+            <input id="activeAllViewWebsiteDetailInputId" name="active" type="checkbox" class="form-check-input active-allview-website-input" placeholder="Active" disabled>
+        {% endif %}
+        <label class="form-check-label" for="activeAllViewWebsiteDetailInputIdInputId">
+            Active
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_allview.is_product == True %}
+            <input id="is_productAllViewWebsiteDetailInputId" name="is_product" type="checkbox" class="form-check-input is_product-allview-website-input" placeholder="Is Product" checked disabled>
+        {% else %}
+            <input id="is_productAllViewWebsiteDetailInputId" name="is_product" type="checkbox" class="form-check-input is_product-allview-website-input" placeholder="Is Product" disabled>
+        {% endif %}
+        <label class="form-check-label" for="is_productAllViewWebsiteDetailInputIdInputId">
+            Is Product
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_allview.staff_only == True %}
+            <input id="staff_onlyAllViewWebsiteDetailInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-allview-website-input" placeholder="Staff Only" checked disabled>
+        {% else %}
+            <input id="staff_onlyAllViewWebsiteDetailInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-allview-website-input" placeholder="Staff Only" disabled>
+        {% endif %}
+        <label class="form-check-label" for="staff_onlyAllViewWebsiteDetailInputIdInputId">
+            Staff Only
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_allview.admin_only == True %}
+            <input id="admin_onlyAllViewWebsiteDetailInputId" name="admin_only" type="checkbox" class="form-check-input admin_only-allview-website-input" placeholder="Admin Only" checked disabled>
+        {% else %}
+            <input id="admin_onlyAllViewWebsiteDetailInputId" name="admin_only" type="checkbox" class="form-check-input admin_only-allview-website-input" placeholder="Admin Only" disabled>
+        {% endif %}
+        <label class="form-check-label" for="admin_onlyAllViewWebsiteDetailInputIdInputId">
+            Admin Only
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Order
+        </span>
+    </div>
+    {% if current_allview %}
+        <input id="orderAllViewWebsiteDetailInputId" name="order" class="form-control order-allview-website-input" placeholder="Order" type="text" value="{{ current_allview.order}}" readonly >
+    {% else %}
+        <input id="orderAllViewWebsiteDetailInputId" name="order" class="form-control order-allview-website-input" placeholder="Order" type="text" value="" readonly >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_allview.demo_mode == True %}
+            <input id="demo_modeAllViewWebsiteDetailInputId" name="demo_mode" type="checkbox" class="form-check-input demo_mode-allview-website-input" placeholder="Demo Mode" checked disabled>
+        {% else %}
+            <input id="demo_modeAllViewWebsiteDetailInputId" name="demo_mode" type="checkbox" class="form-check-input demo_mode-allview-website-input" placeholder="Demo Mode" disabled>
+        {% endif %}
+        <label class="form-check-label" for="demo_modeAllViewWebsiteDetailInputIdInputId">
+            Demo Mode
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    {% if current_allview %}
+        <input id="updated_atAllViewWebsiteDetailInputId" name="updated_at" class="form-control updated_at-allview-website-input" placeholder="Updated At" type="datetime-local" value="{{ current_allview.updated_at }}" readonly>
+    {% else %}
+        <input id="updated_atAllViewWebsiteDetailInputId" name="updated_at" class="form-control updated_at-allview-website-input" placeholder="Updated At" type="datetime-local" value="" readonly>
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    {% if current_allview %}
+        <input id="created_atAllViewWebsiteDetailInputId" name="created_at" class="form-control created_at-allview-website-input" placeholder="Created At" type="datetime-local" value="{{ current_allview.created_at }}" readonly>
+    {% else %}
+        <input id="created_atAllViewWebsiteDetailInputId" name="created_at" class="form-control created_at-allview-website-input" placeholder="Created At" type="datetime-local" value="" readonly>
+    {% endif %}
+</div>
+
+    <div class="modal-footer">
+        <button id="allviewWebsiteTestBtnId" type="button" class="btn btn-warning">Test</button>
+    </div>
+            
+        </form>
+
+        </fieldset>
+    </div>
+</div>
+            
+{% include 'Workspace/'|add:website_template|add:'/admin/includes/Modal--FilePreview.html' %}
+

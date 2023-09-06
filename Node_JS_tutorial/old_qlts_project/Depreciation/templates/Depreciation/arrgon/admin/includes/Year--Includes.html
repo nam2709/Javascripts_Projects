@@ -1,0 +1,183 @@
+
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
+<script src="{% static 'Depreciation/arrgon/admin/js/DepreciationConst.js' %}"></script>    
+<script src="{% static 'Depreciation/arrgon/admin/js/Year.js' %}"></script>
+
+
+<div class="row">
+    <div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            Danh sách Thông Tin Tài Sản:  
+           <!-- <span class="d-block m-t-5">use class <code>table-hover</code> inside table element</span> -->
+           <button type="button" id="btn-create-DepreciationDepreciation" class="btn btn-outline-primary btn-sm " data-bs-toggle="modal" data-bs-target="#DepreciationDepreciationCreatemodalsId">
+                                <i class="fas fa-plus"></i> &nbsp;Thêm mới
+            </button>
+            <!-- <button type="button" id="btn-create-AssetRevaluationAssetRevaluation" class="btn btn-warning btn-sm " onclick="list_checkbox()">
+                <i class="fas fa-plus"></i> &nbsp; Xóa nhiều
+            </button> -->
+            <button type="button" id="DepreciationDepreciationExportExcelBtnId" class="btn btn-success btn-sm">
+                    <i class="far fa-file-excel"></i> &nbsp;Xuất excel
+            </button>
+            <select id="CurrencySelect" style="padding: 4px 8px; margin: 0px 0px 16px;">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="RUB">RUB</option>
+                <option value="CNY">CNY</option>
+            </select>
+            <div style="width: 300px;float: right;">
+                <input id="inputyear" type="text" placeholder="Input year..." class="form-control">
+            </div>
+            <button id="submit-btn111" type="button" id="DepreciationDepreciationExportExcelBtnId" class="btn btn-outline-primary btn-sm" style="float: right">
+                Submit
+            </button>
+            <script>
+                $(document).ready(function() {
+                    $('#submit-btn111').click(function() {
+                        var inputVal = $('#inputyear').val();
+                        var url = '/depre/' + inputVal + '/';
+                        window.location.href = url;
+                    });
+                });
+            </script>
+            
+            
+        </div>
+        <div class="card-body table-border-style">
+        <div class="table-responsive">
+            <table  class="table table-success" id="DepreciationDepreciationDataTableId" style=" border-top: 1px solid black; text-align: center">
+                <thead>
+                    <tr> 
+                        <th scope="col" attr-name="del_check" >
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="confirmed[]" width="30%" id="action-toggle" style=" height: 1.2rem; width: 1.2rem;">
+                                </label>
+                            </div>
+                        </th>
+                        <script>
+                            $(function() {
+                              $('input[name="confirmed[]"]:first').change(function() {
+                                var isChecked = $(this).is(':checked');
+                                $('input[name="confirmed[]"]').prop('checked', isChecked);
+                              });
+                            });
+                        </script>
+                        <!-- <th scope="col" attr-name="stt" class="border-gray-200"> STT </th> -->
+                        <!-- <th scope="col" attr-name="name" class="border-gray-200"> Tên </th> -->
+                        <th scope="col" attr-name="aset_name">Tài Sản </th>
+                        <th scope="col" attr-name="namesasetstype">Loai Tai San </th>
+                        <th scope="col" attr-name="aset_date_added">Ngày Nhập </th>
+                        <th scope="col" attr-name="month_1">Thang 1 </th>
+                        <th scope="col" attr-name="month_2">Thang 2 </th>
+                        <th scope="col" attr-name="month_3"> Thang 3 </th>
+                        <th scope="col" attr-name="month_4"> Thang 4 </th>
+                        <th scope="col" attr-name="month_5"> Thang 5 </th>
+                        <th scope="col" attr-name="month_6"> Thang 6 </th> 
+                        <th scope="col" attr-name="month_7"> Thang 7 </th>
+                        <th scope="col" attr-name="month_8"> Thang 8 </th> 
+                        <th scope="col" attr-name="month_9"> Thang 9  </th>
+                        <th scope="col" attr-name="month_10"> Thang 10  </th>
+                        <th scope="col" attr-name="month_11"> Thang 11  </th>
+                        <th scope="col" attr-name="month_12"> Thang 12 </th>
+                        <th scope="col" attr-name="account-admin-action">Thao tác</th>
+                        <!-- <th attr-name="account-admin-action">Thao tác</th> -->
+                    </tr>
+                </thead>
+                <tbody id="DepreciationDepreciationTableBodyId"> 
+                </tbody>
+            </table>
+            
+            
+            <table style="min-height: 210px;" class="table table-sm table-flush table-hover table-striped d-none" id="DepreciationDepreciationExportTableId" width="100%" cellspacing="0">
+                <thead class="thead-light">
+                    <tr>
+                        <th attr-name="del_check" >
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="confirmed[]" width="30%" id="action-toggle" style=" height: 1.2rem; width: 1.2rem;">
+                                </label>
+                            </div>
+                        </th>
+                        <th attr-name="stt">STT</th>
+            
+                        <th attr-name="username">Username</th>
+                    
+                        <th attr-name="full_name">Full_Name</th>
+                    
+                        <th attr-name="email">Email</th>
+                    
+                        <th attr-name="date_of_birth">Date_Of_Birth</th>
+                    
+                        <th attr-name="telephone">Telephone</th>
+                    
+                    </tr>
+                </thead>
+                <tbody id="DepreciationDepreciationExportTableBodyId">
+                </tbody>
+            </table>
+                
+            
+        </div>
+        
+
+            <div class="col-md-12 col-xl-12" id="DepreciationDepreciationCardAreaId">
+                <div class="card d-none DepreciationDepreciationTemplateCardClass">
+                    <div class="card-header">
+                        <div class="card-header-right">
+                            <div class="btn-group card-option">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="feather icon-more-horizontal"></i>
+                                </button>
+                                <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                    <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> Tối đa</span><span style="display:none"><i class="feather icon-minimize"></i> Trở về</span></a></li>
+                                    <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> Thu gọn</span><span style="display:none"><i class="feather icon-plus"></i> Mở rộng</span></a></li>
+                                    <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> Tải lại</a></li>
+                                    <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> Xóa</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" tnv_card_content="" attr-name="name"></h5>
+                        
+                        <p class="card-text" tnv_card_content="" title="Username" attr-name="username"></p>
+                    
+                        <p class="card-text" tnv_card_content="" title="Full_Name" attr-name="full_name"></p>
+                    
+                        <p class="card-text" tnv_card_content="" title="Email" attr-name="email"></p>
+                    
+                        <p class="card-text" tnv_card_content="" title="Date_Of_Birth" attr-name="date_of_birth"></p>
+                    
+                        <p class="card-text" tnv_card_content="" title="Telephone" attr-name="telephone"></p>
+                    
+                        <p class="card-text" tnv_card_content="" attr-name="created_at"><small class="text-muted"></small></p>
+                    </div>
+                </div>
+            </div>
+
+            
+        <span class="page-total page-total-DepreciationDepreciation text-left"></span>
+    </div>
+    <hr>
+    <nav aria-label="Page navigation">
+        <ul class="pagination pagination-DepreciationDepreciation justify-content-center">
+        </ul>
+    </nav>
+    
+    </div>
+    </div>
+</div>
+
+
+            

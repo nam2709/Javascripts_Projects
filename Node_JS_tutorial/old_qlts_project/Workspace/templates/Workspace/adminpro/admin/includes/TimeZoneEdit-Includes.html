@@ -1,0 +1,57 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a href="{% url 'Website:TimeZoneEditView' slug=current_timezone.uuid %}">
+            Current TimeZone: {{ current_timezone.name|title }}
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_timezone.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="WebsitetimezoneEditFormId" data-uuid="{{ current_timezone.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="WebsitetimezoneEditFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+            
+<div class="form-group input-group d-none">
+<div class="input-group-prepend">
+<span class="input-group-text">
+Id
+</span>
+</div>
+<input id="idTimeZoneWebsiteInputId" name="id" class="form-control id-timezone-website-input" placeholder="Id of TimeZone" type="text" value="{{ current_timezone.id}}">
+</div>
+            
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameTimeZoneWebsiteInputId" name="name" class="form-control name-timezone-website-input" placeholder="Name of TimeZone" type="text" value="{{ current_timezone.name}}">
+</div>
+                        
+<div class="form-group">
+    <button id="timezoneWebsiteSaveAndNewBtnId" type="button" class="btn btn-secondary btn-lg">Create New</button>
+    <button id="timezoneWebsiteEditBtnId" type="button" class="btn btn-primary btn-lg">Edit</button>
+    <button id="timezoneWebsiteSaveBtnId" type="button" class="btn btn-primary btn-lg">Save</button>
+    <button id="timezoneWebsiteDeleteBtnId" type="button" class="btn btn-danger btn-lg">Delete</button>
+    <button id="timezoneWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

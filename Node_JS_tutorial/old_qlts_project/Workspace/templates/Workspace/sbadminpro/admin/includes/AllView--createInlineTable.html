@@ -1,0 +1,78 @@
+
+                    {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+                    
+    <div class="col-12  px-0">
+       <h6 class="heading-small text-muted mb-4">  Danh Sách View  django  &nbsp;<i style="color:green" class="fas fa-plus allviewWorkspace-createAddInlineTableBtnId"></i></h6>
+      <div class="table-responsive">
+        <table class="table table-sm table-flush table-hover"  app-model-name="AllViewWorkspace" model_name="allview" id="allviewWorkspacecreateDataTableAddingId" depend="self-depend" parent-attr-name="" parent-attr-uuid=""  width="100%" cellspacing="0">
+          <thead class="thead-light">
+            <tr>
+        
+          <th>STT</th>
+        
+                <th attr-name="name" class="text-center" style="min-width:250px">Name</th>
+                
+                <th attr-name="active" class="text-center" style="min-width:250px">Active</th>
+                
+                <th attr-name="is_product" class="text-center" style="min-width:250px">Is_Product</th>
+                
+                <th attr-name="staff_only" class="text-center" style="min-width:250px">Staff_Only</th>
+                
+                <th attr-name="admin_only" class="text-center" style="min-width:250px">Admin_Only</th>
+                
+                <th attr-name="order" class="text-center" style="min-width:250px">Order</th>
+                
+        <th attr-name="allview-admin-action" class="text-center">Thao tác</th>
+         
+        </tr>
+    </thead>
+        
+      <tbody id="allviewWorkspacecreateInlineTableBodyId">
+        
+        <tr class="allview-Workspace-template-row-create d-none" is-new="template">
+        <td class="stt-allview">${count_row_allview}</td>
+        
+                <td class=""> 
+                
+                        <input name="name"  class=" form-control name-allview-workspace-inline-input" placeholder="Điền thông tin Name" type="text" value="">
+                    
+                </td>
+                
+                <td class="text-center"> 
+                
+                                <input  name="active"  type="checkbox" class=" form-control active-allview-workspace-inline-input" placeholder="Điền thông tin Active of AllView" value="" >
+                    
+                </td>
+                
+                <td class="text-center"> 
+                
+                                <input  name="is_product"  type="checkbox" class=" form-control is_product-allview-workspace-inline-input" placeholder="Điền thông tin Is_Product of AllView" value="" >
+                    
+                </td>
+                
+                <td class="text-center"> 
+                
+                                <input  name="staff_only"  type="checkbox" class=" form-control staff_only-allview-workspace-inline-input" placeholder="Điền thông tin Staff_Only of AllView" value="" >
+                    
+                </td>
+                
+                <td class="text-center"> 
+                
+                                <input  name="admin_only"  type="checkbox" class=" form-control admin_only-allview-workspace-inline-input" placeholder="Điền thông tin Admin_Only of AllView" value="" >
+                    
+                </td>
+                
+                <td class=""> 
+                
+                        <input name="order"  class="  form-control order-allview-workspace-inline-input" placeholder="Điền thông tin Order" type="text">
+                    
+                </td>
+                
+        <td class="text-center"><i class="fas fa-trash allview-Workspace-create-DeleteRowBtnId"></i> &nbsp; <i class="far fa-clone allview-Workspace-create-CloneRowBtnId"></i></td>
+        </tr>
+        
+      </tbody>
+    </table>
+</div>
+</div>
+        

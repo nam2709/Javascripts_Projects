@@ -1,0 +1,71 @@
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+<script src="/static/arrgon/js/jquery/dist/jquery.min.js"></script>
+<script src="{% static 'UserGroup/js/UserGroupClass.js' %}"> </script>
+<script src="{% static 'UserGroup/js/UserGroupCount.js' %}"> </script>   
+<!-- Search Form -->
+<!-- Search Form -->
+<div class="row">
+   <div class="col-sm-12 mb-4">
+      <div class="card">
+         <div class="card-body">
+            <div class="">
+               <!-- <h5 class="mb-3">Tìm kiếm Thông tin người dùng</h5> -->
+               <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                  <li class="">
+                     <a class="nav-link active" id="pills-quick-search-tab" data-bs-toggle="pill" href="#pills-quick-search" role="tab" aria-controls="pills-quick" aria-selected="true">Tìm kiếm nhanh</a>
+                  </li>
+                  <li class="">
+                     <a class="nav-link" id="pills-filter-search-tab" data-bs-toggle="pill" href="#pills-filter-search" role="tab" aria-controls="pills-filter" aria-selected="false">Bộ lọc</a>
+                  </li>
+               </ul>
+            </div>
+            <div class="tab-content" id="pills-tabContent">
+               <div class="tab-pane fade show active" id="pills-quick-search" role="tabpanel" aria-labelledby="pills-home-tab">
+                  <!-- Tìm kiếm nhanh -->
+                  <div class="row gx-2 mb-2 d-flex align-items-center justify-content-center">
+                     <div class="col-xl-8">
+                        <div class="input-group input-group-joined input-group-solid">
+                           <input class="form-control pe-0" type="text"  id="UserGroupQuickSearchInputId" placeholder="Nhập 'Nhóm Người'" aria-label="Search">
+                           <span class="input-group-text" id="UserGroupQuickSearchBtnId">
+                              <i class="fas fa-search" aria-hidden="true"></i>
+                           </span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="tab-pane fade align-items-center justify-content-center" id="pills-filter-search" role="tabpanel" aria-labelledby="pills-profile-tab">
+                  <!-- Tìm kiếm bộ lọc -->
+                  <div class="row gx-2 mb-2 d-flex align-items-center justify-content-center">
+                     <div class="mb-1 col-xl-12">
+                        <div class="input-group input-group-joined input-group-solid">
+                           <div class=" mb-1 col-xl-1"></div>
+                           <div class=" mb-1 col-xl-3">
+                              <input class="form-control pe-0" type="text"  id="nameUserGroupFilterSearchInputId" placeholder="Nhập 'Tên Nhóm Người'" aria-label="Filter"> 
+                           </div>
+                           <div >&nbsp;&nbsp;</div>
+                           {% comment %} <div class=" mb-1 col-xl-3">
+                                            
+                              <select id="accountUserGroupFilterSearchInputId"  name="account" class="form-control pe-1 " multiple="multiple" placeholder="Chọn 'User'" type="text" aria-label="Filter">
+                                  
+                              </select>
+                          </div> {% endcomment %}
+                           <div> &nbsp;&nbsp;</div>
+                           <div class=" mb-1 col-xl-1">
+                              <button class="input-group-text" id="UserGroupSearchBtnId">
+                              &nbsp; Lọc <i class="fas fa-filter" aria-hidden="true"></i> 
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- </div> -->
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- End Search Form -->

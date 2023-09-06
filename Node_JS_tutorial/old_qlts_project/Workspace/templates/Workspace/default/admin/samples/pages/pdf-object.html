@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+
+    {% include "Workspace/"|add:website_template|add:"/admin/header.html" %}
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    {% include "Workspace/"|add:website_template|add:"/admin/sidebar.html" %}
+
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+
+            {% with "Workspace/"|add:website_template|add:"/admin/topbar.html" as template %}
+                {% include template %}
+            {% endwith %}
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">PDF Object</h1>
+                </div>
+                <div class="w3-col l10 m12" id="main">
+                    <div>
+                        <div id="pdfExampleID">
+                        </div>
+                    </div>
+                    <div id="example1"></div>
+
+                </div>
+                <hr>
+                  <script src="{% static 'Workspace/'|add:website_template|add:'/admin/vendor/PDFObject/pdfobject.js' %}"></script>
+
+                  <script>PDFObject.embed("http://www.pdf995.com/samples/pdf.pdf", "#pdfExampleID");</script>
+
+            </div>
+            <style>
+            .pdfobject-container { height: 30rem; border: 1rem solid rgba(0,0,0,.1); }
+            </style>
+        </div>
+        <!-- /.container-fluid -->
+        {% with "Workspace/"|add:website_template|add:"/admin/footer.html" as template %}
+            {% include template %}
+        {% endwith %}
+
+    </div>
+    <!-- End of Main Content -->
+
+
+</div>
+<!-- End of Content Wrapper -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+
+            {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+            
+<div class="modal fade" id="configWorkspaceCreatemodalsId" tabindex="-1" data-backdrop="static" data-keyboard="true"  role="dialog" aria-labelledby="configWorkspaceCreatemodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="configWorkspaceCreateModalsFormId" data-uuid="">
+            <div class="modal-header">
+                <h3 class="modal-title">Tạo mới   Thông Tin Cấu Hình </h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group px-lg-5 text-start">
+            
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Id</label>
+    <input id="idConfigWorkspaceCreateModalInputId" name="id" class="form-control id-config-workspace-input" placeholder="Điền thông tin Id of Config" type="text" value="">
+</div>
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Uuid</label>
+    <input id="uuidConfigWorkspaceCreateModalInputId" name="uuid" class="form-control uuid-config-workspace-input" placeholder="Điền thông tin Uuid of Config" type="text" value="">
+</div>
+            <div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-12">
+                        <label class="small mb-1">Name</label>
+                        <input id="nameConfigWorkspaceCreateModalInputId"  name="name" class="form-control name-config-workspace-input " placeholder="Điền thông tin Name" type="text" value="">
+                        
+                    </div>
+                    </div><div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-12">
+                        <label class="small mb-1">Value</label>
+                        <input id="valueConfigWorkspaceCreateModalInputId"  name="value" class="form-control value-config-workspace-input " placeholder="Điền thông tin Value" type="text" value="">
+                        
+                    </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <div class="form-check mt-4">
+                                {% if current_config.default == True %}
+                                <input id="defaultConfigWorkspaceCreateModalInputId"  name="default" type="checkbox" class="form-check-input default-config-workspace-input" placeholder="Điền thông tin Default of Config" value="" checked>
+                                {% else %}
+                                <input id="defaultConfigWorkspaceCreateModalInputId"  name="default" type="checkbox" class="form-check-input default-config-workspace-input" placeholder="Điền thông tin Default of Config" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="defaultConfigWorkspaceCreateModalInputId">
+                                    Default
+                                </label>
+                            </div>
+                        </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <div class="form-check mt-4">
+                                {% if current_config.active == True %}
+                                <input id="activeConfigWorkspaceCreateModalInputId"  name="active" type="checkbox" class="form-check-input active-config-workspace-input" placeholder="Điền thông tin Active of Config" value="" checked>
+                                {% else %}
+                                <input id="activeConfigWorkspaceCreateModalInputId"  name="active" type="checkbox" class="form-check-input active-config-workspace-input" placeholder="Điền thông tin Active of Config" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="activeConfigWorkspaceCreateModalInputId">
+                                    Active
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+                    <div class="modal-footer">
+                        <button id="configWorkspaceCancelCreateModalBtnId" type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="configWorkspaceCreateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                        
+                        <button id="configWorkspaceSaveAndNewModalBtnId" type="button" class="d-none btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu và thêm mới</button>
+                        <button id="configWorkspaceTestCreateModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+            </div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+            
+            

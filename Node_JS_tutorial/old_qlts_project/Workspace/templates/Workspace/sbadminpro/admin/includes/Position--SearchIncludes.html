@@ -1,0 +1,101 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="/static/sbadminpro/js/jquery/dist/jquery.min.js"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WorkspaceConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+<!-- Search Form -->
+
+            <!-- Search Form -->
+        <div class="row">
+            <div class="col-sm-12 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- <h5 class="mb-3">Tìm kiếm   Vị trí hiển thị </h5> -->
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-quick-search-tab" data-bs-toggle="pill" href="#pills-quick-search" role="tab" aria-controls="pills-quick" aria-selected="true">Tìm kiếm nhanh</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-filter-search-tab" data-bs-toggle="pill" href="#pills-filter-search" role="tab" aria-controls="pills-filter" aria-selected="false">Bộ lọc</a>
+                            </li>
+
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-quick-search" role="tabpanel" aria-labelledby="pills-home-tab">
+                            <!-- Tìm kiếm nhanh -->
+                                    
+            <div class="row gx-2 mb-2 d-flex align-items-center justify-content-center">
+            <div class="col-xl-8">
+                <div class="input-group input-group-joined input-group-solid">
+                    <input class="form-control pe-0" type="text"  id="positionWorkspaceQuickSearchInputId" placeholder="Điền thông tin 'name'" aria-label="Search">
+                    <span class="input-group-text" id="positionWorkspaceQuickSearchBtnId">
+                        <i data-feather="search"></i>
+                    </span>
+                </div>
+            </div>
+            </div>
+            
+                            </div>
+                            <div class="tab-pane fade" id="pills-filter-search" role="tabpanel" aria-labelledby="pills-profile-tab">
+                            <!-- Tìm kiếm bộ lọc -->
+                                
+                        <div class="form-group row">
+                                
+            
+            <div class="mb-1   col-xl-4">
+                <label class="small mb-1">Name</label>
+                <input id="namePositionWorkspaceFilterSearchInputId" name="name" class="form-control form-control-sm ('name-position-workspace-input',)" placeholder="Điền thông tin " type="text" value=""  >
+            </div>
+            
+                        <div class=" mb-1 col-xl-4">
+                                                        <label style="color:transparent">Tìm kiếm</label><br>
+                                                        <button type="button" id="positionWorkspaceSearchBtnId" class="btn  btn-warning btn-sm">
+                                                                <i class="fas fa-search"></i> &nbsp;Tìm kiếm
+                                                            </button>
+                                                    </div>
+                        
+                        </div >
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- End Search Form -->
+            
+            

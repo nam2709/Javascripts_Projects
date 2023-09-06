@@ -1,0 +1,146 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+        
+
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a class="btn btn-primary" href="{% url 'Website:BotUAView' %}">
+            All BotUAs
+          </a>
+          <a href="{% url 'Website:BotUA_DetailView' slug=current_botua.uuid %}">
+            Current BotUA: {{ current_botua.name|title }}
+          </a>
+          <a class="btn btn-primary" href="{% url 'Website:BotUA_EditView' slug=current_botua.uuid %}">
+            Edit
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_botua.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="botuaWebsiteDetailFormId" data-uuid="{{ current_botua.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="botuaWebsiteDetailFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            {% if current_botua.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="botuaWebsiteDetailFormId" data-uuid="{{ current_botua.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="botuaWebsiteDetailFormId" data-uuid="">
+            {% endif %}
+                {% csrf_token %}
+    
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    {% if current_botua %}
+        <input id="nameBotUAWebsiteDetailInputId" name="name" class="form-control name-botua-website-input" placeholder="Name" type="text" value="{{ current_botua.name}}" readonly >
+    {% else %}
+        <input id="nameBotUAWebsiteDetailInputId" name="name" class="form-control name-botua-website-input" placeholder="Name" type="text" value="" readonly >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    {% if current_botua %}
+        <input id="uuidBotUAWebsiteDetailInputId" name="uuid" class="form-control uuid-botua-website-input" placeholder="Uuid" type="text" value="{{ current_botua.uuid}}" readonly >
+    {% else %}
+        <input id="uuidBotUAWebsiteDetailInputId" name="uuid" class="form-control uuid-botua-website-input" placeholder="Uuid" type="text" value="" readonly >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_botua.active == True %}
+            <input id="activeBotUAWebsiteDetailInputId" name="active" type="checkbox" class="form-check-input active-botua-website-input" placeholder="Active" checked disabled>
+        {% else %}
+            <input id="activeBotUAWebsiteDetailInputId" name="active" type="checkbox" class="form-check-input active-botua-website-input" placeholder="Active" disabled>
+        {% endif %}
+        <label class="form-check-label" for="activeBotUAWebsiteDetailInputIdInputId">
+            Active
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    {% if current_botua %}
+        <input id="updated_atBotUAWebsiteDetailInputId" name="updated_at" class="form-control updated_at-botua-website-input" placeholder="Updated At" type="datetime-local" value="{{ current_botua.updated_at }}" readonly>
+    {% else %}
+        <input id="updated_atBotUAWebsiteDetailInputId" name="updated_at" class="form-control updated_at-botua-website-input" placeholder="Updated At" type="datetime-local" value="" readonly>
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    {% if current_botua %}
+        <input id="created_atBotUAWebsiteDetailInputId" name="created_at" class="form-control created_at-botua-website-input" placeholder="Created At" type="datetime-local" value="{{ current_botua.created_at }}" readonly>
+    {% else %}
+        <input id="created_atBotUAWebsiteDetailInputId" name="created_at" class="form-control created_at-botua-website-input" placeholder="Created At" type="datetime-local" value="" readonly>
+    {% endif %}
+</div>
+
+    <div class="modal-footer">
+        <button id="botuaWebsiteTestBtnId" type="button" class="btn btn-warning">Test</button>
+    </div>
+            
+        </form>
+
+        </fieldset>
+    </div>
+</div>
+            
+{% include 'Workspace/'|add:website_template|add:'/admin/includes/Modal--FilePreview.html' %}
+

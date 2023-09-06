@@ -1,0 +1,69 @@
+{% load static %} 
+{% load i18n %} 
+{% load humanize %} 
+{% load tz %}
+            
+<div class="modal fade" id="OwnStatusDetailmodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="accountAccountDetailmodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="OwnStatusDetailModalsFormId" data-uuid="">
+            <div class="modal-header">
+                <h3 class="modal-title">Xem chi tiết Thông tin trạng thái sử dụng</h3>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group px-lg-5 text-start">
+            
+                <div class="mb-1 col-xl-6 d-none">
+                    <label class="small mb-1">Uuid</label>
+                    <input id="uuidOwnStatusDetailModalInputId" name="uuid" class="form-control uuid-account-account-input" placeholder="Nhập Uuid of Asset" type="text" value="">
+                </div>
+                <h6 class="heading-small text-muted mb-4">Thông tin chung</h6><div class="row gx-2 mb-2">
+                    <div class="mb-1 col-xl-6">
+                        <label class="small mb-1">Mãtrạng thái</label>
+                         <input id="dcodeOwnStatusDetailModalInputId" name="dcode" class="form-control id-account-account-input" type="text" disabled>
+                     </div>
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Tên trạng thái</label>
+                        <input id="nameOwnStatusDetailModalInputId" name="name" class="form-control email-account-account-input" type="text" disabled>
+                    </div>
+
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Mô tả chi tiết</label>
+                        <input id="detail_descriptionOwnStatusDetailModalInputId" name="detail_description" class="form-control password-account-account-input" type="text" disabled>
+                    </div>
+                                
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Thời gian tạo</label>
+                            <input id="created_atOwnStatusDetailModalInputId" name="created_at" class="form-control password-account-account-input" type="text" disabled>
+                        </div>
+
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Thời gian cập nhật</label>
+                            <input id="updated_atOwnStatusDetailModalInputId" name="updated_at" class="form-control password-account-account-input" type="text" disabled>
+                        </div>
+
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Được tạo bởi</label>
+                            <input id="created_byOwnStatusDetailModalInputId" name="updated_at" class="form-control password-account-account-input" type="text" disabled>
+                        </div>
+                    </div>
+                    <div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <div class="col-xl-12" id="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="accountAccountCancelDetailModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+            </div>  
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+            
+            

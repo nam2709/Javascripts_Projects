@@ -1,0 +1,135 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="/static/sbadminpro/js/jquery/dist/jquery.min.js"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WorkspaceConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+
+<div class="card shadow mb-1">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a class="btn btn-primary btn-sm" href="{% url 'Workspace:LogoImagesView' %}">
+            Danh sách   LogoImages 
+          </a>
+          <a href="{% url 'Workspace:LogoImages_DetailView' slug=current_logoimages.uuid %}">
+            Hiện tại   LogoImages : {{ current_logoimages.name|title }}
+          </a>
+          <a class="btn btn-primary btn-sm" href="{% url 'Workspace:LogoImages_EditView' slug=current_logoimages.uuid %}">
+            Chỉnh sửa
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_logoimages.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="logoimagesWorkspaceDetailFormId" data-uuid="{{ current_logoimages.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="logoimagesWorkspaceDetailFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            
+                    <div class="mb-1 col-xl-6 d-none">
+                       <label class="small mb-1">Id</label>
+                        {% if current_id %}
+                            <input id="idLogoImagesWorkspaceInputId" name="id" class="form-control id-logoimages-workspace-input" placeholder="Điền thông tin Id of LogoImages" type="text" value="{{ current_logoimages.id}}">
+                        {% else %}
+                            <input id="idLogoImagesWorkspaceInputId" name="id" class="form-control id-logoimages-workspace-input" placeholder="Điền thông tin Id of LogoImages" type="text" value="">
+                        {% endif %}
+                    </div>
+            
+                    <div class="mb-1 col-xl-6 d-none">
+                        <label class="small mb-1">Uuid</label>
+                        {% if current_uuid %}
+                            <input id="uuidLogoImagesWorkspaceInputId" name="uuid" class="form-control uuid-logoimages-workspace-input" placeholder="Điền thông tin Uuid of LogoImages" type="text" value="{{ current_logoimages.uuid}}">
+                        {% else %}
+                            <input id="uuidLogoImagesWorkspaceInputId" name="uuid" class="form-control uuid-logoimages-workspace-input" placeholder="Điền thông tin Uuid of LogoImages" type="text" value="">
+                        {% endif %}
+                    </div>
+            <div class="row gx-2 mb-2">
+                                    <div class=" mb-1 col-xl-12">
+                                     <label class="small mb-1">Name</label>
+                                    <input id="nameLogoImagesWorkspaceInputId" name="name" class="form-control name-logoimages-workspace-input" placeholder="Điền thông tin Name" type="text" value="{{ current_logoimages.name}}" readonly>
+                                </div>
+                                </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <label for="fileLogoImagesWorkspaceInputId"><i class="fas fa-paperclip"></i>&nbsp;{% trans 'file' %}</label>
+                                <input class="logoimages-workspace form-control-file form-control d-none logoimages-workspace-file file-logoimages-workspace-file-input"  type="file" name="file" class="" id="fileLogoImagesWorkspaceInputId">
+                            <div class="col-xl-12" id="fileLogoImagesWorkspaceFileAreaId">    
+                            {% if current_logoimages.file %}
+  
+                                <div class="form-group row col-xl-8 table-hover mt-1" style="background-color:gainsboro;height: 25px;" id="{{ current_logoimages.uuid }}AttachmentDivId">
+                                    <div class="col-xl-10 " >
+                                        <span><a style="color:cornflowerblue" target="_blank"  href="{{ current_logoimages.file.url }}"><p><b> {{ current_logoimages.file_filename|title }}</b></p></a></span>
+                                    </div>
+                                    <div class="col-xl-2 text-end">
+                                        <i class="fas fa-times" style="color:gray" file-uuid="{{ current_logoimages.uuid }}" onclick="filelogoimagesWorkspaceDeletedAttacthment(this)"></i>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                        </div>
+
+                    </div><div class="row gx-2 mb-2">
+                                <div class="mb-1 col-xl-12">
+                                    <div class="form-check mt-4">
+                                        {% if current_logoimages.is_favicon == True %}
+                                        <input id="is_faviconLogoImagesWorkspaceInputId" name="is_favicon" type="checkbox" class="form-check-input is_favicon-logoimages-workspace-input" placeholder="Điền thông tin Is_Favicon" value="{{ current_logoimages.is_favicon}}" checked  disabled="true">
+                                        {% else %}
+                                        <input id="is_faviconLogoImagesWorkspaceInputId" name="is_favicon" type="checkbox" class="form-check-input is_favicon-logoimages-workspace-input" placeholder="Điền thông tin Is_Favicon" value="{{ current_logoimages.is_favicon}}"  disabled="true">
+                                        {% endif %}
+                                        <label class="form-check-label" for="is_faviconLogoImagesWorkspaceInputId">
+                                            Is Favicon
+                                        </label>
+                                    </div>
+                                </div>
+                                </div><div class="row gx-2 mb-2">
+                                <div class="mb-1 col-xl-12">
+                                <label class="small mb-1">Desc</label>
+                                    <textarea id="descLogoImagesWorkspaceInputId" name="desc" class="form-control desc-logoimages-workspace-input ckeditor-input" placeholder="Điền thông tin Desc" type="text" rows="4" cols="80" readonly>{{ current_logoimages.desc}}</textarea>
+                                </div>
+                                </div>
+                    <div class="modal-footer">
+                        <button id="logoimagesWorkspaceCancelBtnId" type="button" class="btn btn-danger btn-sm"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="logoimagesWorkspaceTestBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+            
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

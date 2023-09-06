@@ -1,0 +1,129 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6>
+          <a class="btn btn-primary" href="{% url 'Website:RobotsArgView' %}">
+            All RobotsArgs
+          </a>
+        </h6>
+      <h6 class="m-0 font-weight-bold text-primary">
+            New RobotsArg
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            
+            <form method="POST" action="" enctype="multipart/form-data" id="robotsargWebsiteCreateFormId" data-uuid="">
+                {% csrf_token %}
+    
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameRobotsArgWebsiteCreateInputId" name="name" class="form-control name-robotsarg-website-input" placeholder="Name" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidRobotsArgWebsiteCreateInputId" name="uuid" class="form-control uuid-robotsarg-website-input" placeholder="Uuid" type="text" value=""  >
+</div>
+
+<div class="form-group input-group card  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Value
+        </span>
+    </div>
+    <textarea rows="10" id="valueRobotsArgWebsiteCreateInputId" name="value" class="form-control ckeditor-input value-robotsarg-website-input" placeholder="Value" type="text" value="" ></textarea>
+</div>
+
+<div class="input-group mb-3  ">
+    <div class="input-group-prepend">
+        <label class="" for="uaBotUARobotsArgWebsiteInputId">{% trans 'Ua' %}</label>
+    </div>
+    <select class="custom-select tnd-select2 ua-robotsarg-website-option botua-website-select autoload"  name="ua" id="uaBotUARobotsArgWebsiteInputId" >
+    <option selected>Choose... Ua</option>
+    </select>
+</div>
+
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="activeRobotsArgWebsiteCreateInputId" name="active" type="checkbox" class="form-check-input active-robotsarg-website-input" placeholder="Active" >
+        <label class="form-check-label" for="activeRobotsArgWebsiteCreateInputIdInputId">
+            Active
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    <input id="updated_atRobotsArgWebsiteCreateInputId" name="updated_at" class="form-control updated_at-robotsarg-website-input" placeholder="Updated At" type="datetime-local" value="" >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    <input id="created_atRobotsArgWebsiteCreateInputId" name="created_at" class="form-control created_at-robotsarg-website-input" placeholder="Created At" type="datetime-local" value="" >
+</div>
+
+    <div class="modal-footer">
+        <button id="robotsargWebsiteCreateBtnId" type="button" class="btn btn-primary">Create</button>
+        <button id="robotsargWebsiteSaveAndNewBtnId" type="button" class="btn btn-secondary">Save and New</button>
+        <button id="robotsargWebsiteTestBtnId" type="button" class="btn btn-warning">Test</button>
+    </div>
+            
+        </form>
+
+        </fieldset>
+    </div>
+</div>
+            

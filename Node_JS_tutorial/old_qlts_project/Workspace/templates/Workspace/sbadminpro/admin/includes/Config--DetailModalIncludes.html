@@ -1,0 +1,72 @@
+
+            {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+<div class="modal fade" id="configWorkspaceDetailmodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="configWorkspaceDetailmodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="configWorkspaceDetailModalsFormId" data-uuid="">
+            <div class="modal-header">
+                <h3 class="modal-title">Xem chi tiết   Thông Tin Cấu Hình </h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group px-lg-5 text-start">
+            
+                <div class="mb-1 col-xl-6 d-none">
+                   <label class="small mb-1">Id</label>
+                    <input id="idConfigWorkspaceDetailModalInputId" name="id" class="form-control id-config-workspace-input" placeholder="Điền thông tin Id of Config" type="text" value="">
+                </div>
+            
+                <div class="mb-1 col-xl-6 d-none">
+                    <label class="small mb-1">Uuid</label>
+                    <input id="uuidConfigWorkspaceDetailModalInputId" name="uuid" class="form-control uuid-config-workspace-input" placeholder="Điền thông tin Uuid of Config" type="text" value="">
+                </div>
+            <div class="row gx-2 mb-2">
+                                    <div class=" mb-1 col-xl-12">
+                                     <label class="small mb-1">Name</label>
+                                    <input id="nameConfigWorkspaceDetailModalInputId" name="name" class="form-control name-config-workspace-input" placeholder="Điền thông tin Name" type="text" value="{{ current_config.name}}" readonly>
+                                </div>
+                                </div><div class="row gx-2 mb-2">
+                                    <div class=" mb-1 col-xl-12">
+                                     <label class="small mb-1">Value</label>
+                                    <input id="valueConfigWorkspaceDetailModalInputId" name="value" class="form-control value-config-workspace-input" placeholder="Điền thông tin Value" type="text" value="{{ current_config.value}}" readonly>
+                                </div>
+                                </div><div class="row gx-2 mb-2">
+                                <div class="mb-1 col-xl-12">
+                                    <div class="form-check mt-4">
+                                        {% if current_config.default == True %}
+                                        <input id="defaultConfigWorkspaceDetailModalInputId" name="default" type="checkbox" class="form-check-input default-config-workspace-input" placeholder="Điền thông tin Default" value="{{ current_config.default}}" checked  disabled="true">
+                                        {% else %}
+                                        <input id="defaultConfigWorkspaceDetailModalInputId" name="default" type="checkbox" class="form-check-input default-config-workspace-input" placeholder="Điền thông tin Default" value="{{ current_config.default}}"  disabled="true">
+                                        {% endif %}
+                                        <label class="form-check-label" for="defaultConfigWorkspaceDetailModalInputId">
+                                            Default
+                                        </label>
+                                    </div>
+                                </div>
+                                </div><div class="row gx-2 mb-2">
+                                <div class="mb-1 col-xl-12">
+                                    <div class="form-check mt-4">
+                                        {% if current_config.active == True %}
+                                        <input id="activeConfigWorkspaceDetailModalInputId" name="active" type="checkbox" class="form-check-input active-config-workspace-input" placeholder="Điền thông tin Active" value="{{ current_config.active}}" checked  disabled="true">
+                                        {% else %}
+                                        <input id="activeConfigWorkspaceDetailModalInputId" name="active" type="checkbox" class="form-check-input active-config-workspace-input" placeholder="Điền thông tin Active" value="{{ current_config.active}}"  disabled="true">
+                                        {% endif %}
+                                        <label class="form-check-label" for="activeConfigWorkspaceDetailModalInputId">
+                                            Active
+                                        </label>
+                                    </div>
+                                </div>
+                                </div>
+             </div> </div>
+                    <div class="modal-footer">
+                        <button id="configWorkspaceCancelDetailModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                    </div>
+            
+            </div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+            
+            

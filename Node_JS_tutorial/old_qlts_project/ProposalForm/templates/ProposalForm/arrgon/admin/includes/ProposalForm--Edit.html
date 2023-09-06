@@ -1,0 +1,83 @@
+
+            {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+            
+<div class="modal fade" id="proposalFormEditmodalsId" tabindex="-1" data-backdrop="static" data-keyboard="true"  role="dialog" aria-labelledby="accountAccountCreatemodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <form method="POST" action="" enctype="multipart/form-data" id="proposalFormEditModalsFormId" data-uuid="">
+                <div class="modal-header bg-primary">
+                    <h3 class="modal-title text-white">Chỉnh sửa Đơn đề xuất</h3>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group px-lg-5 text-start">
+                        <div class="mb-1 col-xl-6 d-none">
+                            <label class="small mb-1 d-none">Uuid</label>
+                            <input id="uuidProposalFormEditModalInputId" name="uuid" class="form-control uuid-account-account-input" placeholder="Nhập Uuid of Asset" type="text" value="">
+                        </div>  
+                        <div class="row">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Mã đơn</label>
+                                <input id="codeProposalFormEditModalInputId" name="code" class="form-control username-account-account-input" type="text" >
+                            </div>
+
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Tên đơn</label>
+                                <input id="nameProposalFormEditModalInputId" name="name" class="form-control username-account-account-input" type="text" >
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Lý do tạo đơn</label>
+                                <input id="reasonProposalFormEditModalInputId" name="reason" class="form-control username-account-account-input" type="text" >
+                            </div>
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Trạng thái đơn</label>
+                                <select id="proposal_statusProposalFormEditModalInputId"  name="proposal_status" class="form-control email-account-account-input mps_required" placeholder="Nhập công ty" type="text" value=""></select>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Công ty</label>
+                                <select id="companyProposalFormEditModalInputId"  name="company" class="form-control email-account-account-input mps_required" placeholder="Nhập công ty" type="text" value=""></select>
+                            </div>
+
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Kiểu đơn</label>
+                                <select id="proposal_typeProposalFormEditModalInputId"  name="proposal_type" class="form-control full_name-account-account-input mps_required" placeholder="Nhập kiểu đơn" type="text" value=""></select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Người đề xuất</label>
+                                <select id="proposerProposalFormEditModalInputId"  name="proposer" class="form-control password-account-account-input mps_required" placeholder="Nhập người đề xuất" type="text" value=""> </select>
+                            </div>
+
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Danh sách tài sản
+                                    <button type="button" style="padding: 0.1rem;" id="btn-create-ProposalForm" class="btn btn-outline-primary btn-sm mx-auto" data-bs-toggle="modal">
+                                        <i class="fas fa-plus"></i> &nbsp;
+                                    </button>
+                                </label>
+                                <select id="asset_listProposalFormEditModalInputId"  name="asset_list" class="form-control telephone-account-account-input " placeholder="Nhập danh sách tài sản" type="text" value=""></select>
+                            </div>   
+                        </div>   
+
+                        <div class="modal-footer">
+                            <button id="proposalFormCancelEditModalBtnId" type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                            <button id="proposalFormUpdateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                            
+                            <button id="proposalFormTestEditModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+            
+            

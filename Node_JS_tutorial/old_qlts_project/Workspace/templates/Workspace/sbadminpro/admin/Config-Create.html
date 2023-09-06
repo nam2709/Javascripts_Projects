@@ -1,0 +1,92 @@
+
+{% extends "sbadminpro/layouts/base.html" %}
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="TruongNV <truongg.nv@gmail.com>">
+    <meta name="copyright" content="Copyright ©2022 TruongNV <truongg.nv@gmail.com>">
+<script src="/static/sbadminpro/js/jquery/dist/jquery.min.js"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WorkspaceConst.js' %}"></script>
+    </head>
+                
+    <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+                    
+    <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+                    
+    <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+                    
+    <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+                    
+    <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+                    
+    <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+                    
+    <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+                    
+    <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+                    
+    <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+                    
+    <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+                    
+    <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+                    
+    <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+                    
+    <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+                    
+{% block content %}
+<!-- [ Main Content ] start -->
+<main>
+        <!-- [ breadcrumb ] start -->
+        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+            <div class="container-xl px-4">
+                <div class="page-header-content pt-4">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto mt-4">
+                            <h1 class="page-header-title">
+                                  Thông Tin Cấu Hình 
+                            </h1>
+                        </div>
+                    </div>
+                    <nav class="mt-4 rounded" aria-label="breadcrumb">
+                        <ol class="breadcrumb px-3 py-2 rounded mb-0">
+                            <li class="breadcrumb-item"><a href="/"><i data-feather="home"></i></a></li>
+                            <li class="breadcrumb-item active">  Thông Tin Cấu Hình </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </header>
+         <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+            <div class="container-xl px-4 mt-n10">
+
+        {% csrf_token %}
+                      <!-- Page Heading -->
+                      
+                        <a>{% include 'Workspace/'|add:website_template|add:'/admin/includes/Config--SearchIncludes.html' %}</a>
+                        <a>{% include 'Workspace/'|add:website_template|add:'/admin/includes/Config--CreateIncludes.html' %}</a>
+                        
+                        
+                        <br>{% include 'Workspace/'|add:website_template|add:'/admin/includes/Config--CreateModalIncludes.html' %}
+                        <br>{% include 'Workspace/'|add:website_template|add:'/admin/includes/Config--DetailModalIncludes.html' %}
+                        <br>{% include 'Workspace/'|add:website_template|add:'/admin/includes/Config--EditModalIncludes.html' %}
+                
+                        <!-- Detail content refer -->
+                        
+                        
+                        
+                </ul>
+                
+            </div>
+        </main>
+    {% endblock %}
+    
+
+                

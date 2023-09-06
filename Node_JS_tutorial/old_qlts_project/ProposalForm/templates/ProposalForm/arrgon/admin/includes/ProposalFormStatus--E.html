@@ -1,0 +1,44 @@
+
+{% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+            
+<div class="modal fade" id="proposalFormStatusEditmodalsId" tabindex="-1" data-ds-backdrop="static" data-keyboard="true"  role="dialog" aria-labelledby="accountAccountCreatemodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <form method="POST" action="" enctype="multipart/form-data" id="proposalFormStatusEditModalsFormId" data-uuid="">
+                <div class="modal-header bg-primary">
+                    <h3 class="modal-title text-white">Chỉnh sửa kiểu</h3>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group px-lg-5 text-start">  
+                        <div class="mb-1 col-xl-6 d-none">
+                            <label class="small mb-1 d-none">Uuid</label>
+                            <input id="uuidProposalFormStatusEditModalInputId" name="uuid" class="form-control uuid-account-account-input" placeholder="Nhập Uuid of Asset" type="text" value="">
+                        </div> 
+                        <div class="row">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Mã kiểu</label>
+                                <input id="codeProposalFormStatusEditModalInputId" name="code" class="form-control username-account-account-input" type="text" >
+                            </div>
+
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Tên kiểu</label>
+                                <input id="nameProposalFormStatusEditModalInputId" name="name" class="form-control username-account-account-input" type="text" >
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button id="proposalFormStatusCancelEditModalBtnId" type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                            <button id="proposalFormStatusUpdateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                            
+                            <button id="proposalFormStatusTestEditModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+            
+            

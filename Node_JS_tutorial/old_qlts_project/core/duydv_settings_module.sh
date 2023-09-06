@@ -1,0 +1,9 @@
+#  export DJANGO_SETTINGS_MODULE=core.settings
+# #  export MPS_QLTS_DB_HOST=27.72.195.145
+#  export MPS_QLTS_DB_PORT=5432
+#  export MPS_QLTS_DB_NAME=mps_assetmaagement
+#  export MPS_QLTS_DB_USER=postgres
+#  export MPS_QLTS_DB_PASSWORD=1
+# #  export MPS_QLTS_DB_SCHEMA=public
+# #  export MPS_QLTS_DB_TEST_SCHEMA=test
+#  export MPS_QLTS_DOMAIN_NAME=localhot

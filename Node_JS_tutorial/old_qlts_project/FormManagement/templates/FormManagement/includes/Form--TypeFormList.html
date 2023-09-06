@@ -1,0 +1,103 @@
+
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<script src="{% static 'js/Const.js' %}"></script>
+<script src="{% static 'js/TypeForm.js' %}"></script>
+
+<div class="row">
+    <div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            Danh sách các loại Phiếu
+           <!-- <span class="d-block m-t-5">use class <code>table-hover</code> inside table element</span> -->
+           <button type="button" id="typeFormManagementAddBtnId" onclick="createTypeFormFormManagement()" class="btn btn-outline-primary btn-sm " data-bs-toggle="modal" data-bs-target="#accountAccountCreatemodalsId">
+                                <i class="fas fa-plus"></i> &nbsp;Thêm mới
+            </button>
+            <button type="button" id="typeFormManagementExportExcelBtnId" onclick="TypeFormExportDataTableExcel()" class="btn btn-success btn-sm">
+                    <i class="far fa-file-excel"></i> &nbsp;Xuất excel
+            </button>
+        </div>
+        <div class="card-body table-border-style">
+            <style>
+                /* table td:last-child,
+                table th:last-child {
+                  display: table-cell;
+                }
+                table {
+                  text-align: center;
+                  table-layout: fixed;
+                  width: 90%;
+                } */
+                th, td {
+                    text-align: center;
+                    vertical-align: middle;
+                }
+              </style>
+        <div class="table-responsive">
+            <table style="min-height: 210px; text-align: center;" class="table table-sm table-flush table-hover table-striped" id="typeFormDataTableId" width="100%" cellspacing="0">
+                <thead class="thead-light">
+                    <tr>
+            
+                        <th attr-name="stt">STT</th>
+            
+                        <th attr-name="name"  style="text-align: left;">Tên loại phiếu</th>
+                    
+                        <th attr-name="code">Mã loại Phiếu</th>
+                                        
+                        <th attr-name="created_at">Ngày tạo</th>
+                    
+                        <th attr-name="created_by">Người tạo</th>
+                    
+                        <th attr-name="account-admin-action">Thao tác</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="typeFormDataTableBodyId"> 
+                </tbody>
+            </table>
+
+            <table style="min-height: 210px; text-align: center;" class="table table-sm table-flush table-hover table-striped d-none" id="typeFormDataTableExportExcelId" width="100%" cellspacing="0">
+                <thead class="thead-light">
+                    <tr>
+            
+                        <th attr-name="stt">STT</th>
+            
+                        <th attr-name="name">Tên loại phiếu</th>
+                    
+                        <th attr-name="code">Mã loại Phiếu</th>
+                                        
+                        <th attr-name="created_at">Ngày tạo</th>
+                    
+                        <th attr-name="created_by">Người tạo</th>
+                    
+                    </tr>
+                </thead>
+                
+                <tbody id="typeFormDataTableBodyExportExcelId"> 
+                </tbody>
+            </table>
+        </div>
+        
+        <span class="page-total page-total-TypeFormFormManagement text-left">
+        </span>
+    </div>
+    <hr>
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination pagination-TypeFormFormManagement justify-content-center">
+            <!-- <li class="page-item"><a class="page-link" onclick="FormManagementFormGetListFormApi(1)">Đầu</a></li> -->
+        </ul>
+    </nav>
+    
+    </div>
+    </div>
+</div>
+
+
+            

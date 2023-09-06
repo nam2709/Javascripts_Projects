@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+
+    {% include "Workspace/"|add:website_template|add:"/admin/header.html" %}
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    {% include "Workspace/"|add:website_template|add:"/admin/sidebar.html" %}
+
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+
+            {% with "Workspace/"|add:website_template|add:"/admin/topbar.html" as template %}
+                {% include template %}
+            {% endwith %}
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                </div>
+                <div class="w3-col l10 m12" id="main">
+                    <div id="mainLeaderboard" style="overflow:hidden;">
+                        <!-- MainLeaderboard-->
+
+                        <!--<pre>main_leaderboard, all: [728,90][970,90][320,50][468,60]</pre>-->
+                        <div id="snhb-main_leaderboard-0" data-google-query-id="CJLYutujv-UCFYMPXAodR5EHcw">
+                            <div id="google_ads_iframe_/22152718/sws-hb//w3schools.com//main_leaderboard_0__container__"
+                                 style="border: 0pt none;">
+                            </div>
+                        </div>
+                        <!-- adspace leaderboard -->
+
+                    </div>
+                    <h1>Bootstrap 4 <span class="color_h1">Images</span></h1>
+
+                    <div style="float:left;width:33%">
+                        <p>Rounded Corners:</p>
+                        <img src="https://gocchiem.com/wp-content/uploads/2019/09/52845398_2221386288189315_1612598868064834542_n_thumb-1-750x430.jpg"
+                             class="img-fluid rounded" alt="Paris" style="width:204px;height:auto;">
+                    </div>
+                    <div style="float:left;width:33%">
+                        <p>Circle:</p>
+                        <img src="https://znews-photo.zadn.vn/w660/Uploaded/mdf_drkydd/2019_09_23/42194298_1006016386225525_937637961111961600_n.jpg"
+                             class="img-fluid rounded-circle" alt="NYC" style="width:204px;height:auto;">
+                    </div>
+                    <div style="float:left;width:33%;">
+                        <p>Thumbnail:</p>
+                        <img src="https://znews-photo.zadn.vn/w660/Uploaded/mdf_drkydd/2019_09_23/69028892_1221009708059524_8825084107290574848_n.jpg"
+                             class="img-fluid img-thumbnail" alt="San Fran" style="width:204px;height:auto;">
+                    </div>
+                    <div style="clear:both;margin-bottom:20px;"></div>
+                    <hr>
+
+                        <h2>Aligning Images</h2>
+
+                        <p>Float an image to the right with the <code class="w3-codespan">.float-right</code> class or to
+                            the left with <code class="w3-codespan">.float-left</code>:</p>
+
+                        <div class="w3-container" style="margin:0 -16px">
+                            <img src="https://gocchiem.com/wp-content/uploads/2019/09/52845398_2221386288189315_1612598868064834542_n_thumb-1-750x430.jpg"
+                                 class="float-left" style="width:30%">
+                            <img src="https://gocchiem.com/wp-content/uploads/2019/09/52845398_2221386288189315_1612598868064834542_n_thumb-1-750x430.jpg"
+                                 class="float-right" style="width:30%">
+                        </div>
+
+                    <h2>Centered Image</h2>
+
+                    <p>Center an image by adding the utility classes <code class="w3-codespan">.mx-auto</code>
+                        (margin:auto) and <code class="w3-codespan">.d-block</code> (display:block) to the image:</p>
+
+                    <div class="w3-container" style="margin:0 -16px">
+                        <img src="https://gocchiem.com/wp-content/uploads/2019/09/52845398_2221386288189315_1612598868064834542_n_thumb-1-750x430.jpg"
+                             class="mx-auto d-block" style="width:30%">
+                    </div>
+
+                    <hr>
+
+                    <h2>Responsive Images</h2>
+
+                    <p>Images come in all sizes. So do screens. Responsive images automatically
+                        adjust to fit the size of the screen. </p>
+
+                    <p>Create responsive images by adding an <code class="w3-codespan">.img-fluid</code> class
+                        to the <code class="w3-codespan">&lt;img&gt;</code> tag. The image will then scale nicely to the
+                        parent element.</p>
+
+                    <p>The <code class="w3-codespan">.img-fluid</code> class applies <code class="w3-codespan">max-width:
+                        100%;</code> and
+                        <code class="w3-codespan">height: auto;</code> to the image:</p>
+
+                    <div class="w3-example">
+                        <h3>Example</h3>
+
+                        <div class="w3-code notranslate htmlHigh">
+                            <span class="tagnamecolor" style="color:brown"><span class="tagcolor"
+                                                                                 style="color:mediumblue">&lt;</span>img<span
+                                    class="attributecolor" style="color:red"> class<span class="attributevaluecolor"
+                                                                                         style="color:mediumblue">="img-fluid"</span> src<span
+                                    class="attributevaluecolor"
+                                    style="color:mediumblue">="img_chania.jpg"</span> alt<span
+                                    class="attributevaluecolor" style="color:mediumblue">="Chania"</span></span><span
+                                    class="tagcolor" style="color:mediumblue">&gt;</span></span></div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+      <!-- Footer -->
+
+
+        {% with "Workspace/"|add:website_template|add:"/admin/footer.html" as template %}
+            {% include template %}
+        {% endwith %}
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a class="btn btn-primary" href="{% url 'Website:WidgetView' %}">
+            All Widgets
+          </a>
+          <a href="{% url 'Website:Widget_EditView' slug=current_widget.uuid %}">
+            Current Widget: {{ current_widget.name|title }}
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            
+            {% if current_widget.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="widgetWebsiteEditFormId" data-uuid="{{ current_widget.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="widgetWebsiteEditFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+    
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    {% if current_widget %}
+        <input id="nameWidgetWebsiteEditInputId" name="name" class="form-control name-widget-website-input" placeholder="Name" type="text" value="{{ current_widget.name}}"  >
+    {% else %}
+        <input id="nameWidgetWebsiteEditInputId" name="name" class="form-control name-widget-website-input" placeholder="Name" type="text" value=""  >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    {% if current_widget %}
+        <input id="uuidWidgetWebsiteEditInputId" name="uuid" class="form-control uuid-widget-website-input" placeholder="Uuid" type="text" value="{{ current_widget.uuid}}"  >
+    {% else %}
+        <input id="uuidWidgetWebsiteEditInputId" name="uuid" class="form-control uuid-widget-website-input" placeholder="Uuid" type="text" value=""  >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Title
+        </span>
+    </div>
+    {% if current_widget %}
+        <input id="titleWidgetWebsiteEditInputId" name="title" class="form-control title-widget-website-input" placeholder="Title" type="text" value="{{ current_widget.title}}"  >
+    {% else %}
+        <input id="titleWidgetWebsiteEditInputId" name="title" class="form-control title-widget-website-input" placeholder="Title" type="text" value=""  >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Url
+        </span>
+    </div>
+    {% if current_widget %}
+        <input id="urlWidgetWebsiteEditInputId" name="url" class="form-control url-widget-website-input" placeholder="Url" type="text" value="{{ current_widget.url}}"  >
+    {% else %}
+        <input id="urlWidgetWebsiteEditInputId" name="url" class="form-control url-widget-website-input" placeholder="Url" type="text" value=""  >
+    {% endif %}
+</div>
+
+<div class="form-group input-group card  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Desc
+        </span>
+    </div>
+    {% if current_widget %}
+        <textarea rows="10" id="descWidgetWebsiteEditInputId" name="desc" class="form-control ckeditor-input w-100 desc-widget-website-input" placeholder="Desc" type="text" value="" >{{  current_widget.desc }}</textarea>
+    {% else %}
+        <textarea rows="10" id="descWidgetWebsiteEditInputId" name="desc" class="form-control ckeditor-input w-100 desc-widget-website-input" placeholder="Desc" type="text" value="" ></textarea>
+    {% endif %}
+</div>
+
+<div class="form-group input-group card  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Html Code
+        </span>
+    </div>
+    {% if current_widget %}
+        <textarea rows="10" id="html_codeWidgetWebsiteEditInputId" name="html_code" class="form-control ckeditor-input w-100 html_code-widget-website-input" placeholder="Html Code" type="text" value="" >{{  current_widget.html_code }}</textarea>
+    {% else %}
+        <textarea rows="10" id="html_codeWidgetWebsiteEditInputId" name="html_code" class="form-control ckeditor-input w-100 html_code-widget-website-input" placeholder="Html Code" type="text" value="" ></textarea>
+    {% endif %}
+</div>
+
+<div class="form-group input-group card  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Css Code
+        </span>
+    </div>
+    {% if current_widget %}
+        <textarea rows="10" id="css_codeWidgetWebsiteEditInputId" name="css_code" class="form-control ckeditor-input w-100 css_code-widget-website-input" placeholder="Css Code" type="text" value="" >{{  current_widget.css_code }}</textarea>
+    {% else %}
+        <textarea rows="10" id="css_codeWidgetWebsiteEditInputId" name="css_code" class="form-control ckeditor-input w-100 css_code-widget-website-input" placeholder="Css Code" type="text" value="" ></textarea>
+    {% endif %}
+</div>
+
+<div class="form-group input-group card  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Js Code
+        </span>
+    </div>
+    {% if current_widget %}
+        <textarea rows="10" id="js_codeWidgetWebsiteEditInputId" name="js_code" class="form-control ckeditor-input w-100 js_code-widget-website-input" placeholder="Js Code" type="text" value="" >{{  current_widget.js_code }}</textarea>
+    {% else %}
+        <textarea rows="10" id="js_codeWidgetWebsiteEditInputId" name="js_code" class="form-control ckeditor-input w-100 js_code-widget-website-input" placeholder="Js Code" type="text" value="" ></textarea>
+    {% endif %}
+</div>
+
+    <div class="input-group mb-3  ">
+        <div class="input-group-prepend">
+            <label class="" for="positionPositionWidgetWebsiteInputId">{% trans 'Position' %}</label>
+        </div>
+        <select class="custom-select tnd-select2 autoload position-widget-website-option position-website-select"  name="position" id="positionPositionWidgetWebsiteInputId" >
+        <option selected>Choose... Position</option>
+        {% for ele in all_positions %}
+            {% if ele.uuid == current_widget.position.uuid %}
+                <option value="{{ ele.uuid }}" selected>
+                    {{ ele.name }}
+                </option>
+            {% else %}
+                <option value="{{ ele.uuid }}">
+                    {{ ele.name }}
+                </option>
+            {% endif %}
+        {% endfor %}
+        </select>
+    </div>
+    
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Order
+        </span>
+    </div>
+    {% if current_widget %}
+        <input id="orderWidgetWebsiteEditInputId" name="order" class="form-control order-widget-website-input" placeholder="Order" type="text" value="{{ current_widget.order}}"  >
+    {% else %}
+        <input id="orderWidgetWebsiteEditInputId" name="order" class="form-control order-widget-website-input" placeholder="Order" type="text" value=""  >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_widget.active == True %}
+            <input id="activeWidgetWebsiteEditInputId" name="active" type="checkbox" class="form-check-input active-widget-website-input" placeholder="Active" checked >
+        {% else %}
+            <input id="activeWidgetWebsiteEditInputId" name="active" type="checkbox" class="form-check-input active-widget-website-input" placeholder="Active" >
+        {% endif %}
+        <label class="form-check-label" for="activeWidgetWebsiteEditInputIdInputId">
+            Active
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    {% if current_widget %}
+        <input id="updated_atWidgetWebsiteEditInputId" name="updated_at" class="form-control updated_at-widget-website-input" placeholder="Updated At" type="datetime-local" value="{{ current_widget.updated_at }}" >
+    {% else %}
+        <input id="updated_atWidgetWebsiteEditInputId" name="updated_at" class="form-control updated_at-widget-website-input" placeholder="Updated At" type="datetime-local" value="" >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    {% if current_widget %}
+        <input id="created_atWidgetWebsiteEditInputId" name="created_at" class="form-control created_at-widget-website-input" placeholder="Created At" type="datetime-local" value="{{ current_widget.created_at }}" >
+    {% else %}
+        <input id="created_atWidgetWebsiteEditInputId" name="created_at" class="form-control created_at-widget-website-input" placeholder="Created At" type="datetime-local" value="" >
+    {% endif %}
+</div>
+
+    <div class="modal-footer">
+        <button id="widgetWebsiteUpdateBtnId" type="button" class="btn btn-primary">Update</button>
+        <button id="widgetWebsiteTestBtnId" type="button" class="btn btn-warning">Test</button>
+    </div>
+            
+        </form>
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            
+{% include 'Workspace/'|add:website_template|add:'/admin/includes/Modal--FilePreview.html' %}
+

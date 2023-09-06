@@ -1,0 +1,123 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a href="{% url 'Website:LogoImages_EditView' slug=current_logoimages.uuid %}">
+            Current LogoImages: {{ current_logoimages.name|title }}
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_logoimages.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="WebsitelogoimagesEditFormId" data-uuid="{{ current_logoimages.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="WebsitelogoimagesEditFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+            
+<div class="form-group input-group d-none">
+<div class="input-group-prepend">
+<span class="input-group-text">
+Id
+</span>
+</div>
+<input id="idLogoImagesWebsiteInputId" name="id" class="form-control id-logoimages-website-input" placeholder="Id of LogoImages" type="text" value="{{ current_logoimages.id}}">
+</div>
+            
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameLogoImagesWebsiteInputId" name="name" class="form-control name-logoimages-website-input" placeholder="Name of LogoImages" type="text" value="{{ current_logoimages.name}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidLogoImagesWebsiteInputId" name="uuid" class="form-control uuid-logoimages-website-input" placeholder="Uuid of LogoImages" type="text" value="{{ current_logoimages.uuid}}" readonly>
+</div>
+                        
+  <div class="form-group input-group">
+    <div class="input-group-prepend" for="fileLogoImagesWebsiteInputId">
+        <span class="input-group-text">
+        File
+        </span>
+    </div>
+    <div class="custom-file">
+        <input class="logoimages-website" type="file" name="file" class="form-control-file form-control file-logoimages-website-input" id="fileLogoImagesWebsiteInputId">
+        <label class="custom-file-label" for="fileLogoImagesWebsiteInputId">{% trans 'Choose file' %}</label>
+    </div>
+    {% if current_logoimages.file %}
+    <span>(Current:
+        <a href="{{ current_logoimages.file.url }}" target="_self">
+            {{ current_logoimages.file_filename|title }}
+        </a>)
+    </span>
+    {% endif %}
+  </div>
+
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_logoimages.is_favicon == True %}
+        <input id="is_faviconLogoImagesWebsiteInputId" name="is_favicon" type="checkbox" class="form-check-input is_favicon-logoimages-website-input" placeholder="Is_Favicon of LogoImages" value="{{ current_logoimages.is_favicon}}" checked>
+        {% else %}
+        <input id="is_faviconLogoImagesWebsiteInputId" name="is_favicon" type="checkbox" class="form-check-input is_favicon-logoimages-website-input" placeholder="Is_Favicon of LogoImages" value="{{ current_logoimages.is_favicon}}">
+        {% endif %}
+        <label class="form-check-label" for="is_faviconLogoImagesWebsiteInputId">
+            Is_Favicon
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Desc
+        </span>
+    </div>
+    <textarea id="descLogoImagesWebsiteInputId" name="desc" class="form-control desc-logoimages-website-input" placeholder="Desc of LogoImages" type="text">{{ current_logoimages.desc}}</textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    <input id="updated_atLogoImagesWebsiteInputId" name="updated_at" class="form-control updated_at-logoimages-website-input" placeholder="Updated_At of LogoImages" type="datetime-local" value="{{ current_logoimages.updated_at}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    <input id="created_atLogoImagesWebsiteInputId" name="created_at" class="form-control created_at-logoimages-website-input" placeholder="Created_At of LogoImages" type="datetime-local" value="{{ current_logoimages.created_at}}">
+</div>
+                        
+<div class="form-group">
+    <button id="logoimagesWebsiteSaveBtnId" type="button" class="btn btn-primary btn-lg">Save</button>
+    <button id="logoimagesWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

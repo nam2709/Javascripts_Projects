@@ -1,0 +1,68 @@
+
+{% extends "arrgon/layouts/base.html" %}
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="TruongNV <truongg.nv@gmail.com>">
+    <meta name="copyright" content="Copyright ©2022 TruongNV <truongg.nv@gmail.com>">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>   
+  
+</head>
+                
+{% block overlay %}
+  <div class="min-height-300 bg-primary position-absolute w-100"></div>
+{% endblock overlay %}
+{% block content %}
+<!-- [ Main Content ] start -->
+<main>
+        <!-- [ breadcrumb ] start -->
+        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+            <div class="container-xl px-4">
+                <div class="page-header-content pt-4">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto mt-4">
+                            <h1 class="page-header-title">
+                                Nhân Viên
+                            </h1>
+                        </div>
+                    </div>
+                    <nav class="mt-4 rounded d-none" aria-label="breadcrumb">
+                        <ol class="breadcrumb px-3 py-2 rounded mb-0">
+                            <li class="breadcrumb-item"><a href="/"><i data-feather="home"></i></a></li>
+                            <li class="breadcrumb-item active"> Nhân Viên</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </header>
+         <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+            <div class="container-xl px-4 mt-n10">
+
+        {% csrf_token %}
+                      <!-- Page Heading -->
+                       <a> {% include 'Staff/include/Staff--SeachInclude.html' %}</a> 
+                        <a> {% include 'Staff/include/Staff--Include.html' %}</a> 
+
+
+
+                    <br> {% include 'Staff/include/Staff--DetailModalInclude.html' %}
+                    <br> {% include 'Staff/include/Staff--CreateModalInclude.html' %}
+                
+                    <br> {% include 'Staff/include/Staff--EditModalInclude.html' %} 
+                        
+                </ul>
+                
+            </div>
+        </main>
+    {% endblock %}
+    
+
+   
+                 

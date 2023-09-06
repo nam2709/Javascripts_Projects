@@ -1,0 +1,109 @@
+
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="TruongNV <truongg.nv@gmail.com>">
+    <meta name="copyright" content="Copyright ©2022 TruongNV <truongg.nv@gmail.com>">
+    <script src="{% static 'arrgon/js/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'AssetManagement/argon/admin/js/AssetManagementConst.js' %}"></script>
+    <script src="{% static 'AssetManagement/argon/admin/js/AssetManagementClasses.js' %}"></script>
+</head>
+
+
+{% comment %} <script src="{% static 'Account/'|add:website_template|add:'/admin/js/AccountConst.js' %}"></script>                  
+
+<script src="/static/arrgon/js/jquery/dist/jquery.min.js"></script>
+<script src="{% static 'Account/'|add:website_template|add:'/admin/js/AccountConst.js' %}"></script>
+        
+<script src="{% static 'Account/'|add:website_template|add:'/admin/js/AccountClasses.js' %}"></script>
+            
+<!-- <script src="{% static 'Account/'|add:website_template|add:'/admin/js/GroupClasses.js' %}"></script> -->
+                
+<!-- <script src="{% static 'Account/'|add:website_template|add:'/admin/js/PermissionClasses.js' %}"></script> -->
+                
+<!-- <script src="{% static 'Account/'|add:website_template|add:'/admin/js/WebsiteTemplateClasses.js' %}"></script> -->
+                
+<!-- <script src="{% static 'Account/'|add:website_template|add:'/admin/js/AppPermissionClasses.js' %}"></script> -->
+                
+<!-- <script src="{% static 'Account/'|add:website_template|add:'/admin/js/ExtendInfoClasses.js' %}"></script> --> {% endcomment %}
+                
+
+<!-- DataTales -->
+{% comment %} <script src="{% static 'Account/'|add:website_template|add:'/admin/js/Account--createInlineTable.js' %}"></script>
+<script src="{% static 'Account/'|add:website_template|add:'/admin/js/Account--editInlineTable.js' %}"></script>
+<script src="{% static 'Account/'|add:website_template|add:'/admin/js/Account--detailInlineTable.js' %}"></script> {% endcomment %}
+                                 
+<div id="assetAssetCreatemodalsId">
+        <form method="POST" action="" enctype="multipart/form-data" id="assetAssetCreateModalsFormId" data-uuid="">
+            <div class="modal-header bg-info border-primary">
+                <h3 class="modal-title">Thêm thông tin tài sản</h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <h6 class="heading-small text-muted mb-4">Thông tin chung</h6><div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-6" style="display: inline-block;">
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Mã tài sản
+                            </label>
+                            <input id="codeAssetAssetCreateModalInputId"  name="code" class="mps_required form-control username-account-account-input" placeholder="Nhập Code" type="text">
+                                </div>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Tên tài sản
+                            </label>
+                            <input id="nameAssetAssetCreateModalInputId" name="name" class="mps_required form-control -account-account-input" placeholder="Nhập " type="text">
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Loại tài sản
+                                    <button type="button" style="padding: 0.2rem;" id="btn-create-AssetAssetType" class="btn btn-outline-primary btn-sm " data-bs-toggle="modal">
+                                        <i class="fas fa-plus"></i> &nbsp;
+                                    </button>
+                                </label>
+                            <select id="asset_typeAssetAssetCreateModalInputId" name="asset_type" class="form-control -account-account-input" placeholder="Nhập " type="text" ></select>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Trạng thái
+                                <button type="button" style="padding: 0.2rem;" id="btn-create-AssetAssetStatus" class="btn btn-outline-primary btn-sm " data-bs-toggle="modal" hidden>
+                                    <i class="fas fa-plus"></i> &nbsp;
+                                </button>
+                            </label>
+                            <select id="own_statusAssetAssetCreateModalInputId" name="own_status" class="form-control -account-account-input" placeholder="Nhập " type="text" ></select>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Giá nhập
+                            </label>
+                            <input id="price_buyAssetAssetCreateModalInputId" name="price_buy" class="mps_required form-control -account-account-input" placeholder="Nhập " type="text">
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Kho</label>
+                            <select id="warehouseAssetAssetCreateModalInputId" name="warehouse" class="form-control password-account-account-input" type="text"></select>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Nhà Cung Cấp</label>
+                            <select id="supplierAssetAssetCreateModalInputId" name="supplier" class="form-control password-account-account-input" type="text"></select>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Tình Trạng Thiết Bị</label>
+                            <select id="asset_statusAssetAssetCreateModalInputId" name="asset_status" class="form-control password-account-account-input" type="text"></select>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Đơn vị tính</label>
+                            <select id="unitAssetAssetCreateModalInputId" name="unit" class="form-control password-account-account-input" type="text"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="assetAssetCancelModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                <button id="assetAssetCreateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                
+                <button id="assetAssetTestModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+        
+            </div>
+        </form>
+        </div>
+    </div>
+</div>

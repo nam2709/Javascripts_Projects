@@ -1,0 +1,123 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+            Create New Position
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_position.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="positionWebsiteCreateFormId" data-uuid="{{ current_position.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="positionWebsiteCreateFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            
+<div class="form-group input-group d-none">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Id
+        </span>
+    </div>
+    <input id="idPositionWebsiteInputId" name="id" class="form-control id-position-website-input" placeholder="Id of Position" type="text" value="">
+</div>
+            
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="namePositionWebsiteInputId" name="name" class="form-control name-position-website-input" placeholder="Name of Position" type="text" value="">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidPositionWebsiteInputId" name="uuid" class="form-control uuid-position-website-input" placeholder="Uuid of Position" type="text" value="{{ current_uuid}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Desc
+        </span>
+    </div>
+    <textarea id="descPositionWebsiteInputId" name="desc" class="form-control desc-position-website-input" placeholder="Desc of Position" type="text"></textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Css
+        </span>
+    </div>
+    <textarea id="cssPositionWebsiteInputId" name="css" class="form-control css-position-website-input" placeholder="Css of Position" type="text"></textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Order
+        </span>
+    </div>
+    <input id="orderPositionWebsiteInputId" name="order" class="form-control order-position-website-input" placeholder="Order of Position" type="text" value="{{ current_position.order}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_position.active == True %}
+        <input id="activePositionWebsiteInputId" name="active" type="checkbox" class="form-check-input active-position-website-input" placeholder="Active of Position" value="" checked>
+        {% else %}
+        <input id="activePositionWebsiteInputId" name="active" type="checkbox" class="form-check-input active-position-website-input" placeholder="Active of Position" value="">
+        {% endif %}
+        <label class="form-check-label" for="activePositionWebsiteInputId">
+            Active
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated_At
+        </span>
+    </div>
+    <input id="updated_atPositionWebsiteInputId" name="updated_at" class="form-control updated_at-position-website-input" placeholder="Updated_At of Position" type="datetime-local" value="">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created_At
+        </span>
+    </div>
+    <input id="created_atPositionWebsiteInputId" name="created_at" class="form-control created_at-position-website-input" placeholder="Created_At of Position" type="datetime-local" value="">
+</div>
+                        
+<div class="form-group">
+    <button id="positionWebsiteSaveBtnId" type="button" class="btn btn-primary btn-lg">Save</button>
+    <button id="positionWebsiteSaveAndNewBtnId" type="button" class="btn btn-secondary btn-lg">Save and Create New</button>
+    <button id="positionWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

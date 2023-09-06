@@ -1,0 +1,97 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a href="{% url 'Website:BotUAEditView' slug=current_botua.uuid %}">
+            Current BotUA: {{ current_botua.name|title }}
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_botua.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="WebsitebotuaEditFormId" data-uuid="{{ current_botua.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="WebsitebotuaEditFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+            
+<div class="form-group input-group d-none">
+<div class="input-group-prepend">
+<span class="input-group-text">
+Id
+</span>
+</div>
+<input id="idBotUAWebsiteInputId" name="id" class="form-control id-botua-website-input" placeholder="Id of BotUA" type="text" value="{{ current_botua.id}}">
+</div>
+            
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameBotUAWebsiteInputId" name="name" class="form-control name-botua-website-input" placeholder="Name of BotUA" type="text" value="{{ current_botua.name}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidBotUAWebsiteInputId" name="uuid" class="form-control uuid-botua-website-input" placeholder="Uuid of BotUA" type="text" value="{{ current_botua.uuid}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_botua.active == True %}
+        <input id="activeBotUAWebsiteInputId" name="active" type="checkbox" class="form-check-input active-botua-website-input" placeholder="Active of BotUA" value="{{ current_botua.active}}" checked>
+        {% else %}
+        <input id="activeBotUAWebsiteInputId" name="active" type="checkbox" class="form-check-input active-botua-website-input" placeholder="Active of BotUA" value="{{ current_botua.active}}">
+        {% endif %}
+        <label class="form-check-label" for="activeBotUAWebsiteInputId">
+            Active
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated_At
+        </span>
+    </div>
+    <input id="updated_atBotUAWebsiteInputId" name="updated_at" class="form-control updated_at-botua-website-input" placeholder="Updated_At of BotUA" type="datetime-local" value="{{ current_botua.updated_at}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created_At
+        </span>
+    </div>
+    <input id="created_atBotUAWebsiteInputId" name="created_at" class="form-control created_at-botua-website-input" placeholder="Created_At of BotUA" type="datetime-local" value="{{ current_botua.created_at}}">
+</div>
+                        
+<div class="form-group">
+    <button id="botuaWebsiteSaveAndNewBtnId" type="button" class="btn btn-secondary btn-lg">Create New</button>
+    <button id="botuaWebsiteEditBtnId" type="button" class="btn btn-primary btn-lg">Edit</button>
+    <button id="botuaWebsiteSaveBtnId" type="button" class="btn btn-primary btn-lg">Save</button>
+    <button id="botuaWebsiteDeleteBtnId" type="button" class="btn btn-danger btn-lg">Delete</button>
+    <button id="botuaWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

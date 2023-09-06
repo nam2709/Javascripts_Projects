@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load i18n %}
+{% load tz %}
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Cards</title>
+
+    {% include "Workspace/"|add:website_template|add:"/admin/header.html" %}
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+{% include "Workspace/"|add:website_template|add:"/admin/sidebar.html" %}
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column">
+
+<!-- Main Content -->
+<div id="content">
+
+{% include "Workspace/"|add:website_template|add:"/admin/topbar.html" %}
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Results</h1>
+</div>
+
+<div class="row">
+
+
+<!-- yandex_accounts Card  -->
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Yandex Accounts</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ yandex_accounts.count }}</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Browser Results Card Example -->
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Browsers</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ browsers.count }}</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Profile Results Card Example -->
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Profiles</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ browser_profiles.count }}</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- screenshots Card  -->
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Screenshots</div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{ screenshots.count }}</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+<div class="col-lg-12">
+
+<!-- yandex_accounts Detail Card Example -->
+<div class="card shadow mb-4">
+    <!-- Card Header - Dropdown -->
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">Yandex Accounts</h6>
+
+        <div class="dropdown no-arrow">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-header">Dropdown Header:</div>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+    </div>
+    <!-- Card Body -->
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped w-auto" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>
+                        Logged in
+                    </th>
+                    <th>Login</th>
+                    <th>Browser</th>
+                    <th>Created</th>
+                    <th>Domain</th>
+                    <th>Updated At</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Logged in</th>
+                    <th>Login</th>
+                    <th>Browser</th>
+                    <th>Created</th>
+                    <th>Domain</th>
+                    <th>Updated At</th>
+                    <th>Action</th>
+
+                </tr>
+                </tfoot>
+                <tbody>
+                {% if yandex_accounts %}
+                    {% for s in yandex_accounts %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'YandexEmail:EmailDetailView' slug=s.id %}">
+                                    {{ s.id }}
+                                </a>
+                            </td>
+                            <td>
+                                <a href="{% url 'YandexEmail:EmailDetailView' slug=s.id %}">
+                                    {{ s.name }}
+                                </a>
+                                <br>
+                                First: <a href="#">
+                                {{ s.first_name }}
+                            </a>
+                                Last: <a href="#">
+                                {{ s.last_name }}
+                            </a>
+                            </td>
+                            <td>
+                                {% if s.yandex_login_status == True %}
+                                    <img src="/static/admin/img/icon-yes.svg" alt="True">
+                                {% else %}
+                                    <img src="/static/admin/img/icon-no.svg" alt="False">
+                                {% endif %}
+                            </td>
+
+                            <td>
+                                <a href="#">
+                                    {{ s.login }}
+                                </a>
+                                Yandex Uid: <a href="#">
+                                {{ s.yandex_uid }}
+                            </a>
+                            </td>
+                            <td>
+                              {% if s.browser %}
+                                  <a target="_blank" href="{% url 'browsers:BrowserDetailView' slug=s.browser.id %}">
+                                    {{ s.browser }}
+                                  </a>
+                              {% else %}
+                                <form method="POST"
+                                      onsubmit="confirmContinue(this.form);"
+                                      id="create-profile-data-form-{{ s.id }}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="action" value="create-profile-data">
+                                    <input type="hidden" name="email-id" value="{{ s.id }}">
+                                    <button type="submit"
+                                            form="create-profile-data-form-{{ s.id }}"
+                                            class="btn btn-primary btn-block"> Create Profile
+                                    </button>
+                                </form>
+                              {% endif %}
+                            </td>
+                            <td>
+                                {{ s.created }}
+                                <form method="POST"
+                                      onsubmit="confirmContinue(this.form);"
+                                      id="create-email-form-{{ s.id }}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="action" value="create-email">
+                                    <input type="hidden" name="email-id" value="{{ s.id }}">
+                                    <button type="submit"
+                                            form="create-email-form-{{ s.id }}"
+                                            class="btn btn-warning btn-block"> Create
+                                    </button>
+                                </form>
+                            </td>
+                            <td>{{ s.domain }}</td>
+                            <td>{{ s.updated_at }}</td>
+                            <td>
+                                <form method="POST"
+                                      onsubmit="confirmContinue(this.form);"
+                                      id="delete-email-form-{{ s.id }}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="action" value="delete-email">
+                                    <input type="hidden" name="email-id" value="{{ s.id }}">
+                                    <button type="submit"
+                                            form="delete-email-form-{{ s.id }}"
+                                            class="btn btn-warning btn-block"> Delete
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Browser Detail Results Example -->
+<div class="card shadow mb-4">
+    <!-- Card Header - Dropdown -->
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">Browser Results</h6>
+
+        <div class="dropdown no-arrow">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-header">Dropdown Header:</div>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+    </div>
+    <!-- Card Body -->
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped w-auto" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Last Screenshot</th>
+
+                    <th>Path</th>
+                    <th>Desc</th>
+                    <th>Save Cookie</th>
+                    <th>Updated At</th>
+                    <th>Created At</th>
+                </tr>
+                </thead>
+                <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Last Screenshot</th>
+                    <th>Path</th>
+                    <th>Desc</th>
+                    <th>Save Cookie</th>
+                    <th>Updated At</th>
+                    <th>Created At</th>
+                </tr>
+                </tfoot>
+                <tbody>
+                {% if browsers %}
+                    {% for s in browsers %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'browsers:BrowserDetailView' slug=s.id %}">
+                                    {{ s.id }}
+                                </a>
+
+                                <form method="POST"
+                                      onsubmit="confirmContinue(this.form);"
+                                      id="edit-email-browser-profile-form-{{ s.id }}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="action" value="edit-email-browser-profile">
+                                    <input type="hidden" name="browser-id" value="{{ s.id }}">
+                                    <button type="submit"
+                                            form="edit-email-browser-profile-form-{{ s.id }}"
+                                            class="btn btn-warning btn-block"> Edit Profile
+                                    </button>
+                                </form>
+                            </td>
+                            <td>
+                                <a href="{% url 'browsers:BrowserDetailView' slug=s.id %}">
+                                    {{ s.name }}
+                                </a>
+                                <br>
+                                (UUID: <a>
+                                {{ s.uuid }}
+                            </a>)
+                                <form method="POST"
+                                      onsubmit="confirmContinue(this.form);"
+                                      id="browser-url-form-{{ s.id }}">
+                                    {% csrf_token %}
+                                    <input type="url" name="url" placeholder="Insert Url">
+                                    <input type="hidden" name="action" value="browser-url">
+                                    <input type="hidden" name="browser-id" value="{{ s.id }}">
+                                    <button type="submit"
+                                            form="browser-url-form-{{ s.id }}"
+                                            class="btn btn-warning btn-block"> Browser Url
+                                    </button>
+                                </form>
+                            </td>
+                            <td>
+                                {% if s.last_screenshot %}
+                                    <input type="text" readonly value="{{ s.last_url }}">
+                                    <img id="picFrameImg-{{ s.id }}" src="{{ s.last_screenshot.url }}"
+                                         style="max-width: 480px;">
+                                {% else %}
+                                    <img id="picFrameImg-{{ s.id }}" src="" style="max-width: 480px;">
+                                {% endif %}
+                                <form action="">
+                                    <button class="btn btn-primary" type="button"
+                                            onclick="get_screenshot_url('{{ s.id }}')">Update
+                                    </button>
+                                </form>
+                                <a href="{% url 'browsers:BrowserScreenshotView' slug=s.id %}">
+                                    All Screenshots
+                                </a>
+
+                            </td>
+                            <td>
+                                Gecko: <br>
+                                <b>{{ s.gecko_path }}</b> <br>
+                                Profile: <br>
+                                <b>{{ s.profile.path }}/profile</b> <br>
+                                Temporary Profile: <br>
+                                <b>{{ s.temp_profile }}</b> <br>
+                                Mirrow Profile: <br>
+                                <b>{{ s.mirror_profile }}</b>
+                            </td>
+
+                            <td>
+                                {{ s.desc }}
+                            </td>
+                            <td>{{ s.save_cookie }}</td>
+                            <td>{{ s.updated_at }}</td>
+                            <td>{{ s.created_at }}</td>
+                        </tr>
+                    {% endfor %}
+                {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Profile Detail Results Card Example -->
+<div class="card shadow mb-4">
+    <!-- Card Header - Dropdown -->
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+        <h6 class="m-0 font-weight-bold text-primary">Profile Results</h6>
+        <div class="dropdown no-arrow">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+               aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-header">Dropdown Header:</div>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+    </div>
+    <!-- Card Body -->
+    <div class="card-body">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped w-auto" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Firefox Path</th>
+                        <th>
+                            Profile Path
+                            <form method="POST"
+                                  onsubmit="confirmContinue(this.form);"
+                                  id="get-all-profile-size-on-disk">
+                                {% csrf_token %}
+                                <input type="hidden" name="action" value="get-all-profile-size">
+                                <button type="submit"
+                                        form="get-all-profile-size-on-disk"
+                                        class="btn btn-warning btn-block"> Get SOD
+                                </button>
+                            </form>
+                        </th>
+                        <th>Desc</th>
+                        <th>Save Cookie</th>
+                        <th>Generated</th>
+                        <th>Updated At</th>
+                        <th>Created At</th>
+                    </tr>
+                    </thead>
+                    <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Gecko Path</th>
+                        <th>Profile Path</th>
+                        <th>Desc</th>
+                        <th>Save Cookie</th>
+                        <th>Generated</th>
+                        <th>Updated At</th>
+                        <th>Created At</th>
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    {% if browser_profiles %}
+                        {% for s in browser_profiles %}
+                            <tr>
+                                <td>
+                                    <a href="#">
+                                        {{ s.id }}
+                                    </a>
+
+                                    <form method="POST"
+                                          onsubmit="confirmContinue(this.form);"
+                                          id="delete-profile-form-{{ s.id }}">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="action" value="delete-profile">
+                                        <input type="hidden" name="profile-id" value="{{ s.id }}">
+                                        <button type="submit"
+                                                form="delete-profile-form-{{ s.id }}"
+                                                class="btn btn-warning btn-block"> Delete
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <a href="">
+                                        {{ s.name }}
+                                    </a>
+                                    <br>
+                                    (UUID:<a href="#">
+                                    {{ s.uuid }}
+                                </a>)
+                                </td>
+                                <td>{{ s.firefox_path }}</td>
+                                <td>
+                                    {{ s.path }}
+                                    <br>
+                                    Size: <a>
+                                    {{ s.size_on_disk }}
+                                </a>
+                                </td>
+                                <td>
+                                    {{ s.desc }}
+                                </td>
+                                <td>{{ s.save_cookie }}</td>
+                                <td>{{ s.browser_generated }}</td>
+                                <td>{{ s.updated_at }}</td>
+                                <td>{{ s.created_at }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endif %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- screenshots Card Example -->
+<div class="card shadow mb-4">
+    <!-- Card Header - Accordion -->
+    <a href="#collapseCardExample" class="d-block card-header py-3" data-toggle="collapse" role="button"
+       aria-expanded="true" aria-controls="collapseCardExample">
+        <h6 class="m-0 font-weight-bold text-primary">Screenshots</h6>
+    </a>
+    <!-- Card Content - Collapse -->
+    <div class="collapse" id="collapseCardExample">
+        <div class="card-body">
+
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped w-auto" id="dataTable" width="100%"
+                           cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Image</th>
+
+                            <th>Browser</th>
+
+                            <th>Updated At</th>
+                            <th>Created At</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>Browser</th>
+                            <th>Updated At</th>
+                            <th>Created At</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        {% if screenshots %}
+                            {% for s in screenshots %}
+                                <tr>
+                                    <td>
+                                        <a href="#">
+                                            {{ s.id }}
+                                        </a>
+
+                                        <form method="POST"
+                                              onsubmit="confirmContinue(this.form);"
+                                              id="edit-email-browser-profile-form-{{ s.id }}">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="action" value="edit-email-browser-profile">
+                                            <input type="hidden" name="browser-id" value="{{ s.id }}">
+                                            <button type="submit"
+                                                    form="edit-email-browser-profile-form-{{ s.id }}"
+                                                    class="btn btn-warning btn-block"> Edit Profile
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <a href="">
+                                            {{ s.name }}
+                                        </a>
+                                        <br>
+                                        (UUID: <a>
+                                        {{ s.uuid }}
+                                    </a>)
+                                        <form method="POST"
+                                              onsubmit="confirmContinue(this.form);"
+                                              id="browser-url-form-{{ s.id }}">
+                                            {% csrf_token %}
+                                            <input type="url" name="url" placeholder="Insert Url">
+                                            <input type="hidden" name="action" value="browser-url">
+                                            <input type="hidden" name="browser-id" value="{{ s.id }}">
+                                            <button type="submit"
+                                                    form="browser-url-form-{{ s.id }}"
+                                                    class="btn btn-warning btn-block"> Browser Url
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        {% if s.image %}
+                                            <img src="{{ s.image.url }}" style="max-width: 480px;">
+                                        {% else %}
+                                            <img id="picFrameImg-{{ s.id }}" src="" style="max-width: 480px;">
+                                        {% endif %}
+                                        <form action="">
+                                            <button class="btn btn-primary" type="button"
+                                                    onclick="get_screenshot_url('{{ s.id }}')">Update
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>{{ s.browser }}</td>
+                                    <td>{{ s.updated_at }}</td>
+                                    <td>{{ s.created_at }}</td>
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+      <!-- Footer -->
+
+
+        {% with "Workspace/"|add:website_template|add:"/admin/footer.html" as template %}
+            {% include template %}
+        {% endwith %}
+      <!-- End of Footer -->
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+</body>
+
+</html>

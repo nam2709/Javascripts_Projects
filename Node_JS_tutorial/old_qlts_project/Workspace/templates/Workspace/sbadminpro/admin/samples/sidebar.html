@@ -1,0 +1,6 @@
+{% load static %}
+
+{% include 'Workspace/'|add:website_template|add:'/admin/sidebar-pc.html' %}
+
+{% if user_agent and user_agent.is_pc is True %}
+{% endif %}

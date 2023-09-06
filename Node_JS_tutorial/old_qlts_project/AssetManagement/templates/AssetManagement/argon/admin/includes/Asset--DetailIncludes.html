@@ -1,0 +1,136 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="{% static 'Account/'|add:website_template|add:'/admin/js/AccountConst.js' %}"></script>
+                
+                
+
+<script src="/static/arrgon/js/jquery/dist/jquery.min.js"></script>
+
+<script src="{% static 'Account/'|add:website_template|add:'/admin/js/AccountConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Account/'|add:website_template|add:'/admin/js/AccountClasses.js' %}"></script>
+            
+<script src="{% static 'Account/'|add:website_template|add:'/admin/js/AccountBindData.js' %}"></script>
+            
+
+<!-- <script src="{% static 'Account/'|add:website_template|add:'/admin/js/GroupClasses.js' %}"></script> -->
+                
+<!-- <script src="{% static 'Account/'|add:website_template|add:'/admin/js/PermissionClasses.js' %}"></script> -->
+                
+<!-- <script src="{% static 'Account/'|add:website_template|add:'/admin/js/WebsiteTemplateClasses.js' %}"></script> -->
+                
+<!-- <script src="{% static 'Account/'|add:website_template|add:'/admin/js/AppPermissionClasses.js' %}"></script> -->
+                
+<!-- <script src="{% static 'Account/'|add:website_template|add:'/admin/js/ExtendInfoClasses.js' %}"></script> -->
+                
+
+<div class="card shadow mb-1">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a class="btn btn-primary btn-sm" href="{% url 'Account:AccountView' %}">
+            Danh sách thông tin người dùng
+          </a>
+          <a href="{% url 'Account:Account_DetailView' slug=current_account.uuid %}">
+            Hiện tại Thông tin người dùng: {{ current_account.name|title }}
+          </a>
+          <a class="btn btn-primary btn-sm" href="{% url 'Account:Account_EditView' slug=current_account.uuid %}">
+            Chỉnh sửa
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_account.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="accountAccountDetailFormId" data-uuid="{{ current_account.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="accountAccountDetailFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            
+                    <div class="mb-1 col-xl-6 d-none">
+                       <label class="small mb-1">Id</label>
+                        {% if current_id %}
+                            <input id="idAccountAccountInputId" name="id" class="form-control id-account-account-input" placeholder="Nhập Id of Account" type="text" value="{{ current_account.id}}">
+                        {% else %}
+                            <input id="idAccountAccountInputId" name="id" class="form-control id-account-account-input" placeholder="Nhập Id of Account" type="text" value="">
+                        {% endif %}
+                    </div>
+            
+                    <div class="mb-1 col-xl-6 d-none">
+                        <label class="small mb-1">Uuid</label>
+                        {% if current_uuid %}
+                            <input id="uuidAccountAccountInputId" name="uuid" class="form-control uuid-account-account-input" placeholder="Nhập Uuid of Account" type="text" value="{{ current_account.uuid}}">
+                        {% else %}
+                            <input id="uuidAccountAccountInputId" name="uuid" class="form-control uuid-account-account-input" placeholder="Nhập Uuid of Account" type="text" value="">
+                        {% endif %}
+                    </div>
+            <h6 class="heading-small text-muted mb-4">Thông tin chung</h6><div class="row gx-2 mb-2">
+                                    <div class=" mb-1 col-xl-6">
+                                     <label class="small mb-1">Username</label>
+                                    <input id="usernameAccountAccountDetailModalInputId" name="username" class="form-control username-account-account-input" placeholder="Nhập Username" type="text" value="{{ current_account.username}}" readonly>
+                                </div>
+                                
+                                    <div class=" mb-1 col-xl-6">
+                                     <label class="small mb-1">Họ và tên</label>
+                                    <input id="full_nameAccountAccountDetailModalInputId" name="full_name" class="form-control full_name-account-account-input" placeholder="Nhập Full_Name" type="text" value="{{ current_account.full_name}}" readonly>
+                                </div>
+                                </div><hr><div class="row gx-2 mb-2">
+                                    <div class=" mb-1 col-xl-6">
+                                     <label class="small mb-1">Email</label>
+                                    <input id="emailAccountAccountDetailModalInputId" name="email" class="form-control email-account-account-input" placeholder="Nhập Email" type="text" value="{{ current_account.email}}" readonly>
+                                </div>
+                                
+                                    <div class=" mb-1 col-xl-6">
+                                     <label class="small mb-1">Điện thoại</label>
+                                    <input id="telephoneAccountAccountDetailModalInputId" name="telephone" class="form-control telephone-account-account-input" placeholder="Nhập Telephone" type="text" value="{{ current_account.telephone}}" readonly>
+                                </div>
+                                </div><div class="row gx-2 mb-2">
+                                <div class="mb-1 col-xl-6">
+                                    <label class="small mb-1">Ngày sinh</label>
+                                    
+                                    <input id="date_of_birthAccountAccountDetailModalInputId" name="date_of_birth" class="form-control date_of_birth-account-account-input" placeholder="Nhập Date_Of_Birth" type="text" value="{{ current_account.date_of_birth}}" readonly>
+                                </div>
+                                
+                                    <div class=" mb-1 col-xl-6">
+                                     <label class="small mb-1">Mật khẩu</label>
+                                    <input id="passwordAccountAccountDetailModalInputId" name="password" class="form-control password-account-account-input" placeholder="Nhập Password" type="text" value="{{ current_account.password}}" readonly>
+                                </div>
+                                </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <label for="avatarAccountAccountDetailModalInputId"><i class="fas fa-paperclip"></i>&nbsp;{% trans 'avatar' %}</label>
+                                <input class="account-account form-control-file form-control d-none account-account-file avatar-account-account-file-input"  type="file" name="avatar" class="" id="avatarAccountAccountDetailModalInputId">
+                            <div class="col-xl-12" id="avatarAccountAccountDetailModalFileAreaId">    
+                            {% if current_account.avatar %}
+  
+                                <div class="form-group row col-xl-8 table-hover mt-1" style="background-color:gainsboro;height: 25px;" id="{{ current_account.uuid }}AttachmentDivId">
+                                    <div class="col-xl-10 " >
+                                        <span><a style="color:cornflowerblue" target="_blank"  href="{{ current_account.avatar.url }}"><p><b> {{ current_account.avatar_filename|title }}</b></p></a></span>
+                                    </div>
+                                    <div class="col-xl-2 text-end">
+                                        <i class="fas fa-times" style="color:gray" file-uuid="{{ current_account.uuid }}" onclick="avataraccountAccountDeletedAttacthment(this)"></i>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="accountAccountCancelBtnId" type="button" class="btn btn-danger btn-sm"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="accountAccountTestBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+            
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

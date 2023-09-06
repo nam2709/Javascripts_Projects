@@ -1,0 +1,71 @@
+
+            {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+            
+<div class="modal fade" id="footeritemWorkspaceCreatemodalsId" tabindex="-1" data-backdrop="static" data-keyboard="true"  role="dialog" aria-labelledby="footeritemWorkspaceCreatemodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="footeritemWorkspaceCreateModalsFormId" data-uuid="">
+            <div class="modal-header">
+                <h3 class="modal-title">Tạo mới   FooterItem </h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group px-lg-5 text-start">
+            
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Id</label>
+    <input id="idFooterItemWorkspaceCreateModalInputId" name="id" class="form-control id-footeritem-workspace-input" placeholder="Điền thông tin Id of FooterItem" type="text" value="">
+</div>
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Uuid</label>
+    <input id="uuidFooterItemWorkspaceCreateModalInputId" name="uuid" class="form-control uuid-footeritem-workspace-input" placeholder="Điền thông tin Uuid of FooterItem" type="text" value="">
+</div>
+            <div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-12">
+                        <label class="small mb-1">Name</label>
+                        <input id="nameFooterItemWorkspaceCreateModalInputId"  name="name" class="form-control name-footeritem-workspace-input " placeholder="Điền thông tin Name" type="text" value="">
+                        
+                    </div>
+                    </div><div class="row gx-2 mb-2"></div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-6">
+                        <label class="small mb-1">Desc</label>
+                            <textarea id="descFooterItemWorkspaceCreateModalInputId"  name="desc" class=" form-control desc-footeritem-workspace-input ckeditor-input" placeholder="Điền thông tin Desc" type="text"></textarea>
+                        </div>
+                    
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Order</label>
+                        <input id="orderFooterItemWorkspaceCreateModalInputId"  name="order" class=" form-control order-footeritem-workspace-input" placeholder="Điền thông tin Order" type="text" value="{{ current_footeritem.order}}">
+                    </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <div class="form-check mt-4">
+                                {% if current_footeritem.active == True %}
+                                <input id="activeFooterItemWorkspaceCreateModalInputId"  name="active" type="checkbox" class="form-check-input active-footeritem-workspace-input" placeholder="Điền thông tin Active of FooterItem" value="" checked>
+                                {% else %}
+                                <input id="activeFooterItemWorkspaceCreateModalInputId"  name="active" type="checkbox" class="form-check-input active-footeritem-workspace-input" placeholder="Điền thông tin Active of FooterItem" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="activeFooterItemWorkspaceCreateModalInputId">
+                                    Active
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+                    <div class="modal-footer">
+                        <button id="footeritemWorkspaceCancelCreateModalBtnId" type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="footeritemWorkspaceCreateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                        
+                        <button id="footeritemWorkspaceSaveAndNewModalBtnId" type="button" class="d-none btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu và thêm mới</button>
+                        <button id="footeritemWorkspaceTestCreateModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+            </div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+            
+            

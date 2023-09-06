@@ -1,0 +1,61 @@
+
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
+<script src="{% static 'Depreciation/arrgon/admin/js/DepreciationConst.js' %}"></script>    
+<script src="{% static 'Depreciation/arrgon/admin/js/AssetRevaluationClasses.js' %}"></script>
+
+<div class="row bg-light border rounded-3">
+    <form method="POST" action="" enctype="multipart/form-data" id="AssetRevaluationAssetRevaluationCreateModalsFormId" data-uuid="">
+            <div class="modal-header bg-info border-primary rounded-1">
+                <h3 class="modal-title">Chỉnh sửa Thông tin Đánh giá </h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-1 col-xl-6 d-none">
+                    <label class="small mb-1">Id</label>
+                     <input id="idAssetRevaluationAssetRevaluationCreateModalInputId" name="id" class="form-control id-account-account-input" placeholder="Nhập Id of Account" type="text" value="">
+                 </div>     
+                 <div class="mb-1 col-xl-6 d-none">
+                     <label class="small mb-1">Uuid</label>
+                     <input id="uuidAssetRevaluationAssetRevaluationCreateModalInputId" name="uuid" class="form-control uuid-account-account-input" placeholder="Nhập Uuid of Account" type="text" value="">
+                 </div>
+                 <h6 class="heading-small text-muted mb-4">Thông tin chung</h6><div class="row gx-2 mb-2">
+                 <div class=" mb-1 col-xl-6">
+                     <label class="small mb-1">Tên Khấu Hao</label>
+                     <input id="nameAssetRevaluationAssetRevaluationCreateModalInputId" name="name" class="mps_required form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" >
+                 </div>
+                 <div class=" mb-1 col-xl-6">
+                     <label class="small mb-1">Thời Gian Thay Đổi</label>
+                     <input id="timerevaluationAssetRevaluationAssetRevaluationCreateModalInputId" name="time_revaluation" class="mps_required form-control -account-account-input" placeholder="Nhập " type="date" value="{{ current_account.}}" >
+                 </div>
+                 <div class=" mb-1 col-xl-6">
+                     <label class="small mb-1">GIá Trị Thêm Vào</label>
+                     <input id="addupvalueAssetRevaluationAssetRevaluationCreateModalInputId" name="addup_value" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" >
+                 </div>
+                 <div class=" mb-1 col-xl-6">
+                         <label class="small mb-1">Thời Gian Tăng Lên</label>
+                     <input id="adduptimeAssetRevaluationAssetRevaluationCreateModalInputId" name="addup_time" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" >
+                 </div>
+            </div> 
+            </div>
+                <button id="AssetRevaluationAssetRevaluationCancelCreateModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                <button id="AssetRevaluationAssetRevaluationCreateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                
+                <button id="AssetRevaluationAssetRevaluationTestCreateModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+        </div>
+        </form>
+    </div>
+      
+            
+            
+
+
+            

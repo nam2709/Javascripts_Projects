@@ -1,0 +1,133 @@
+
+{% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+
+<div class="modal fade" id="DepreciationDepreciationCreatemodalsId" tabindex="-1" data-backdrop="static" data-keyboard="true"  role="dialog" aria-labelledby="accountAccountCreatemodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            
+        <form method="POST" action="" enctype="multipart/form-data" id="DepreciationDepreciationCreateModalsFormId" data-uuid="">
+            <div class="modal-header border-primary">
+                <h3 class="modal-title">Thêm Mới Thông Tin Khấu Hao</h3>
+            <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class=" mb-1 col-xl-12" style="display: inline-block;">
+                    <div class="mb-1 col-xl-12 d-none">
+                        <label class="small mb-1">Uuid
+                        </label>
+                        <input id="uuidDepreciationDepreciationCreateModalInputId" name="uuid" class="form-control uuid-account-account-input" placeholder="Nhập Uuid of Account" type="text" value="">
+                    </div>
+                    <h6 class="heading-small text-muted mb-4">Thông tin chung</h6><div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-6" style="display: inline-block;">
+                        <div class=" mb-1 col-xl-12">
+                            <label class="small mb-1">Tài Sản
+                                <!-- <button type="button" style="padding: 1rem;" id="btn-create-DepreciationDepreciation" class="btn btn-outline-primary btn-sm " > -->
+                                <a onclick='myFunction()' type="button" style="padding: 0.2rem;" id="btn-create-DepreciationDepreciation" class="btn btn-outline-primary btn-sm ">
+                                    &nbsp; <i class="fas fa-plus"></i> &nbsp;
+                                </a>
+                                <!-- </button> -->
+                            </label><br>
+                            Nhap Tai San: &nbsp; <input id="searchbox1" type="text" placeholder="Search..." onkeydown="ShowOption1(event,'#asetnameDepreciationDepreciationCreateModalInputId','#searchbox1')"> <br><br>
+                            <select id="asetnameDepreciationDepreciationCreateModalInputId" name="aset" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" >
+                                <option value="" selected disabled>Select an option</option>
+                            </select>
+                        </div>
+                        <script>
+                            function myFunction() {
+                                window.open("http://127.0.0.1:1500/AssetManagement/CreateAsset/", "popup", "width=1024,height=786");
+                            }
+                        </script>
+                        <div class=" mb-1 col-xl-12">
+                            <label class="small mb-1"> Kieu Tai San
+                                <!-- <button type="button" style="padding: 0.2rem;" id="btn-create-DepreciationDepreciation" class="btn btn-outline-primary btn-sm " data-bs-toggle="modal">
+                                    &nbsp; <i class="fas fa-plus"></i> &nbsp;
+                                </button> -->
+                            </label>
+                            <select id="typedepreciationDepreciationDepreciationCreateModalInputId" name="type_depreciation" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" ></select>
+                        </div>
+                        <div class=" mb-1 col-xl-12">
+                                <label class="small mb-1"> Kiểu Khấu Hao  
+                                </label>
+                            <select id="preioddetailDepreciationDepreciationCreateModalInputId" name="preiod_detail" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" ></select>
+                        </div>
+                    </div>
+                    <div class=" mb-1 col-xl-6" style="display: inline-block;">
+                        <div class=" mb-1 col-xl-12">
+                            <label class="small mb-1">Đánh giá lại tài sản 
+                                <div class="switch-container" style="text-align: center; vertical-align: middle;">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" name="is_confirm" data-uuid="" unchecked id="rememberMe" style="width: 40.22222px; height: 20.22222px;" onclick="is_statusFormEventChangeSwitcher(this)">
+                                    </div>
+                                </div>  
+
+                                <div id="content" class="content-hidden">
+                                    {% csrf_token %}
+                                    <select size="6" id="assetrevaluationDepreciationDepreciationCreateModalInputId"  class="form-select" multiple aria-label="multiple select example" name="revaluation">
+                                    </select>
+                                </div>
+                            </label>
+                            <script>
+                                $(document).ready(function(){
+                                    $("#content").toggle('hide');
+                                });
+
+                                function is_statusFormEventChangeSwitcher($this) {
+                                    if ($($this).is(":checked")) {
+                                        $("#content").toggle('show');
+                                    } else {
+                                        $("#content").toggle('hide');
+                                    }
+                                }
+                            </script>
+                        </div>
+                        <div class=" mb-1 col-xl-12">
+                            <label class="small mb-1"> Dieu chinh
+                                <div class="switch-container" style="text-align: center; vertical-align: middle;">
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" name="is_confirm" data-uuid="" unchecked id="rememberMe" style="width: 40.22222px; height: 20.22222px;" onclick="is_statusFormEventChangeSwitcher1(this)">
+                                    </div>
+                                </div>
+
+                                <div id="content1" class="content-hidden">
+                                    {% csrf_token %}
+                                    <select id="adjustmentasetDepreciationDepreciationCreateModalInputId" name="adjustment_aset" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" >
+                                    </select>
+                                </div>
+                            </label>
+                            <script>
+                                $(document).ready(function(){
+                                    $("#content1").toggle('hide');
+                                });
+
+                                function is_statusFormEventChangeSwitcher1($this) {
+                                    if ($($this).is(":checked")) {
+                                        $("#content1").toggle('show');
+                                    } else {
+                                        $("#content1").toggle('hide');
+                                    }
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <script>
+                        function myFunction11() {
+                            window.open("http://127.0.0.1:1500/depre/revaluationcreate/", "popup", "width=1024,height=786");
+                        }
+                    </script>
+                </div> 
+            </div>
+            <div class="modal-footer">
+                <button id="DepreciationDepreciationCancelCreateModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                <button id="DepreciationDepreciationCreateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                
+                <button id="DepreciationDepreciationTestCreateModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+            </div>
+            
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
+            
+            

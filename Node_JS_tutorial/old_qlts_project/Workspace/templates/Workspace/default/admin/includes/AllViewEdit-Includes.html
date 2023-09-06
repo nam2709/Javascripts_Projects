@@ -1,0 +1,205 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a href="{% url 'Website:AllViewEditView' slug=current_allview.uuid %}">
+            Current AllView: {{ current_allview.name|title }}
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_allview.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="WebsiteallviewEditFormId" data-uuid="{{ current_allview.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="WebsiteallviewEditFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+            
+<div class="form-group input-group d-none">
+<div class="input-group-prepend">
+<span class="input-group-text">
+Id
+</span>
+</div>
+<input id="idAllViewWebsiteInputId" name="id" class="form-control id-allview-website-input" placeholder="Id of AllView" type="text" value="{{ current_allview.id}}">
+</div>
+            
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameAllViewWebsiteInputId" name="name" class="form-control name-allview-website-input" placeholder="Name of AllView" type="text" value="{{ current_allview.name}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidAllViewWebsiteInputId" name="uuid" class="form-control uuid-allview-website-input" placeholder="Uuid of AllView" type="text" value="{{ current_allview.uuid}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Short_Name
+        </span>
+    </div>
+    <input id="short_nameAllViewWebsiteInputId" name="short_name" class="form-control short_name-allview-website-input" placeholder="Short_Name of AllView" type="text" value="{{ current_allview.short_name}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Pattern
+        </span>
+    </div>
+    <input id="patternAllViewWebsiteInputId" name="pattern" class="form-control pattern-allview-website-input" placeholder="Pattern of AllView" type="text" value="{{ current_allview.pattern}}">
+</div>
+                        
+  <div class="form-group input-group">
+    <div class="input-group-prepend" for="iconAllViewWebsiteInputId">
+        <span class="input-group-text">
+        Icon
+        </span>
+    </div>
+    <div class="custom-file">
+        <input class="allview-website" type="file" name="icon" class="form-control-file form-control icon-allview-website-input" id="iconAllViewWebsiteInputId">
+        <label class="custom-file-label" for="iconAllViewWebsiteInputId">{% trans 'Choose file' %}</label>
+    </div>
+    {% if current_allview.icon %}
+    <span>(Current:
+        <a href="{{ current_allview.icon.url }}" target="_self">
+            {{ current_allview.icon_filename|title }}
+        </a>)
+    </span>
+    {% endif %}
+  </div>
+
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Icon_Base64
+        </span>
+    </div>
+    <textarea id="icon_base64AllViewWebsiteInputId" name="icon_base64" class="form-control icon_base64-allview-website-input" placeholder="Icon_Base64 of AllView" type="text">{{ current_allview.icon_base64}}</textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_allview.active == True %}
+        <input id="activeAllViewWebsiteInputId" name="active" type="checkbox" class="form-check-input active-allview-website-input" placeholder="Active of AllView" value="{{ current_allview.active}}" checked>
+        {% else %}
+        <input id="activeAllViewWebsiteInputId" name="active" type="checkbox" class="form-check-input active-allview-website-input" placeholder="Active of AllView" value="{{ current_allview.active}}">
+        {% endif %}
+        <label class="form-check-label" for="activeAllViewWebsiteInputId">
+            Active
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_allview.is_product == True %}
+        <input id="is_productAllViewWebsiteInputId" name="is_product" type="checkbox" class="form-check-input is_product-allview-website-input" placeholder="Is_Product of AllView" value="{{ current_allview.is_product}}" checked>
+        {% else %}
+        <input id="is_productAllViewWebsiteInputId" name="is_product" type="checkbox" class="form-check-input is_product-allview-website-input" placeholder="Is_Product of AllView" value="{{ current_allview.is_product}}">
+        {% endif %}
+        <label class="form-check-label" for="is_productAllViewWebsiteInputId">
+            Is_Product
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_allview.staff_only == True %}
+        <input id="staff_onlyAllViewWebsiteInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-allview-website-input" placeholder="Staff_Only of AllView" value="{{ current_allview.staff_only}}" checked>
+        {% else %}
+        <input id="staff_onlyAllViewWebsiteInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-allview-website-input" placeholder="Staff_Only of AllView" value="{{ current_allview.staff_only}}">
+        {% endif %}
+        <label class="form-check-label" for="staff_onlyAllViewWebsiteInputId">
+            Staff_Only
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_allview.admin_only == True %}
+        <input id="admin_onlyAllViewWebsiteInputId" name="admin_only" type="checkbox" class="form-check-input admin_only-allview-website-input" placeholder="Admin_Only of AllView" value="{{ current_allview.admin_only}}" checked>
+        {% else %}
+        <input id="admin_onlyAllViewWebsiteInputId" name="admin_only" type="checkbox" class="form-check-input admin_only-allview-website-input" placeholder="Admin_Only of AllView" value="{{ current_allview.admin_only}}">
+        {% endif %}
+        <label class="form-check-label" for="admin_onlyAllViewWebsiteInputId">
+            Admin_Only
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Order
+        </span>
+    </div>
+    <input id="orderAllViewWebsiteInputId" name="order" class="form-control order-allview-website-input" placeholder="Order of AllView" type="text" value="{{ current_allview.order}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_allview.demo_mode == True %}
+        <input id="demo_modeAllViewWebsiteInputId" name="demo_mode" type="checkbox" class="form-check-input demo_mode-allview-website-input" placeholder="Demo_Mode of AllView" value="{{ current_allview.demo_mode}}" checked>
+        {% else %}
+        <input id="demo_modeAllViewWebsiteInputId" name="demo_mode" type="checkbox" class="form-check-input demo_mode-allview-website-input" placeholder="Demo_Mode of AllView" value="{{ current_allview.demo_mode}}">
+        {% endif %}
+        <label class="form-check-label" for="demo_modeAllViewWebsiteInputId">
+            Demo_Mode
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated_At
+        </span>
+    </div>
+    <input id="updated_atAllViewWebsiteInputId" name="updated_at" class="form-control updated_at-allview-website-input" placeholder="Updated_At of AllView" type="datetime-local" value="{{ current_allview.updated_at}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created_At
+        </span>
+    </div>
+    <input id="created_atAllViewWebsiteInputId" name="created_at" class="form-control created_at-allview-website-input" placeholder="Created_At of AllView" type="datetime-local" value="{{ current_allview.created_at}}">
+</div>
+                        
+<div class="form-group">
+    <button id="allviewWebsiteSaveAndNewBtnId" type="button" class="btn btn-secondary btn-lg">Create New</button>
+    <button id="allviewWebsiteEditBtnId" type="button" class="btn btn-primary btn-lg">Edit</button>
+    <button id="allviewWebsiteSaveBtnId" type="button" class="btn btn-primary btn-lg">Save</button>
+    <button id="allviewWebsiteDeleteBtnId" type="button" class="btn btn-danger btn-lg">Delete</button>
+    <button id="allviewWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

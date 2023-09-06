@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+
+    {% include "Workspace/"|add:website_template|add:"/admin/header.html" %}
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    {% include "Workspace/"|add:website_template|add:"/admin/sidebar.html" %}
+
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+
+    {% with "Workspace/"|add:website_template|add:"/admin/topbar.html" as template %}
+        {% include template %}
+    {% endwith %}
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+          </div>
+<div>
+    <h>Count Down 1</h>
+
+          <!-- Count Down -->
+                <div class="js-countdown row mb-5"
+                     data-end-date="2020/11/30"
+                     data-days-format="%D"
+                     data-hours-format="%H"
+                     data-minutes-format="%M"
+                     data-seconds-format="%S">
+                  <div class="col-3">
+                    <strong class="js-cd-days h3 text-primary font-weight-bold mb-0"></strong>
+                    <span class="h5 font-weight-normal mb-0">Days</span>
+                  </div>
+                  <div class="col-3">
+                    <strong class="js-cd-hours h3 text-primary font-weight-bold mb-0"></strong>
+                    <span class="h5 font-weight-normal mb-0">Hours</span>
+                  </div>
+                  <div class="col-3">
+                    <strong class="js-cd-minutes h3 text-primary font-weight-bold mb-0"></strong>
+                    <span class="h5 font-weight-normal mb-0">Mins</span>
+                  </div>
+                  <div class="col-3">
+                    <strong class="js-cd-seconds h3 text-primary font-weight-bold mb-0"></strong>
+                    <span class="h5 font-weight-normal mb-0">Secs</span>
+                  </div>
+                </div>
+                    <!-- JS Implementing Plugins -->
+
+                    <script src="Workspace/default/admin/scripts/jquery.countdown.min.js"></script>
+
+                    <!-- JS Implementing Plugins -->
+                    <script src="Workspace/default/admin/scripts/hs.countdown.js"></script>
+
+                    <!-- JS Plugins Init. -->
+                    <script>
+                      $(document).on('ready', function () {
+                        // initialization of countdowns
+                        var countdowns = $.HSCore.components.HSCountdown.init('.js-countdown', {
+                          yearsElSelector: '.js-cd-years',
+                          monthsElSelector: '.js-cd-months',
+                          daysElSelector: '.js-cd-days',
+                          hoursElSelector: '.js-cd-hours',
+                          minutesElSelector: '.js-cd-minutes',
+                          secondsElSelector: '.js-cd-seconds'
+                        });
+                      });
+                    </script>
+</div>
+
+<div>
+    <h>Count Down 2</h>
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
+
+
+<p id="demo"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2021 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is over, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+
+</div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+      <!-- Footer -->
+
+
+        {% with "Workspace/"|add:website_template|add:"/admin/footer.html" as template %}
+            {% include template %}
+        {% endwith %}
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+</body>
+
+</html>

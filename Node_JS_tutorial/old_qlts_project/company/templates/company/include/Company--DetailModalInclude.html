@@ -1,0 +1,110 @@
+{% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+<div class="modal fade" id="CompanyCompanyDetailmodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="CompanyCompanyDetailmodalsId" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+         <form method="POST" action="" enctype="multipart/form-data" id="CompanyCompanyDetailModalsFormId" data-uuid="">
+            <div class="modal-header">
+               <h3 class="modal-title">Thông tin Công Ty</h3>
+               <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <div class="form-group px-lg-5 text-start">
+                  <div class="mb-1 col-xl-6 d-none">
+                     <label class="small mb-1">Id</label>
+                     <input id="idCompanyCompanyDetailModalInputId" name="id" class="form-control id-Company-Company-input" placeholder="Nhập Id of Company" type="text" value="">
+                  </div>
+                  <div class="mb-1 col-xl-6 d-none">
+                     <label class="small mb-1">Uuid</label>
+                     <input id="uuidCompanyCompanyDetailModalInputId" name="uuid" class="form-control uuid-Company-Company-input" placeholder="Nhập Uuid of Company" type="text" value="">
+                  </div>
+                  <h6 class="heading-small text-muted mb-4">Thông tin chung</h6>
+                  <div class="row gx-2 mb-2">
+                     <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Tên Công Ty</label>
+                        <input id="nameCompanyCompanyDetailModalInputId" name="name" class="form-control username-Company-Company-input" placeholder="Nhập Tên Công Ty" type="text" value="{{ Company_count.name}}" readonly>
+                     </div>
+                     <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Trạng Thái Hoạt Động</label>
+                        <input id="get_name_companystatusCompanyCompanyDetailModalInputId" name="companystatus" class="form-control username-Company-Company-input" placeholder="Nhập Tên Công Ty" type="text" value="{{ Company_count.name}}" readonly>
+                     </div>
+                     <div class="row gx-2 mb-2">
+                        <div class=" mb-1 col-xl-6">
+                           <label class="small mb-1">MÃ Công Ty</label>
+                           <input id="code_companyCompanyCompanyDetailModalInputId" name="tax_code" class="form-control full_name-Company-Company-input" placeholder="Nhập Mã Công Ty" type="text" value="{{ Company_count.code_company}}" readonly>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                           <label class="small mb-1">Mã Số Thuế</label>
+                           <input id="tax_codeCompanyCompanyDetailModalInputId" name="tax_code" class="form-control email-Company-Company-input" placeholder="Nhập Mã Số Thuế" type="text" value="{{ Company_count.tax_code}}" readonly>
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="row gx-2 mb-2">
+                        <div class=" mb-1 col-xl-6">
+                           <label class="small mb-1">Thành Phố</label>
+                           <input id="get_name_cityCompanyCompanyDetailModalInputId" name="email" class="form-control email-Company-Company-input" placeholder="Nhập Thành Phố" type="text" value="{{ Company_count.city}}" readonly>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                           <label class="small mb-1">Huyện</label>
+                           <input id="get_name_districtCompanyCompanyDetailModalInputId" name="telephone" class="form-control telephone-Company-Company-input" placeholder="Nhập Huyện" type="text" value="{{ Company_count.district}}" readonly>
+                        </div>
+                     </div>
+                     {% comment %} 
+                     <div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-6">
+                           <label class="small mb-1">Xã</label>
+                           <input id="date_of_birthCompanyCompanyDetailModalInputId" name="date_of_birth" class="form-control date_of_birth-Company-Company-input" placeholder="Nhập Xã" type="text" value="{{ Company_count.commune}}" readonly>
+                        </div>
+                     </div>
+                     <div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-6">
+                           <label class="small mb-1">Địa Chỉ</label>
+                           <input id="date_of_birthCompanyCompanyDetailModalInputId" name="date_of_birth" class="form-control date_of_birth-Company-Company-input" placeholder="Nhập Địa Chỉ" type="text" value="{{ Company_count.address}}" readonly>
+                        </div>
+                        {% endcomment %}
+                        <div class="row gx-2 mb-2">
+                           <div class=" mb-1 col-xl-6">
+                              <label class="small mb-1">Xã</label>
+                              <input id="get_name_communeCompanyCompanyDetailModalInputId" name="commune" class="form-control email-Company-Company-input" placeholder="Nhập Xã" type="text" value="{{ Company_count.commune}}" readonly>
+                           </div>
+                           <div class=" mb-1 col-xl-6">
+                              <label class="small mb-1">Telephone </label>
+                              <input id="phone_numberCompanyCompanyDetailModalInputId" name="telephone" class="form-control telephone-Company-Company-input" placeholder="Nhập Số Điện Thoại" type="text" value="{{ Company_count.code_copany}}" readonly>
+                           </div>
+                        </div>
+                        <div class="row gx-2 mb-2">
+                           <label class="small mb-1">Địa Chỉ </label>
+                           <input id="addressCompanyCompanyDetailModalInputId" name="address" class="form-control telephone-Company-Company-input" placeholder="Nhập Địa Chỉ" type="text" value="{{ Company_count.address}}" readonly>
+                        </div>
+                     </div>
+                     {% comment %} 
+                     <div class="mb-1 col-xl-12">
+                        <label for="avatarCompanyCompanyDetailModalInputId"><i class="fas fa-paperclip"></i>&nbsp;{% trans 'avatar' %}</label>
+                        <input class="Company-Company form-control-file form-control d-none Company-Company-file avatar-Company-Company-file-input"  type="file" name="avatar" class="" id="avatarCompanyCompanyDetailModalInputId">
+                        <div class="col-xl-12" id="avatarCompanyCompanyDetailModalFileAreaId">
+                           {% if current_Company.avatar %}
+                           <div class="form-group row col-xl-8 table-hover mt-1" style="background-color:gainsboro;height: 25px;" id="{{ current_Company.uuid }}AttachmentDivId">
+                              <div class="col-xl-10 " >
+                                 <span>
+                                    <a style="color:cornflowerblue" target="_blank"  href="{{ current_Company.avatar.url }}">
+                                       <p><b> {{ current_Company.avatar_filename|title }}</b></p>
+                                    </a>
+                                 </span>
+                              </div>
+                              <div class="col-xl-2 text-end">
+                                 <i class="fas fa-times" style="color:gray" file-uuid="{{ current_Company.uuid }}" onclick="avatarCompanyCompanyDeletedAttacthment(this)"></i>
+                              </div>
+                           </div>
+                           {% endif %}
+                        </div>
+                        {% endcomment %}
+                     </div>
+                     <div class="modal-footer">
+                        <button id="CompanyCompanyCancelDetailModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                     </div>
+                  </div>
+         </form>
+         </div>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,433 @@
+
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+  <script src="{% static 'js/Const.js' %}"></script>
+<script src="{% static 'js/FormClasses.js' %}"></script>
+<script src="{% static 'js/TypeForm.js' %}"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+
+<div class="row">
+    <div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            Danh sách
+               <!-- <button type="button" id="btn-create-formFormManagement" onclick="createFormFormManagement()" class="btn btn-outline-primary btn-sm " data-bs-toggle="modal" data-bs-target="#accountAccountCreatemodalsId">
+                                <i class="fas fa-plus"></i> &nbsp;Thêm mới
+            </button> -->
+            <!-- <div class="dropdown"> -->
+                <button class="btn btn-primary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Thêm mới
+                </button>
+                <ul class="dropdown-menu" id="createFormdropdownMenuButton" aria-labelledby="createFormdropdownMenuButton">
+                  <!-- <li><a class="dropdown-item" href="#">Choose</a></li> -->
+                </ul>
+            <button type="button" id="formFormManagementExportExcelBtnId" onclick="ExportDataTableExcel()" class="btn btn-success btn-sm">
+                    <i class="far fa-file-excel"></i> &nbsp;Xuất excel
+            </button>
+
+              <!-- <div class="dataTable-dropdown" > -->
+              <div class="gx-2 mb-2" id="selectWrapper">
+                <div class=" mb-1 col-xl-1">
+                  <select class="form-select " id="numDataInTable">
+                    <option value="5">5</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100" selected="">100</option>
+                  </select>
+                </div>
+              </div>
+              <script>
+                const selectWrapper = document.getElementById('selectWrapper');
+                const mySelect = document.getElementById('numDataInTable');
+
+                selectWrapper.addEventListener('click', function() {
+                  const selectedOption = mySelect.options[mySelect.selectedIndex];
+                  FormFormManagementGetListFormApi(1, null, selectedOption.value);
+                });
+              </script>
+
+          <!-- <div class="dataTable-dropdown">
+          <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+            &nbsp;&nbsp;&nbsp; Số bản ghi
+          </button>
+          <ul class="dropdown-menu" id="createFormdropdownMenuButton2" aria-labelledby="createFormdropdownMenuButton2">
+            <li><a class="dropdown-item" value="5" onclick="FormFormManagementGetListFormApi(1, null, 5)">5</a></li>
+            <li><a class="dropdown-item"  value="20" onclick="FormFormManagementGetListFormApi(1, null, 20)">20</a></li>
+            <li><a class="dropdown-item"  value="50" onclick="FormFormManagementGetListFormApi(1, null, 50)">50</a></li>
+            <li><a class="dropdown-item" value="100" onclick="FormFormManagementGetListFormApi(1, null, 100)">100</a></li>
+          </ul>
+          </div> -->
+
+        </div>      
+        <div class="card-body table-border-style">
+        <div class="table-responsive">
+          <style>
+            table td:last-child,
+            table th:last-child {
+                display: table-cell;
+            }
+            table {
+                text-align: center; 
+                table-layout: fixed; 
+                width: 100% ;
+            }
+            th, td {
+                text-align: center;
+                vertical-align: middle;
+            }
+
+
+            .switch-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+            
+        </style>
+        <script>
+          function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("formFormDataTableId");
+            switching = true;
+            dir = "asc"; 
+
+            while (switching) {
+              switching = false;
+              rows = table.rows;
+              for (i = 1; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+
+                x = rows[i].getElementsByTagName("td")[n];
+                y = rows[i + 1].getElementsByTagName("td")[n];
+
+                if (dir == "asc") {
+                  if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    shouldSwitch= true;
+                    break;
+                  }
+                } else if (dir == "desc") {
+                  if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                    shouldSwitch = true;
+                    break;
+                  }
+                }
+              }
+              if (shouldSwitch) {
+
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+                switchcount ++;      
+              } else {
+
+                if (switchcount == 0 && dir == "asc") {
+                  dir = "desc";
+                  switching = true;
+                }
+              }
+            }
+          }
+          </script>
+
+          <style>
+                        
+            .dataTable-sorter {
+              display: inline-block;
+              height: 100%;
+              position: relative;
+              width: 100%;
+            }
+
+            .dataTable-sorter::before,
+            .dataTable-sorter::after {
+              content: "";
+              height: 0;
+              width: 0;
+              position: absolute;
+              right: 4px;
+              border-left: 4px solid transparent;
+              border-right: 4px solid transparent;
+              opacity: 0.2;
+            }
+
+            .dataTable-sorter::before {
+              bottom: 4px;
+            }
+
+            .dataTable-sorter::after {
+              top: 0px;
+            }
+
+            .asc .dataTable-sorter::after,
+            .desc .dataTable-sorter::before {
+              opacity: 0.6;
+            }
+          .dataTable-sorter::after{
+            border-bottom-color: black;
+          }
+
+          .dataTable-sorter::before{
+            border-top-color: black;
+          }
+
+          .dark-version .dataTable-sorter::after {
+              border-bottom-color: #9b1616;
+            }
+
+            .dark-version .dataTable-sorter::before {
+              border-top-color: #9b1313;
+            }
+
+
+            table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  position: relative;
+  cursor: pointer;
+}
+
+.arrow {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 5px;
+  border-top: 4px solid #000;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  transition: transform 0.2s ease-in-out;
+}
+
+.up {
+  margin-bottom: 2px;
+}
+
+.down {
+  margin-top: 2px;
+}
+
+th.sorted-asc .up {
+  transform: rotate(180deg);
+  border-top-color: #000;
+}
+
+th.sorted-desc .down {
+  transform: rotate(180deg);
+  border-top-color: #000;
+}
+
+th.sorted-asc.grey .up {
+  border-top-color: #999;
+}
+
+th.sorted-asc.grey .up {
+  border-top-color: #ccc;
+}
+
+th.sorted-desc.grey .down {
+  border-top-color: #ccc;
+}
+
+
+
+          </style>
+
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const sortableColumns = document.querySelectorAll('.sortable');
+
+            sortableColumns.forEach(function(column) {
+              column.addEventListener('click', function() {
+                const isAscending = this.classList.contains('sorted-asc');
+                const isDescending = this.classList.contains('sorted-desc');
+
+                // Remove sorting classes from all columns
+                sortableColumns.forEach(function(col) {
+                  col.classList.remove('sorted-asc', 'sorted-desc', 'grey');
+                });
+
+
+                if (isAscending) {
+                  // this.classList.add('sorted-desc', 'grey');
+                } else if (isDescending) {
+                  this.classList.remove('sorted-desc');
+                  this.classList.add('grey');
+                } else {
+                  this.classList.add('sorted-asc');
+                }
+              });
+            });
+          });
+
+
+
+
+          </script>
+            <table class="table table-sm table-flush table-hover table-striped" id="formFormDataTableId" width="100%" cellspacing="0">
+                <thead class="thead-light">
+                    <tr>
+                        <th attr-name="stt" class="sortable" onclick="sortTable(0)"  style="width: 5%; text-align: center;"> STT  <span class="arrow up"></span>
+                          </th>
+            
+                        <!-- <th attr-name="name" style="width: 20%;" data-sortable="" class="asc" aria-sort="ascending">
+                          <a href="#" class="dataTable-sorter">
+                            Tên Phiếu
+                          </a>
+                        </th> -->
+                        <th attr-name="name" class="sortable" onclick="sortTable(1)"   style="width: 20%;  text-align: left;">Tên Phiếu <span class="arrow up"></span></th>
+                    
+                        <th attr-name="code" class="sortable" onclick="sortTable(0)"  style="width: 10%;  ">Mã Phiếu</th>
+                    
+                        <th attr-name="type_form" onclick="sortTable(1)" style="width: 15%; text-align: left;">Loại phiếu</th>
+
+                        <th attr-name="is_confirm" style="width: 7%;">Trạng thái</th>
+                    
+                        <th attr-name="created_at" onclick="sortTable(0)" style="width: 7%;">Ngày tạo</th>
+                    
+                        <th attr-name="created_by" style="width: 10%;">Người tạo</th>
+                    
+                        <th attr-name="account-admin-action" style="width: 5%; vertical-align: middle;">Thao tác</th>
+
+                        <!-- <th attr-name="add-asset-quick">Thêm nhanh</th>
+                        if(attr=="add-asset-quick"){
+                          html +=`
+                              <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center">
+                                  <i class="fas fa-plus" aria-hidden="true"></i>
+                              </button>`;
+                              continue;
+                          } -->
+
+                    </tr>
+                </thead>
+                
+                <tbody id="formFormDataTableBodyId"> 
+                </tbody>
+            </table>
+            <table style="min-height: 210px;" class="table table-sm table-flush table-hover table-striped d-none" id="formFormDataExportTableId" width="100%" cellspacing="0">
+
+              <thead class="thead-light">
+                  <tr>
+                      <th attr-name="stt">STT</th>
+          
+                      <th attr-name="name">Tên phiếu</th>
+                  
+                      <th attr-name="code">Mã Phiếu</th>
+                  
+                      <th attr-name="type_form">Loại phiếu</th>
+
+                      <th attr-name="is_confirm">Trạng thái</th>
+                  
+                      <th attr-name="created_at">Ngày tạo</th>
+                  
+                      <th attr-name="created_by">Người tạo</th>
+                  
+                  </tr>
+              </thead>
+              
+              <tbody id="formFormDataExportTableBodyId"> 
+
+              </tbody>
+          </table>
+        
+        </div>
+        
+        
+        <span class="page-total page-total-FormFormManagement text-left">
+        </span>
+    </div>
+    <hr>
+
+    {% for value, text in form.providers.field.choices %}
+  <div class="ui slider checkbox">
+    <input id="id_providers_{{ forloop.counter0 }}" name="{{ form.providers.name }}" type="checkbox" value="{{ value }}"{% if value in checked_providers %} checked="checked"{% endif %}>
+    <label>{{ text }}</label>
+  </div>
+{% endfor %}
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination pagination-FormFormManagement justify-content-center">
+        </ul>
+    </nav>
+    
+    </div>
+    </div>
+</div>
+
+
+
+<!-- <div class="modal fade" id="confirm-dialog_"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Confirm Action</h5>
+        <button type="button" class="close"   data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Bạn có chắc chắn muốn xóa không?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="confirm-dialog-cancel"  data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="confirm-dialog-confirm">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- 
+
+<div class="modal fade" id="exampleModalToggle" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="0">
+  <div class="modal-dialog modal-dialog-centered ">
+    <div class="modal-content ">
+      <div class="modal-header " style="height: 60px">
+        <h5 class="modal-title" id="exampleModalLabel">Xác nhận xóa phiếu :v</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body  text-center">
+        <i class="fa fa-warning" style="font-size:48px;color:red"></i>
+        <br>&nbsp;
+        <p>Bạn đang xóa một phiếu trong danh sách</p>
+        <p style="margin-bottom: 0px">Bạn có chắc chắn muốn xóa không?</p>
+      </div>
+      <div class="modal-footer" >
+        <button type="button" style="margin-bottom: 0px" class="btn btn-secondary btn-sm" id="confirm-dialog-cancel" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" style="margin-bottom: 0px" class="btn btn-danger btn-sm" id="confirm-dialog-confirm">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .modal-backdrop {
+    opacity: 0.5;
+  }
+</> -->
+
+<!-- <div id="exampleModalToggle" class="modal fade show" aria-modal="true" style="display: block;">
+	<div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header flex-column">
+				<div class="icon-box">
+					<i class="material-icons"></i>
+				</div>						
+				<h4 class="modal-title w-100">Are you sure?</h4>	
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			</div>
+			<div class="modal-body">
+				<p>Do you really want to delete these records? This process cannot be undone.</p>
+			</div>
+			<div class="modal-footer justify-content-center">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-danger">Delete</button>
+			</div>
+		</div>
+	</div>
+</div> -->
+
+
+            

@@ -1,0 +1,304 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a class="btn btn-primary" href="{% url 'Website:AllAppView' %}">
+            All AllApps
+          </a>
+          <a href="{% url 'Website:AllApp_EditView' slug=current_allapp.uuid %}">
+            Current AllApp: {{ current_allapp.name|title }}
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            
+            {% if current_allapp.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="allappWebsiteEditFormId" data-uuid="{{ current_allapp.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="allappWebsiteEditFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+    
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    {% if current_allapp %}
+        <input id="nameAllAppWebsiteEditInputId" name="name" class="form-control name-allapp-website-input" placeholder="Name" type="text" value="{{ current_allapp.name}}"  >
+    {% else %}
+        <input id="nameAllAppWebsiteEditInputId" name="name" class="form-control name-allapp-website-input" placeholder="Name" type="text" value=""  >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    {% if current_allapp %}
+        <input id="uuidAllAppWebsiteEditInputId" name="uuid" class="form-control uuid-allapp-website-input" placeholder="Uuid" type="text" value="{{ current_allapp.uuid}}"  >
+    {% else %}
+        <input id="uuidAllAppWebsiteEditInputId" name="uuid" class="form-control uuid-allapp-website-input" placeholder="Uuid" type="text" value=""  >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Short Name
+        </span>
+    </div>
+    {% if current_allapp %}
+        <input id="short_nameAllAppWebsiteEditInputId" name="short_name" class="form-control short_name-allapp-website-input" placeholder="Short Name" type="text" value="{{ current_allapp.short_name}}"  >
+    {% else %}
+        <input id="short_nameAllAppWebsiteEditInputId" name="short_name" class="form-control short_name-allapp-website-input" placeholder="Short Name" type="text" value=""  >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        
+        </span>
+    </div>
+    {% if current_allapp %}
+        <input id="urlAllAppWebsiteEditInputId" name="url" class="form-control url-allapp-website-input" placeholder="" type="text" value="{{ current_allapp.url}}"  >
+    {% else %}
+        <input id="urlAllAppWebsiteEditInputId" name="url" class="form-control url-allapp-website-input" placeholder="" type="text" value=""  >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        
+        </span>
+    </div>
+    {% if current_allapp %}
+        <input id="href_targetAllAppWebsiteEditInputId" name="href_target" class="form-control href_target-allapp-website-input" placeholder="" type="text" value="{{ current_allapp.href_target}}"  >
+    {% else %}
+        <input id="href_targetAllAppWebsiteEditInputId" name="href_target" class="form-control href_target-allapp-website-input" placeholder="" type="text" value=""  >
+    {% endif %}
+</div>
+
+<hr>
+<div>
+<!--
+    {% if current_allapp.icon %}
+        <span>
+         Current: <a href="{{ current_allapp.icon.url }}" target="_blank">{{ current_allapp.icon.name}}</a>
+        </span>
+    {% endif %}
+-->
+    <div class="form-group input-group  border" old-class="">
+        <div class="input-group-prepend w-20">
+            <span class="input-group-text">
+            
+            </span>
+        </div>
+        <div class="input-group-content ml-3 w-75">
+            {% if current_allapp and current_allapp.icon %}
+                <div class="">
+                    {% trans 'Current: ' %}<a id="iconAllAppWebsiteEditInputId" name="icon" old-class="form-control" class="icon-allapp-website-input current-file-preview tnd-file-path" data-toggle="modal" data-target="#FilePreviewModalFormId" placeholder="" type="file" href="{{ current_allapp.icon.url}}" target="_blank"  > {{ current_allapp.icon.name}}</a>
+                </div>
+        <!--
+                    <a class="current-file-preview border-left"  url="{{ current_allapp.icon.url}}" data-toggle="modal" data-target="#FilePreviewModalFormId" >Preview</a>
+        -->
+                <div class="form-check border-left">
+                    <input id="iconAllAppWebsiteEditInputIdClearId" name="icon-clear" class="icon-allapp-website-input" placeholder="" type="checkbox" value=""  />
+                    <label class="form-check-label" for="iconAllAppWebsiteEditInputId">
+                        {% trans 'Remove' %}
+                    </label>
+                </div>
+                <hr>
+            {% else %}
+                Current: <a id="iconAllAppWebsiteEditInputIdCurrentFileId" name="icon" class="" data-target="#FilePreviewModalFormId" url="" href="">None
+                </a>
+                <hr>
+            {% endif %}
+            <div class="input-group w-100">
+                <input id="iconAllAppWebsiteEditInputId" name="icon" class="form-control icon-allapp-website-input" placeholder="" type="file" value=""  />
+                <div class="input-group-append w-20">
+                    <span class="input-group-text">
+                    {% trans 'Change' %}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="form-group input-group card  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        
+        </span>
+    </div>
+    {% if current_allapp %}
+        <textarea rows="10" id="icon_base64AllAppWebsiteEditInputId" name="icon_base64" class="form-control ckeditor-input w-100 icon_base64-allapp-website-input" placeholder="" type="text" value="" >{{  current_allapp.icon_base64 }}</textarea>
+    {% else %}
+        <textarea rows="10" id="icon_base64AllAppWebsiteEditInputId" name="icon_base64" class="form-control ckeditor-input w-100 icon_base64-allapp-website-input" placeholder="" type="text" value="" ></textarea>
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_allapp.active == True %}
+            <input id="activeAllAppWebsiteEditInputId" name="active" type="checkbox" class="form-check-input active-allapp-website-input" placeholder="Active" checked >
+        {% else %}
+            <input id="activeAllAppWebsiteEditInputId" name="active" type="checkbox" class="form-check-input active-allapp-website-input" placeholder="Active" >
+        {% endif %}
+        <label class="form-check-label" for="activeAllAppWebsiteEditInputIdInputId">
+            Active
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_allapp.is_product == True %}
+            <input id="is_productAllAppWebsiteEditInputId" name="is_product" type="checkbox" class="form-check-input is_product-allapp-website-input" placeholder="" checked >
+        {% else %}
+            <input id="is_productAllAppWebsiteEditInputId" name="is_product" type="checkbox" class="form-check-input is_product-allapp-website-input" placeholder="" >
+        {% endif %}
+        <label class="form-check-label" for="is_productAllAppWebsiteEditInputIdInputId">
+            
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_allapp.staff_only == True %}
+            <input id="staff_onlyAllAppWebsiteEditInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-allapp-website-input" placeholder="Chỉ quyền staff mới truy cập được!" checked >
+        {% else %}
+            <input id="staff_onlyAllAppWebsiteEditInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-allapp-website-input" placeholder="Chỉ quyền staff mới truy cập được!" >
+        {% endif %}
+        <label class="form-check-label" for="staff_onlyAllAppWebsiteEditInputIdInputId">
+            Chỉ quyền staff mới truy cập được!
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_allapp.admin_only == True %}
+            <input id="admin_onlyAllAppWebsiteEditInputId" name="admin_only" type="checkbox" class="form-check-input admin_only-allapp-website-input" placeholder="Chỉ quyền super admin mới truy cập được!" checked >
+        {% else %}
+            <input id="admin_onlyAllAppWebsiteEditInputId" name="admin_only" type="checkbox" class="form-check-input admin_only-allapp-website-input" placeholder="Chỉ quyền super admin mới truy cập được!" >
+        {% endif %}
+        <label class="form-check-label" for="admin_onlyAllAppWebsiteEditInputIdInputId">
+            Chỉ quyền super admin mới truy cập được!
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Order
+        </span>
+    </div>
+    {% if current_allapp %}
+        <input id="orderAllAppWebsiteEditInputId" name="order" class="form-control order-allapp-website-input" placeholder="Order" type="text" value="{{ current_allapp.order}}"  >
+    {% else %}
+        <input id="orderAllAppWebsiteEditInputId" name="order" class="form-control order-allapp-website-input" placeholder="Order" type="text" value=""  >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_allapp.demo_mode == True %}
+            <input id="demo_modeAllAppWebsiteEditInputId" name="demo_mode" type="checkbox" class="form-check-input demo_mode-allapp-website-input" placeholder="Demo apps!" checked >
+        {% else %}
+            <input id="demo_modeAllAppWebsiteEditInputId" name="demo_mode" type="checkbox" class="form-check-input demo_mode-allapp-website-input" placeholder="Demo apps!" >
+        {% endif %}
+        <label class="form-check-label" for="demo_modeAllAppWebsiteEditInputIdInputId">
+            Demo apps!
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    {% if current_allapp %}
+        <input id="updated_atAllAppWebsiteEditInputId" name="updated_at" class="form-control updated_at-allapp-website-input" placeholder="Updated At" type="datetime-local" value="{{ current_allapp.updated_at }}" >
+    {% else %}
+        <input id="updated_atAllAppWebsiteEditInputId" name="updated_at" class="form-control updated_at-allapp-website-input" placeholder="Updated At" type="datetime-local" value="" >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    {% if current_allapp %}
+        <input id="created_atAllAppWebsiteEditInputId" name="created_at" class="form-control created_at-allapp-website-input" placeholder="Created At" type="datetime-local" value="{{ current_allapp.created_at }}" >
+    {% else %}
+        <input id="created_atAllAppWebsiteEditInputId" name="created_at" class="form-control created_at-allapp-website-input" placeholder="Created At" type="datetime-local" value="" >
+    {% endif %}
+</div>
+
+    <div class="modal-footer">
+        <button id="allappWebsiteUpdateBtnId" type="button" class="btn btn-primary">Update</button>
+        <button id="allappWebsiteTestBtnId" type="button" class="btn btn-warning">Test</button>
+    </div>
+            
+        </form>
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            
+{% include 'Workspace/'|add:website_template|add:'/admin/includes/Modal--FilePreview.html' %}
+

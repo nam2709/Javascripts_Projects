@@ -1,0 +1,337 @@
+
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Tamnd <ductambka@gmail.com>">
+<meta name="copyright" content="Copyright ©2020 Tamnd <ductambka@gmail.com>">
+{% include 'Workspace/'|add:website_template|add:'/admin/fixed/header.html' %}
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+
+<script src="{% static 'Account/'|add:website_template|add:'/admin/js/AccountConst.js' %}"></script>
+<script src="{% static 'Account/'|add:website_template|add:'/admin/js/AccountClasses.js' %}"></script>
+
+</head>
+        
+<body id="page-top">
+
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+{% include 'Workspace/'|add:website_template|add:'/admin/fixed/sidebar.html' %}
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="">
+
+    <!-- Main Content -->
+    <div id="content">
+
+        {% include 'Workspace/'|add:website_template|add:'/admin/fixed/topbar.html' %}
+
+        {% block content %}
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800"><a href="{% url 'Website:Index' %}">{% trans 'Summary Information' %}<a></h1>
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+
+        
+            <!-- Config Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="{% url 'Website:ConfigView' %}" target="_self">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Config</div>
+                          <div id="configUsageId" class="h5 mb-0 font-weight-bold text-gray-800">{{ config_count }} </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            
+            <!-- Allapp Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="{% url 'Website:AllAppView' %}" target="_self">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Allapp</div>
+                          <div id="allappUsageId" class="h5 mb-0 font-weight-bold text-gray-800">{{ allapp_count }} </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-ellipsis-v fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            
+            <!-- Allview Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="{% url 'Website:AllViewView' %}" target="_self">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Allview</div>
+                          <div id="allviewUsageId" class="h5 mb-0 font-weight-bold text-gray-800">{{ allview_count }} </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            
+            <!-- Adminmenugroup Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="{% url 'Website:AdminMenuGroupView' %}" target="_self">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Adminmenugroup</div>
+                          <div id="adminmenugroupUsageId" class="h5 mb-0 font-weight-bold text-gray-800">{{ adminmenugroup_count }} </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            
+            <!-- Alladminmenu Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="{% url 'Website:AllAdminMenuView' %}" target="_self">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Alladminmenu</div>
+                          <div id="alladminmenuUsageId" class="h5 mb-0 font-weight-bold text-gray-800">{{ alladminmenu_count }} </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            
+            <!-- Position Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="{% url 'Website:PositionView' %}" target="_self">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Position</div>
+                          <div id="positionUsageId" class="h5 mb-0 font-weight-bold text-gray-800">{{ position_count }} </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-ellipsis-v fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            
+            <!-- Footeritem Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="{% url 'Website:FooterItemView' %}" target="_self">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Footeritem</div>
+                          <div id="footeritemUsageId" class="h5 mb-0 font-weight-bold text-gray-800">{{ footeritem_count }} </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-ellipsis-v fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            
+            <!-- Widget Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="{% url 'Website:WidgetView' %}" target="_self">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Widget</div>
+                          <div id="widgetUsageId" class="h5 mb-0 font-weight-bold text-gray-800">{{ widget_count }} </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            
+            <!-- Timezone Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="{% url 'Website:TimeZoneView' %}" target="_self">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Timezone</div>
+                          <div id="timezoneUsageId" class="h5 mb-0 font-weight-bold text-gray-800">{{ timezone_count }} </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            
+            <!-- Alertmessage Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="{% url 'Website:AlertMessageView' %}" target="_self">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Alertmessage</div>
+                          <div id="alertmessageUsageId" class="h5 mb-0 font-weight-bold text-gray-800">{{ alertmessage_count }} </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            
+            <!-- Pageinfo Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="{% url 'Website:PageInfoView' %}" target="_self">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Pageinfo</div>
+                          <div id="pageinfoUsageId" class="h5 mb-0 font-weight-bold text-gray-800">{{ pageinfo_count }} </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            
+            <!-- Botua Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="{% url 'Website:BotUAView' %}" target="_self">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Botua</div>
+                          <div id="botuaUsageId" class="h5 mb-0 font-weight-bold text-gray-800">{{ botua_count }} </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-ellipsis-v fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            
+            <!-- Robotsarg Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="{% url 'Website:RobotsArgView' %}" target="_self">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Robotsarg</div>
+                          <div id="robotsargUsageId" class="h5 mb-0 font-weight-bold text-gray-800">{{ robotsarg_count }} </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-ellipsis-v fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            
+            <!-- Logoimages Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                <a href="{% url 'Website:LogoImagesView' %}" target="_self">
+                  <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Logoimages</div>
+                          <div id="logoimagesUsageId" class="h5 mb-0 font-weight-bold text-gray-800">{{ logoimages_count }} </div>
+                        </div>
+                        <div class="col-auto">
+                          <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+            </div>
+            
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+        {% endblock %}
+
+    </div>
+    {% include 'Workspace/'|add:website_template|add:'/admin/fixed/footer.html' %}
+</div>
+</div>
+
+</body>
+
+</html>
+
+        

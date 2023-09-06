@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+
+    {% include "Workspace/"|add:website_template|add:"/admin/header.html" %}
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    {% include "Workspace/"|add:website_template|add:"/admin/sidebar.html" %}
+
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+
+    {% with "Workspace/"|add:website_template|add:"/admin/topbar.html" as template %}
+        {% include template %}
+    {% endwith %}
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+          </div>
+<div class="w3-col l10 m12" id="main">
+      <div id="mainLeaderboard" style="overflow:hidden;">
+        <!-- MainLeaderboard-->
+
+        <!--<pre>main_leaderboard, all: [728,90][970,90][320,50][468,60]</pre>-->
+        <div id="snhb-main_leaderboard-0" data-google-query-id="CPfM3qijv-UCFc-VvQodU1AEwg"><div id="google_ads_iframe_/22152718/sws-hb//w3schools.com//main_leaderboard_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22152718/sws-hb//w3schools.com//main_leaderboard_0" title="3rd party ad content" name="google_ads_iframe_/22152718/sws-hb//w3schools.com//main_leaderboard_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" data-google-container-id="j" data-load-complete="true" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+        <!-- adspace leaderboard -->
+
+      </div>
+<h1>Bootstrap 4 <span class="color_h1">Alerts</span></h1>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="bootstrap_jumbotron.asp">❮ Previous</a>
+<a class="w3-right w3-btn" href="bootstrap_buttons.asp">Next ❯</a>
+</div>
+<hr>
+<h2>Bootstrap 4 Alerts</h2>
+<p>Bootstrap 4 provides an easy way to create predefined alert messages:</p>
+
+<div style="margin:24px 0">
+<div class="alert alert-success fade in alert-dismissible show" style="margin-top:18px;">
+ <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true" style="font-size:20px">×</span>
+  </button>    <strong>Success!</strong> This alert box indicates a successful or positive action.
+</div>
+<div class="alert alert-info fade in alert-dismissible show">
+ <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true" style="font-size:20px">×</span>
+  </button>    <strong>Info!</strong> This alert box indicates a neutral informative change or action.
+</div>
+<div class="alert alert-warning fade in alert-dismissible show">
+ <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true" style="font-size:20px">×</span>
+  </button>    <strong>Warning!</strong> This alert box indicates a warning that might need attention.
+</div>
+<div class="alert alert-danger fade in alert-dismissible show">
+ <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true" style="font-size:20px">×</span>
+  </button>    <strong>Danger!</strong> This alert box indicates a dangerous or potentially negative action.
+</div>
+<div class="alert alert-primary fade in alert-dismissible show">
+ <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true" style="font-size:20px">×</span>
+  </button>    <strong>Primary!</strong> This alert box indicates an important action.
+</div>
+<div class="alert alert-secondary fade in alert-dismissible show">
+ <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true" style="font-size:20px">×</span>
+  </button>    <strong>Secondary!</strong> This alert box indicates a less important action.
+</div>
+<div class="alert alert-dark fade in alert-dismissible show">
+ <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true" style="font-size:20px">×</span>
+  </button>    <strong>Dark!</strong> Dark grey alert box.
+</div>
+<div class="alert alert-light fade in alert-dismissible show">
+ <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true" style="font-size:20px">×</span>
+  </button>    <strong>Light!</strong> Light grey alert box.
+</div>
+
+</div>
+<p>Alerts are created with the <code class="w3-codespan">.alert</code> class, followed by one of the
+contextual classes <code class="w3-codespan">.alert-success</code>, <code class="w3-codespan">.alert-info</code>, <code class="w3-codespan">.alert-warning</code>,
+<code class="w3-codespan">.alert-danger</code>, <code class="w3-codespan">.alert-primary</code>, <code class="w3-codespan">.alert-secondary</code>, <code class="w3-codespan">.alert-light</code> or <code class="w3-codespan">.alert-dark</code>:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="alert alert-success"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>strong<span class="tagcolor" style="color:mediumblue">&gt;</span></span>Success!<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/strong<span class="tagcolor" style="color:mediumblue">&gt;</span></span> Indicates a successful or positive action.<br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br> </div>
+<a target="_blank" href="tryit.asp?filename=trybs_alerts&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself »</a>
+</div>
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <!--<pre>mid_content, all: [300,250][336,280][728,90][970,250][970,90][320,50][468,60]</pre>-->
+  <div id="snhb-mid_content-0" data-google-query-id="CISu4Kijv-UCFc-VvQodU1AEwg"><div id="google_ads_iframe_/22152718/sws-hb//w3schools.com//mid_content_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22152718/sws-hb//w3schools.com//mid_content_0" title="3rd party ad content" name="google_ads_iframe_/22152718/sws-hb//w3schools.com//mid_content_0" width="336" height="280" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" data-google-container-id="l" data-load-complete="true" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+
+</div>
+<hr>
+
+<h2>Alert Links</h2>
+<p>Add the <code class="w3-codespan">alert-link</code> class to any links inside the alert box to create "matching colored links":</p>
+  <div class="alert alert-success">
+    <strong>Success!</strong> You should <a href="javascript:void(0)" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-info">
+    <strong>Info!</strong> You should <a href="javascript:void(0)" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-warning">
+    <strong>Warning!</strong> You should <a href="javascript:void(0)" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-danger">
+    <strong>Danger!</strong> You should <a href="javascript:void(0)" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-primary">
+    <strong>Primary!</strong> You should <a href="javascript:void(0)" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-secondary">
+    <strong>Secondary!</strong> You should <a href="javascript:void(0)" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-dark">
+    <strong>Dark!</strong> You should <a href="javascript:void(0)" class="alert-link">read this message</a>.
+  </div>
+  <div class="alert alert-light">
+    <strong>Light!</strong> You should <a href="javascript:void(0)" class="alert-link">read this message</a>.
+  </div>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="alert alert-success"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>strong<span class="tagcolor" style="color:mediumblue">&gt;</span></span>Success!<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/strong<span class="tagcolor" style="color:mediumblue">&gt;</span></span> You should <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red"> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span> class<span class="attributevaluecolor" style="color:mediumblue">="alert-link"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>read this message<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span>.<br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br> </div>
+<a target="_blank" href="tryit.asp?filename=trybs_alerts_link&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself »</a>
+</div>
+
+<hr>
+
+<h2>Closing Alerts</h2>
+<div class="alert alert-success alert-dismissible">
+    <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+    Click on the "x" symbol to the right to close me.
+</div>
+
+<p>To close the alert message, add a <code class="w3-codespan">.alert-dismissible</code>
+class to the alert container. Then add <code class="w3-codespan">class="close"</code> and <code class="w3-codespan">data-dismiss="alert"</code>
+to a link or a button element (when you click on this the alert box will
+disappear).</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="alert alert-success alert-dismissible"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+  &nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>button<span class="attributecolor" style="color:red"> type<span class="attributevaluecolor" style="color:mediumblue">="button"</span> class<span class="attributevaluecolor" style="color:mediumblue">="close"</span> data-dismiss<span class="attributevaluecolor" style="color:mediumblue">="alert"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>&amp;times;<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/button<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>strong<span class="tagcolor" style="color:mediumblue">&gt;</span></span>Success!<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/strong<span class="tagcolor" style="color:mediumblue">&gt;</span></span> Indicates a successful or positive action.<br>
+ <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br> </div>
+<a target="_blank" href="tryit.asp?filename=trybs_alerts_dismissible&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself »</a>
+</div>
+
+<div class="w3-panel w3-note">
+<p style="margin-bottom:8px"><strong>Tip:</strong> &amp;times; (×) is an HTML entity that is the preferred icon for close
+buttons, rather than the letter "x".<br><br>For a list of all HTML Entities, <a href="/charsets/ref_html_entities_4.asp">visit our HTML Entities Reference</a>.</p>
+
+</div>
+<hr>
+
+<h2>Animated Alerts</h2>
+<div class="alert alert-danger fade show alert-dismissible" style="margin-bottom:22px">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+    Click on the "x" symbol to the right to close me. I will "fade" out.
+</div>
+
+<p>The <code class="w3-codespan">.fade</code> and <code class="w3-codespan">.show</code> classes adds a fading effect when
+closing the alert message:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="alert alert-danger
+  alert-dismissible fade show"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br> </div>
+<a target="_blank" href="tryit.asp?filename=trybs_alerts_fade&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself »</a>
+</div>
+<hr>
+
+<h2>Complete Bootstrap 4 Alert Reference</h2>
+<p>For a complete reference of all alert options, methods and events, go to our
+<a href="bootstrap_ref_js_alert.asp">Bootstrap 4 JS Alert Reference</a>.</p>
+<br>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="bootstrap_jumbotron.asp">❮ Previous</a>
+<a class="w3-right w3-btn" href="bootstrap_buttons.asp">Next ❯</a>
+</div>
+</div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+      <!-- Footer -->
+
+
+        {% with "Workspace/"|add:website_template|add:"/admin/footer.html" as template %}
+            {% include template %}
+        {% endwith %}
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+
+</body>
+
+</html>

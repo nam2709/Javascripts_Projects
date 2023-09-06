@@ -1,0 +1,84 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+                
+<div class="card shadow mb-1">
+    <div class="card-header py-3">
+        <h6>
+          <a class="btn btn-primary btn-sm" href="{% url 'Account:AccountView' %}">
+            All Accounts
+          </a>
+        </h6>
+      <h6 class="m-0 font-weight-bold text-primary">
+             Thông tin người dùng Mới
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_account.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="assetAssetCreateFormId" data-uuid="{{ current_account.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="assetAssetCreateFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Uuid</label>
+    <input id="uuidAssetAssetInputId" name="uuid" class="form-control uuid-account-account-input" placeholder="Nhập Uuid of Account" type="text" value="">
+</div>
+            <h6 class="heading-small text-muted mb-4">Thông tin chung</h6><div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Username</label>
+                        <input id="usernameAssetAssetCreateModalInputId"  name="username" class="form-control username-account-account-input mps_required" placeholder="Nhập Username" type="text" value="">
+                        
+                    </div>
+                    
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Full_Name</label>
+                        <input id="full_nameAssetAssetCreateModalInputId"  name="full_name" class="form-control full_name-account-account-input mps_required" placeholder="Nhập Full_Name" type="text" value="">
+                        
+                    </div>
+                    </div><hr><div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Email</label>
+                        <input id="emailAssetAssetCreateModalInputId"  name="email" class="form-control email-account-account-input mps_required" placeholder="Nhập Email" type="text" value="">
+                        
+                    </div>
+                    
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Telephone</label>
+                        <input id="telephoneAssetAssetCreateModalInputId"  name="telephone" class="form-control telephone-account-account-input " placeholder="Nhập Telephone" type="text" value="">
+                        
+                    </div>
+                    </div><div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Date_Of_Birth</label>
+                        <input id="date_of_birthAssetAssetCreateModalInputId"  name="date_of_birth" class=" form-control date_of_birth-account-account-input" placeholder="Nhập Date_Of_Birth" type="text" value="{{ current_account.date_of_birth}}">
+                    </div>
+                    
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Password</label>
+                        <input id="passwordAssetAssetCreateModalInputId"  name="password" class="form-control password-account-account-input mps_required" placeholder="Nhập Password" type="text" value="">
+                        
+                    </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">    
+                        </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="AssetAssetCancelBtnId" type="button" class="btn btn-danger btn-sm" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="AssetAssetCreateBtnId" type="button" class="btn btn-info btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                        <button id="AssetAssetSaveAndNewBtnId" type="button" class="btn btn-success btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu và tạo mới</button>
+                        <button id="AssetAssetTestBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+            

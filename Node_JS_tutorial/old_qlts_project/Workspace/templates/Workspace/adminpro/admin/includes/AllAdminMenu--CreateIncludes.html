@@ -1,0 +1,260 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6>
+          <a class="btn btn-primary" href="{% url 'Website:AllAdminMenuView' %}">
+            All AllAdminMenus
+          </a>
+        </h6>
+      <h6 class="m-0 font-weight-bold text-primary">
+            New AllAdminMenu
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            
+            <form method="POST" action="" enctype="multipart/form-data" id="alladminmenuWebsiteCreateFormId" data-uuid="">
+                {% csrf_token %}
+    
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameAllAdminMenuWebsiteCreateInputId" name="name" class="form-control name-alladminmenu-website-input" placeholder="Name" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidAllAdminMenuWebsiteCreateInputId" name="uuid" class="form-control uuid-alladminmenu-website-input" placeholder="Uuid" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Title
+        </span>
+    </div>
+    <input id="titleAllAdminMenuWebsiteCreateInputId" name="title" class="form-control title-alladminmenu-website-input" placeholder="Title" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Icon Class
+        </span>
+    </div>
+    <input id="icon_classAllAdminMenuWebsiteCreateInputId" name="icon_class" class="form-control icon_class-alladminmenu-website-input" placeholder="Icon Class" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Url
+        </span>
+    </div>
+    <input id="urlAllAdminMenuWebsiteCreateInputId" name="url" class="form-control url-alladminmenu-website-input" placeholder="Url" type="text" value=""  >
+</div>
+
+<div class="form-group input-group   border">
+    <div class="input-group-prepend border-right">
+        <span class="input-group-text">
+        Icon
+        </span>
+    </div>
+    <div class="input-group-content ml-3">
+        <div class="current-file">
+            {% trans 'Current:' %}
+            <a id="iconAllAdminMenuWebsiteCreateInputId" class="current-file-preview tnd-file-path" data-toggle="modal" data-target="#FilePreviewModalFormId"  href="#">None</a>
+        </div>
+        <div class="form-check">
+            <input id="iconAllAdminMenuWebsiteCreateInputIdClearId" name="icon-clear" class="form-control" placeholder="icon-alladminmenu-website-input" type="checkbox" value="" Icon />
+            <label class="form-check-label" for="">
+                {% trans 'Remove' %}
+            </label>
+        </div>
+        <div class="file-input">
+            <input id="iconAllAdminMenuWebsiteCreateInputId" name="icon" class="icon-alladminmenu-website-input Icon" placeholder="" type="file" value="" iconAllAdminMenuWebsiteCreateInputId>
+        </div>
+    </div>
+</div>
+
+<div class="form-group input-group card  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        
+        </span>
+    </div>
+    <textarea rows="10" id="icon_base64AllAdminMenuWebsiteCreateInputId" name="icon_base64" class="form-control ckeditor-input icon_base64-alladminmenu-website-input" placeholder="" type="text" value="" ></textarea>
+</div>
+
+<div class="form-group input-group card  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Desc
+        </span>
+    </div>
+    <textarea rows="10" id="descAllAdminMenuWebsiteCreateInputId" name="desc" class="form-control ckeditor-input desc-alladminmenu-website-input" placeholder="Desc" type="text" value="" ></textarea>
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Order
+        </span>
+    </div>
+    <input id="orderAllAdminMenuWebsiteCreateInputId" name="order" class="form-control order-alladminmenu-website-input" placeholder="Order" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="in_main_menuAllAdminMenuWebsiteCreateInputId" name="in_main_menu" type="checkbox" class="form-check-input in_main_menu-alladminmenu-website-input" placeholder="In Main Menu" >
+        <label class="form-check-label" for="in_main_menuAllAdminMenuWebsiteCreateInputIdInputId">
+            In Main Menu
+        </label>
+    </div>
+</div>
+        
+<div class="input-group mb-3  ">
+    <div class="input-group-prepend">
+        <label class="" for="menu_groupAdminMenuGroupAllAdminMenuWebsiteInputId">{% trans 'Menu Group' %}</label>
+    </div>
+    <select class="custom-select tnd-select2 menu_group-alladminmenu-website-option adminmenugroup-website-select autoload"  name="menu_group" id="menu_groupAdminMenuGroupAllAdminMenuWebsiteInputId" >
+    <option selected>Choose... Menu Group</option>
+    </select>
+</div>
+
+<div class="input-group mb-3  ">
+    <div class="input-group-prepend">
+        <label class="" for="parent_menuAllAdminMenuAllAdminMenuWebsiteInputId">{% trans 'Parent Menu' %}</label>
+    </div>
+    <select class="custom-select tnd-select2 parent_menu-alladminmenu-website-option alladminmenu-website-select autoload"  name="parent_menu" id="parent_menuAllAdminMenuAllAdminMenuWebsiteInputId" >
+    <option selected>Choose... Parent Menu</option>
+    </select>
+</div>
+
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="login_redirectAllAdminMenuWebsiteCreateInputId" name="login_redirect" type="checkbox" class="form-check-input login_redirect-alladminmenu-website-input" placeholder="Redirect to this link after login..." >
+        <label class="form-check-label" for="login_redirectAllAdminMenuWebsiteCreateInputIdInputId">
+            Redirect to this link after login...
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="activeAllAdminMenuWebsiteCreateInputId" name="active" type="checkbox" class="form-check-input active-alladminmenu-website-input" placeholder="Active" >
+        <label class="form-check-label" for="activeAllAdminMenuWebsiteCreateInputIdInputId">
+            Active
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="staff_onlyAllAdminMenuWebsiteCreateInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-alladminmenu-website-input" placeholder="Staff Only" >
+        <label class="form-check-label" for="staff_onlyAllAdminMenuWebsiteCreateInputIdInputId">
+            Staff Only
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="superuser_onlyAllAdminMenuWebsiteCreateInputId" name="superuser_only" type="checkbox" class="form-check-input superuser_only-alladminmenu-website-input" placeholder="Superuser Only" >
+        <label class="form-check-label" for="superuser_onlyAllAdminMenuWebsiteCreateInputIdInputId">
+            Superuser Only
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="split_markedAllAdminMenuWebsiteCreateInputId" name="split_marked" type="checkbox" class="form-check-input split_marked-alladminmenu-website-input" placeholder="Split Marked" >
+        <label class="form-check-label" for="split_markedAllAdminMenuWebsiteCreateInputIdInputId">
+            Split Marked
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Split Label
+        </span>
+    </div>
+    <input id="split_labelAllAdminMenuWebsiteCreateInputId" name="split_label" class="form-control split_label-alladminmenu-website-input" placeholder="Split Label" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    <input id="updated_atAllAdminMenuWebsiteCreateInputId" name="updated_at" class="form-control updated_at-alladminmenu-website-input" placeholder="Updated At" type="datetime-local" value="" >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    <input id="created_atAllAdminMenuWebsiteCreateInputId" name="created_at" class="form-control created_at-alladminmenu-website-input" placeholder="Created At" type="datetime-local" value="" >
+</div>
+
+    <div class="modal-footer">
+        <button id="alladminmenuWebsiteCreateBtnId" type="button" class="btn btn-primary">Create</button>
+        <button id="alladminmenuWebsiteSaveAndNewBtnId" type="button" class="btn btn-secondary">Save and New</button>
+        <button id="alladminmenuWebsiteTestBtnId" type="button" class="btn btn-warning">Test</button>
+    </div>
+            
+        </form>
+
+        </fieldset>
+    </div>
+</div>
+            

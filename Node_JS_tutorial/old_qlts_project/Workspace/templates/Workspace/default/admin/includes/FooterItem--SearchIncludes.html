@@ -1,0 +1,70 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+        
+
+        
+<!-- Search Form -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+            Search FooterItems
+      </h6>
+    </div>
+
+            
+<!-- Search Form -->
+    <div class="card-body">
+      <div class="table-responsive">
+            
+<div class="mt-4 mb-3">
+    <div class="col-12 px-0 text-first">
+        <div class="btn-group">
+            <div class="nav-wrapper position-relative mb-2">
+                <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+
+                    <li class="nav-item">
+                        <a class="nav-link mb-sm-3 mb-md-0 d-flex align-items-center justify-content-center active" id="tabs-icons-text-1-tab" data-bs-toggle="tab" href="#quick-search" role="tab" aria-controls="quick-search" aria-selected="false"  data-toggle="tab">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mb-sm-3 mb-md-0 d-flex align-items-center justify-content-center" id="tabs-icons-text-2-tab" data-bs-toggle="tab" href="#filter-search" role="tab" aria-controls="filter-search" aria-selected="true" data-toggle="tab">
+                            <i class="fas fa-filter"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tab-content" id="tabcontent2">
+    <div class="tab-pane fade show active" id="quick-search" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+            <!-- Search content -->
+          
+          <form id="footeritemWebsiteSearchFormId">
+            <div class="input-group">
+                  <div class="form-outline w-75">
+                    <input type="search" id="footeritemWebsiteSearchInputId" class="form-control" placeholder="Search" />
+                  </div>
+                  <button type="button" class="btn btn-primary" id="footeritemWebsiteSearchBtnId">
+                    <i class="fas fa-search"></i>
+                  </button>
+            </div>
+          </form>
+
+    </div>
+
+</div>
+
+            <!-- Search END -->
+      </div>
+    </div>
+</div>
+            

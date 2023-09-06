@@ -1,0 +1,93 @@
+
+            {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+           
+<div class="modal fade" id="accountAccountEditmodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="accountAccountEditmodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="accountAccountEditModalsFormId" data-uuid="">
+            <div class="modal-header">
+                <h3 class="modal-title">Chỉnh sửa Thông tin người dùng</h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group px-lg-5 text-start">
+            
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Id</label>
+    <input id="idAccountAccountEditModalInputId" name="id" class="form-control id-account-account-input" placeholder="Nhập Id of Account" type="text" value="">
+</div>
+            
+
+            <h6 class="heading-small text-muted mb-4">Thông tin chung</h6><div class="row gx-2 mb-2">
+        <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Username</label>
+                                    
+            <input id="usernameAccountAccountEditModalInputId"  name="username" class="mps_required form-control username-account-account-input" placeholder="Nhập Username" type="text" value="{{ current_account.username}}">
+                                </div>
+                                
+        <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Full_Name</label>
+                                    
+            <input id="full_nameAccountAccountEditModalInputId"  name="full_name" class="mps_required form-control full_name-account-account-input" placeholder="Nhập Full_Name" type="text" value="{{ current_account.full_name}}">
+                                </div>
+                                </div><hr><div class="row gx-2 mb-2">
+        <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Email</label>
+                                    
+            <input id="emailAccountAccountEditModalInputId"  name="email" class="mps_required form-control email-account-account-input" placeholder="Nhập Email" type="text" value="{{ current_account.email}}">
+                                </div>
+                                
+        <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Telephone</label>
+                                    
+            <input id="telephoneAccountAccountEditModalInputId"  name="telephone" class=" form-control telephone-account-account-input" placeholder="Nhập Telephone" type="text" value="{{ current_account.telephone}}">
+                                </div>
+                                </div><div class="row gx-2 mb-2">
+
+         <div class=" mb-1 col-xl-6">
+            <label class="small mb-1">Date_Of_Birth</label>
+            <input id="date_of_birthAccountAccountEditModalInputId" name="date_of_birth" class=" form-control date_of_birth-account-account-input" placeholder="Nhập Date_Of_Birth" type="text" value="{{ current_account.date_of_birth}}">
+        </div>
+                                
+        <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Password</label>
+                                    
+            <input id="passwordAccountAccountEditModalInputId"  name="password" class="mps_required form-control password-account-account-input" placeholder="Nhập Password" type="text" value="{{ current_account.password}}">
+                                </div>
+                                </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <label for="avatarAccountAccountEditModalInputId"><i class="fas fa-paperclip"></i>&nbsp;{% trans 'avatar' %}</label>
+                                <input class=" account-account form-control-file form-control  account-account-file avatar-account-account-file-input"  type="file" name="avatar"  class="" id="avatarAccountAccountEditModalInputId">
+                            <div class="col-xl-12" id="avatarAccountAccountEditModalFileAreaId">    
+                            {% if current_account.avatar %}
+  
+                                <div class="form-group row col-xl-8 table-hover mt-1" style="background-color:gainsboro;height: 25px;" id="{{ current_account.uuid }}AttachmentDivId">
+                                    <div class="col-xl-10 " >
+                                        <span><a style="color:cornflowerblue" target="_blank"  href="{{ current_account.avatar.url }}"><p><b> {{ current_account.avatar_filename|title }}</b></p></a></span>
+                                    </div>
+                                    <div class="col-xl-2 text-end">
+                                        <i class="fas fa-times" style="color:gray" file-uuid="{{ current_account.uuid }}" onclick="avataraccountAccountDeletedAttacthment(this)"></i>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                        </div>
+
+                    </div>
+             </div> </div>
+                    <div class="modal-footer">
+                        <button id="accountAccountCancelEditModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="accountAccountUpdateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                        
+                        <button id="accountAccountTestEditModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+            </div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+            
+            

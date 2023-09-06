@@ -1,0 +1,46 @@
+{% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+<div class="modal fade" id="PermissionGroupDetailmodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="PermissionGroupDetailmodalsId" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+         <form method="POST" action="" enctype="multipart/form-data" id="PermissionGroupDetailModalsFormId" data-uuid="">
+            <div class="modal-header">
+               <h3 class="modal-title">Thông tin Quyền</h3>
+               <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <div class="form-group px-lg-5 text-start">
+                  <div class="mb-1 col-xl-6 d-none">
+                     <label class="small mb-1">Id</label>
+                     <input id="idPermissionGroupDetailModalInputId" name="id" class="form-control id-PermissionGroup-PermissionGroup-input" placeholder="Nhập Id of PermissionGroup" type="text" value="">
+                  </div>
+                  <div class="mb-1 col-xl-6 d-none">
+                     <label class="small mb-1">Uuid</label>
+                     <input id="uuidPermissionGroupDetailModalInputId" name="uuid" class="form-control uuid-PermissionGroup-PermissionGroup-input" placeholder="Nhập Uuid of PermissionGroup" type="text" value="">
+                  </div>
+                  <h6 class="heading-small text-muted mb-4">Thông tin chung</h6>
+                  <div class="row gx-2 mb-2">
+                     <label class="small mb-1">Tên Nhóm Quyền</label>
+                     <input id="namePermissionGroupDetailModalInputId" name="name" class="form-control name-PermissionGroup-PermissionGroup-input" placeholder="Nhập Tên" type="text" value="{{current_PermissionGroup.name}}" readonly>
+                  </div>
+                  <div class="row gx-2 mb-2">
+                     <label class="small mb-1">Quyền Trong Nhóm</label>
+                     <input id="permissionPermissionGroupDetailModalInputId" name="permission" class="form-control Permission-PermissionGroup-PermissionGroup-input" placeholder="Nhập Quyền" type="text" value="{{ current_PermissionGroup.PermissionGroupstatus}}" readonly>
+                  </div>
+                  <div class="row gx-2 mb-2">
+                     <label class="small mb-1">Các Người Dùng</label>
+                     <input id="accountPermissionGroupDetailModalInputId" name="account" class="form-control account-PermissionGroup-PermissionGroup-input" placeholder="Nhập account" type="text" value="" readonly>
+                  </div>
+                  <div class="row gx-2 mb-2">
+                     <label class="small mb-1">Mô tả</label>
+                     <input id="descPermissionGroupDetailModalInputId" name="desc" class="form-control desc-PermissionGroup-PermissionGroup-input" placeholder="Nhập mô tả" type="text" value="" readonly>
+                  </div>
+                  <div class="modal-footer">
+                     <button id="PermissionGroupCancelDetailModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                  </div>
+               </div>
+         </form>
+         </div>
+      </div>
+   </div>
+</div>
+</div>

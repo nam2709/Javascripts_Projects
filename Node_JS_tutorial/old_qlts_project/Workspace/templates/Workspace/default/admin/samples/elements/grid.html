@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+
+    {% include "Workspace/"|add:website_template|add:"/admin/header.html" %}
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    {% include "Workspace/"|add:website_template|add:"/admin/sidebar.html" %}
+
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+
+            {% with "Workspace/"|add:website_template|add:"/admin/topbar.html" as template %}
+                {% include template %}
+            {% endwith %}
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                </div>
+
+<div class="w3-col l10 m12" id="main">
+      <div id="mainLeaderboard" style="overflow:hidden;">
+        <!-- MainLeaderboard-->
+
+        <!--<pre>main_leaderboard, all: [728,90][970,90][320,50][468,60]</pre>-->
+        <div id="snhb-main_leaderboard-0" data-google-query-id="CMqJjKCnv-UCFQ8jvQod3HsMgw"><div id="google_ads_iframe_/22152718/sws-hb//w3schools.com//main_leaderboard_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22152718/sws-hb//w3schools.com//main_leaderboard_0" title="3rd party ad content" name="google_ads_iframe_/22152718/sws-hb//w3schools.com//main_leaderboard_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" data-google-container-id="d" data-load-complete="true" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+        <!-- adspace leaderboard -->
+
+      </div>
+<h1>Bootstrap <span class="color_h1">4 Grids</span></h1>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="bootstrap_get_started.asp">❮ Previous</a>
+<a class="w3-right w3-btn" href="bootstrap_typography.asp">Next ❯</a>
+</div>
+<hr>
+<h2>Bootstrap 4 Grid System</h2>
+<p>Bootstrap's grid system is built with flexbox and allows up to 12 columns across the page.</p>
+<p>If you do not want to use all 12 columns individually, you can group the
+columns together to create wider columns:</p>
+<div class="table-responsive">
+<table class="table grid">
+<tbody><tr>
+  <td>span 1</td>
+  <td>span 1</td>
+  <td>span 1</td>
+  <td>span 1</td>
+  <td>span 1</td>
+  <td>span 1</td>
+  <td>span 1</td>
+  <td>span 1</td>
+  <td>span 1</td>
+  <td>span 1</td>
+  <td>span 1</td>
+  <td>span 1</td>
+</tr>
+<tr>
+  <td colspan="4">&nbsp;span 4</td>
+  <td colspan="4">&nbsp;span 4</td>
+  <td colspan="4">&nbsp;span 4</td>
+</tr>
+<tr>
+  <td colspan="4">span 4</td>
+  <td colspan="8">span 8</td>
+</tr>
+<tr>
+  <td colspan="6">span 6</td>
+  <td colspan="6">span 6</td>
+</tr>
+<tr>
+  <td colspan="12">span 12</td>
+</tr>
+</tbody></table>
+</div>
+<p>The grid system is responsive, and the columns will re-arrange automatically depending on the screen size.</p>
+<p>Make sure that the sum adds up to 12 or fewer (it is not required that you
+use all 12 available columns).</p>
+<hr>
+
+<h2>Grid Classes</h2>
+<p>The Bootstrap 4 grid system has five classes:</p>
+<ul>
+  <li><code class="w3-codespan">.col-</code> (extra small devices - screen width less than 576px)</li>
+  <li><code class="w3-codespan">.col-sm-</code> (small devices - screen width equal to or greater than 576px)</li>
+  <li><code class="w3-codespan">.col-md-</code> (medium devices - screen width equal to or greater than 768px)</li>
+  <li><code class="w3-codespan">.col-lg-</code> (large devices - screen width equal to or greater than 992px)</li>
+  <li><code class="w3-codespan">.col-xl-</code> (xlarge devices - screen width equal to or greater than 1200px)</li>
+</ul>
+<p>The classes above can be combined to create more dynamic and flexible layouts.</p>
+<p><strong>Tip:</strong> Each class scales up, so if you wish to set the same widths for
+<code class="w3-codespan">sm</code> and <code class="w3-codespan">md</code>, you only need to specify <code class="w3-codespan">sm</code>.</p>
+<hr>
+
+<h2>Basic Structure of a Bootstrap 4 Grid</h2>
+<p>The following is a basic structure of a Bootstrap 4 grid:</p>
+<div class="w3-example">
+ <div class="w3-code notranslate htmlHigh">
+   <span class="commentcolor" style="color:green">&lt;!-- Control the column width, and how they should appear on different
+   devices --&gt;</span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="row"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col-*-*"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;
+   <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col-*-*"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="row"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col-*-*"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col-*-*"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col-*-*"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+   <br><span class="commentcolor" style="color:green">&lt;!-- Or let Bootstrap automatically handle the layout --&gt;</span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="row"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span> </div>
+</div>
+<p>First example: create a row (<code class="w3-codespan">&lt;div
+class="row"&gt;</code>). Then, add the desired number of columns (tags with appropriate
+<code class="w3-codespan">.col-*-*</code> classes). The first star (*)
+represents the responsiveness: sm, md, lg or xl, while the second star
+represents a number, which should add up to 12 for each row.</p>
+<p>Second example: instead of adding a number to each <code class="w3-codespan">col</code>, let bootstrap handle
+the layout, to create equal width columns: two <code class="w3-codespan">"col"</code> elements = 50% width to
+each col. three cols = 33.33% width to each col. four cols = 25% width, etc. You
+can also use <code class="w3-codespan">.col-sm|md|lg|xl</code> to make the columns responsive.</p>
+<p>Below we have collected some examples of basic Bootstrap 4 grid layouts.</p>
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <!--<pre>mid_content, all: [300,250][336,280][728,90][970,250][970,90][320,50][468,60]</pre>-->
+  <div id="snhb-mid_content-0" data-google-query-id="CNqbjqCnv-UCFQ8jvQod3HsMgw"><div id="google_ads_iframe_/22152718/sws-hb//w3schools.com//mid_content_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22152718/sws-hb//w3schools.com//mid_content_0" title="3rd party ad content" name="google_ads_iframe_/22152718/sws-hb//w3schools.com//mid_content_0" width="336" height="280" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" sandbox="allow-forms allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" data-google-container-id="f" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div></div>
+
+</div>
+<hr>
+
+<h2>Three Equal Columns</h2>
+<div class="container-fluid" style="margin:8px 0 15px 0;">
+<div class="row test">
+  <div class="col-sm-4">.col</div>
+  <div class="col-sm-4">.col</div>
+  <div class="col-sm-4">.col</div>
+</div>
+</div>
+<p>The following example shows how to create three equal-width columns, on all
+devices and screen widths:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="row"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>.col<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>.col<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>.col<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span> </div>
+<a target="_blank" href="tryit.asp?filename=trybs_grid_ex&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself »</a>
+</div>
+<hr>
+
+<h2>Responsive Columns</h2>
+<div class="container-fluid" style="margin:8px 0 15px 0;">
+<div class="row test">
+  <div class="col-sm-3">.col-sm-3</div>
+  <div class="col-sm-3">.col-sm-3</div>
+  <div class="col-sm-3">.col-sm-3</div>
+  <div class="col-sm-3">.col-sm-3</div>
+</div>
+</div>
+<p>The following example shows how to create four equal-width columns starting at tablets and scaling to
+extra large desktops. <strong>On mobile phones or screens that are less than 576px wide, the columns will automatically stack
+on top of each other</strong>:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="row"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col-sm-3"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>.col-sm-3<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col-sm-3"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>.col-sm-3<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col-sm-3"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>.col-sm-3<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;
+  <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col-sm-3"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>.col-sm-3<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span> </div>
+<a target="_blank" href="tryit.asp?filename=trybs_grid_ex1&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself »</a>
+</div>
+<hr>
+
+<h2>Two Unequal Responsive Columns</h2>
+<div class="container-fluid" style="margin:8px 0 15px 0;">
+<div class="row test">
+  <div class="col-sm-4">.col-sm-4</div>
+  <div class="col-sm-8">.col-sm-8</div>
+</div>
+</div>
+<p>The following example shows how to get two various-width columns starting at
+tablets and scaling to large extra desktops:</p>
+<div class="w3-example">
+<h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="row"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col-sm-4"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>.col-sm-4<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col-sm-8"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>.col-sm-8<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span> </div>
+<a target="_blank" href="tryit.asp?filename=trybs_grid_ex3&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself »</a>
+</div>
+
+<div class="w3-panel w3-note">
+<p style="margin-bottom:8px"><strong>Tip:</strong> You will learn more about Bootstrap 4 grids later in this tutorial.</p>
+</div>
+
+<br>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="bootstrap_get_started.asp">❮ Previous</a>
+<a class="w3-right w3-btn" href="bootstrap_typography.asp">Next ❯</a>
+</div>
+</div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+      <!-- Footer -->
+
+
+        {% with "Workspace/"|add:website_template|add:"/admin/footer.html" as template %}
+            {% include template %}
+        {% endwith %}
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+</body>
+
+</html>

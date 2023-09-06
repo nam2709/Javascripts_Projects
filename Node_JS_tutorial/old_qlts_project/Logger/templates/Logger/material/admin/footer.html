@@ -1,0 +1,16 @@
+{% load static %}
+
+{% include 'Workspace/'|add:website_template|add:'/admin/footer.html' %}
+{% block after_all_js %}
+
+<form id="current-user-data">
+<input type="hidden" id="user_id" name="user_id" value="{{ current_user.uuid }}">
+
+</form>
+
+<script>
+
+</script>
+{% endblock %}
+
+

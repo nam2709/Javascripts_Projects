@@ -1,0 +1,8 @@
+{% extends "admin/index.html" %}
+<-- Load file này trong trang chủ của admin -->
+{% block extrahead %}
+    {{ block.super }}
+    <script src="/static/Workspace/admin/js/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/static/Workspace/admin/js/callmenow.js"></script>
+{% endblock %}

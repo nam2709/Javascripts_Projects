@@ -1,0 +1,45 @@
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
+    <script src="{% static 'Depreciation/arrgon/admin/js/DepreciationConst.js' %}"></script>    
+    <script src="{% static 'Depreciation/arrgon/admin/js/Testing.js' %}"></script>
+</head>
+<body>
+    HELLO
+    <div>
+        <label class="small mb-1">Tài Sản
+            <!-- <button type="button" style="padding: 1rem;" id="btn-create-DepreciationDepreciation" class="btn btn-outline-primary btn-sm " > -->
+            <a onclick='myFunction()' type="button" style="padding: 0.2rem;" id="btn-create-DepreciationDepreciation" class="btn btn-outline-primary btn-sm ">
+                <i class="fas fa-plus"></i> &nbsp;
+            </a>
+            <!-- </button> -->
+        </label>
+        <select size="2" id="Testtesttest" name="aset" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" ></select>
+    </div>
+    <br>
+    <br><br>
+    <div>
+        <label class="small mb-1">Tài Sản
+            <!-- <button type="button" style="padding: 1rem;" id="btn-create-DepreciationDepreciation" class="btn btn-outline-primary btn-sm " > -->
+            <a onclick='myFunction()' type="button" style="padding: 0.2rem;" id="btn-create-DepreciationDepreciation" class="btn btn-outline-primary btn-sm ">
+                <i class="fas fa-plus"></i> &nbsp;
+            </a>
+            <!-- </button> -->
+        </label>
+        <input id="searchbox" type="text" placeholder="Search..." onkeydown="ShowOption(event)"> <br>
+        <select id="Testtest1" name="aset" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" ></select>
+    </div>
+</body>
+</html>

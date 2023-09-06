@@ -1,0 +1,129 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6>
+          <a class="btn btn-primary" href="{% url 'Website:ConfigView' %}">
+            All Configs
+          </a>
+        </h6>
+      <h6 class="m-0 font-weight-bold text-primary">
+            New Config
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            
+            <form method="POST" action="" enctype="multipart/form-data" id="configWebsiteCreateFormId" data-uuid="">
+                {% csrf_token %}
+    
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameConfigWebsiteCreateInputId" name="name" class="form-control name-config-website-input" placeholder="Name" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidConfigWebsiteCreateInputId" name="uuid" class="form-control uuid-config-website-input" placeholder="Uuid" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Value
+        </span>
+    </div>
+    <input id="valueConfigWebsiteCreateInputId" name="value" class="form-control value-config-website-input" placeholder="Value" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="activeConfigWebsiteCreateInputId" name="active" type="checkbox" class="form-check-input active-config-website-input" placeholder="Active" >
+        <label class="form-check-label" for="activeConfigWebsiteCreateInputIdInputId">
+            Active
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="defaultConfigWebsiteCreateInputId" name="default" type="checkbox" class="form-check-input default-config-website-input" placeholder="Default" >
+        <label class="form-check-label" for="defaultConfigWebsiteCreateInputIdInputId">
+            Default
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    <input id="updated_atConfigWebsiteCreateInputId" name="updated_at" class="form-control updated_at-config-website-input" placeholder="Updated At" type="datetime-local" value="" >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    <input id="created_atConfigWebsiteCreateInputId" name="created_at" class="form-control created_at-config-website-input" placeholder="Created At" type="datetime-local" value="" >
+</div>
+
+    <div class="modal-footer">
+        <button id="configWebsiteCreateBtnId" type="button" class="btn btn-primary">Create</button>
+        <button id="configWebsiteSaveAndNewBtnId" type="button" class="btn btn-secondary">Save and New</button>
+        <button id="configWebsiteTestBtnId" type="button" class="btn btn-warning">Test</button>
+    </div>
+            
+        </form>
+
+        </fieldset>
+    </div>
+</div>
+            

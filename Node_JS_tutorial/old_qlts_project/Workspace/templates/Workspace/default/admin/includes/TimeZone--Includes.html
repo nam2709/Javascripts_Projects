@@ -1,0 +1,166 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+
+
+<!-- DataTales -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a class="btn btn-primary" href="{% url 'Website:TimeZoneView' %}">
+            All TimeZones
+          </a>
+          <a class="btn btn-primary" href="{% url 'Website:TimeZone_CreateView' %}">
+            Create
+          </a>
+          <a class="btn btn-secondary" href="#" id="timezoneWebsiteReloadBtnId">
+            Reload
+          </a>
+      </h6>
+
+
+      <h6 class="m-0 font-weight-bold text-primary text-right">
+            <span class="step-links">
+                {% if all_timezones.has_previous %}
+                    <a href="?page=1">&laquo; {% trans 'first ' %}</a>
+                    <a class="paginate_button previous" href="?page={{ all_timezones.previous_page_number }}">{% trans 'previous' %}</a>
+                {% endif %}
+
+                <span class="current">
+                    {% trans 'Page ' %}{{ all_timezones.number }} {% trans 'of ' %}{{ all_timezones.paginator.num_pages }}.
+                </span>
+
+                {% if all_timezones.has_next %}
+                    <a href="?page={{ all_timezones.next_page_number }}">{% trans 'next' %}</a>
+                    <a href="?page={{ all_timezones.paginator.num_pages }}">{% trans 'last ' %}&raquo;</a>
+                {% endif %}
+            </span>
+      </h6>
+    </div>
+            
+<div class="card-body">
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped w-auto table-fit" id="timezoneWebsiteDataTableId" width="100%" cellspacing="0">
+      <thead>
+        <tr>
+        
+          <th class="text-center">ID</th>
+        
+                  <th attr-name="name">Name</th>
+                
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+        
+          <th>ID</th>
+        
+                  <th>Name</th>
+                
+          <th>Action</th>
+        </tr>
+      </tfoot>
+      <tbody id="timezoneWebsiteTableBodyId">
+      {% if all_timezones %}
+      {% for s in all_timezones %}
+        <tr>
+          <td class="text-center">
+            <a class="text-center">{{ forloop.counter }}</a>
+          </td>
+        
+                  <td class="">
+                      <a href="{% url 'Website:TimeZone_DetailView' slug=s.uuid %}" target="_self">
+                        {{ s.name }}
+                      </a>
+                  </td>
+                    
+          <td class="text-center">
+            <div class="dropdown no-arrow">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(17px, 17px, 0px);">
+                    <a href="{% url 'Website:TimeZone_DetailView' slug=s.uuid %}" class="dropdown-item timezone-website-uuid-detail-button" title="" data-uuid="{{ s.uuid }}" data-toggle="tooltip" data-original-title="Detail">
+                        <span style="font-size: 14px;">
+                            <i class="far fa-eye"></i> Detail
+                        </span>
+                    </a>
+                    <a class="btn btn-primary dropdown-item timezone-website-modal-detail-button"
+                        data-target="#timezoneWebsiteModalDetailFormId"
+                        title="" data-uuid="{{ s.uuid }}"
+                        data-toggle="modal"
+                        data-original-title="Modal Detail">
+                        <span style="font-size: 14px;">
+                            <i class="far fa-eye"></i> Modal Detail
+                        </span>
+                    </a>
+                    <hr>
+                    <a href="{% url 'Website:TimeZone_EditView' slug=s.uuid %}" class="btn btn-warning dropdown-item  timezone-website-uuid-edit-button" title="" data-uuid="{{ s.uuid }}" data-toggle="tooltip" data-original-title="Edit">
+                        <span style="font-size: 14px;">
+                            <i class="far fa-edit"></i> Edit
+                        </span>
+                    </a>
+                    <a class="btn btn-primary dropdown-item  timezone-website-modal-edit-button"
+                        data-target="#timezoneWebsiteEditModalFormId"
+                        title=""
+                        data-uuid="{{ s.uuid }}"
+                        data-toggle="modal"
+                        data-original-title="Modal Edit">
+                        <span style="font-size: 14px;">
+                            <i class="far fa-edit"></i> Modal Edit
+                        </span>
+                    </a>
+                    <hr>
+                    <a class="btn btn-danger dropdown-item  timezone-website-uuid-delete-button" title="" data-uuid="{{ s.uuid }}" data-toggle="tooltip" data-original-title="Delete">
+                        <span style="font-size: 14px;">
+                            <i class="far fa-trash-alt"></i> Delete
+                        </span>
+                    </a>
+                </div>
+            </div>
+          </td>
+        </tr>
+      {% endfor %}
+      {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+        
+
+            

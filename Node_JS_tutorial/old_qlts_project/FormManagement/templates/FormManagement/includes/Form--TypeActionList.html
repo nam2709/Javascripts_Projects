@@ -1,0 +1,126 @@
+
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="/static/arrgon/js/jquery/dist/jquery.min.js"></script>
+
+<script src="{% static 'js/Const.js' %}"></script>
+<script src="{% static 'js/TypeAction.js' %}"></script>
+<div class="row">
+    <div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            Danh sách
+               <button type="button" id="btn-create-typeActionFormManagement" onclick="createTypeAcionFormManagement()" class="btn btn-outline-primary btn-sm " data-bs-toggle="modal" data-bs-target="#accountAccountCreatemodalsId">
+                                <i class="fas fa-plus"></i> &nbsp;Thêm mới
+            </button> 
+            <button type="button" id="typeActionFormManagementExportExcelBtnId" onclick="" class="btn btn-success btn-sm">
+                    <i class="far fa-file-excel"></i> &nbsp;Xuất excel
+            </button>
+        </div>      
+        <style>
+                th, td {
+                text-align: center;
+                vertical-align: middle;
+            }
+            .badge-success {
+                color: #1aae6f;
+                background-color: #b0eed3;
+            }
+
+            .badge-danger {
+                color: #f80031;
+                background-color: #fdd1da;
+            }
+            .badge-info {
+                color: #03acca;
+                background-color: #aaedf9;
+            }
+            .badge-warning {
+                background-image: linear-gradient(310deg,#fb6340,#fbb140);
+            }
+
+            .badge-primary {
+                background-image: linear-gradient(310deg,#5e72e4,#825ee4);
+            }
+            th, td {
+                    text-align: center;
+                    vertical-align: middle;
+                }
+            </style>
+        <div class="card-body table-border-style">
+        <div class="table-responsive">
+            <table class="table table-sm table-flush table-hover table-striped" id="typeActionFormDataTableId" width="100%" cellspacing="0">
+                <thead class="thead-light">
+                    <tr>
+
+                        <th attr-name="stt" >STT</th>
+            
+                        <th attr-name="name" style="text-align: left;">Tên hành động</th>
+                    
+                        <th attr-name="code">Mã hành động</th>
+
+                        <th attr-name="icon" >Icon</th>
+
+                    
+                        <th attr-name="type_form"  style="text-align: left;">Loại Phiếu</th>
+
+
+                        <!-- <th attr-name="color" >Màu</th> -->
+
+                        <th attr-name="created_at">Ngày tạo</th>
+                  
+                        <th attr-name="created_by">Người tạo</th>
+                    
+                        <th attr-name="account-admin-action">Thao tác</th>
+
+                    </tr>
+                </thead>
+                
+                <tbody id="typeActionFormDataTableBodyId"> 
+                </tbody>
+            </table>
+            <table style="min-height: 210px;" class="table table-sm table-flush table-hover table-striped d-none" id="typeActionFormDataExportTableId" width="100%" cellspacing="0">
+
+              <thead class="thead-light">
+                  <tr>
+                    <th attr-name="stt" >STT</th>
+            
+                    <th attr-name="name" >Tên hành động</th>
+                
+                    <th attr-name="code">Mã hành động</th>
+                
+                    <th attr-name="type_form" >Loại Phiếu</th>
+
+                    <th attr-name="created_at">Ngày tạo</th>
+              
+                    <th attr-name="created_by">Người tạo</th>
+                  
+                  </tr>
+              </thead>
+              
+              <tbody id="typeActionFormDataExportTableBodyId"> 
+
+              </tbody>
+          </table>
+        
+        </div>
+        
+        
+        <span class="page-total page-total-FormFormManagement text-left">
+        </span>
+    </div>
+    <hr>
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination pagination-FormFormManagement justify-content-center">
+        </ul>
+    </nav>
+    
+    </div>
+    </div>
+</div>

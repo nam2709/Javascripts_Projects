@@ -1,0 +1,112 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="/static/sbadminpro/js/jquery/dist/jquery.min.js"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WorkspaceConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+<div class="card shadow mb-1">
+    <div class="card-header py-3">
+        <h6>
+          <a class="btn btn-primary btn-sm" href="{% url 'Workspace:FooterItemView' %}">
+            All FooterItems
+          </a>
+        </h6>
+      <h6 class="m-0 font-weight-bold text-primary">
+               FooterItem  Mới
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_footeritem.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="footeritemWorkspaceCreateFormId" data-uuid="{{ current_footeritem.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="footeritemWorkspaceCreateFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            
+<div class="mb-1 col-xl-6 d-none">
+    <label class="small mb-1">Id</label>
+    <input id="idFooterItemWorkspaceInputId" name="id" class="form-control id-footeritem-workspace-input" placeholder="Điền thông tin Id of FooterItem" type="text" value="">
+</div>
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Uuid</label>
+    <input id="uuidFooterItemWorkspaceInputId" name="uuid" class="form-control uuid-footeritem-workspace-input" placeholder="Điền thông tin Uuid of FooterItem" type="text" value="">
+</div>
+            <div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-12">
+                        <label class="small mb-1">Name</label>
+                        <input id="nameFooterItemWorkspaceInputId"  name="name" class="form-control name-footeritem-workspace-input " placeholder="Điền thông tin Name" type="text" value="">
+                        
+                    </div>
+                    </div><div class="row gx-2 mb-2"></div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-6">
+                        <label class="small mb-1">Desc</label>
+                            <textarea id="descFooterItemWorkspaceInputId"  name="desc" class=" form-control desc-footeritem-workspace-input ckeditor-input" placeholder="Điền thông tin Desc" type="text"></textarea>
+                        </div>
+                    
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Order</label>
+                        <input id="orderFooterItemWorkspaceInputId"  name="order" class=" form-control order-footeritem-workspace-input" placeholder="Điền thông tin Order" type="text" value="{{ current_footeritem.order}}">
+                    </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <div class="form-check mt-4">
+                                {% if current_footeritem.active == True %}
+                                <input id="activeFooterItemWorkspaceInputId"  name="active" type="checkbox" class="form-check-input active-footeritem-workspace-input" placeholder="Điền thông tin Active of FooterItem" value="" checked>
+                                {% else %}
+                                <input id="activeFooterItemWorkspaceInputId"  name="active" type="checkbox" class="form-check-input active-footeritem-workspace-input" placeholder="Điền thông tin Active of FooterItem" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="activeFooterItemWorkspaceInputId">
+                                    Active
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="footeritemWorkspaceCancelBtnId" type="button" class="btn btn-danger btn-sm" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="footeritemWorkspaceCreateBtnId" type="button" class="btn btn-info btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                        <button id="footeritemWorkspaceSaveAndNewBtnId" type="button" class="btn btn-success btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu và tạo mới</button>
+                        <button id="footeritemWorkspaceTestBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+            

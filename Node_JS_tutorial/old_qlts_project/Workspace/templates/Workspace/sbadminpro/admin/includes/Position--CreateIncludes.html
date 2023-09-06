@@ -1,0 +1,117 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="/static/sbadminpro/js/jquery/dist/jquery.min.js"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WorkspaceConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+<div class="card shadow mb-1">
+    <div class="card-header py-3">
+        <h6>
+          <a class="btn btn-primary btn-sm" href="{% url 'Workspace:PositionView' %}">
+            All Positions
+          </a>
+        </h6>
+      <h6 class="m-0 font-weight-bold text-primary">
+               Vị trí hiển thị  Mới
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_position.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="positionWorkspaceCreateFormId" data-uuid="{{ current_position.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="positionWorkspaceCreateFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            
+<div class="mb-1 col-xl-6 d-none">
+    <label class="small mb-1">Id</label>
+    <input id="idPositionWorkspaceInputId" name="id" class="form-control id-position-workspace-input" placeholder="Điền thông tin Id of Position" type="text" value="">
+</div>
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Uuid</label>
+    <input id="uuidPositionWorkspaceInputId" name="uuid" class="form-control uuid-position-workspace-input" placeholder="Điền thông tin Uuid of Position" type="text" value="">
+</div>
+            <div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-12">
+                        <label class="small mb-1">Name</label>
+                        <input id="namePositionWorkspaceInputId"  name="name" class="form-control name-position-workspace-input " placeholder="Điền thông tin Name" type="text" value="">
+                        
+                    </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                        <label class="small mb-1">Css</label>
+                            <textarea id="cssPositionWorkspaceInputId"  name="css" class=" form-control css-position-workspace-input ckeditor-input" placeholder="Điền thông tin Css" type="text"></textarea>
+                        </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-6">
+                        <label class="small mb-1">Desc</label>
+                            <textarea id="descPositionWorkspaceInputId"  name="desc" class=" form-control desc-position-workspace-input ckeditor-input" placeholder="Điền thông tin Desc" type="text"></textarea>
+                        </div>
+                    
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Order</label>
+                        <input id="orderPositionWorkspaceInputId"  name="order" class=" form-control order-position-workspace-input" placeholder="Điền thông tin Order" type="text" value="{{ current_position.order}}">
+                    </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <div class="form-check mt-4">
+                                {% if current_position.active == True %}
+                                <input id="activePositionWorkspaceInputId"  name="active" type="checkbox" class="form-check-input active-position-workspace-input" placeholder="Điền thông tin Active of Position" value="" checked>
+                                {% else %}
+                                <input id="activePositionWorkspaceInputId"  name="active" type="checkbox" class="form-check-input active-position-workspace-input" placeholder="Điền thông tin Active of Position" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="activePositionWorkspaceInputId">
+                                    Active
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="positionWorkspaceCancelBtnId" type="button" class="btn btn-danger btn-sm" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="positionWorkspaceCreateBtnId" type="button" class="btn btn-info btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                        <button id="positionWorkspaceSaveAndNewBtnId" type="button" class="btn btn-success btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu và tạo mới</button>
+                        <button id="positionWorkspaceTestBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+            

@@ -1,0 +1,64 @@
+
+    <html lang="en">
+    {% load static %}
+    {% load i18n %}
+    {% load tz %}
+    {% load humanize %}
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Tamnd <ductambka@gmail.com>">
+        <meta name="copyright" content="Copyright ©2020 Tamnd <ductambka@gmail.com>">
+        {% include 'Workspace/'|add:website_template|add:'/admin/fixed/header.html' %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+
+<script src="{% static 'Account/'|add:website_template|add:'/admin/js/AccountConst.js' %}"></script>
+<script src="{% static 'Account/'|add:website_template|add:'/admin/js/AccountClasses.js' %}"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+
+    </head>
+                
+    <body id="page-top">
+
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        {% include 'Workspace/'|add:website_template|add:'/admin/fixed/sidebar.html' %}
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="">
+
+            <!-- Main Content -->
+            <div id="content">
+                {% include 'Workspace/'|add:website_template|add:'/admin/fixed/topbar.html' %}
+
+                {% block content %}
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+
+                      <!-- Page Heading -->
+                      <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800"><a class="btn btn-primary" href="{% url 'Website:Index' %}"> Website Summary </a></h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                      </div>
+
+                        {% include 'Workspace/'|add:website_template|add:'/admin/includes/ConfigCreate-Includes.html' %}
+                    </div>
+                {% endblock %}
+            </div>
+            {% include 'Workspace/'|add:website_template|add:'/admin/fixed/footer.html' %}
+        </div>
+    </div>
+
+    </body>
+
+    </html>
+
+                

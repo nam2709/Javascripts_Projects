@@ -1,0 +1,134 @@
+{% load i18n %}
+{% load tz %}
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled"
+        id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'Website:Index' %}">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fab fa-redhat"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">{{ request.user }} <span class="hide-mobile-600">Workspace</span> <sup></sup></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+                {% if menu_groups %}
+
+                {% for group in menu_groups %}
+                    {% if group.is_base == True or group.app.name == app_name %}
+                          <!-- Heading -->
+                          <div class="sidebar-heading">
+                              {% trans group.title %}
+                          </div>
+                        {% if main_menu_items %}
+                            {% for main_menu in main_menu_items %}
+                                {% if main_menu.menu_group == group %}
+                                  <!-- Nav Item - Pages Collapse Menu -->
+                                  <li class="nav-item tnd-nav-item">
+                                    {% if main_menu.url == "#" %}
+                                        <a class="nav-link collapsed"
+                                           href="#"
+                                           data-toggle="collapse"
+                                           data-target="#collapse-{{main_menu.uuid}}"
+                                           aria-expanded="false"
+                                           aria-controls="collapse-{{main_menu.uuid}}">
+                                          {% if main_menu.icon_class|length > 0 %}
+                                            <i class="{{ main_menu.icon_class }}"></i>
+                                          {% else %}
+                                            <i class="fas fa-fw fa-cog"></i>
+                                          {% endif %}
+                                          <span>
+                                              {% trans main_menu.title %}
+                                          </span>
+                                        </a>
+                                        <div id="collapse-{{main_menu.uuid}}"
+                                             class="collapse"
+                                             aria-labelledby="heading-{{main_menu.uuid}}"
+                                             data-parent="#accordionSidebar">
+                                          <div class="bg-white py-2 collapse-inner rounded">
+
+                                            <h6 class="collapse-header">
+                                                {% trans main_menu.title %}:
+                                            </h6>
+                                              {% for sub_menu in all_menu_items %}
+                                                  {% if sub_menu.parent_menu == main_menu %}
+                                                            {% if sub_menu.split_marked == True %}
+                                                                {% if sub_menu.split_label %}
+                                                                    <div class="collapse-divider"></div>
+                                                                    <h6 class="collapse-header">
+                                                                        {% trans sub_menu.split_label %}:
+                                                                    </h6>
+                                                                {% endif %}
+
+                                                            {% endif %}
+                                                            <!-- Nếu đây là active menu (current menu) - -> đánh dấu là active menu -->
+                                                              {% if sub_menu.url == request.path or sub_menu.url == request.get_full_path %}
+                                                                  {% if user_agent.is_pc %}
+                                                                    <a class="collapse-item tnd-collapse-item active" href="{{ sub_menu.url }}">
+                                                                        <i class="{{ sub_menu.icon_class }}"></i>
+                                                                        <span>
+                                                                            {% trans sub_menu.title %}
+                                                                        </span>
+                                                                    </a>
+                                                                  {% else %}
+                                                                    <a class="collapse-item tnd-collapse-item active" href="{{ sub_menu.url }}">
+                                                                        <i class="{{ sub_menu.icon_class }}"></i>
+                                                                        <span>
+                                                                            {% trans sub_menu.title %}
+                                                                        </span>
+                                                                    </a>
+                                                                  {% endif %}
+                                                                <span id="current-active-menu-id" style="display: none;">collapse-{{main_menu.uuid}}</span>
+                                                                                                                                                                                            <!-- Nếu không thì hiển thị như menu thường -->
+                                                              {% else %}
+                                                                <a class="collapse-item tnd-collapse-item"
+                                                                   target=""
+                                                                   href="{{ sub_menu.url }}">
+                                                                        <i class="{{ sub_menu.icon_class }}"></i>
+                                                                    <span>
+                                                                        {% trans sub_menu.title %}
+                                                                    </span>
+                                                                </a>
+                                                              {% endif %}
+                                                  {% endif %}
+                                              {% endfor %}
+                                          </div>
+                                        </div>
+                                    {% else %}
+                                        <a class="nav-link" href="{{ main_menu.url }}">
+                                          {% if main_menu.icon_class %}
+                                            <i class="{{ main_menu.icon_class }}"></i>
+                                          {% else %}
+                                            <i class="fas fa-fw fa-cog"></i>
+                                          {% endif %}
+                                          <span>
+                                              {% trans main_menu.title %}
+                                          </span>
+                                        </a>
+                                    {% endif %}
+                                  </li>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                        <hr class="sidebar-divider">
+                    {% else %}
+                    {% endif %}
+              <!-- Divider -->
+                {% endfor %}
+                {% endif %}
+
+              <!-- Sidebar Toggler (Sidebar) -->
+              <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+              </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+        </div>
+
+    </ul>
+    <!-- End of Sidebar -->

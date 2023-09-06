@@ -1,0 +1,262 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+            Create New AllAdminMenu
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_alladminmenu.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="alladminmenuWebsiteCreateFormId" data-uuid="{{ current_alladminmenu.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="alladminmenuWebsiteCreateFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            
+<div class="form-group input-group d-none">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Id
+        </span>
+    </div>
+    <input id="idAllAdminMenuWebsiteInputId" name="id" class="form-control id-alladminmenu-website-input" placeholder="Id of AllAdminMenu" type="text" value="">
+</div>
+            
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameAllAdminMenuWebsiteInputId" name="name" class="form-control name-alladminmenu-website-input" placeholder="Name of AllAdminMenu" type="text" value="">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidAllAdminMenuWebsiteInputId" name="uuid" class="form-control uuid-alladminmenu-website-input" placeholder="Uuid of AllAdminMenu" type="text" value="{{ current_uuid}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Title
+        </span>
+    </div>
+    <input id="titleAllAdminMenuWebsiteInputId" name="title" class="form-control title-alladminmenu-website-input" placeholder="Title of AllAdminMenu" type="text" value="">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Icon_Class
+        </span>
+    </div>
+    <input id="icon_classAllAdminMenuWebsiteInputId" name="icon_class" class="form-control icon_class-alladminmenu-website-input" placeholder="Icon_Class of AllAdminMenu" type="text" value="">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Url
+        </span>
+    </div>
+    <input id="urlAllAdminMenuWebsiteInputId" name="url" class="form-control url-alladminmenu-website-input" placeholder="Url of AllAdminMenu" type="text" value="">
+</div>
+                        
+  <div class="form-group input-group">
+    <div class="input-group-prepend" for="iconAllAdminMenuWebsiteInputId">
+        <span class="input-group-text">
+        Icon
+        </span>
+    </div>
+    <div class="custom-file">
+        <input class="alladminmenu-website" type="file" name="icon" class="form-control-file form-control icon-alladminmenu-website-input" id="iconAllAdminMenuWebsiteInputId">
+        <label class="custom-file-label" for="iconAllAdminMenuWebsiteInputId">{% trans 'Choose file' %}</label>
+    </div>
+    {% if current_alladminmenu.icon %}
+        <span>(Current:
+            <a href="{{ current_alladminmenu.icon.url }}" target="_self">
+                {{ current_alladminmenu.icon_filename|title }}
+            </a>)
+        </span>
+    {% endif %}
+  </div>
+
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Icon_Base64
+        </span>
+    </div>
+    <textarea id="icon_base64AllAdminMenuWebsiteInputId" name="icon_base64" class="form-control icon_base64-alladminmenu-website-input" placeholder="Icon_Base64 of AllAdminMenu" type="text"></textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Desc
+        </span>
+    </div>
+    <textarea id="descAllAdminMenuWebsiteInputId" name="desc" class="form-control desc-alladminmenu-website-input" placeholder="Desc of AllAdminMenu" type="text"></textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Order
+        </span>
+    </div>
+    <input id="orderAllAdminMenuWebsiteInputId" name="order" class="form-control order-alladminmenu-website-input" placeholder="Order of AllAdminMenu" type="text" value="{{ current_alladminmenu.order}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_alladminmenu.in_main_menu == True %}
+        <input id="in_main_menuAllAdminMenuWebsiteInputId" name="in_main_menu" type="checkbox" class="form-check-input in_main_menu-alladminmenu-website-input" placeholder="In_Main_Menu of AllAdminMenu" value="" checked>
+        {% else %}
+        <input id="in_main_menuAllAdminMenuWebsiteInputId" name="in_main_menu" type="checkbox" class="form-check-input in_main_menu-alladminmenu-website-input" placeholder="In_Main_Menu of AllAdminMenu" value="">
+        {% endif %}
+        <label class="form-check-label" for="in_main_menuAllAdminMenuWebsiteInputId">
+            In_Main_Menu
+        </label>
+    </div>
+</div>
+                        
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="menu_groupAdminMenuGroupAllAdminMenuWebsiteInputId">{% trans 'Adminmenugroup' %}</label>
+  </div>
+  <select class="custom-select adminmenugroup-website-select" name="menu_group" id="menu_groupAdminMenuGroupAllAdminMenuWebsiteInputId">
+    <option selected>Choose...</option>
+  </select>
+</div>
+                        
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="parent_menuAllAdminMenuAllAdminMenuWebsiteInputId">{% trans 'Alladminmenu' %}</label>
+  </div>
+  <select class="custom-select alladminmenu-website-select" name="parent_menu" id="parent_menuAllAdminMenuAllAdminMenuWebsiteInputId">
+    <option selected>Choose...</option>
+  </select>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_alladminmenu.login_redirect == True %}
+        <input id="login_redirectAllAdminMenuWebsiteInputId" name="login_redirect" type="checkbox" class="form-check-input login_redirect-alladminmenu-website-input" placeholder="Login_Redirect of AllAdminMenu" value="" checked>
+        {% else %}
+        <input id="login_redirectAllAdminMenuWebsiteInputId" name="login_redirect" type="checkbox" class="form-check-input login_redirect-alladminmenu-website-input" placeholder="Login_Redirect of AllAdminMenu" value="">
+        {% endif %}
+        <label class="form-check-label" for="login_redirectAllAdminMenuWebsiteInputId">
+            Login_Redirect
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_alladminmenu.active == True %}
+        <input id="activeAllAdminMenuWebsiteInputId" name="active" type="checkbox" class="form-check-input active-alladminmenu-website-input" placeholder="Active of AllAdminMenu" value="" checked>
+        {% else %}
+        <input id="activeAllAdminMenuWebsiteInputId" name="active" type="checkbox" class="form-check-input active-alladminmenu-website-input" placeholder="Active of AllAdminMenu" value="">
+        {% endif %}
+        <label class="form-check-label" for="activeAllAdminMenuWebsiteInputId">
+            Active
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_alladminmenu.staff_only == True %}
+        <input id="staff_onlyAllAdminMenuWebsiteInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-alladminmenu-website-input" placeholder="Staff_Only of AllAdminMenu" value="" checked>
+        {% else %}
+        <input id="staff_onlyAllAdminMenuWebsiteInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-alladminmenu-website-input" placeholder="Staff_Only of AllAdminMenu" value="">
+        {% endif %}
+        <label class="form-check-label" for="staff_onlyAllAdminMenuWebsiteInputId">
+            Staff_Only
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_alladminmenu.superuser_only == True %}
+        <input id="superuser_onlyAllAdminMenuWebsiteInputId" name="superuser_only" type="checkbox" class="form-check-input superuser_only-alladminmenu-website-input" placeholder="Superuser_Only of AllAdminMenu" value="" checked>
+        {% else %}
+        <input id="superuser_onlyAllAdminMenuWebsiteInputId" name="superuser_only" type="checkbox" class="form-check-input superuser_only-alladminmenu-website-input" placeholder="Superuser_Only of AllAdminMenu" value="">
+        {% endif %}
+        <label class="form-check-label" for="superuser_onlyAllAdminMenuWebsiteInputId">
+            Superuser_Only
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_alladminmenu.split_marked == True %}
+        <input id="split_markedAllAdminMenuWebsiteInputId" name="split_marked" type="checkbox" class="form-check-input split_marked-alladminmenu-website-input" placeholder="Split_Marked of AllAdminMenu" value="" checked>
+        {% else %}
+        <input id="split_markedAllAdminMenuWebsiteInputId" name="split_marked" type="checkbox" class="form-check-input split_marked-alladminmenu-website-input" placeholder="Split_Marked of AllAdminMenu" value="">
+        {% endif %}
+        <label class="form-check-label" for="split_markedAllAdminMenuWebsiteInputId">
+            Split_Marked
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Split_Label
+        </span>
+    </div>
+    <input id="split_labelAllAdminMenuWebsiteInputId" name="split_label" class="form-control split_label-alladminmenu-website-input" placeholder="Split_Label of AllAdminMenu" type="text" value="">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated_At
+        </span>
+    </div>
+    <input id="updated_atAllAdminMenuWebsiteInputId" name="updated_at" class="form-control updated_at-alladminmenu-website-input" placeholder="Updated_At of AllAdminMenu" type="datetime-local" value="">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created_At
+        </span>
+    </div>
+    <input id="created_atAllAdminMenuWebsiteInputId" name="created_at" class="form-control created_at-alladminmenu-website-input" placeholder="Created_At of AllAdminMenu" type="datetime-local" value="">
+</div>
+                        
+<div class="form-group">
+    <button id="alladminmenuWebsiteSaveBtnId" type="button" class="btn btn-primary btn-lg">Save</button>
+    <button id="alladminmenuWebsiteSaveAndNewBtnId" type="button" class="btn btn-secondary btn-lg">Save and Create New</button>
+    <button id="alladminmenuWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

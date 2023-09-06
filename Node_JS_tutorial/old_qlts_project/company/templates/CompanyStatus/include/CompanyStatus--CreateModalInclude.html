@@ -1,0 +1,78 @@
+{% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+<div class="modal fade" id="StatusStatusCreatemodalsId" tabindex="-1" data-backdrop="static" data-keyboard="true"  role="dialog" aria-labelledby="StatusStatusCreatemodalsId" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+         <form method="POST" action="" enctype="multipart/form-data" id="StatusStatusCreateModalsFormId" data-uuid="">
+            <div class="modal-header">
+               <h3 class="modal-title">Tạo mới Trạng Thái</h3>
+               <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <div class="form-group px-lg-5 text-start">
+                  <div class="mb-1 col-xl-6 d-none">
+                     <label class="small mb-1">Id</label>
+                     <input id="idStatusStatusCreateModalInputId" name="id" class="form-control id-Status-Status-input" placeholder="Nhập Id of Status" type="text" value="">
+                  </div>
+                  <div class="mb-1 col-xl-6 d-none">
+                     <label class="small mb-1">Uuid</label>
+                     <input id="uuidStatusStatusCreateModalInputId" name="uuid" class="form-control uuid-Status-Status-input" placeholder="Nhập Uuid of Status" type="text" value="">
+                  </div>
+                  <h6 class="heading-small text-muted mb-4">Thông tin chung</h6>
+                  <div class="row gx-2 mb-2">
+                     <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Trạng Thái</label>
+                        <input id="nameStatusStatusCreateModalInputId"  name="name" class="form-control name-Status-Status-input mps_required" placeholder="Nhập Trạng Thái" type="text" value="">
+                     </div>
+                     <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Mã Trạng Thái</label>
+                       
+                        <input id="codeStatusStatusCreateModalInputId"  name="code" class="form-control code-Status-Status-input mps_required" placeholder="Nhập Mã Trạng Thái" type="text" value="">
+        
+                     </div>
+                  </div>
+                  <hr>
+                  <div class="row gx-2 mb-2">
+                     
+                        <label class="small mb-1">Mô Tả</label>
+                        <textarea id="descStatusStatusCreateModalInputId" name="desc" class=" form-control desc-Status-Status-input ckeditor-input" placeholder="Mô Tả" type="text"></textarea>
+                     
+                  </div>
+                  
+                     {% comment %} 
+                  </div>
+                  <div class="row gx-2 mb-2">
+                     <div class="mb-1 col-xl-12">
+                        <label for="avatarStatusStatusCreateModalInputId"><i class="fas fa-paperclip"></i>&nbsp;{% trans 'avatar' %}</label>
+                        <input class=" Status-Status form-control-file form-control Status-Status-file avatar-Status-Status-file-input" type="file" name="avatar"  class="" id="avatarStatusStatusCreateModalInputId">
+                        <div class="col-xl-12" id="avatarStatusStatusCreateModalFileAreaId">
+                           {% if current_Status.avatar %}
+                           <div class="form-group row col-xl-8 table-hover mt-1" style="background-color:gainsboro;height: 25px;" id="{{ current_Status.uuid }}AttachmentDivId">
+                              <div class="col-xl-10 " >
+                                 <span>
+                                    <a style="color:cornflowerblue" target="_blank"  href="{{ current_Status.avatar.url }}">
+                                       <p><b> {{ current_Status.avatar_filename|title }}</b></p>
+                                    </a>
+                                 </span>
+                              </div>
+                              <div class="col-xl-2 text-end">
+                                 <i class="fas fa-times" style="color:gray" file-uuid="{{ current_Status.uuid }}" onclick="avatarStatusStatusDeletedAttacthment(this)"></i>
+                              </div>
+                           </div>
+                           {% endif %}
+                        </div>
+                     </div>
+                     {% endcomment %}
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button id="StatusStatusCancelCreateModalBtnId" type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                  <button id="StatusStatusCreateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                  <button id="StatusStatusSaveAndNewModalBtnId" type="button" class="d-none btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu và thêm mới</button>
+                  {% comment %} <button id="StatusStatusTestCreateModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button> {% endcomment %}
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+</div>

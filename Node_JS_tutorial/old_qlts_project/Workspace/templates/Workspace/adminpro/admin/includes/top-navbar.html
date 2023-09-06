@@ -1,0 +1,399 @@
+{% load i18n %}
+{% load tz %}
+{% load user_agents %}
+
+<ul class="navbar-nav ml-left align-left">
+    <!-- Mainmenu Button (Visible Only XS) - Mobile only -->
+    <li class="nav-item dropdown no-arrow d-sm-none align-left">
+    <!--
+        <a class="nav-link dropdown-toggle"
+           href="#" id="mainMenuButtonMobile"
+           role="button"
+           data-toggle="dropdown"
+           aria-haspopup="true"
+           aria-expanded="false">
+            <i class="fas fa-bars"></i>
+        </a>
+        -->
+        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+        </button>
+    </li>
+</ul>
+<!-- Topbar Navbar -->
+<ul class="navbar-nav ml-auto">
+    <!-- Search Dropdown (Visible Only XS) - Mobile only -->
+    <li class="nav-item dropdown no-arrow d-sm-none">
+        <a class="nav-link dropdown-toggle show-mobile-1000" href="#" id="searchDropdown" role="button"
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-search fa-fw"></i>
+        </a>
+        <!-- Dropdown - Messages -->
+        <div class="dropdown-menu dropdown-menu-left p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+            <form class="form-inline mr-auto w-100 navbar-search"
+                  action="#"
+                   method="get"
+                   target="_blank">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input type="text"
+                           class="form-control bg-light border-0 small"
+                           placeholder="Search for..."
+                           aria-label="Search"
+                           name="q"
+                           aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </li>
+
+    <!-- Top Search Form - PC only -->
+    <li class="nav-item dropdown no-arrow m-auto p-auto hide-mobile-1200">
+        {% if user.is_authenticated %}
+        <!-- Sidebar Toggle (Topbar) -->
+        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3 hide-mobile-1200">
+            <i class="fa fa-bars"></i>
+        </button>
+
+        <!-- Topbar Search -->
+        <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search hide-mobile-1200"
+              id="search-form"
+              action="#" method="get" target="_blank">
+            {% csrf_token %}
+            <div class="input-group">
+                <input type="text"
+                       class="form-control bg-light border-0 small"
+                       placeholder="{% trans 'Keyword' %}..."
+                       aria-label="Search"
+                       aria-describedby="basic-addon2"
+                       name="q">
+
+                <div class="input-group-append">
+                    <button class="btn btn-primary"
+                            form="search-form"
+                            type="submit">
+                        <i class="fas fa-search fa-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+        <!-- End Top Search -->
+        {% endif %}
+    </li>
+    <!-- Nav Item - Alerts -->
+    <li class="nav-item dropdown no-arrow mx-1 float-right">
+        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-bell fa-fw"></i>
+            <!-- Counter - Alerts -->
+            {% if unread_alerts|length > 0 %}
+                <span class="badge badge-danger badge-counter"
+                      id="alert-count-id">
+                    {{ unread_alerts|length }}
+                </span>
+            {% else %}
+
+            {% endif %}
+        </a>
+        <!-- Dropdown - Alerts -->
+        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+             aria-labelledby="alertsDropdown" style="z-index: 200;">
+            <h6 class="dropdown-header">
+                {% trans "Alerts Center" %}
+            </h6>
+
+            <div id="alert-list-top-id">
+                {% if alerts %}
+                {% for a in alerts %}
+                <a class="dropdown-item d-flex align-items-center" href="{% url 'Alert:AlertMessageDetailView' slug=a.uuid %}">
+                    {% if a.read == True %}
+                        <div class="mr-3">
+                            <div class="icon-circle bg-success">
+                                <i class="fas fa-file-alt text-white"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="small text-gray-500">{{ a.updated_at }}</div>
+                            {{ a.message }}
+                        </div>
+                    {% else %}
+                        <div class="mr-3">
+                            <div class="icon-circle bg-primary">
+                                <i class="fas fa-donate text-white"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="small text-gray-500">{{ a.updated_at }}</div>
+                            <span class="font-weight-bold">{{ a.message }}</span>
+                        </div>
+                    {% endif %}
+                </a>
+
+                {% endfor %}
+                {% endif %}
+            </div>
+            <a class="dropdown-item text-center small text-gray-500" href="{% url 'Alert:Index' %}">
+                {% trans "Show All Alerts" %}
+            </a>
+        </div>
+    </li>
+
+    <!-- Nav Item - Message -->
+    <li class="nav-item dropdown no-arrow mx-1 float-right">
+        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-envelope fa-fw"></i>
+            <!-- Counter - Message -->
+            {% if unread_messages|length > 0 %}
+                <span class="badge badge-danger badge-counter"
+                      id="message-count-id">
+                    {{ unread_messages|length }}
+                </span>
+            {% else %}
+            {% endif %}
+        </a>
+        <!-- Dropdown - Message -->
+        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+             aria-labelledby="messagesDropdown" style="z-index: 200;">
+            <h6 class="dropdown-header">
+                {% trans "Message Center" %}
+            </h6>
+
+            <div id="messages-list-top-id">
+                {% if messages %}
+                {% for m in messages %}
+                <a class="dropdown-item d-flex align-items-center"
+                   href="{% url 'Message:MessageDetailView' slug=m.id %}">
+                    {% if m.read == True %}
+                    <div class="dropdown-list-image mr-3">
+                        {% if m.created_by.avatar_base64 %}
+                        <img id="avatarImage" src="data:image/jpeg;base64,{{ m.created_by.avatar_base64 }}" alt=""
+                             style="width:100%; max-width:300px; text-align: center;">
+                        {% else %}
+                        {% if m.created_by.avatar %}
+                        <img class="rounded-circle" src="{{ m.created_by.avatar.url }}" alt="">
+                        {% else %}
+                        <img id="avatarImage2" src="/media/default/default-avatar.png" alt=""
+                             style="width:100%; max-width:300px; text-align: center;">
+                        {% endif %}
+                        {% endif %}
+
+                        <div class="status-indicator"></div>
+                    </div>
+                    <div>
+                        <div class="text-truncate">
+                            {% autoescape off %}
+                            {{ m.message }}
+                            {% endautoescape %}
+                        </div>
+                        <div class="small text-gray-500">{{ m.created_by }} · 1d</div>
+                    </div>
+                    {% else %}
+                    <div class="dropdown-list-image mr-3">
+
+                        {% if m.created_by.avatar %}
+                        <img class="rounded-circle" src="{{ m.created_by.avatar.url }}" alt="">
+                        {% else %}
+                        {% if m.created_by.avatar_base64 %}
+                        <img id="avatarImage" src="{{ m.created_by.avatar_base64 }}" alt=""
+                             style="width:100%; max-width:300px; text-align: center;">
+                        {% else %}
+                        <img id="avatarImage2" src="/media/default/default-avatar.png" alt=""
+                             style="width:100%; max-width:300px; text-align: center;">
+                        {% endif %}
+                        {% endif %}
+
+                        <div class="status-indicator bg-success"></div>
+                    </div>
+                    <div class="font-weight-bold">
+                        <div class="text-truncate" style="max-width: 200px; max-height: 200px;">
+                            {% autoescape off %}
+                            {{ m.message }}
+                            {% endautoescape %}
+                        </div>
+                        <div class="small text-gray-500">{{ m.admin_support }} · 58m</div>
+                    </div>
+                    {% endif %}
+                </a>
+                {% endfor %}
+                {% endif %}
+            </div>
+
+            <a class="dropdown-item text-center small text-gray-500" href="{% url 'Message:IndexView' %}">
+                {% trans "Read More Messages" %}
+            </a>
+        </div>
+    </li>
+
+    <div class="topbar-divider d-sm-block d-none"></div>
+
+    <!-- Nav Item - Apps -->
+    <li class="nav-item dropdown no-arrow mx-1 float-right">
+        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+           aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-rocket"></i>
+            <!-- Counter - Apps -->
+            {% if all_apps %}
+                <span class="badge badge-danger badge-counter">{{ all_apps|length }}</span>
+            {% else %}
+                <span class="badge badge-danger badge-counter">{{ all_apps.count }}</span>
+            {% endif %}
+        </a>
+        <!-- Dropdown - Apps -->
+        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+             aria-labelledby="messagesDropdown" style="z-index: 200;">
+            <h6 class="dropdown-header">
+                {% trans "Apps" %}
+            </h6>
+
+            <div class="mail-ui-IconList-Content">
+                {% for app in all_apps %}
+                    {% if app.is_product == True and app.demo_mode == False %}
+                    <a href="{{ app.url }}"
+                       target="{{ app.href_target }}"
+                       data-toggle="tooltip"
+                       title="{{ app.name }}"
+                       class="mail-ui-IconList-Item ns-action tnd-tooltip">
+                        <div class="mail-ui-IconList-Item-Icon" style="width:50px; height: 50px;">
+                            {% if app.icon_base64 %}
+                            <img class="fa fa-rocket" src="data:image/jpeg;base64,{{ app.icon_base64 }}"
+                                 style="width: 32px; height: 32px; text-align: center;">
+                            {% else %}
+                            {% if app.icon %}
+                            <img class="fa fa-rocket" src="{{ app.icon.url }}"
+                                 style="width: 32px; height: 32px; text-align: center;">
+                            {% else %}
+                            <img src="https://image.flaticon.com/icons/svg/1337/1337055.svg"
+                                 style="width: 32px; text-align: center;">
+                            {% endif %}
+                            {% endif %}
+                                          <span class="mail-ui-IconList-Item-Text" style="top:10%;">
+                                              {% if app.short_name %}
+                                                  {{ app.short_name }}
+                                              {% else %}
+                                                  {{ app.name }}
+                                              {% endif %}
+                                          </span>
+                        </div>
+                    </a>
+
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <hr>
+            <h6 class="dropdown-header">
+                {% trans "Demo" %}
+            </h6>
+
+            <div class="mail-ui-IconList-Content">
+
+                {% for app in all_apps %}
+                    {% if app.is_product == True and app.demo_mode == True %}
+                    <a href="{{ app.url }}"
+                       data-toggle="tooltip"
+                       title="{{ app.name }}"
+                       class="mail-ui-IconList-Item ns-action tnd-tooltip"
+                       data-click-action="common.clck"
+                       data-params="metrika=Login header.Left part:Hamburger services menu:Open hamburger menu popup:Click on service &quot;&quot;"
+                       target="_blank" rel="noopener">
+
+                        <div class="mail-ui-IconList-Item-Icon">
+                            {% if app.icon_base64 %}
+                            <img class="fa fa-rocket" src="data:image/png;base64,{{ app.icon_base64 }}"
+                                 style="width: 32px; height: 32px; text-align: center;">
+                            {% else %}
+                            {% if app.icon %}
+                            <img src="{{ app.icon.url }}" style="max-width: 32px;">
+                            {% else %}
+                            <img src="https://image.flaticon.com/icons/svg/1337/1337055.svg" style="max-width: 32px;">
+                            {% endif %}
+                            {% endif %}
+                        </div>
+                        <span class="mail-ui-IconList-Item-Text">{{ app.name }}</span>
+                    </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <hr>
+            <a class="dropdown-item text-center small text-gray-500" href="">
+                {% trans "All Application" %}
+            </a>
+    </li>
+
+    <!-- Nav Item - User Information -->
+    <li class="nav-item dropdown no-arrow">
+        <a class="nav-link dropdown-toggle"
+           id="userDropdownId"
+           role="button"
+           data-toggle="dropdown"
+           aria-haspopup="true"
+           aria-label="{{ current_user.username }}"
+           aria-expanded="false">
+            {% if current_user %}
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ current_user.username }}</span>
+                <div>
+                {% if current_user.avatar_base64 %}
+                    <img class="img-profile rounded-circle" src="data:image/jpeg;base64,{{ current_user.avatar_base64 }}">
+                {% else %}
+                    {% if current_user.avatar %}
+                        <img class="img-profile rounded-circle" src="{{ current_user.avatar.url }}">
+                    {% else %}
+                        <img class="img-profile rounded-circle" src="/media/default/default-avatar.png">
+                    {% endif %}
+                {% endif %}
+                </div>
+            {% endif %}
+        </a>
+        <!-- Dropdown - User Information -->
+        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in hide"
+             aria-labelledby="userDropdownId"
+             style="z-index: 200;">
+
+            {% if user.is_superuser %}
+            <a class="dropdown-item" href="{% url 'admin:index' %}">
+                <i class="fas fa-mask fa-sm fa-fw mr-2 text-gray-400"></i>
+                {% trans "Super Admin" %}
+            </a>
+            <a class="dropdown-item" href="">
+                <i class="fas fa-tools fa-sm fa-fw mr-2 text-gray-400"></i>
+                {% trans "SuperUser Tools" %}
+            </a>
+
+            <a class="dropdown-item" href="{% url 'Website:SystemSetting' %}">
+                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                {% trans "System Settings" %}
+
+            </a>
+            {% endif %}
+
+            <a class="dropdown-item" href="{% url 'Account:Profile' %}">
+                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                {% trans "Profile" %}
+
+            </a>
+
+            <a class="dropdown-item" href="{% url 'Logger:Dashboard' %}">
+                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                {% trans "Activity Log" %}
+
+            </a>
+
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item"
+               id="signoutButtonId"
+               href="{% url 'Account:Signout' %}"
+               data-toggle="modal"
+               data-target="#logoutModal">
+                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                {% trans "Logout" %}
+            </a>
+
+        </div>
+    </li>
+</ul>
+<!-- End Topbar Navbar -->

@@ -1,0 +1,13 @@
+{% load i18n %}
+{% load tz %}
+
+{% if all_uas %}
+    {% for ua in all_uas %}
+        User-agent: {{ ua.name }}<br>
+        {% for arg in robots_args %}
+            {% if arg.ua == ua %}
+                {{ arg.name }}: {{ arg.value }}<br>
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endif %}

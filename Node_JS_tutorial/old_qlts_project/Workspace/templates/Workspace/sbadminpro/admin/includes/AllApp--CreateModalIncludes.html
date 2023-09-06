@@ -1,0 +1,142 @@
+
+            {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+            
+<div class="modal fade" id="allappWorkspaceCreatemodalsId" tabindex="-1" data-backdrop="static" data-keyboard="true"  role="dialog" aria-labelledby="allappWorkspaceCreatemodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="allappWorkspaceCreateModalsFormId" data-uuid="">
+            <div class="modal-header">
+                <h3 class="modal-title">Tạo mới   Danh Sách Webapp </h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group px-lg-5 text-start">
+            
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Id</label>
+    <input id="idAllAppWorkspaceCreateModalInputId" name="id" class="form-control id-allapp-workspace-input" placeholder="Điền thông tin Id of AllApp" type="text" value="">
+</div>
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Uuid</label>
+    <input id="uuidAllAppWorkspaceCreateModalInputId" name="uuid" class="form-control uuid-allapp-workspace-input" placeholder="Điền thông tin Uuid of AllApp" type="text" value="">
+</div>
+            <div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Name</label>
+                        <input id="nameAllAppWorkspaceCreateModalInputId"  name="name" class="form-control name-allapp-workspace-input " placeholder="Điền thông tin Name" type="text" value="">
+                        
+                    </div>
+                    
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Short_Name</label>
+                        <input id="short_nameAllAppWorkspaceCreateModalInputId"  name="short_name" class="form-control short_name-allapp-workspace-input " placeholder="Điền thông tin Short_Name" type="text" value="">
+                        
+                    </div>
+                    </div><div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Url For App. If Null Or Blank</label>
+                        <input id="urlAllAppWorkspaceCreateModalInputId"  name="url" class="form-control url-allapp-workspace-input " placeholder="Điền thông tin Url For App. If Null Or Blank" type="text" value="">
+                        
+                    </div>
+                    
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">"Target On Click!"</label>
+                        <input id="href_targetAllAppWorkspaceCreateModalInputId"  name="href_target" class="form-control href_target-allapp-workspace-input " placeholder="Điền thông tin "Target On Click!"" type="text" value="">
+                        
+                    </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                        <label for="iconAllAppWorkspaceCreateModalInputId"><i class="fas fa-paperclip"></i>&nbsp;{% trans 'Logo for app. If blank' %}</label>
+                                <input class=" allapp-workspace form-control-file form-control allapp-workspace-file icon-allapp-workspace-file-input" type="file" name="icon"  class="" id="iconAllAppWorkspaceCreateModalInputId">
+                            <div class="col-xl-12" id="iconAllAppWorkspaceCreateModalFileAreaId">    
+                            {% if current_allapp.icon %}
+  
+                                <div class="form-group row col-xl-8 table-hover mt-1" style="background-color:gainsboro;height: 25px;" id="{{ current_allapp.uuid }}AttachmentDivId">
+                                    <div class="col-xl-10 " >
+                                        <span><a style="color:cornflowerblue" target="_blank"  href="{{ current_allapp.icon.url }}"><p><b> {{ current_allapp.icon_filename|title }}</b></p></a></span>
+                                    </div>
+                                    <div class="col-xl-2 text-end">
+                                        <i class="fas fa-times" style="color:gray" file-uuid="{{ current_allapp.uuid }}" onclick="iconallappWorkspaceDeletedAttacthment(this)"></i>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                        </div>
+
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <div class="form-check mt-4">
+                                {% if current_allapp.active == True %}
+                                <input id="activeAllAppWorkspaceCreateModalInputId"  name="active" type="checkbox" class="form-check-input active-allapp-workspace-input" placeholder="Điền thông tin Active of AllApp" value="" checked>
+                                {% else %}
+                                <input id="activeAllAppWorkspaceCreateModalInputId"  name="active" type="checkbox" class="form-check-input active-allapp-workspace-input" placeholder="Điền thông tin Active of AllApp" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="activeAllAppWorkspaceCreateModalInputId">
+                                    Active
+                                </label>
+                            </div>
+                        </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <div class="form-check mt-4">
+                                {% if current_allapp.is_product == True %}
+                                <input id="is_productAllAppWorkspaceCreateModalInputId"  name="is_product" type="checkbox" class="form-check-input is_product-allapp-workspace-input" placeholder="Điền thông tin Is_Product of AllApp" value="" checked>
+                                {% else %}
+                                <input id="is_productAllAppWorkspaceCreateModalInputId"  name="is_product" type="checkbox" class="form-check-input is_product-allapp-workspace-input" placeholder="Điền thông tin Is_Product of AllApp" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="is_productAllAppWorkspaceCreateModalInputId">
+                                    If Not Is A Product
+                                </label>
+                            </div>
+                        </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <div class="form-check mt-4">
+                                {% if current_allapp.staff_only == True %}
+                                <input id="staff_onlyAllAppWorkspaceCreateModalInputId"  name="staff_only" type="checkbox" class="form-check-input staff_only-allapp-workspace-input" placeholder="Điền thông tin Staff_Only of AllApp" value="" checked>
+                                {% else %}
+                                <input id="staff_onlyAllAppWorkspaceCreateModalInputId"  name="staff_only" type="checkbox" class="form-check-input staff_only-allapp-workspace-input" placeholder="Điền thông tin Staff_Only of AllApp" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="staff_onlyAllAppWorkspaceCreateModalInputId">
+                                    Chỉ Quyền Staff Mới Truy Cập Được!
+                                </label>
+                            </div>
+                        </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <div class="form-check mt-4">
+                                {% if current_allapp.admin_only == True %}
+                                <input id="admin_onlyAllAppWorkspaceCreateModalInputId"  name="admin_only" type="checkbox" class="form-check-input admin_only-allapp-workspace-input" placeholder="Điền thông tin Admin_Only of AllApp" value="" checked>
+                                {% else %}
+                                <input id="admin_onlyAllAppWorkspaceCreateModalInputId"  name="admin_only" type="checkbox" class="form-check-input admin_only-allapp-workspace-input" placeholder="Điền thông tin Admin_Only of AllApp" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="admin_onlyAllAppWorkspaceCreateModalInputId">
+                                    Chỉ Quyền Super Admin Mới Truy Cập Được!
+                                </label>
+                            </div>
+                        </div>
+                    </div><div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-12">
+                        <label class="small mb-1">Order</label>
+                        <input id="orderAllAppWorkspaceCreateModalInputId"  name="order" class=" form-control order-allapp-workspace-input" placeholder="Điền thông tin Order" type="text" value="{{ current_allapp.order}}">
+                    </div>
+                    </div>
+              </div>
+                    <div class="modal-footer">
+                        <button id="allappWorkspaceCancelCreateModalBtnId" type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="allappWorkspaceCreateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                        
+                        <button id="allappWorkspaceSaveAndNewModalBtnId" type="button" class="d-none btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu và thêm mới</button>
+                        <button id="allappWorkspaceTestCreateModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+            </div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+            
+            

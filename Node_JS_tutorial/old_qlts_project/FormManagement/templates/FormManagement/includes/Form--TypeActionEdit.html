@@ -1,0 +1,113 @@
+
+{% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+
+
+<div class="modal fade" id="typeActionEditmodalsId" tabindex="-1" data-bs-backdrop="static" data-keyboard="true"  role="dialog" aria-labelledby="typeActionEditmodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <form  id="typeActiontEditModalsFormId" >
+                <div class="modal-header">
+                    <h3 class="modal-title">Chỉnh sửa loại hành động</h3>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group px-lg-5 text-start">
+                        {% csrf_token %}
+                        <div class="mb-1 col-xl-6 d-none">
+                            <label class="small mb-1">Id</label>
+                            <input id="idTypeActionFormManagementDetailId" name="id" class="form-control" placeholder="Nhập Id" type="text" >
+                        </div>
+                                    
+                        <div class="mb-1 col-xl-6 d-none">
+                            <label class="small mb-1">Uuid</label>
+                            <input id="uuidTypeActionFormManagementEditModal" name="uuid_" class="form-control uuid-account-account-input mps_required" placeholder="Uuid " type="text" value="">
+                        </div>
+
+                        <h6 class="heading-small text-muted mb-4">Nhập các thông tin cho loại hành động mới</h6>
+                        
+                        <div class="row gx-2 mb-2">
+                            <div class=" mb-1 col-xl-12">
+                                <label class="small mb-1">Tên Loại Hành Động</label>
+                                <input id="nameTypeActionFormManagementEditModal"  name="name" class="form-control named-account-account-input mps_required" placeholder="Tên Loại Hành Động" type="text" value="">
+                                
+                            </div>                                                                        
+                        </div>
+
+                        <div class="row gx-2 mb-2">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Mã Loại Hành Động</label>
+                                <input id="codeFormFormManagementEditModal" name="code" class="form-control " placeholder="Mã Loại Hành Động" type="text">
+                            </div>
+
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Loại Phiếu</label>
+                                <input id="typeFormTypeActionFormManagementEditModal" name="type_form" class="form-control " placeholder="Mã Loại Hành Động" type="text" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row gx-2 mb-2">
+                            <div class=" mb-1 col-xl-6">
+                                <!-- <label class="small mb-1">Loại màu</label>
+                                <input id="colorCodeTypeActionFormManagementEditModal" name="color_code" class="form-control" placeholder="Loại Màu" type="text"> -->
+                                <label for="exampleColorInput" class="form-label">Color picker</label>
+                                <input id="colorCodeTypeActionFormManagementEditModal" name="color_code" type="color" class="form-control form-control-color" placeholder="#563d7c" value="" title="Choose your color">
+                            </div>
+
+                            <div class="mb-1 col-xl-6">
+                                <label class="small"><a href="https://adminlte.io/themes/AdminLTE/pages/UI/icons.html">&nbsp;Icon</a></label>
+                                <input id="iconTypeActionFormManagementEditModal" name="icon" class="form-control " placeholder="Icon" type="text">
+                            </div>
+<!-- 
+                            <div class="mb-1 col-xl-2">
+                                <label class="small">&nbsp;</label>
+                                <br>
+                                <button class="btn btn-sm btn-primary" type="button" style="
+                                margin-bottom: 0px;
+                                margin-top: 0px;
+                                padding-top: 8px;
+                                padding-bottom: 8px;
+                            "><i title="Xem chi tiết" class="far fa-eye"></i><a href="https://adminlte.io/themes/AdminLTE/pages/UI/icons.html">&nbsp;Chi tiết</a></button>
+                            </div> -->
+                        </div>
+
+                        
+                        <div class="row gx-2 mb-2 d-none">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Người cập nhật</label>
+                                <input id="updateByTypeActionFormManagementEditModal"  name="updated_by" class="form-control password-account-account-input" placeholder="Người cập nhật" type="text" value="">
+                                
+                            </div>
+                            <div class=" mb-1 col-xl-6 ">
+                                <label class="small mb-1">Ngày cập nhật</label>
+                                <input id="updateAtTypeActionFormManagementEditModal"  name="updated_at" class="form-control password-account-account-input" placeholder="Ngày cập nhật" type="text" value="">
+                            </div>
+
+                        </div>
+                        <div class="row gx-2 mb-2 d-none">  
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Người tạo</label>
+                                <input id="createdByTypeActionFormManagementEditModal"  name="created_by" class="form-control password-account-account-input" placeholder="Người tạo" type="text" value="">
+                            </div>   
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Ngày tạo</label>
+                                <input id="createAtTypeActionFormManagementEditModal"  name="created_at" class="form-control password-account-account-input" placeholder="Người tạo" type="text" value="">
+                            </div>                                          
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="" type="" class="btn btn-light btn-sm d-none" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                    <button id="typeActionFormManagementEditModalBtnId" type="button" onclick="UpdateTypeActionFormManagement()" class="btn btn-primary btn-sm">
+                        <i class="fas fa-save"></i>
+                        &nbsp;Lưu
+                    </button>
+                    <!-- <button id="accountAccountSaveAndNewModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="d-none fas fa-save"></i>&nbsp;Lưu và thêm mới</button> -->
+                    <!-- <button id="accountAccountTestCreateModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button> -->
+                </div>
+            </form>
+            
+          
+        </div>
+    </div>
+</div>

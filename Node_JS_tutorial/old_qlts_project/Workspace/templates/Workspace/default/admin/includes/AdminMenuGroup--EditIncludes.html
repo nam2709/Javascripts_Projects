@@ -1,0 +1,270 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a class="btn btn-primary" href="{% url 'Website:AdminMenuGroupView' %}">
+            All AdminMenuGroups
+          </a>
+          <a href="{% url 'Website:AdminMenuGroup_EditView' slug=current_adminmenugroup.uuid %}">
+            Current AdminMenuGroup: {{ current_adminmenugroup.name|title }}
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            
+            {% if current_adminmenugroup.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="adminmenugroupWebsiteEditFormId" data-uuid="{{ current_adminmenugroup.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="adminmenugroupWebsiteEditFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+    
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    {% if current_adminmenugroup %}
+        <input id="nameAdminMenuGroupWebsiteEditInputId" name="name" class="form-control name-adminmenugroup-website-input" placeholder="Name" type="text" value="{{ current_adminmenugroup.name}}"  >
+    {% else %}
+        <input id="nameAdminMenuGroupWebsiteEditInputId" name="name" class="form-control name-adminmenugroup-website-input" placeholder="Name" type="text" value=""  >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    {% if current_adminmenugroup %}
+        <input id="uuidAdminMenuGroupWebsiteEditInputId" name="uuid" class="form-control uuid-adminmenugroup-website-input" placeholder="Uuid" type="text" value="{{ current_adminmenugroup.uuid}}"  >
+    {% else %}
+        <input id="uuidAdminMenuGroupWebsiteEditInputId" name="uuid" class="form-control uuid-adminmenugroup-website-input" placeholder="Uuid" type="text" value=""  >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Title
+        </span>
+    </div>
+    {% if current_adminmenugroup %}
+        <input id="titleAdminMenuGroupWebsiteEditInputId" name="title" class="form-control title-adminmenugroup-website-input" placeholder="Title" type="text" value="{{ current_adminmenugroup.title}}"  >
+    {% else %}
+        <input id="titleAdminMenuGroupWebsiteEditInputId" name="title" class="form-control title-adminmenugroup-website-input" placeholder="Title" type="text" value=""  >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Icon Class
+        </span>
+    </div>
+    {% if current_adminmenugroup %}
+        <input id="icon_classAdminMenuGroupWebsiteEditInputId" name="icon_class" class="form-control icon_class-adminmenugroup-website-input" placeholder="Icon Class" type="text" value="{{ current_adminmenugroup.icon_class}}"  >
+    {% else %}
+        <input id="icon_classAdminMenuGroupWebsiteEditInputId" name="icon_class" class="form-control icon_class-adminmenugroup-website-input" placeholder="Icon Class" type="text" value=""  >
+    {% endif %}
+</div>
+
+<div class="form-group input-group card  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Desc
+        </span>
+    </div>
+    {% if current_adminmenugroup %}
+        <textarea rows="10" id="descAdminMenuGroupWebsiteEditInputId" name="desc" class="form-control ckeditor-input w-100 desc-adminmenugroup-website-input" placeholder="Desc" type="text" value="" >{{  current_adminmenugroup.desc }}</textarea>
+    {% else %}
+        <textarea rows="10" id="descAdminMenuGroupWebsiteEditInputId" name="desc" class="form-control ckeditor-input w-100 desc-adminmenugroup-website-input" placeholder="Desc" type="text" value="" ></textarea>
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Order
+        </span>
+    </div>
+    {% if current_adminmenugroup %}
+        <input id="orderAdminMenuGroupWebsiteEditInputId" name="order" class="form-control order-adminmenugroup-website-input" placeholder="Order" type="text" value="{{ current_adminmenugroup.order}}"  >
+    {% else %}
+        <input id="orderAdminMenuGroupWebsiteEditInputId" name="order" class="form-control order-adminmenugroup-website-input" placeholder="Order" type="text" value=""  >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_adminmenugroup.active == True %}
+            <input id="activeAdminMenuGroupWebsiteEditInputId" name="active" type="checkbox" class="form-check-input active-adminmenugroup-website-input" placeholder="Active" checked >
+        {% else %}
+            <input id="activeAdminMenuGroupWebsiteEditInputId" name="active" type="checkbox" class="form-check-input active-adminmenugroup-website-input" placeholder="Active" >
+        {% endif %}
+        <label class="form-check-label" for="activeAdminMenuGroupWebsiteEditInputIdInputId">
+            Active
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_adminmenugroup.is_base == True %}
+            <input id="is_baseAdminMenuGroupWebsiteEditInputId" name="is_base" type="checkbox" class="form-check-input is_base-adminmenugroup-website-input" placeholder="Is Base" checked >
+        {% else %}
+            <input id="is_baseAdminMenuGroupWebsiteEditInputId" name="is_base" type="checkbox" class="form-check-input is_base-adminmenugroup-website-input" placeholder="Is Base" >
+        {% endif %}
+        <label class="form-check-label" for="is_baseAdminMenuGroupWebsiteEditInputIdInputId">
+            Is Base
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_adminmenugroup.staff_only == True %}
+            <input id="staff_onlyAdminMenuGroupWebsiteEditInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-adminmenugroup-website-input" placeholder="Staff Only" checked >
+        {% else %}
+            <input id="staff_onlyAdminMenuGroupWebsiteEditInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-adminmenugroup-website-input" placeholder="Staff Only" >
+        {% endif %}
+        <label class="form-check-label" for="staff_onlyAdminMenuGroupWebsiteEditInputIdInputId">
+            Staff Only
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_adminmenugroup.superuser_only == True %}
+            <input id="superuser_onlyAdminMenuGroupWebsiteEditInputId" name="superuser_only" type="checkbox" class="form-check-input superuser_only-adminmenugroup-website-input" placeholder="Superuser Only" checked >
+        {% else %}
+            <input id="superuser_onlyAdminMenuGroupWebsiteEditInputId" name="superuser_only" type="checkbox" class="form-check-input superuser_only-adminmenugroup-website-input" placeholder="Superuser Only" >
+        {% endif %}
+        <label class="form-check-label" for="superuser_onlyAdminMenuGroupWebsiteEditInputIdInputId">
+            Superuser Only
+        </label>
+    </div>
+</div>
+        
+    <div class="input-group mb-3  ">
+        <div class="input-group-prepend">
+            <label class="" for="appAllAppAdminMenuGroupWebsiteInputId">{% trans 'App' %}</label>
+        </div>
+        <select class="custom-select tnd-select2 autoload app-adminmenugroup-website-option allapp-website-select"  name="app" id="appAllAppAdminMenuGroupWebsiteInputId" >
+        <option selected>Choose... App</option>
+        {% for ele in all_allapps %}
+            {% if ele.uuid == current_adminmenugroup.app.uuid %}
+                <option value="{{ ele.uuid }}" selected>
+                    {{ ele.name }}
+                </option>
+            {% else %}
+                <option value="{{ ele.uuid }}">
+                    {{ ele.name }}
+                </option>
+            {% endif %}
+        {% endfor %}
+        </select>
+    </div>
+    
+    <div class="input-group mb-3  ">
+        <div class="input-group-prepend">
+            <label class="" for="related_appsAllAppAdminMenuGroupWebsiteInputId">{% trans 'Related Apps' %}</label>
+        </div>
+        <select class="custom-select tnd-select2 autoload related_apps-adminmenugroup-website-option allapp-website-select"  name="related_apps" id="related_appsAllAppAdminMenuGroupWebsiteInputId" >
+        <option selected>Choose... Related Apps</option>
+        {% for ele in all_allapps %}
+            {% if ele.uuid == current_adminmenugroup.related_apps.uuid %}
+                <option value="{{ ele.uuid }}" selected>
+                    {{ ele.name }}
+                </option>
+            {% else %}
+                <option value="{{ ele.uuid }}">
+                    {{ ele.name }}
+                </option>
+            {% endif %}
+        {% endfor %}
+        </select>
+    </div>
+    
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    {% if current_adminmenugroup %}
+        <input id="updated_atAdminMenuGroupWebsiteEditInputId" name="updated_at" class="form-control updated_at-adminmenugroup-website-input" placeholder="Updated At" type="datetime-local" value="{{ current_adminmenugroup.updated_at }}" >
+    {% else %}
+        <input id="updated_atAdminMenuGroupWebsiteEditInputId" name="updated_at" class="form-control updated_at-adminmenugroup-website-input" placeholder="Updated At" type="datetime-local" value="" >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    {% if current_adminmenugroup %}
+        <input id="created_atAdminMenuGroupWebsiteEditInputId" name="created_at" class="form-control created_at-adminmenugroup-website-input" placeholder="Created At" type="datetime-local" value="{{ current_adminmenugroup.created_at }}" >
+    {% else %}
+        <input id="created_atAdminMenuGroupWebsiteEditInputId" name="created_at" class="form-control created_at-adminmenugroup-website-input" placeholder="Created At" type="datetime-local" value="" >
+    {% endif %}
+</div>
+
+    <div class="modal-footer">
+        <button id="adminmenugroupWebsiteUpdateBtnId" type="button" class="btn btn-primary">Update</button>
+        <button id="adminmenugroupWebsiteTestBtnId" type="button" class="btn btn-warning">Test</button>
+    </div>
+            
+        </form>
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            
+{% include 'Workspace/'|add:website_template|add:'/admin/includes/Modal--FilePreview.html' %}
+

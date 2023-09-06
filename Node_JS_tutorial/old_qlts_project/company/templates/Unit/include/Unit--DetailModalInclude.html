@@ -1,0 +1,81 @@
+{% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+<div class="modal fade" id="UnitUnitDetailmodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="UnitUnitDetailmodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="UnitUnitDetailModalsFormId" data-uuid="">
+            <div class="modal-header">
+                <h3 class="modal-title">Thông tin Nhân Viên</h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+             <div class="modal-body">
+                <div class="form-group px-lg-5 text-start">
+            
+                 <div class="mb-1 col-xl-6 d-none">
+                   <label class="small mb-1">Id</label>
+                    <input id="idUnitUnitDetailModalInputId" name="id" class="form-control id-Unit-Unit-input" placeholder="Nhập Id of Unit" type="text" value="">
+                </div>
+            
+                <div class="mb-1 col-xl-6 d-none">
+                    <label class="small mb-1">Uuid</label>
+                    <input id="uuidUnitUnitDetailModalInputId" name="uuid" class="form-control uuid-Unit-Unit-input" placeholder="Nhập Uuid of Unit" type="text" value="">
+                </div>  
+            <h6 class="heading-small text-muted mb-4">Thông tin chung</h6>
+                                <div class="row gx-2 mb-2">
+                                    <div class=" mb-1 col-xl-6">
+                                        <label class="small mb-1">Phòng</label>
+                                       <input id="nameUnitUnitDetailModalInputId" name="name" class="form-control name-Unit-Unit-input" placeholder="Nhập Tên" type="text" value="{{ current_Unit.name}}" readonly>
+                                   </div>
+                                   <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Mã Phòng</label>
+                                    <input id="codeUnitUnitDetailModalInputId" name="code" class="form-control code-Unit-Unit-input" placeholder="Nhập code" type="text" value="" readonly>
+                                </div>  
+                                <div class="row gx-2 mb-2">
+                                    
+                                    <div class=" mb-1 col-xl-6">
+                                        <label class="small mb-1">Công Ty</label>
+                                        <input id="kcompanyUnitUnitDetailModalInputId" name="company" class="form-control company-Unit-Unit-input" placeholder="Nhập Phòng" type="text" value="" readonly>
+                                    </div>
+                                
+                                </div>
+                               
+                              
+                            </div>
+                        </div>         
+                                    
+                                  
+                                 
+                         {% comment %} <div class="mb-1 col-xl-12">
+                            <label for="avatarUnitUnitDetailModalInputId"><i class="fas fa-paperclip"></i>&nbsp;{% trans 'avatar' %}</label>
+                                <input class="Unit-Unit form-control-file form-control d-none Unit-Unit-file avatar-Unit-Unit-file-input"  type="file" name="avatar" class="" id="avatarUnitUnitDetailModalInputId">
+                            <div class="col-xl-12" id="avatarUnitUnitDetailModalFileAreaId">    
+                            {% if current_Unit.avatar %}
+  
+                                <div class="form-group row col-xl-8 table-hover mt-1" style="background-color:gainsboro;height: 25px;" id="{{ current_Unit.uuid }}AttachmentDivId">
+                                    <div class="col-xl-10 " >
+                                        <span><a style="color:cornflowerblue" target="_blank"  href="{{ current_Unit.avatar.url }}"><p><b> {{ current_Unit.avatar_filename|title }}</b></p></a></span>
+                                    </div>
+                                    <div class="col-xl-2 text-end">
+                                        <i class="fas fa-times" style="color:gray" file-uuid="{{ current_Unit.uuid }}" onclick="avatarUnitUnitDeletedAttacthment(this)"></i>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>  {% endcomment %}
+                        
+
+                    {% comment %} </div> {% endcomment %}
+              
+                    <div class="modal-footer">
+                        <button id="UnitUnitCancelDetailModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                    </div>
+            
+            </div>
+                     </form>
+                       
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            
+            

@@ -1,0 +1,327 @@
+
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<!-- DataTales -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a class="btn btn-primary" href="{% url 'Website:AllAdminMenuView' %}">
+            All AllAdminMenus
+          </a>
+          <a class="btn btn-primary" href="{% url 'Website:AllAdminMenu_CreateView' %}">
+            Create
+          </a>
+      </h6>
+            
+
+      <h6 class="m-0 font-weight-bold text-primary text-right">
+            <span class="step-links">
+                {% if all_alladminmenus.has_previous %}
+                    <a href="?page=1">&laquo; {% trans 'first ' %}</a>
+                    <a class="paginate_button previous" href="?page={{ all_alladminmenus.previous_page_number }}">{% trans 'previous' %}</a>
+                {% endif %}
+
+                <span class="current">
+                    {% trans 'Page ' %}{{ all_alladminmenus.number }} {% trans 'of ' %}{{ all_alladminmenus.paginator.num_pages }}.
+                </span>
+
+                {% if all_alladminmenus.has_next %}
+                    <a href="?page={{ all_alladminmenus.next_page_number }}">{% trans 'next' %}</a>
+                    <a href="?page={{ all_alladminmenus.paginator.num_pages }}">{% trans 'last ' %}&raquo;</a>
+                {% endif %}
+            </span>
+      </h6>
+    </div>
+            
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped w-auto table-fit" id="alladminmenuWebsiteDataTableId" width="100%" cellspacing="0">
+          <thead>
+            <tr>
+            
+                  <th>Name</th>
+                
+                  <th>Uuid</th>
+                
+                  <th>Title</th>
+                
+                  <th>Icon_Class</th>
+                
+                  <th>Url</th>
+                
+                  <th>Icon</th>
+                
+                  <th>Icon_Base64</th>
+                
+                  <th>Desc</th>
+                
+                  <th>Order</th>
+                
+                  <th>In_Main_Menu</th>
+                
+                  <th>Menu_Group</th>
+                
+                  <th>Parent_Menu</th>
+                
+                  <th>Login_Redirect</th>
+                
+                  <th>Active</th>
+                
+                  <th>Staff_Only</th>
+                
+                  <th>Superuser_Only</th>
+                
+                  <th>Split_Marked</th>
+                
+                  <th>Split_Label</th>
+                
+                  <th>Updated_At</th>
+                
+                  <th>Created_At</th>
+                
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+            
+                  <th>Name</th>
+                
+                  <th>Uuid</th>
+                
+                  <th>Title</th>
+                
+                  <th>Icon_Class</th>
+                
+                  <th>Url</th>
+                
+                  <th>Icon</th>
+                
+                  <th>Icon_Base64</th>
+                
+                  <th>Desc</th>
+                
+                  <th>Order</th>
+                
+                  <th>In_Main_Menu</th>
+                
+                  <th>Menu_Group</th>
+                
+                  <th>Parent_Menu</th>
+                
+                  <th>Login_Redirect</th>
+                
+                  <th>Active</th>
+                
+                  <th>Staff_Only</th>
+                
+                  <th>Superuser_Only</th>
+                
+                  <th>Split_Marked</th>
+                
+                  <th>Split_Label</th>
+                
+                  <th>Updated_At</th>
+                
+                  <th>Created_At</th>
+                
+            </tr>
+          </tfoot>
+          <tbody id="alladminmenuWebsiteTableBodyId">
+          {% if all_alladminmenus %}
+          {% for s in all_alladminmenus %}
+            <tr>
+            
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.name }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.uuid }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.title }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.icon_class }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.url }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.icon }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.icon_base64 }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.desc }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.order }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.in_main_menu }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.menu_group }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.parent_menu }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.login_redirect }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.active }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.staff_only }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.superuser_only }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.split_marked }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.split_label }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.updated_at }}
+                  </a>
+              </td>
+                
+              <td class="">
+                  <a href="{% url 'Website:AllAdminMenu_DetailView' slug=s.uuid %}" target="_self">
+                    {{ s.created_at }}
+                  </a>
+              </td>
+                
+            </tr>
+          {% endfor %}
+          {% endif %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+            
+              <script>
+                    $(document).ready( function () {
+                        var alladminmenuDataTable = $('#alladminmenuDataTableId').DataTable({
+                            dom: '<"btn-tools"B><"top"lf>rt<"bottom"ip><"clear">',
+                            buttons: [
+                                'copyHtml5',
+                                'print',
+                                'excelHtml5',
+                                'csvHtml5',
+                                'pdfHtml5',
+                                {
+                                    text: 'Reload',
+                                    attr: {
+                                        id: 'reloadEnvParametersTableId',
+                                        class: 'btn btn-success',
+                                    },
+                                    action: function ( e, dt, node, config ) {
+                                        var r = confirm("Reload data again...!");
+                                        if (r == true) {
+                                          configParaTable.ajax.reload( null, false );
+                                        } else {
+                                          console.log('Canceled...');
+                                        };
+                                    }
+                                },
+                            ]
+                        } );
+
+                    });
+
+                    $(document).ready(function(){
+                        $(".dt-button").addClass('btn btn-success');
+                    });
+              </script>
+
+                <style>
+                    .btn-tools {
+                        text-align: right !important;
+                        padding-bottom: 0.5em;
+                    }
+                    .dataTables_filter {
+                       /* float: center !important; */
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+                    .dataTables_info {
+                       float: left !important;
+                        vertical-align: middle;
+                    }
+
+                    .dataTables_length {
+                       float: left !important;
+                        vertical-align: middle;
+                        text-align: left;
+                    }
+                    .dt-buttons {
+                       /* float: right !important; */
+                        vertical-align: middle;
+                    }
+                </style>
+            

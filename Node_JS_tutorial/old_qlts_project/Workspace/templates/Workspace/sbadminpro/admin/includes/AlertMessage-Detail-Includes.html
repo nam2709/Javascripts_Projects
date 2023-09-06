@@ -1,0 +1,52 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AlertMessageClasses.js' %}"></script>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a href="{% url 'Website:AlertMessage_DetailView' slug=current_alertmessage.uuid %}">
+            Current AlertMessage: {{ current_alertmessage.name|title }}
+          </a>
+          <a class="btn btn-primary" href="{% url 'Website:AlertMessage_EditView' slug=current_alertmessage.uuid %}">
+            Edit
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_alertmessage.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="alertmessageWebsiteDetailFormId" data-uuid="{{ current_alertmessage.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="alertmessageWebsiteDetailFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            
+<div class="form-group input-group d-none">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Id
+        </span>
+    </div>
+    {% if current_id %}
+        <input id="idAlertMessageWebsiteInputId" name="id" class="form-control id-alertmessage-website-input" placeholder="Id of AlertMessage" type="text" value="{{ current_alertmessage.id}}">
+    {% else %}
+        <input id="idAlertMessageWebsiteInputId" name="id" class="form-control id-alertmessage-website-input" placeholder="Id of AlertMessage" type="text" value="">
+    {% endif %}
+</div>
+            
+<div class="form-group">
+    <button id="alertmessageWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load i18n %}
+
+<head>
+
+    {% include 'Workspace/'|add:website_template|add:'/admin/header.html' %}
+
+</head>
+
+<body id="page-top">
+
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    {% include 'Workspace/'|add:website_template|add:'/admin/sidebar.html' %}
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="">
+        <!-- Main Content -->
+        <div id="content">
+            {% include 'Workspace/'|add:website_template|add:'/admin/topbar.html' %}
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">
+
+                </h1>
+
+                <div class="col-lg-12">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">{% trans 'Tools:' %}</h6>
+                        </div>
+                        <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <form id="update-all-apps-list-form"
+                                      method="POST"
+                                      class="post-form"
+                                      action=""
+                                      enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="action" value="update-all-apps-list">
+                                    <button type="submit"
+                                            form="update-all-apps-list-form"
+                                            title="Update AllApps List"
+                                            class="btn btn-primary btn-block"> Update AllApps
+                                    </button>
+                                </form>
+                                <form id="clean-all-apps-list-form"
+                                      method="POST"
+                                      class="post-form"
+                                      action=""
+                                      enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="action" value="clean-all-apps-list">
+                                    <button type="submit"
+                                            form="clean-all-apps-list-form"
+                                            title="Update AllApps List"
+                                            class="btn btn-danger btn-block"> Clean AllApps
+                                    </button>
+                                </form>
+                                <br>
+                                <form id="update-all-views-list-form"
+                                      method="POST"
+                                      class="post-form"
+                                      action=""
+                                      enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="action" value="update-all-views-list">
+                                    <button type="submit"
+                                            form="update-all-views-list-form"
+                                            title="Update AllViews List"
+                                            class="btn btn-primary btn-block"> Update AllView
+                                    </button>
+                                </form>
+                                <form id="clean-all-views-list-form"
+                                      method="POST"
+                                      class="post-form"
+                                      action=""
+                                      enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="action" value="clean-all-views-list">
+                                    <button type="submit"
+                                            form="clean-all-views-list-form"
+                                            title="Update AllViews List"
+                                            class="btn btn-danger btn-block"> Clean AllView
+                                    </button>
+                                </form>
+                                <br>
+                                <form id="archive-logs-form"
+                                      method="POST"
+                                      class="post-form"
+                                      action=""
+                                      enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="action" value="archive-log">
+                                    <button type="submit"
+                                            form="archive-logs-form"
+                                            title="Update AllViews List"
+                                            class="btn btn-danger btn-block"> Archive Logs
+                                    </button>
+                                </form>
+                                <br>
+                                <form id="clean-expired-user-form"
+                                      method="POST"
+                                      class="post-form"
+                                      action=""
+                                      enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="action" value="clean-expired-user">
+                                    <button type="submit"
+                                            form="clean-expired-user-form"
+                                            title="Update AllViews List"
+                                            class="btn btn-danger btn-block"> Clean Expired Users
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% include 'Workspace/'|add:website_template|add:'/admin/footer.html' %}
+
+    </div>
+</div>
+
+</body>
+
+</html>

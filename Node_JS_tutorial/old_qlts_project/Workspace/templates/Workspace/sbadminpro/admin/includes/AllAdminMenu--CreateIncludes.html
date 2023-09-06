@@ -1,0 +1,209 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="/static/sbadminpro/js/jquery/dist/jquery.min.js"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WorkspaceConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+<div class="card shadow mb-1">
+    <div class="card-header py-3">
+        <h6>
+          <a class="btn btn-primary btn-sm" href="{% url 'Workspace:AllAdminMenuView' %}">
+            All AllAdminMenus
+          </a>
+        </h6>
+      <h6 class="m-0 font-weight-bold text-primary">
+               Admin Menu  Mới
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_alladminmenu.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="alladminmenuWorkspaceCreateFormId" data-uuid="{{ current_alladminmenu.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="alladminmenuWorkspaceCreateFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            
+<div class="mb-1 col-xl-6 d-none">
+    <label class="small mb-1">Id</label>
+    <input id="idAllAdminMenuWorkspaceInputId" name="id" class="form-control id-alladminmenu-workspace-input" placeholder="Điền thông tin Id of AllAdminMenu" type="text" value="">
+</div>
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Uuid</label>
+    <input id="uuidAllAdminMenuWorkspaceInputId" name="uuid" class="form-control uuid-alladminmenu-workspace-input" placeholder="Điền thông tin Uuid of AllAdminMenu" type="text" value="">
+</div>
+            <div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Name</label>
+                        <input id="nameAllAdminMenuWorkspaceInputId"  name="name" class="form-control name-alladminmenu-workspace-input " placeholder="Điền thông tin Name" type="text" value="">
+                        
+                    </div>
+                    
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Title</label>
+                        <input id="titleAllAdminMenuWorkspaceInputId"  name="title" class="form-control title-alladminmenu-workspace-input " placeholder="Điền thông tin Title" type="text" value="">
+                        
+                    </div>
+                    </div><div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Icon_Class</label>
+                        <input id="icon_classAllAdminMenuWorkspaceInputId"  name="icon_class" class="form-control icon_class-alladminmenu-workspace-input " placeholder="Điền thông tin Icon_Class" type="text" value="">
+                        
+                    </div>
+                    
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Data_Feather</label>
+                        <input id="data_featherAllAdminMenuWorkspaceInputId"  name="data_feather" class="form-control data_feather-alladminmenu-workspace-input " placeholder="Điền thông tin Data_Feather" type="text" value="">
+                        
+                    </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-6">
+                            <div class="form-check mt-4">
+                                {% if current_alladminmenu.active == True %}
+                                <input id="activeAllAdminMenuWorkspaceInputId"  name="active" type="checkbox" class="form-check-input active-alladminmenu-workspace-input" placeholder="Điền thông tin Active of AllAdminMenu" value="" checked>
+                                {% else %}
+                                <input id="activeAllAdminMenuWorkspaceInputId"  name="active" type="checkbox" class="form-check-input active-alladminmenu-workspace-input" placeholder="Điền thông tin Active of AllAdminMenu" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="activeAllAdminMenuWorkspaceInputId">
+                                    Active
+                                </label>
+                            </div>
+                        </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-4">
+                        <label class="small mb-1">Desc</label>
+                            <textarea id="descAllAdminMenuWorkspaceInputId"  name="desc" class=" form-control desc-alladminmenu-workspace-input ckeditor-input" placeholder="Điền thông tin Desc" type="text"></textarea>
+                        </div>
+                    
+                        <div class="mb-1 col-xl-4">
+                            <div class="form-check mt-4">
+                                {% if current_alladminmenu.in_main_menu == True %}
+                                <input id="in_main_menuAllAdminMenuWorkspaceInputId"  name="in_main_menu" type="checkbox" class="form-check-input in_main_menu-alladminmenu-workspace-input" placeholder="Điền thông tin In_Main_Menu of AllAdminMenu" value="" checked>
+                                {% else %}
+                                <input id="in_main_menuAllAdminMenuWorkspaceInputId"  name="in_main_menu" type="checkbox" class="form-check-input in_main_menu-alladminmenu-workspace-input" placeholder="Điền thông tin In_Main_Menu of AllAdminMenu" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="in_main_menuAllAdminMenuWorkspaceInputId">
+                                    In_Main_Menu
+                                </label>
+                            </div>
+                        </div>
+                    
+                    <div class=" mb-1 col-xl-4">
+                        <label class="small mb-1">Order</label>
+                        <input id="orderAllAdminMenuWorkspaceInputId"  name="order" class=" form-control order-alladminmenu-workspace-input" placeholder="Điền thông tin Order" type="text" value="{{ current_alladminmenu.order}}">
+                    </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-6">
+                            <label class="small mb-1"  for="menu_groupAdminMenuGroupAllAdminMenuWorkspaceInputId">Menu Group</label>
+                            <select style="width: 100%;"  class="  form-control adminmenugroup-workspace-select"  name="menu_group" id="menu_groupAdminMenuGroupAllAdminMenuWorkspaceInputId">
+                                <option selected value=''>Lựa chọn</option>
+                        </select>
+                        </div>
+                    
+                        <div class="mb-1 col-xl-6">
+                            <label class="small mb-1"  for="parent_menuAllAdminMenuAllAdminMenuWorkspaceInputId">Parent Menu</label>
+                            <select style="width: 100%;"  class="  form-control alladminmenu-workspace-select"  name="parent_menu" id="parent_menuAllAdminMenuAllAdminMenuWorkspaceInputId">
+                                <option selected value=''>Lựa chọn</option>
+                        </select>
+                        </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <div class="form-check mt-4">
+                                {% if current_alladminmenu.login_redirect == True %}
+                                <input id="login_redirectAllAdminMenuWorkspaceInputId"  name="login_redirect" type="checkbox" class="form-check-input login_redirect-alladminmenu-workspace-input" placeholder="Điền thông tin Login_Redirect of AllAdminMenu" value="" checked>
+                                {% else %}
+                                <input id="login_redirectAllAdminMenuWorkspaceInputId"  name="login_redirect" type="checkbox" class="form-check-input login_redirect-alladminmenu-workspace-input" placeholder="Điền thông tin Login_Redirect of AllAdminMenu" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="login_redirectAllAdminMenuWorkspaceInputId">
+                                    Redirect To This Link After Login...
+                                </label>
+                            </div>
+                        </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <div class="form-check mt-4">
+                                {% if current_alladminmenu.active == True %}
+                                <input id="activeAllAdminMenuWorkspaceInputId"  name="active" type="checkbox" class="form-check-input active-alladminmenu-workspace-input" placeholder="Điền thông tin Active of AllAdminMenu" value="" checked>
+                                {% else %}
+                                <input id="activeAllAdminMenuWorkspaceInputId"  name="active" type="checkbox" class="form-check-input active-alladminmenu-workspace-input" placeholder="Điền thông tin Active of AllAdminMenu" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="activeAllAdminMenuWorkspaceInputId">
+                                    Active
+                                </label>
+                            </div>
+                        </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-6">
+                            <div class="form-check mt-4">
+                                {% if current_alladminmenu.superuser_only == True %}
+                                <input id="superuser_onlyAllAdminMenuWorkspaceInputId"  name="superuser_only" type="checkbox" class="form-check-input superuser_only-alladminmenu-workspace-input" placeholder="Điền thông tin Superuser_Only of AllAdminMenu" value="" checked>
+                                {% else %}
+                                <input id="superuser_onlyAllAdminMenuWorkspaceInputId"  name="superuser_only" type="checkbox" class="form-check-input superuser_only-alladminmenu-workspace-input" placeholder="Điền thông tin Superuser_Only of AllAdminMenu" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="superuser_onlyAllAdminMenuWorkspaceInputId">
+                                    Superuser_Only
+                                </label>
+                            </div>
+                        </div>
+                    
+                        <div class="mb-1 col-xl-6">
+                            <div class="form-check mt-4">
+                                {% if current_alladminmenu.staff_only == True %}
+                                <input id="staff_onlyAllAdminMenuWorkspaceInputId"  name="staff_only" type="checkbox" class="form-check-input staff_only-alladminmenu-workspace-input" placeholder="Điền thông tin Staff_Only of AllAdminMenu" value="" checked>
+                                {% else %}
+                                <input id="staff_onlyAllAdminMenuWorkspaceInputId"  name="staff_only" type="checkbox" class="form-check-input staff_only-alladminmenu-workspace-input" placeholder="Điền thông tin Staff_Only of AllAdminMenu" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="staff_onlyAllAdminMenuWorkspaceInputId">
+                                    Staff_Only
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="alladminmenuWorkspaceCancelBtnId" type="button" class="btn btn-danger btn-sm" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="alladminmenuWorkspaceCreateBtnId" type="button" class="btn btn-info btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                        <button id="alladminmenuWorkspaceSaveAndNewBtnId" type="button" class="btn btn-success btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu và tạo mới</button>
+                        <button id="alladminmenuWorkspaceTestBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+            

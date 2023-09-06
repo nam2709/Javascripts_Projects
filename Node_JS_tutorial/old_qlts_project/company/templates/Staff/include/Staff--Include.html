@@ -1,0 +1,95 @@
+<html lang="en">
+   {% load static %}
+   {% load i18n %}
+   {% load tz %}
+   {% load humanize %}
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+   <script src="{% static 'Staff/js/StaffClass.js' %}"> </script>
+   <script src="{% static 'Staff/js/Staffcount.js' %}"> </script> 
+   <div class="row">
+      <div class="col-12">
+         <div class="card">
+            <div class="card-header">
+               Danh sách Nhân Viên
+               <!-- <span class="d-block m-t-5">use class <code>table-hover</code> inside table element</span> -->
+               <button type="button" id="btn-create-StaffStaff" class="btn btn-outline-primary btn-sm " onclick="StaffStaffCreate()">
+               <i class="fas fa-plus"></i> &nbsp;Thêm mới
+               </button>
+               <button type="button" id="StaffStaffExportExcelBtnId" class="btn btn-success btn-sm">
+               <i class="far fa-file-excel"></i> &nbsp;Xuất excel
+               </button>
+            </div>
+            <div class="card-body table-border-style">
+               <div class="table-responsive">
+                  <table style="min-height: 210px; text-align:center;" class="table table-sm table-flush table-hover table-striped" id="StaffStaffDataTableId" width="100%" cellspacing="0">
+                     <thead class="thead-light">
+                        <tr>
+                           <th attr-name="stt">STT</th>
+                           <th attr-name="name">Tên Nhân Viên</th>
+                           <th attr-name="code">Mã Nhân Viên</th>
+                           <th attr-name="get_name_staffstatus">Trạng Thái Nhân Viên</th>
+                           <th attr-name="get_name_company">Công Ty</th>
+                           <th attr-name="get_name_unit">Phòng</th>
+                           <th attr-name="get_name_position">Chức Vụ</th>
+                           <th attr-name="Staff-admin-action">Thao tác</th>
+                        </tr>
+                     </thead>
+                     <tbody id="StaffStaffTableBodyId"> 
+                     </tbody>
+                  </table>
+                  <table style="min-height: 210px;" class="table table-sm table-flush table-hover table-striped d-none" id="StaffStaffExportTableId" width="100%" cellspacing="0">
+                     <thead class="thead-light">
+                        <tr>
+                           <th attr-name="stt">STT</th>
+                           <th attr-name="name">Tên Nhân Viên</th>
+                           <th attr-name="code">Mã Nhân Viên</th>
+                           <th attr-name="get_name_staffstatus">Trạng Thái Nhân Viên</th>
+                           <th attr-name="get_name_company">Công Ty</th>
+                           <th attr-name="get_name_unit">Phòng</th>
+                           <th attr-name="get_name_position">Chức Vụ</th>
+                        </tr>
+                     </thead>
+                     <tbody id="StaffStaffExportTableBodyId">
+                     </tbody>
+                  </table>
+               </div>
+               <div class="col-md-12 col-xl-12" id="StaffStaffCardAreaId">
+                  <div class="card d-none StaffStaffTemplateCardClass">
+                     <div class="card-header">
+                        <div class="card-header-right">
+                           <div class="btn-group card-option">
+                              <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="feather icon-more-horizontal"></i>
+                              </button>
+                              <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                 <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> Tối đa</span><span style="display:none"><i class="feather icon-minimize"></i> Trở về</span></a></li>
+                                 <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> Thu gọn</span><span style="display:none"><i class="feather icon-plus"></i> Mở rộng</span></a></li>
+                                 <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> Tải lại</a></li>
+                                 <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> Xóa</a></li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="card-body">
+                        <h5 class="card-title" card_content="" attr-name="name"></h5>
+                        <p class="card-text" card_content="" title="name" attr-name="name"></p>
+                        <p class="card-text" card_content="" title="code" attr-name="code"></p>
+                        <p class="card-text" card_content="" title="staffstatus" attr-name="get_name_staffstatus"></p>
+                        <p class="card-text" card_content="" title="company" attr-name="get_name_company"></p>
+                        <p class="card-text" card_content="" title="unit" attr-name="get_name_unit"></p>
+                        <p class="card-text" card_content="" title="position" attr-name="get_name_position"></p>
+                        <p class="card-text" card_content="" attr-name="created_at"><small class="text-muted"></small></p>
+                     </div>
+                  </div>
+               </div>
+               <span class="page-total page-total-StaffStaff text-left"></span>
+            </div>
+            <hr>
+            <nav aria-label="Page navigation">
+               <ul class="pagination pagination-StaffStaff justify-content-center">
+               </ul>
+            </nav>
+         </div>
+      </div>
+   </div>

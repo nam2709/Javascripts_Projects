@@ -1,0 +1,122 @@
+
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="TruongNV <truongg.nv@gmail.com>">
+    <meta name="copyright" content="Copyright ©2022 TruongNV <truongg.nv@gmail.com>">
+    <script src="{% static 'arrgon/js/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'AssetManagement/argon/admin/js/AssetManagementConst.js' %}"></script>
+    <script src="{% static 'AssetManagement/argon/admin/js/AssetDetailTemplateClasses.js' %}"></script>
+</head>
+                             
+<div class="row">
+    <div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            Danh sách Thông tin tài sản
+           <!-- <span class="d-block m-t-5">use class <code>table-hover</code> inside table element</span> -->
+           <button type="button" id="btn-create-AssetDetailTemplate" class="btn btn-outline-primary btn-sm " data-bs-toggle="modal" data-bs-target="#AssetDetailTemplateCreatemodalsId">
+                <i class="fas fa-plus"></i> &nbsp;Thêm mới
+            </button>
+            <button type="button" id="AssetDetailTemplateExportExcelBtnId" class="btn btn-success btn-sm">
+                    <i class="far fa-file-excel"></i> &nbsp;Xuất excel
+            </button>
+        </div>
+        <div class="card-body table-border-style">
+        <div class="table-responsive">
+            <table style="min-height: 210px;" class="table table-sm table-flush table-hover table-striped" id="AssetDetailTemplateDataTableId" width="100%" cellspacing="0">
+                <thead class="thead-light">
+                    <tr class="text-center">
+            
+                        <th attr-name="stt">STT</th>
+            
+                        <th attr-name="code">Mã thông số</th>
+                    
+                        <th attr-name="name">Tên thông số</th>
+
+                        <th attr-name="name_asset_type">Thuộc loại tài sản</th>
+                    
+                        <th attr-name="asset-admin-action">Thao tác</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="AssetDetailTemplateTableBodyId" class="text-center"> 
+                </tbody>
+            </table>
+            
+            
+            <table style="min-height: 210px;" class="table table-sm table-flush table-hover table-striped d-none" id="AssetDetailTemplateExportTableId" width="100%" cellspacing="0">
+                <thead class="thead-light">
+                    <tr>
+                        <th attr-name="stt">STT</th>
+            
+                        <th attr-name="code">Mã thông số</th>
+                    
+                        <th attr-name="name">Tên thông số</th>
+
+                        <th attr-name="name_asset_type">Thuộc loại tài sản</th>
+                    
+                    </tr>
+                </thead>
+                <tbody id="AssetDetailTemplateExportTableBodyId">
+                </tbody>
+            </table>
+                
+            
+        </div>
+        
+
+            <div class="col-md-12 col-xl-12" id="accountAccountCardAreaId">
+                <div class="card d-none accountAccountTemplateCardClass">
+                    <div class="card-header">
+                        <div class="card-header-right">
+                            <div class="btn-group card-option">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="feather icon-more-horizontal"></i>
+                                </button>
+                                <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                    <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> Tối đa</span><span style="display:none"><i class="feather icon-minimize"></i> Trở về</span></a></li>
+                                    <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> Thu gọn</span><span style="display:none"><i class="feather icon-plus"></i> Mở rộng</span></a></li>
+                                    <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> Tải lại</a></li>
+                                    <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> Xóa</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" tnv_card_content="" attr-name="name"></h5>
+                        
+                        <p class="card-text" tnv_card_content="" title="Username" attr-name="username"></p>
+                    
+                        <p class="card-text" tnv_card_content="" title="Full_Name" attr-name="full_name"></p>
+                    
+                        <p class="card-text" tnv_card_content="" title="Email" attr-name="email"></p>
+                    
+                        <p class="card-text" tnv_card_content="" title="Date_Of_Birth" attr-name="date_of_birth"></p>
+                    
+                        <p class="card-text" tnv_card_content="" title="Telephone" attr-name="telephone"></p>
+                    
+                        <p class="card-text" tnv_card_content="" attr-name="created_at"><small class="text-muted"></small></p>
+                    </div>
+                </div>
+            </div>
+
+            
+        <span class="page-total page-total-AccountAccount text-left"></span>
+    </div>
+    <hr>
+    <nav aria-label="Page navigation">
+        <ul class="pagination pagination-AccountAccount justify-content-center">
+        </ul>
+    </nav>
+    
+    </div>
+    </div>
+</div>
+
+
+            

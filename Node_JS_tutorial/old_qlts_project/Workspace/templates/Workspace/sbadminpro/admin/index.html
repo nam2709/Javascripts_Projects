@@ -1,0 +1,278 @@
+
+{% extends "sbadminpro/layouts/base.html" %}
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="TruongNV <truongg.nv@gmail.com>">
+<meta name="copyright" content="Copyright ©2022 TruongNV <truongg.nv@gmail.com>">
+{% include 'Workspace/'|add:website_template|add:'/admin/fixed/header.html' %}
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WorkspaceConst.js' %}"></script>
+
+
+<script src="{% static 'Website/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+<script src="{% static 'Website/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+<script src="{% static 'Website/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+
+<script src="{% static 'Account/'|add:website_template|add:'/admin/js/AccountConst.js' %}"></script>
+<script src="{% static 'Account/'|add:website_template|add:'/admin/js/AccountClasses.js' %}"></script>
+
+</head>
+        
+{% block content %}
+
+<!-- [ Main Content ] start -->
+<main>
+          <!-- Page Heading -->
+          <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+                    <div class="container-xl px-4">
+                        <div class="page-header-content pt-4">
+                            <div class="row align-items-center justify-content-between">
+                                <div class="col-auto mt-4">
+                                    <h1 class="page-header-title">
+                                        <div class="page-header-icon"><i data-feather="layout"></i></div>
+                                       Tổng quan
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+        <div class="container-xl px-4 mt-n10">
+          <!-- Content Row -->
+            <div class="row">
+
+        
+            <!-- Config Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="{% url 'Workspace:ConfigView' %}" target="_self">
+                    <div class="card border-start-lg border-start-danger h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <div class="small fw-bold text-danger mb-1">  Thông Tin Cấu Hình </div>
+                                    <div class="h5"><span id="configUsageId">{{ config_count }}</span></div>
+                                </div>
+                                <div class="ms-2"><i class="far fa-address-card fa-2x text-gray-200"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            
+            <!-- Allapp Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="{% url 'Workspace:AllAppView' %}" target="_self">
+                    <div class="card border-start-lg border-start-info h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <div class="small fw-bold text-info mb-1">  Danh Sách Webapp </div>
+                                    <div class="h5"><span id="allappUsageId">{{ allapp_count }}</span></div>
+                                </div>
+                                <div class="ms-2"><i class="fas fa-baseball-ball fa-2x text-gray-200"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            
+            <!-- Allview Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="{% url 'Workspace:AllViewView' %}" target="_self">
+                    <div class="card border-start-lg border-start-secondary h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <div class="small fw-bold text-secondary mb-1">  Danh Sách View  django  </div>
+                                    <div class="h5"><span id="allviewUsageId">{{ allview_count }}</span></div>
+                                </div>
+                                <div class="ms-2"><i class="far fa-address-card fa-2x text-gray-200"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            
+            <!-- Adminmenugroup Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="{% url 'Workspace:AdminMenuGroupView' %}" target="_self">
+                    <div class="card border-start-lg border-start-info h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <div class="small fw-bold text-info mb-1">  Nhóm Admin Menu </div>
+                                    <div class="h5"><span id="adminmenugroupUsageId">{{ adminmenugroup_count }}</span></div>
+                                </div>
+                                <div class="ms-2"><i class="fas fa-adjust fa-2x text-gray-200"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            
+            <!-- Alladminmenu Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="{% url 'Workspace:AllAdminMenuView' %}" target="_self">
+                    <div class="card border-start-lg border-start-danger h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <div class="small fw-bold text-danger mb-1">  Admin Menu </div>
+                                    <div class="h5"><span id="alladminmenuUsageId">{{ alladminmenu_count }}</span></div>
+                                </div>
+                                <div class="ms-2"><i class="fas fa-comments fa-2x text-gray-200"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            
+            <!-- Position Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="{% url 'Workspace:PositionView' %}" target="_self">
+                    <div class="card border-start-lg border-start-secondary h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <div class="small fw-bold text-secondary mb-1">  Vị trí hiển thị </div>
+                                    <div class="h5"><span id="positionUsageId">{{ position_count }}</span></div>
+                                </div>
+                                <div class="ms-2"><i class="far fa-address-card fa-2x text-gray-200"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            
+            <!-- Footeritem Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="{% url 'Workspace:FooterItemView' %}" target="_self">
+                    <div class="card border-start-lg border-start-secondary h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <div class="small fw-bold text-secondary mb-1">  FooterItem </div>
+                                    <div class="h5"><span id="footeritemUsageId">{{ footeritem_count }}</span></div>
+                                </div>
+                                <div class="ms-2"><i class="fas fa-ellipsis-v fa-2x text-gray-200"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            
+            <!-- Widget Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="{% url 'Workspace:WidgetView' %}" target="_self">
+                    <div class="card border-start-lg border-start-warning h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <div class="small fw-bold text-warning mb-1">  Widget </div>
+                                    <div class="h5"><span id="widgetUsageId">{{ widget_count }}</span></div>
+                                </div>
+                                <div class="ms-2"><i class="fas fa-clipboard-list fa-2x text-gray-200"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            
+            <!-- Timezone Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="{% url 'Workspace:TimeZoneView' %}" target="_self">
+                    <div class="card border-start-lg border-start-warning h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <div class="small fw-bold text-warning mb-1">  TimeZone </div>
+                                    <div class="h5"><span id="timezoneUsageId">{{ timezone_count }}</span></div>
+                                </div>
+                                <div class="ms-2"><i class="fas fa-baseball-ball fa-2x text-gray-200"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            
+            <!-- Pageinfo Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="{% url 'Workspace:PageInfoView' %}" target="_self">
+                    <div class="card border-start-lg border-start-success h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <div class="small fw-bold text-success mb-1">  PageInfo </div>
+                                    <div class="h5"><span id="pageinfoUsageId">{{ pageinfo_count }}</span></div>
+                                </div>
+                                <div class="ms-2"><i class="fas fa-city fa-2x text-gray-200"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            
+            <!-- Botua Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="{% url 'Workspace:BotUAView' %}" target="_self">
+                    <div class="card border-start-lg border-start-secondary h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <div class="small fw-bold text-secondary mb-1">  BotUA </div>
+                                    <div class="h5"><span id="botuaUsageId">{{ botua_count }}</span></div>
+                                </div>
+                                <div class="ms-2"><i class="fas fa-baseball-ball fa-2x text-gray-200"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            
+            <!-- Robotsarg Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="{% url 'Workspace:RobotsArgView' %}" target="_self">
+                    <div class="card border-start-lg border-start-info h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <div class="small fw-bold text-info mb-1">  RobotsArg </div>
+                                    <div class="h5"><span id="robotsargUsageId">{{ robotsarg_count }}</span></div>
+                                </div>
+                                <div class="ms-2"><i class="fas fa-calendar fa-2x text-gray-200"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            
+            <!-- Logoimages Card Summary -->
+            <div class="col-xl-3 col-md-6 mb-4">
+                    <a href="{% url 'Workspace:LogoImagesView' %}" target="_self">
+                    <div class="card border-start-lg border-start-danger h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1">
+                                    <div class="small fw-bold text-danger mb-1">  LogoImages </div>
+                                    <div class="h5"><span id="logoimagesUsageId">{{ logoimages_count }}</span></div>
+                                </div>
+                                <div class="ms-2"><i class="far fa-address-card fa-2x text-gray-200"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            
+          </div>
+    </div>
+</main>
+    {% endblock %}
+
+
+        

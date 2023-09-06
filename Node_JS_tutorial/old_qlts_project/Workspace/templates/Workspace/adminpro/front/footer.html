@@ -1,0 +1,81 @@
+{% load i18n %}
+{% load tz %}
+{% load static %}
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="{% url 'About:About' %}" target="_blank">
+                  {% trans 'About' %}</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="{% url 'About:Contact' %}" target="_blank">
+                  {% trans 'Contact' %}
+              </a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="{% url 'About:Term' %}" target="_blank">
+                  {% trans 'Terms of Use' %}
+              </a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="{% url 'About:Policy' %}" target="_blank">
+                  {% trans 'Privacy Policy' %}
+              </a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">
+              <span>
+              {% trans "Copyright" %} &copy; {{ current_site }} {% now "Y" %}
+              </span>
+          </p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="https://www.facebook.com/oheentool/" target="_blank">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="https://twitter.com/BkaDuc" target="_blank">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.instagram.com/oheentool/" target="_blank">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/nguyen-d-4a088121/" target="_blank">
+                <i class="fab fa-linkedin fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    {% if session_key %}
+        <a id="current-session-key-id" style="display: none;">{{ session_key }}</a>
+    {% else %}
+        <a id="current-session-key-id" style="display: none;"></a>
+    {% endif %}
+  <!-- Bootstrap core JavaScript-->
+
+  <!-- Core plugin JavaScript-->
+
+
+
+{% if user.is_authenticated %}
+  <script src="{% static 'Workspace/'|add:website_template|add:'/front/js/tnd_foot.js' %}"></script>
+{% endif %}

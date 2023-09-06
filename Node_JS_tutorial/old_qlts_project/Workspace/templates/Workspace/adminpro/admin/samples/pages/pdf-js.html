@@ -1,0 +1,95 @@
+{% extends 'Workspace/'|add:website_template|add:'/base.html' %}
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="google" content="notranslate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PDF JS</title>
+
+
+
+    {% include "Workspace/"|add:website_template|add:"/admin/header.html" %}
+
+    <script src="{% static 'Workspace/'|add:website_template|add:'/admin/vendor/PdfJS/js/pdf.js' %}"></script>
+
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    {% include "Workspace/"|add:website_template|add:"/admin/sidebar.html" %}
+
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+
+            {% with "Workspace/"|add:website_template|add:"/admin/topbar.html" as template %}
+                {% include template %}
+            {% endwith %}
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-5">
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Nhập Liệu</h1>
+                    </div>
+                  </div>
+                  <div class="col-sm-7">
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">PDF JS</h1>
+                        <!-- Default switch -->
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="ocrModeSwitches">
+                          <label class="custom-control-label" for="ocrModeSwitches">OCR Mode</label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                      </div>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01"
+                          aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                      </div>
+                    </div>
+                    <hr>
+                    <iframe src="/testing/themes/pdf-js-iframe/" id="pdfPreviewIframeId" style="width: 100%; min-height: 600px;"></iframe>
+<script>
+    //$("#pdfPreviewIframeId").contentWindow.abc();
+</script>
+                  </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+        {% with "Workspace/"|add:website_template|add:"/admin/footer.html" as template %}
+            {% include template %}
+        {% endwith %}
+
+    </div>
+    <!-- End of Main Content -->
+
+
+</div>
+<!-- End of Content Wrapper -->
+
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load tz %}
+{% trans "Hello" %}
+
+
+{% blocktrans %}Hello{% endblocktrans %}
+{% for s in countries %}
+<a>{{ s.name }}</a> <br>
+{% endfor %}
+
+
+====
+{% for s in languages %}
+<a>{{ s.code }} --> {{ s.name }}</a> <br>
+{% endfor %}

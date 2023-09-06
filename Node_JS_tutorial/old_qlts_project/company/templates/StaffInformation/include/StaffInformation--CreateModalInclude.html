@@ -1,0 +1,123 @@
+{% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+<div class="modal fade" id="InformationInformationCreatemodalsId" tabindex="-1" data-backdrop="static" data-keyboard="true"  role="dialog" aria-labelledby="InformationInformationCreatemodalsId" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+         <form method="POST" action="" enctype="multipart/form-data" id="InformationInformationCreateModalsFormId" data-uuid="">
+            <div class="modal-header">
+               <h3 class="modal-title">Tạo Thông Tin</h3>
+               <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+               <div class="form-group px-lg-5 text-start">
+                  <div class="mb-1 col-xl-6 d-none">
+                     <label class="small mb-1">Id</label>
+                     <input id="idInformationInformationCreateModalInputId" name="id" class="form-control id-Information-Information-input" placeholder="Nhập Id of Information" type="text" value="">
+                  </div>
+                  <div class="mb-1 col-xl-6 d-none">
+                     <label class="small mb-1">Uuid</label>
+                     <input id="uuidInformationInformationCreateModalInputId" name="uuid" class="form-control uuid-Information-Information-input" placeholder="Nhập Uuid of Information" type="text" value="">
+                  </div>
+                  <h6 class="heading-small text-muted mb-4">Thông tin chung</h6>
+                  <div class="row gx-2 mb-2">
+                     <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Tên Nhân Viên</label>
+                        <select id="staffInformationInformationCreateModalInputId"  name="staff" class="form-select staff-Information-Information-input mps_required" placeholder="Tên Nhân Viên" type="text" value="">
+                           <option value="" selected>-- Lựa chọn --</option>
+                        </select>
+                     </div>
+                     <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Chứng Minh Thư</label>
+                        <input id="id_cardInformationInformationCreateModalInputId"  name="id_card" class="form-control id_card-Information-Information-input mps_required" placeholder="Nhập Tên Nhân Viên" type="text" value="">
+                     </div>
+                  </div>
+                  <hr>
+                  <div class="row gx-2 mb-2">
+                     <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Số Điện Thoại</label>
+                        <input id="phone_numberInformationInformationCreateModalInputId"  name="phone_number" class="form-control phone_number-Information-Information-input mps_required" placeholder="Nhập mã" type="text" value="">
+                     </div>
+                     <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Email</label>
+                        <input id="emailInformationInformationCreateModalInputId"  name="email" class="form-control email-Information-Information-input mps_required" placeholder="name@example.com" type="text" value="">
+                     </div>
+                  </div>
+                  <div class="row gx-2 mb-2">
+                     <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Thành Phố</label>
+                        <select id="cityInformationInformationCreateModalInputId"  name="city" class="form-select city-Information-Information-input mps_required" placeholder="Thành Phố" type="text" value="">
+                           <option value="" selected>-- Lựa chọn --</option>
+                        </select>
+                     </div>
+                     <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Huyện</label>
+                        <select id="districtInformationInformationCreateModalInputId"  name="district" class="form-select district-Information-Information-input mps_required" placeholder="Huyện" type="text" value="">
+                           <option value="" selected>-- Lựa chọn --</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="row gx-2 mb-2">
+                     <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Xã</label>
+                        <select id="communeInformationInformationCreateModalInputId"  name="commune" class="form-select commune-Information-Information-input mps_required" placeholder="Xã" type="text" value="">
+                           <option value="" selected>-- Lựa chọn --</option>
+                        </select>
+                     </div>
+                     <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Địa Chỉ </label>
+                        <input id="addressInformationInformationCreateModalInputId"  name="address" class="form-control address-Information-Information-input mps_required" placeholder="Nhập địa " type="text" value="">
+                     </div>
+                  </div>
+                  <div class="row gx-2 mb-2">
+                     <div class="mb-1 col-xl-12">
+                        <label for="degreeInformationInformationCreateModalInputId"><i class="fas fa-paperclip"></i>&nbsp;{% trans 'Bằng Cấp' %}</label>
+                        <input class=" Information-Information form-control-file form-control Information-Information-file degree-Information-Information-file-input" type="file" name="degree"  class="" id="degreeInformationInformationCreateModalInputId">
+                        <div class="col-xl-12" id="degreeInformationInformationCreateModalFileAreaId">
+                           {% if current_StaffInformation.degree %}
+                           <div class="form-group row col-xl-8 table-hover mt-1" style="background-color:gainsboro;height: 25px;" id="{{ current_Information.uuid }}AttachmentDivId">
+                              <div class="col-xl-10 " >
+                                 <span>
+                                    <a style="color:cornflowerblue" target="_blank"  href="{{ current_Information.avatar.url }}">
+                                       <p><b> {{ current_Information.avatar_filename|title }}</b></p>
+                                    </a>
+                                 </span>
+                              </div>
+                              <div class="col-xl-2 text-end">
+                                 <i class="fas fa-times" style="color:gray" file-uuid="{{ current_Information.uuid }}" onclick="avatarInformationInformationDeletedAttacthment(this)"></i>
+                              </div>
+                           </div>
+                           {% endif %}
+                        </div>
+                        <div class="mb-1 col-xl-12">
+                           <label for="avatarInformationInformationCreateModalInputId"><i class="fas fa-paperclip"></i>&nbsp;{% trans 'avatar' %}</label>
+                           <input class=" Information-Information form-control-file form-control Information-Information-file avatar-Information-Information-file-input" type="file" name="avatar"  class="" id="avatarInformationInformationCreateModalInputId">
+                           <div class="col-xl-12" id="avatarInformationInformationCreateModalFileAreaId">
+                              {% if current_Information.avatar %}
+                              <div class="form-group row col-xl-8 table-hover mt-1" style="background-color:gainsboro;height: 25px;" id="{{ current_Information.uuid }}AttachmentDivId">
+                                 <div class="col-xl-10 " >
+                                    <span>
+                                       <a style="color:cornflowerblue" target="_blank"  href="{{ current_Information.avatar.url }}">
+                                          <p><b> {{ current_Information.avatar_filename|title }}</b></p>
+                                       </a>
+                                    </span>
+                                 </div>
+                                 <div class="col-xl-2 text-end">
+                                    <i class="fas fa-times" style="color:gray" file-uuid="{{ current_Information.uuid }}" onclick="avatarInformationInformationDeletedAttacthment(this)"></i>
+                                 </div>
+                              </div>
+                              {% endif %}
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                     <button id="InformationInformationCancelCreateModalBtnId" type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                     <button id="InformationInformationCreateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                     <button id="InformationInformationSaveAndNewModalBtnId" type="button" class="d-none btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu và thêm mới</button>
+                     {% comment %} <button id="InformationInformationTestCreateModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button> {% endcomment %}
+                  </div>
+               </div>
+         </form>
+         </div>
+      </div>
+   </div>
+</div>

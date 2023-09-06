@@ -1,0 +1,273 @@
+{% load i18n %}
+{% load tz %}
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+        id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'website:Index' %}">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fab fa-redhat"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3"> Tamnd <span class="hide-mobile-600">Administration</span> <sup></sup></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+        {% if menu_groups %}
+
+        {% for group in menu_groups %}
+            {% if group.is_base == True or group.app.name == app_name %}
+                  <!-- Heading -->
+                  <div class="sidebar-heading">
+                      {% trans group.title %}
+                  </div>
+                {% if main_menu_items %}
+                    {% for main_menu in main_menu_items %}
+                        {% if main_menu.menu_group == group %}
+                          <!-- Nav Item - Pages Collapse Menu -->
+                          <li class="nav-item tnd-nav-item">
+                            {% if main_menu.url == "#" %}
+                                <a class="nav-link collapsed"
+                                   href="#"
+                                   data-toggle="collapse"
+                                   data-target="#collapse-{{main_menu.uuid}}"
+                                   aria-expanded="false"
+                                   aria-controls="collapse-{{main_menu.uuid}}">
+                                  {% if main_menu.icon_class %}
+                                    <i class="{{ main_menu.icon_class }}"></i>
+                                  {% else %}
+                                    <i class="fas fa-fw fa-cog"></i>
+                                  {% endif %}
+                                  <span>
+                                      {% trans main_menu.title %}
+                                  </span>
+                                </a>
+                                <div id="collapse-{{main_menu.uuid}}"
+                                     class="collapse"
+                                     aria-labelledby="heading-{{main_menu.uuid}}"
+                                     data-parent="#accordionSidebar">
+                                  <div class="bg-white py-2 collapse-inner rounded">
+
+                                    <h6 class="collapse-header">
+                                        {% trans main_menu.title %}:
+                                    </h6>
+                                      {% for sub_menu in all_menu %}
+                                          {% if sub_menu.parent_menu == main_menu %}
+                                              <!-- continue -->
+                                              {% if sub_menu.staff_only == True and not request.user.is_staff %}
+                                                    <!-- continue -->
+                                              {% else %}
+                                                  {% if sub_menu.superuser_only == True and not request.user.is_superuser %}
+                                                    <!-- continue -->
+                                                  {% else %}
+                                                    {% if sub_menu.split_marked == True %}
+                                                        {% if sub_menu.split_label %}
+                                                            <div class="collapse-divider"></div>
+                                                            <h6 class="collapse-header">
+                                                                {% trans sub_menu.split_label %}:
+                                                            </h6>
+                                                        {% endif %}
+
+                                                    {% endif %}
+                                                      {% if sub_menu.url == request.path or sub_menu.url == request.get_full_path %}
+                                                          {% if user_agent.is_pc %}
+                                                            <a class="collapse-item tnd-collapse-item active" href="{{ sub_menu.url }}">
+                                                                {% trans sub_menu.title %}
+                                                            </a>
+                                                          {% else %}
+                                                            <a class="collapse-item tnd-collapse-item" href="{{ sub_menu.url }}">
+                                                                {% trans sub_menu.title %}
+                                                            </a>
+                                                          {% endif %}
+
+                                                        <span id="current-active-menu-id" style="display: none;">collapse-{{main_menu.uuid}}</span>
+                                                      {% else %}
+                                                        <a class="collapse-item tnd-collapse-item"
+                                                           target=""
+                                                           href="{{ sub_menu.url }}">{% trans sub_menu.title %}</a>
+                                                      {% endif %}
+                                                  {% endif %}
+                                              {% endif %}
+                                          {% endif %}
+                                      {% endfor %}
+                                  </div>
+                                </div>
+                            {% else %}
+                                <a class="nav-link" href="{{ main_menu.url }}">
+                                  {% if main_menu.icon_class %}
+                                    <i class="{{ main_menu.icon_class }}"></i>
+                                  {% else %}
+                                    <i class="fas fa-fw fa-cog"></i>
+                                  {% endif %}
+                                  <span>
+                                      {% trans main_menu.title %}
+                                  </span>
+                                </a>
+                            {% endif %}
+                          </li>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                <hr class="sidebar-divider">
+            {% else %}
+            {% endif %}
+      <!-- Divider -->
+        {% endfor %}
+        {% endif %}
+
+{% if user.is_superuser %}
+        <li class="nav-item">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Themes Check
+            </div>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThemes"
+               aria-expanded="false" aria-controls="collapseThemes">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Theme Elements</span>
+            </a>
+
+            <div id="collapseThemes" class="collapse" aria-labelledby="headingThemes" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <!-- Nav Item - Dashboard -->
+                    <a class="collapse-item" href="{% url 'website:TestingDashboard' %}">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Dashboard</span></a>
+                    <!-- Nav Item - Dashboard -->
+
+                    <!-- Nav Item - Tooltip  -->
+
+                    <a class="collapse-item" href="{% url 'website:TestingToolTip' %}">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Tooltip</span></a>
+                    <!-- Nav Item - Scroll Spy  -->
+
+                    <a class="collapse-item" href="{% url 'website:TestingScrollSpy' %}">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>ScrollSpy</span></a>
+                    <!-- Nav Item - Pagination  -->
+
+                    <a class="collapse-item" href="{% url 'website:TestingPagination' %}">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Pagination</span></a>
+
+                    <!-- Nav Item - Spinder  -->
+
+                    <a class="collapse-item" href="{% url 'website:TestingSpinner' %}">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Spinners</span></a>
+                    <!-- Nav Item - ProgressBar  -->
+
+                    <a class="collapse-item" href="{% url 'website:TestingProgressBar' %}">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Progress Bar</span></a>
+                    <!-- Nav Item - Grid  -->
+
+                    <a class="collapse-item" href="{% url 'website:TestingGrid' %}">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Grid</span></a>
+
+                    <!-- Nav Item - Images  -->
+
+                    <a class="collapse-item" href="{% url 'website:TestingImages' %}">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Images</span></a>
+
+                    <!-- Nav Item - Alerts  -->
+
+                    <a class="collapse-item" href="{% url 'website:TestingAlertMessage' %}">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Alert Message</span></a>
+
+                    <!-- Nav Item - Bread Scumb -->
+
+                    <a class="collapse-item" href="{% url 'website:TestingBreadScumb' %}">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Breadscumb</span></a>
+
+                    <!-- Nav Item - Count Down -->
+
+                    <a class="collapse-item" href="{% url 'website:TestingCountDown' %}">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Count Down</span></a>
+
+
+                    <!-- Nav Item - Slide show -->
+
+                    <a class="collapse-item" href="{% url 'website:TestingSlideShow' %}">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Slide Show</span></a>
+
+                    <!-- Nav Item - Charts -->
+
+                    <a class="collapse-item" href="{% url 'website:TestingChart' %}">
+                        <i class="fas fa-fw fa-chart-area"></i>
+                        <span>Charts</span></a>
+                    <!-- Nav Item - Tables -->
+
+                    <a class="collapse-item" href="{% url 'website:TestingTable' %}">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Tables</span></a>
+
+                    <a class="collapse-item" href="{% url 'website:TestingButton' %}">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Buttons</span></a>
+
+                    <a class="collapse-item" href="{% url 'website:TestingCard' %}">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Cards</span></a>
+
+                    <a class="collapse-item" href="{% url 'website:TestingBlank' %}">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Blank</span></a>
+
+                    <a class="collapse-item" href="{% url 'website:TestingT404' %}">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>404</span></a>
+
+                    <a class="collapse-item" href="{% url 'website:TestingRegister' %}">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Register</span></a>
+
+                    <a class="collapse-item" href="{% url 'website:TestingLogin' %}">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Login</span></a>
+
+                    <a class="collapse-item" href="{% url 'website:TestingForgotPassword' %}">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Forgot Password</span></a>
+                    <a class="collapse-item" href="{% url 'website:TestingAnimation' %}">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Animation</span></a>
+                    <a class="collapse-item" href="{% url 'website:TestingBorder' %}">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Border</span></a>
+                    <a class="collapse-item" href="{% url 'website:TestingColor' %}">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Color</span></a>
+                    <a class="collapse-item" href="{% url 'website:TestingOther' %}">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>Others</span></a>
+                    <a class="collapse-item" href="{% url 'website:TestingPdfObject' %}">
+                        <i class="fas fa-fw fa-table"></i>
+                        <span>PDF</span></a>
+
+                </div>
+            </div>
+        </li>
+
+        <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+{% endif %}
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->

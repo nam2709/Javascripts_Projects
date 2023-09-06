@@ -1,0 +1,207 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+        
+
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a class="btn btn-primary" href="{% url 'Website:LogoImagesView' %}">
+            All LogoImagess
+          </a>
+          <a href="{% url 'Website:LogoImages_DetailView' slug=current_logoimages.uuid %}">
+            Current LogoImages: {{ current_logoimages.name|title }}
+          </a>
+          <a class="btn btn-primary" href="{% url 'Website:LogoImages_EditView' slug=current_logoimages.uuid %}">
+            Edit
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_logoimages.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="logoimagesWebsiteDetailFormId" data-uuid="{{ current_logoimages.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="logoimagesWebsiteDetailFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            {% if current_logoimages.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="logoimagesWebsiteDetailFormId" data-uuid="{{ current_logoimages.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="logoimagesWebsiteDetailFormId" data-uuid="">
+            {% endif %}
+                {% csrf_token %}
+    
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    {% if current_logoimages %}
+        <input id="nameLogoImagesWebsiteDetailInputId" name="name" class="form-control name-logoimages-website-input" placeholder="Name" type="text" value="{{ current_logoimages.name}}" readonly >
+    {% else %}
+        <input id="nameLogoImagesWebsiteDetailInputId" name="name" class="form-control name-logoimages-website-input" placeholder="Name" type="text" value="" readonly >
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    {% if current_logoimages %}
+        <input id="uuidLogoImagesWebsiteDetailInputId" name="uuid" class="form-control uuid-logoimages-website-input" placeholder="Uuid" type="text" value="{{ current_logoimages.uuid}}" readonly >
+    {% else %}
+        <input id="uuidLogoImagesWebsiteDetailInputId" name="uuid" class="form-control uuid-logoimages-website-input" placeholder="Uuid" type="text" value="" readonly >
+    {% endif %}
+</div>
+
+<hr>
+<div>
+<!--
+    {% if current_logoimages.file %}
+        <span>
+         Current: <a href="{{ current_logoimages.file.url }}" target="_blank">{{ current_logoimages.file.name}}</a>
+        </span>
+    {% endif %}
+-->
+    <div class="form-group input-group  border" old-class="">
+        <div class="input-group-prepend w-20">
+            <span class="input-group-text">
+            File
+            </span>
+        </div>
+        <div class="input-group-content ml-3 w-75">
+            {% if current_logoimages and current_logoimages.file %}
+                <div class="">
+                    {% trans 'Current: ' %}<a id="fileLogoImagesWebsiteDetailInputId" name="file" old-class="form-control" class="file-logoimages-website-input current-file-preview tnd-file-path" data-toggle="modal" data-target="#FilePreviewModalFormId" placeholder="File" type="file" href="{{ current_logoimages.file.url}}" target="_blank" disabled > {{ current_logoimages.file.name}}</a>
+                </div>
+        <!--
+                    <a class="current-file-preview border-left"  url="{{ current_logoimages.file.url}}" data-toggle="modal" data-target="#FilePreviewModalFormId" >Preview</a>
+        -->
+                <div class="form-check border-left">
+                    <input id="fileLogoImagesWebsiteDetailInputIdClearId" name="file-clear" class="file-logoimages-website-input" placeholder="File" type="checkbox" value="" disabled />
+                    <label class="form-check-label" for="fileLogoImagesWebsiteDetailInputId">
+                        {% trans 'Remove' %}
+                    </label>
+                </div>
+                <hr>
+            {% else %}
+                Current: <a id="fileLogoImagesWebsiteDetailInputIdCurrentFileId" name="file" class="" data-target="#FilePreviewModalFormId" url="" href="">None
+                </a>
+                <hr>
+            {% endif %}
+            <div class="input-group w-100">
+                <input id="fileLogoImagesWebsiteDetailInputId" name="file" class="form-control file-logoimages-website-input" placeholder="File" type="file" value="" disabled />
+                <div class="input-group-append w-20">
+                    <span class="input-group-text">
+                    {% trans 'Change' %}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="form-group input-group  ">
+    <div class="form-check">
+        {% if current_logoimages.is_favicon == True %}
+            <input id="is_faviconLogoImagesWebsiteDetailInputId" name="is_favicon" type="checkbox" class="form-check-input is_favicon-logoimages-website-input" placeholder="Is Favicon" checked disabled>
+        {% else %}
+            <input id="is_faviconLogoImagesWebsiteDetailInputId" name="is_favicon" type="checkbox" class="form-check-input is_favicon-logoimages-website-input" placeholder="Is Favicon" disabled>
+        {% endif %}
+        <label class="form-check-label" for="is_faviconLogoImagesWebsiteDetailInputIdInputId">
+            Is Favicon
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group card  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Desc
+        </span>
+    </div>
+    {% if current_logoimages %}
+        <textarea rows="10" id="descLogoImagesWebsiteDetailInputId" name="desc" class="form-control ckeditor-input w-100 desc-logoimages-website-input" placeholder="Desc" type="text" value="" readonly>{{  current_logoimages.desc }}</textarea>
+    {% else %}
+        <textarea rows="10" id="descLogoImagesWebsiteDetailInputId" name="desc" class="form-control ckeditor-input w-100 desc-logoimages-website-input" placeholder="Desc" type="text" value="" readonly></textarea>
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    {% if current_logoimages %}
+        <input id="updated_atLogoImagesWebsiteDetailInputId" name="updated_at" class="form-control updated_at-logoimages-website-input" placeholder="Updated At" type="datetime-local" value="{{ current_logoimages.updated_at }}" readonly>
+    {% else %}
+        <input id="updated_atLogoImagesWebsiteDetailInputId" name="updated_at" class="form-control updated_at-logoimages-website-input" placeholder="Updated At" type="datetime-local" value="" readonly>
+    {% endif %}
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    {% if current_logoimages %}
+        <input id="created_atLogoImagesWebsiteDetailInputId" name="created_at" class="form-control created_at-logoimages-website-input" placeholder="Created At" type="datetime-local" value="{{ current_logoimages.created_at }}" readonly>
+    {% else %}
+        <input id="created_atLogoImagesWebsiteDetailInputId" name="created_at" class="form-control created_at-logoimages-website-input" placeholder="Created At" type="datetime-local" value="" readonly>
+    {% endif %}
+</div>
+
+    <div class="modal-footer">
+        <button id="logoimagesWebsiteTestBtnId" type="button" class="btn btn-warning">Test</button>
+    </div>
+            
+        </form>
+
+        </fieldset>
+    </div>
+</div>
+            
+{% include 'Workspace/'|add:website_template|add:'/admin/includes/Modal--FilePreview.html' %}
+

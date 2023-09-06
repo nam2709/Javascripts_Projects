@@ -1,0 +1,53 @@
+{% extends "arrgon/layouts/base.html" %}
+<html lang="en">
+   {% load static %}
+   {% load i18n %}
+   {% load tz %}
+   {% load humanize %}
+   <head>
+      <script src="/static/arrgon/js/jquery/dist/jquery.min.js"></script>
+      <script src="{% static 'UserGroup/js/UserGroupCount.js' %}"> </script> 
+   </head>
+   {% comment %} <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script> {% endcomment %}
+   <script src="{% static 'UserGroup/js/UserGroupClass.js' %}"> </script>
+   {% block overlay %}
+   <div class="min-height-300 bg-primary position-absolute w-100"></div>
+   {% endblock overlay %}
+   {% block content %}
+   <!-- [ Main Content ] start -->
+   <main>
+      <!-- [ breadcrumb ] start -->
+      <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+         <div class="container-xl px-4">
+            <div class="page-header-content pt-4">
+               <div class="row align-items-center justify-content-between">
+                  <div class="col-auto mt-4">
+                     <h1 class="page-header-title">
+                        Danh Sách Nhóm Người
+                     </h1>
+                  </div>
+               </div>
+               <nav class="mt-4 rounded d-none" aria-label="breadcrumb">
+                  <ol class="breadcrumb px-3 py-2 rounded mb-0">
+                     <li class="breadcrumb-item"><a href="/"><i data-feather="home"></i></a></li>
+                     <li class="breadcrumb-item active">Danh Sách Nhóm Người</li>
+                  </ol>
+               </nav>
+            </div>
+         </div>
+      </header>
+      <!-- [ breadcrumb ] end -->
+      <!-- [ Main Content ] start -->
+      <div class="container-xl px-4 mt-n10">
+         {% csrf_token %}
+         <!-- Page Heading -->
+         <a>{% include 'UserGroup/include/UserGroup--Seach.html' %}</a> 
+         <a> {% include 'UserGroup/include/UserGroup--Include.html' %}</a>
+         <br>{% include 'UserGroup/include/UserGroup--CreateModalInclude.html' %} 
+         <br>{% include 'UserGroup/include/UserGroup--DetailModalInclude' %} 
+         <br>{% include 'UserGroup/include/UserGroup--EditModalInclude.html' %} 
+         <!-- Detail content refer -->
+         </ul>
+      </div>
+   </main>
+   {% endblock %}

@@ -1,0 +1,150 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+            Create New FooterItem
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_footeritem.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="footeritemWebsiteCreateFormId" data-uuid="{{ current_footeritem.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="footeritemWebsiteCreateFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            
+<div class="form-group input-group d-none">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Id
+        </span>
+    </div>
+    <input id="idFooterItemWebsiteInputId" name="id" class="form-control id-footeritem-website-input" placeholder="Id of FooterItem" type="text" value="">
+</div>
+            
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameFooterItemWebsiteInputId" name="name" class="form-control name-footeritem-website-input" placeholder="Name of FooterItem" type="text" value="">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidFooterItemWebsiteInputId" name="uuid" class="form-control uuid-footeritem-website-input" placeholder="Uuid of FooterItem" type="text" value="{{ current_uuid}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Desc
+        </span>
+    </div>
+    <textarea id="descFooterItemWebsiteInputId" name="desc" class="form-control desc-footeritem-website-input" placeholder="Desc of FooterItem" type="text"></textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Html_Code
+        </span>
+    </div>
+    <textarea id="html_codeFooterItemWebsiteInputId" name="html_code" class="form-control html_code-footeritem-website-input" placeholder="Html_Code of FooterItem" type="text"></textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Css_Code
+        </span>
+    </div>
+    <textarea id="css_codeFooterItemWebsiteInputId" name="css_code" class="form-control css_code-footeritem-website-input" placeholder="Css_Code of FooterItem" type="text"></textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Js_Code
+        </span>
+    </div>
+    <textarea id="js_codeFooterItemWebsiteInputId" name="js_code" class="form-control js_code-footeritem-website-input" placeholder="Js_Code of FooterItem" type="text"></textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Order
+        </span>
+    </div>
+    <input id="orderFooterItemWebsiteInputId" name="order" class="form-control order-footeritem-website-input" placeholder="Order of FooterItem" type="text" value="{{ current_footeritem.order}}" readonly>
+</div>
+                        
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="positionPositionFooterItemWebsiteInputId">{% trans 'Position' %}</label>
+  </div>
+  <select class="custom-select position-website-select" name="position" id="positionPositionFooterItemWebsiteInputId">
+    <option selected>Choose...Position</option>
+  </select>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_footeritem.active == True %}
+        <input id="activeFooterItemWebsiteInputId" name="active" type="checkbox" class="form-check-input active-footeritem-website-input" placeholder="Active of FooterItem" value="" checked>
+        {% else %}
+        <input id="activeFooterItemWebsiteInputId" name="active" type="checkbox" class="form-check-input active-footeritem-website-input" placeholder="Active of FooterItem" value="">
+        {% endif %}
+        <label class="form-check-label" for="activeFooterItemWebsiteInputId">
+            Active
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated_At
+        </span>
+    </div>
+    <input id="updated_atFooterItemWebsiteInputId" name="updated_at" class="form-control updated_at-footeritem-website-input" placeholder="Updated_At of FooterItem" type="datetime-local" value="">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created_At
+        </span>
+    </div>
+    <input id="created_atFooterItemWebsiteInputId" name="created_at" class="form-control created_at-footeritem-website-input" placeholder="Created_At of FooterItem" type="datetime-local" value="">
+</div>
+                        
+<div class="form-group">
+    <button id="footeritemWebsiteSaveBtnId" type="button" class="btn btn-primary btn-lg">Save</button>
+    <button id="footeritemWebsiteSaveAndNewBtnId" type="button" class="btn btn-secondary btn-lg">Save and Create New</button>
+    <button id="footeritemWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

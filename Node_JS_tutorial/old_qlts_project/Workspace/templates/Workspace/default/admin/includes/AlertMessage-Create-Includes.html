@@ -1,0 +1,47 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AlertMessageClasses.js' %}"></script>
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+            Create New AlertMessage
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_alertmessage.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="alertmessageWebsiteCreateFormId" data-uuid="{{ current_alertmessage.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="alertmessageWebsiteCreateFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            
+<div class="form-group input-group d-none">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Id
+        </span>
+    </div>
+    <input id="idAlertMessageWebsiteInputId" name="id" class="form-control id-alertmessage-website-input" placeholder="Id of AlertMessage" type="text" value="">
+</div>
+            
+<div class="form-group">
+    <button id="alertmessageWebsiteSaveBtnId" type="button" class="btn btn-primary btn-lg">Save</button>
+    <button id="alertmessageWebsiteSaveAndNewBtnId" type="button" class="btn btn-secondary btn-lg">Save and Create New</button>
+    <button id="alertmessageWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

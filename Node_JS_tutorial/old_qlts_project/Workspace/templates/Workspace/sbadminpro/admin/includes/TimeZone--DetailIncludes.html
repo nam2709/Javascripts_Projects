@@ -1,0 +1,93 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="/static/sbadminpro/js/jquery/dist/jquery.min.js"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WorkspaceConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+
+<div class="card shadow mb-1">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a class="btn btn-primary btn-sm" href="{% url 'Workspace:TimeZoneView' %}">
+            Danh sách   TimeZone 
+          </a>
+          <a href="{% url 'Workspace:TimeZone_DetailView' slug=current_timezone.uuid %}">
+            Hiện tại   TimeZone : {{ current_timezone.name|title }}
+          </a>
+          <a class="btn btn-primary btn-sm" href="{% url 'Workspace:TimeZone_EditView' slug=current_timezone.uuid %}">
+            Chỉnh sửa
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_timezone.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="timezoneWorkspaceDetailFormId" data-uuid="{{ current_timezone.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="timezoneWorkspaceDetailFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            
+                    <div class="mb-1 col-xl-6 d-none">
+                       <label class="small mb-1">Id</label>
+                        {% if current_id %}
+                            <input id="idTimeZoneWorkspaceInputId" name="id" class="form-control id-timezone-workspace-input" placeholder="Điền thông tin Id of TimeZone" type="text" value="{{ current_timezone.id}}">
+                        {% else %}
+                            <input id="idTimeZoneWorkspaceInputId" name="id" class="form-control id-timezone-workspace-input" placeholder="Điền thông tin Id of TimeZone" type="text" value="">
+                        {% endif %}
+                    </div>
+            
+                    <div class="mb-1 col-xl-6 d-none">
+                        <label class="small mb-1">Uuid</label>
+                        {% if current_uuid %}
+                            <input id="uuidTimeZoneWorkspaceInputId" name="uuid" class="form-control uuid-timezone-workspace-input" placeholder="Điền thông tin Uuid of TimeZone" type="text" value="{{ current_timezone.uuid}}">
+                        {% else %}
+                            <input id="uuidTimeZoneWorkspaceInputId" name="uuid" class="form-control uuid-timezone-workspace-input" placeholder="Điền thông tin Uuid of TimeZone" type="text" value="">
+                        {% endif %}
+                    </div>
+            
+                    <div class="modal-footer">
+                        <button id="timezoneWorkspaceCancelBtnId" type="button" class="btn btn-danger btn-sm"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="timezoneWorkspaceTestBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+            
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

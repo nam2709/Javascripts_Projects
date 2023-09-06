@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+
+    {% include "Workspace/"|add:website_template|add:"/admin/header.html" %}
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    {% include "Workspace/"|add:website_template|add:"/admin/sidebar.html" %}
+
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+
+            {% with "Workspace/"|add:website_template|add:"/admin/topbar.html" as template %}
+                {% include template %}
+            {% endwith %}
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                </div>
+
+<div class="w3-col l10 m12" id="main">
+      <div id="mainLeaderboard" style="overflow:hidden;">
+        <!-- MainLeaderboard-->
+
+        <!--<pre>main_leaderboard, all: [728,90][970,90][320,50][468,60]</pre>-->
+        <div id="snhb-main_leaderboard-0" data-google-query-id="CKeskfaov-UCFZCGlgodtOoFiQ"><div id="google_ads_iframe_/22152718/sws-hb//w3schools.com//main_leaderboard_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22152718/sws-hb//w3schools.com//main_leaderboard_0" title="3rd party ad content" name="google_ads_iframe_/22152718/sws-hb//w3schools.com//main_leaderboard_0" width="468" height="60" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-google-container-id="d" data-load-complete="true"></iframe></div></div>
+        <!-- adspace leaderboard -->
+
+      </div>
+<h1>Bootstrap 4 <span class="color_h1">Pagination</span></h1>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="bootstrap_spinners.asp">❮ Previous</a>
+<a class="w3-right w3-btn" href="bootstrap_list_groups.asp">Next ❯</a>
+</div>
+<hr>
+
+<h2>Basic Pagination</h2>
+<p>If you have a web site with lots of pages, you may wish to add some sort of pagination to each page.</p>
+<ul class="pagination" style="font-size:16px;margin:20px 0">
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+</ul>
+<p>To create a basic pagination, add the <code class="w3-codespan">.pagination</code> class to an <code class="w3-codespan">&lt;ul&gt;</code> element.
+Then add the <code class="w3-codespan">.page-item</code> to each <code class="w3-codespan">&lt;li&gt;</code> element and a <code class="w3-codespan">.page-link</code> class to each link
+inside <code class="w3-codespan">&lt;li&gt;</code>:</p>
+<div class="w3-example">
+ <h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+  <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>ul<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="pagination"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span>
+  href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>Previous<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>1<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>2<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>3<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>Next<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/ul<span class="tagcolor" style="color:mediumblue">&gt;</span></span> </div>
+<a target="_blank" href="tryit.asp?filename=trybs_pagination&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself »</a>
+</div>
+<hr>
+
+<h2>Active State</h2>
+<p>The <code class="w3-codespan">.active</code> class is used to "highlight" the current page:</p>
+<ul class="pagination" style="font-size:16px;margin:20px 0">
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+  <li class="page-item active"><a class="page-link" href="javascript:void(0);">2</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+</ul>
+<div class="w3-example">
+ <h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>ul<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="pagination"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span>
+  href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>Previous<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>1<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item
+  active"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>2<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>3<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>Next<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/ul<span class="tagcolor" style="color:mediumblue">&gt;</span></span> </div>
+<a target="_blank" href="tryit.asp?filename=trybs_pagination_active&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself »</a>
+</div>
+<hr>
+<div id="midcontentadcontainer" style="overflow:auto;text-align:center">
+<!-- MidContent -->
+
+  <!--<pre>mid_content, all: [300,250][336,280][728,90][970,250][970,90][320,50][468,60]</pre>-->
+  <div id="snhb-mid_content-0" data-google-query-id="CKmskfaov-UCFZCGlgodtOoFiQ"><div id="google_ads_iframe_/22152718/sws-hb//w3schools.com//mid_content_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/22152718/sws-hb//w3schools.com//mid_content_0" title="3rd party ad content" name="google_ads_iframe_/22152718/sws-hb//w3schools.com//mid_content_0" width="336" height="280" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" style="border: 0px; vertical-align: bottom;" data-google-container-id="f" data-load-complete="true"></iframe></div></div>
+
+</div>
+<hr>
+
+<h2>Disabled State</h2>
+<p>The <code class="w3-codespan">.disabled</code> class is used for un-clickable links:</p>
+<ul class="pagination" style="font-size:16px;margin:20px 0">
+  <li class="page-item disabled"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+</ul>
+<div class="w3-example">
+ <h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>ul<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="pagination"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item
+  disabled"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>Previous<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>1<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>2<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>3<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>Next<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/ul<span class="tagcolor" style="color:mediumblue">&gt;</span></span> </div>
+<a target="_blank" href="tryit.asp?filename=trybs_pagination_disabled&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself »</a>
+</div>
+<hr>
+
+<h2>Pagination Sizing</h2>
+<p>Pagination blocks can also be sized to a larger or a smaller size:</p>
+<ul class="pagination pagination-lg" style="margin:20px 0">
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+</ul>
+<ul class="pagination pagination-sm" style="margin:20px 0">
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+</ul>
+
+<p>Add class <code class="w3-codespan">.pagination-lg</code> for larger blocks or <code class="w3-codespan">.pagination-sm</code> for smaller blocks:</p>
+<div class="w3-example">
+ <h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>ul<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="pagination
+  pagination-lg"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span>
+  href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>Previous<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>1<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>2<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>3<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>Next<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/ul<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+  <br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>ul<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="pagination pagination-sm"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span>
+  href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>Previous<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>1<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>2<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>3<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-link"</span> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>Next<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/ul<span class="tagcolor" style="color:mediumblue">&gt;</span></span> </div>
+<a target="_blank" href="tryit.asp?filename=trybs_pagination_sizing&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself »</a>
+</div>
+<hr>
+
+<h2>Pagination Alignment</h2>
+<p>Use utility classes to change the alignment of the pagination:</p>
+<ul class="pagination" style="margin:20px 0">
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+</ul>
+<ul class="pagination justify-content-center" style="margin:20px 0">
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+</ul>
+<ul class="pagination justify-content-end" style="margin:20px 0">
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+  <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+</ul>
+
+<div class="w3-example">
+ <h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+  <span class="commentcolor" style="color:green">&lt;!-- Default (left-aligned) --&gt;</span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>ul<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="pagination"</span> style<span class="attributevaluecolor" style="color:mediumblue">="margin:20px
+  0"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>...<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/ul<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><br><span class="commentcolor" style="color:green">&lt;!--
+  Center-aligned --&gt;</span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>ul<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="pagination justify-content-center"</span>
+  style<span class="attributevaluecolor" style="color:mediumblue">="margin:20px 0"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>...<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/ul<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><br><span class="commentcolor" style="color:green">&lt;!-- Right-aligned --&gt;</span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>ul<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="pagination justify-content-end"</span> style<span class="attributevaluecolor" style="color:mediumblue">="margin:20px 0"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="page-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>...<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/ul<span class="tagcolor" style="color:mediumblue">&gt;</span></span> </div>
+<a target="_blank" href="tryit.asp?filename=trybs_pagination_alignment&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself »</a>
+</div>
+
+<div class="w3-note w3-panel">
+<p class="margin-bottom-add"><strong>Tip:</strong> Read more about Bootstrap 4 Utility/Helper classes in our <a href="bootstrap_utilities.asp">BS4 Utilities Chapter</a>.</p>
+</div>
+
+<hr>
+
+<h2>Breadcrumbs</h2>
+<p>Another form for pagination, is breadcrumbs:</p>
+<ul class="breadcrumb" style="margin:20px 0">
+  <li class="breadcrumb-item"><a href="javascript:void(0)">Photos</a></li>
+  <li class="breadcrumb-item"><a href="javascript:void(0)">Summer 2017</a></li>
+  <li class="breadcrumb-item"><a href="javascript:void(0)">Italy</a></li>
+  <li class="breadcrumb-item active">Rome</li>
+</ul><p>The <code class="w3-codespan">.breadcrumb</code> and <code class="w3-codespan">.breadcrumb-item</code>
+classes indicates the current page's location within a
+navigational hierarchy:</p>
+<div class="w3-example">
+ <h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+  <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>ul<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="breadcrumb"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="breadcrumb-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red">
+  href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>Photos<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="breadcrumb-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red"> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>Summer 2017<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red">
+  class<span class="attributevaluecolor" style="color:mediumblue">="breadcrumb-item"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>a<span class="attributecolor" style="color:red"> href<span class="attributevaluecolor" style="color:mediumblue">="#"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>Italy<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/a<span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>li<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="breadcrumb-item
+  active"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>Rome<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/li<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/ul<span class="tagcolor" style="color:mediumblue">&gt;</span></span> </div>
+<a target="_blank" href="tryit.asp?filename=trybs_breadcrumbs&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself »</a>
+</div>
+<!--
+<hr>
+
+<h2>Complete Bootstrap 4 Navigation Reference</h2>
+<p>For a complete reference of all navigation classes, go to our complete
+<a href="bootstrap_ref_comp_navs.asp" class="w3-border-bottom">Bootstrap Navigation 4 Reference</a>.</p>
+-->
+<br>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="bootstrap_spinners.asp">❮ Previous</a>
+<a class="w3-right w3-btn" href="bootstrap_list_groups.asp">Next ❯</a>
+</div>
+</div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+          <!-- Footer -->
+
+
+        {% with "Workspace/"|add:website_template|add:"/admin/footer.html" as template %}
+            {% include template %}
+        {% endwith %}
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+</body>
+
+</html>

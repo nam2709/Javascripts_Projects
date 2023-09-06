@@ -1,0 +1,112 @@
+
+                    {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+                    
+    <div class="col-12  px-0">
+       <h6 class="heading-small text-muted mb-4">  Widget &nbsp;<i style="color:green" class="fas fa-plus widgetWorkspace-createAddInlineTableBtnId"></i></h6>
+      <div class="table-responsive">
+        <table class="table table-sm table-flush table-hover"  app-model-name="WidgetWorkspace" model_name="widget" id="widgetWorkspacecreateDataTableAddingId" depend="self-depend" parent-attr-name="" parent-attr-uuid=""  width="100%" cellspacing="0">
+          <thead class="thead-light">
+            <tr>
+        
+          <th>STT</th>
+        
+                <th attr-name="name" class="text-center" style="min-width:250px">Name</th>
+                
+                <th attr-name="title" class="text-center" style="min-width:250px">Title</th>
+                
+                <th attr-name="url" class="text-center" style="min-width:250px">Url</th>
+                
+                <th attr-name="desc" class="text-center" style="min-width:250px">Desc</th>
+                
+                <th attr-name="html_code" class="text-center" style="min-width:250px">Html_Code</th>
+                
+                <th attr-name="css_code" class="text-center" style="min-width:250px">Css_Code</th>
+                
+                <th attr-name="js_code" class="text-center" style="min-width:250px">Js_Code</th>
+                
+                <th attr-name="position" class="text-center" style="min-width:250px">Position</th>
+                
+                <th attr-name="order" class="text-center" style="min-width:250px">Order</th>
+                
+                <th attr-name="active" class="text-center" style="min-width:250px">Active</th>
+                
+        <th attr-name="widget-admin-action" class="text-center">Thao tác</th>
+         
+        </tr>
+    </thead>
+        
+      <tbody id="widgetWorkspacecreateInlineTableBodyId">
+        
+        <tr class="widget-Workspace-template-row-create d-none" is-new="template">
+        <td class="stt-widget">${count_row_widget}</td>
+        
+                <td class=""> 
+                
+                        <input name="name"  class=" form-control name-widget-workspace-inline-input" placeholder="Điền thông tin Name" type="text" value="">
+                    
+                </td>
+                
+                <td class=""> 
+                
+                        <input name="title"  class=" form-control title-widget-workspace-inline-input" placeholder="Điền thông tin Title" type="text" value="">
+                    
+                </td>
+                
+                <td class=""> 
+                
+                        <input name="url"  class=" form-control url-widget-workspace-inline-input" placeholder="Điền thông tin Url" type="text" value="">
+                    
+                </td>
+                
+                <td class=""> 
+                
+                            <textarea  name="desc"  class=" form-control desc-widget-workspace-inline-input ckeditor-input" placeholder="Điền thông tin Desc" type="text"></textarea>
+                    
+                </td>
+                
+                <td class=""> 
+                
+                            <textarea  name="html_code"  class=" form-control html_code-widget-workspace-inline-input ckeditor-input" placeholder="Điền thông tin Html_Code" type="text"></textarea>
+                    
+                </td>
+                
+                <td class=""> 
+                
+                            <textarea  name="css_code"  class=" form-control css_code-widget-workspace-inline-input ckeditor-input" placeholder="Điền thông tin Css_Code" type="text"></textarea>
+                    
+                </td>
+                
+                <td class=""> 
+                
+                            <textarea  name="js_code"  class=" form-control js_code-widget-workspace-inline-input ckeditor-input" placeholder="Điền thông tin Js_Code" type="text"></textarea>
+                    
+                </td>
+                
+                <td class=""> 
+                
+                            <select  style="width: 100%;" class="  form-control position-workspace-select"  name="position" >
+                            <option value="">Lựa chọn</option>
+                            </select>
+                    
+                </td>
+                
+                <td class=""> 
+                
+                        <input name="order"  class="  form-control order-widget-workspace-inline-input" placeholder="Điền thông tin Order" type="text">
+                    
+                </td>
+                
+                <td class="text-center"> 
+                
+                                <input  name="active"  type="checkbox" class=" form-control active-widget-workspace-inline-input" placeholder="Điền thông tin Active of Widget" value="" >
+                    
+                </td>
+                
+        <td class="text-center"><i class="fas fa-trash widget-Workspace-create-DeleteRowBtnId"></i> &nbsp; <i class="far fa-clone widget-Workspace-create-CloneRowBtnId"></i></td>
+        </tr>
+        
+      </tbody>
+    </table>
+</div>
+</div>
+        

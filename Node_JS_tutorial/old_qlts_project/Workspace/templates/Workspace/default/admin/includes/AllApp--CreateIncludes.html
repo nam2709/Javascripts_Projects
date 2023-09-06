@@ -1,0 +1,215 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6>
+          <a class="btn btn-primary" href="{% url 'Website:AllAppView' %}">
+            All AllApps
+          </a>
+        </h6>
+      <h6 class="m-0 font-weight-bold text-primary">
+            New AllApp
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            
+            <form method="POST" action="" enctype="multipart/form-data" id="allappWebsiteCreateFormId" data-uuid="">
+                {% csrf_token %}
+    
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameAllAppWebsiteCreateInputId" name="name" class="form-control name-allapp-website-input" placeholder="Name" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidAllAppWebsiteCreateInputId" name="uuid" class="form-control uuid-allapp-website-input" placeholder="Uuid" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Short Name
+        </span>
+    </div>
+    <input id="short_nameAllAppWebsiteCreateInputId" name="short_name" class="form-control short_name-allapp-website-input" placeholder="Short Name" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        
+        </span>
+    </div>
+    <input id="urlAllAppWebsiteCreateInputId" name="url" class="form-control url-allapp-website-input" placeholder="" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        
+        </span>
+    </div>
+    <input id="href_targetAllAppWebsiteCreateInputId" name="href_target" class="form-control href_target-allapp-website-input" placeholder="" type="text" value=""  >
+</div>
+
+<div class="form-group input-group   border">
+    <div class="input-group-prepend border-right">
+        <span class="input-group-text">
+        
+        </span>
+    </div>
+    <div class="input-group-content ml-3">
+        <div class="current-file">
+            {% trans 'Current:' %}
+            <a id="iconAllAppWebsiteCreateInputId" class="current-file-preview tnd-file-path" data-toggle="modal" data-target="#FilePreviewModalFormId"  href="#">None</a>
+        </div>
+        <div class="form-check">
+            <input id="iconAllAppWebsiteCreateInputIdClearId" name="icon-clear" class="form-control" placeholder="icon-allapp-website-input" type="checkbox" value=""  />
+            <label class="form-check-label" for="">
+                {% trans 'Remove' %}
+            </label>
+        </div>
+        <div class="file-input">
+            <input id="iconAllAppWebsiteCreateInputId" name="icon" class="icon-allapp-website-input " placeholder="" type="file" value="" iconAllAppWebsiteCreateInputId>
+        </div>
+    </div>
+</div>
+
+<div class="form-group input-group card  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        
+        </span>
+    </div>
+    <textarea rows="10" id="icon_base64AllAppWebsiteCreateInputId" name="icon_base64" class="form-control ckeditor-input icon_base64-allapp-website-input" placeholder="" type="text" value="" ></textarea>
+</div>
+
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="activeAllAppWebsiteCreateInputId" name="active" type="checkbox" class="form-check-input active-allapp-website-input" placeholder="Active" >
+        <label class="form-check-label" for="activeAllAppWebsiteCreateInputIdInputId">
+            Active
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="is_productAllAppWebsiteCreateInputId" name="is_product" type="checkbox" class="form-check-input is_product-allapp-website-input" placeholder="" >
+        <label class="form-check-label" for="is_productAllAppWebsiteCreateInputIdInputId">
+            
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="staff_onlyAllAppWebsiteCreateInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-allapp-website-input" placeholder="Chỉ quyền staff mới truy cập được!" >
+        <label class="form-check-label" for="staff_onlyAllAppWebsiteCreateInputIdInputId">
+            Chỉ quyền staff mới truy cập được!
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="admin_onlyAllAppWebsiteCreateInputId" name="admin_only" type="checkbox" class="form-check-input admin_only-allapp-website-input" placeholder="Chỉ quyền super admin mới truy cập được!" >
+        <label class="form-check-label" for="admin_onlyAllAppWebsiteCreateInputIdInputId">
+            Chỉ quyền super admin mới truy cập được!
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Order
+        </span>
+    </div>
+    <input id="orderAllAppWebsiteCreateInputId" name="order" class="form-control order-allapp-website-input" placeholder="Order" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="demo_modeAllAppWebsiteCreateInputId" name="demo_mode" type="checkbox" class="form-check-input demo_mode-allapp-website-input" placeholder="Demo apps!" >
+        <label class="form-check-label" for="demo_modeAllAppWebsiteCreateInputIdInputId">
+            Demo apps!
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    <input id="updated_atAllAppWebsiteCreateInputId" name="updated_at" class="form-control updated_at-allapp-website-input" placeholder="Updated At" type="datetime-local" value="" >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    <input id="created_atAllAppWebsiteCreateInputId" name="created_at" class="form-control created_at-allapp-website-input" placeholder="Created At" type="datetime-local" value="" >
+</div>
+
+    <div class="modal-footer">
+        <button id="allappWebsiteCreateBtnId" type="button" class="btn btn-primary">Create</button>
+        <button id="allappWebsiteSaveAndNewBtnId" type="button" class="btn btn-secondary">Save and New</button>
+        <button id="allappWebsiteTestBtnId" type="button" class="btn btn-warning">Test</button>
+    </div>
+            
+        </form>
+
+        </fieldset>
+    </div>
+</div>
+            

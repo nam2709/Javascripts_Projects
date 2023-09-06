@@ -1,0 +1,52 @@
+
+{% extends "arrgon/layouts/base.html" %}
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="TruongNV <truongg.nv@gmail.com>">
+    <meta name="copyright" content="Copyright ©2022 TruongNV <truongg.nv@gmail.com>">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="/static/arrgon/js/jquery/dist/jquery.min.js"></script>
+
+{% block overlay %}
+  <div class="min-height-300 bg-warning position-absolute w-100"></div>
+{% endblock overlay %}
+{% block content %}
+<!-- [ Main Content ] start -->
+<main>
+        <!-- [ breadcrumb ] start -->
+        <header class="page-header page-header-dark pb-10">
+            <div class="container-xl px-4">
+                <div class="page-header-content pt-4">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto mt-4">
+                            <h1 class="page-header-title">
+                                Quản lý danh sách tài sản theo phiếu
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container-vn px-lg-6 mt-n10">
+            {% csrf_token %} 
+                    <ul>
+                        <br>{% include 'FormManagement/includes/Form--AssetListByFormSearch.html' %}
+                        <br>{% include 'FormManagement/includes/Form--AssetListByForm.html' %}
+                        <br>{% include 'FormManagement/includes/Form--AssetListDetailsModal.html' %}
+                        <br>{% include 'FormManagement/includes/Form--AssetListByFormAdd.html' %}
+                        <br>{% include 'FormManagement/includes/Form--AssetListByFormEdit.html' %}
+                    </ul>
+                </div>
+        </main>
+    {% endblock %}
+        
+
+                

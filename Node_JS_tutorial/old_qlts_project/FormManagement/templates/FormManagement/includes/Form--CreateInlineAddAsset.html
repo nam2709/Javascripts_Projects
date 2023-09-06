@@ -1,0 +1,159 @@
+
+{% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+                           
+<script src="{% static 'js/Const.js' %}"></script>
+<script src="{% static 'js/CreateInlineTableAddAsset.js' %}"></script>
+
+  <div class="col-12  px-0">
+   <h6 class="heading-small text-muted mb-4">Danh sách tài sản theo phiếu&nbsp;
+        <i style="color:green" class="fas fa-plus accountAccount-createAddInlineTableBtnId"></i>
+        <input type="hidden" id="my-field" name="my-field" value="">
+        
+        <div class="container mt-5">
+                <div class="mb-3">
+                  <label for="search-input" class="form-label">Search:</label>
+                  <input name="asset" type="text" class="form-control" id="search-input" onkeydown="ShowOption1(event,'#asetnameDepreciationDepreciationCreateModalInputId','#search-input')" placeholder="Tìm kiếm tài sản...">
+                </div>
+                <select id="asetnameDepreciationDepreciationCreateModalInputId" name="aset" class="form-control -account-account-input" placeholder="Nhập " type="text" >
+                </select>
+              </div>
+              <button id="" type="button" class="btn btn-outline-success btn-sm text-success text-gradient px-3 mb-0">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                &nbsp;Thêm
+                </button>       
+        
+        <!-- <style>
+          .ui-autocomplete {
+            z-index: 9999 !important;
+          }
+          </style> -->
+          <!-- <script>
+            $(function() {
+              var dictionary = {
+                      "hi":"Apple",
+                      "hihi": "Banana",
+                      "hihihi": "Cherry",
+                      "1hi":"Apple",
+                      "2hihi": "Banana",
+                      "h3ihihi": "Cherry",
+                      "hi4":"Apple",
+                      "hih5i": "Banana",
+                      "hihi6hi": "Cherry",
+                      "hi5":"Apple",
+                      "hih4i": "Banana",
+                      "hihi4hi": "Cherry",
+                      "hi4":"Apple",
+                      "hih4i": "Banana",
+                      "hihi2hi": "Cherry",
+              };
+
+              $("#search-input").autocomplete({
+                source: function(request, response) {
+                  var searchTerm = request.term.toLowerCase();
+                  var matchingValues = Object.keys(dictionary).filter(function(key) {
+                    return dictionary[key].toLowerCase().indexOf(searchTerm) !== -1;
+                  });
+                  response(matchingValues.map(function(key) {
+                    return { label: dictionary[key], value: key };
+                  }));
+                },
+                select: function(event, ui) {
+                  var selectedValue = ui.item.value;
+                  var selectedDescription = dictionary[selectedValue];
+                  $("#search-input").val(selectedDescription);
+                  $("#result").text(selectedValue + ": " + selectedDescription);
+                  return false;
+                }
+              });
+            });
+          </script> -->
+         
+
+</h6>
+
+  <div class="table-responsive">
+    <table class="table table-sm table-flush table-hover"  app-model-name="AccountAccount" model_name="account" id="accountAccountcreateDataTableAddingId" depend="self-depend" parent-attr-name="" parent-attr-uuid=""  width="100%" cellspacing="0">
+      <thead class="thead-light">
+        <tr>
+    
+      <th>STT</th>
+            
+            <th attr-name="uuid" class="text-center d-none" style="min-width:250px">UUID</th>
+
+            <!-- <th attr-name="asset" class="text-center" style="min-width:250px">Tên tài sản</th>
+
+            <th attr-name="asset" class="text-center" style="min-width:250px">Tên tài sản</th> -->
+
+            <th attr-name="code" class="text-center d-none" style="min-width:250px">Mã</th>      
+
+            <th attr-name="asset" class="text-center" style="min-width:250px">Tên tài sản</th>
+            
+            <th attr-name="get_code_asset_warehouse" class="text-center" style="min-width:250px">Mã tài sản</th>
+            
+            <th attr-name="get_status" class="text-center" style="min-width:250px">Trạng thái</th>
+
+            <th attr-name="code_form" class="text-center d-none" style="min-width:250px">Phiếu</th>
+
+            <th attr-name="updated_by" class="text-center d-none" style="min-width:250px">Người cập nhật</th>
+
+            <th attr-name="updated_at" class="text-center d-none" style="min-width:250px">Ngày cập nhật</th>
+
+            <th attr-name="created_by" class="text-center d-none" style="min-width:250px">Người tạo</th>
+
+            <th attr-name="created_at" class="text-center d-none" style="min-width:250px">Ngày tạo</th>
+            
+            <!-- <th attr-name="date_of_birth" class="text-center" style="min-width:250px">Thao tác</th>
+            
+            <th attr-name="telephone" class="text-center" style="min-width:250px">Telephone</th>
+            
+            <th attr-name="password" class="text-center" style="min-width:250px">Password</th> -->
+            
+            <th attr-name="account-admin-action" class="text-center">Thao tác</th>
+     
+    </tr>
+</thead>
+    
+  <tbody id="accountAccountcreateInlineTableBodyId">
+     
+    <tr class="account-Account-template-row-create d-none" is-new="template">
+        
+    <td class="stt-account">${count_row_account}</td>
+
+            <td class="d-none "> 
+                        
+                <input name="code"  class="form-control username-account-account-inline-input" placeholder="Nhập Mã" type="text" value="">
+                
+            </td>   
+
+            <td class=""> 
+                
+                <input name="asset" id="search-input" class="form-control " placeholder="Nhập Tên tài sản" type="text" >
+            
+            </td>
+            
+            <td class=""> 
+            
+                    <input name="get_code_asset_warehouse"  class="mps_required form-control full_name-account-account-inline-input" placeholder="Nhập Mã tài sản" type="text" value="">
+                
+            </td>
+            
+            <td class=""> 
+            
+                    <input name="get_status"  class="mps_required form-control email-account-account-inline-input" placeholder="Nhập Trạng Thái" type="text" value="">
+                
+            </td>
+        <td class="text-center">
+            <a class="btn btn-link text-danger text-gradient px-3 mb-0 account-Account-create-DeleteRowBtnId" >
+                <i class="far fa-trash-alt me-2 account-Account-create-DeleteRowBtnId"></i>
+            Delete
+            </a>
+            <!-- <i class="fas fa-trash account-Account-create-DeleteRowBtnId"></i> &nbsp;  -->
+            <!-- <i class="far fa-clone account-Account-create-CloneRowBtnId"></i> -->
+        </td>
+    </tr>
+    
+  </tbody>
+</table>
+</div>
+</div>
+    

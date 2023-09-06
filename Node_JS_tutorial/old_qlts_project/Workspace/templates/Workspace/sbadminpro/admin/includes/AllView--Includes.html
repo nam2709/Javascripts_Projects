@@ -1,0 +1,166 @@
+
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="/static/sbadminpro/js/jquery/dist/jquery.min.js"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WorkspaceConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+
+<!-- DataTales -->
+            <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllView--createInlineTable.js' %}"></script>
+                                <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllView--editInlineTable.js' %}"></script>
+                                <script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllView--detailInlineTable.js' %}"></script>
+                                
+<div class="row">
+    <div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            Danh sách   Danh Sách View  django  
+           <!-- <span class="d-block m-t-5">use class <code>table-hover</code> inside table element</span> -->
+           <button type="button" id="btn-create-allviewWorkspace" class="btn btn-outline-primary btn-sm " data-bs-toggle="modal" data-bs-target="#allviewWorkspaceCreatemodalsId">
+                                <i class="fas fa-plus"></i> &nbsp;Thêm mới
+            </button>
+            <button type="button" id="allviewWorkspaceExportExcelBtnId" class="btn btn-success btn-sm">
+                    <i class="far fa-file-excel"></i> &nbsp;Xuất excel
+            </button>
+        </div>
+        <div class="card-body table-border-style">
+        <div class="table-responsive">
+            <table style="min-height: 210px;" class="table table-sm table-flush table-hover table-striped" id="allviewWorkspaceDataTableId" width="100%" cellspacing="0">
+                <thead class="thead-light">
+                    <tr>
+            
+                        <th attr-name="stt">STT</th>
+            
+                        <th attr-name="name">Name</th>
+                    
+                        <th attr-name="active">Active</th>
+                    
+                        <th attr-name="is_product">Is_Product</th>
+                    
+                        <th attr-name="staff_only">Staff_Only</th>
+                    
+                        <th attr-name="admin_only">Admin_Only</th>
+                    
+                        <th attr-name="order">Order</th>
+                    
+                        <th attr-name="allview-admin-action">Thao tác</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="allviewWorkspaceTableBodyId"> 
+                </tbody>
+            </table>
+            
+            
+            <table style="min-height: 210px;" class="table table-sm table-flush table-hover table-striped d-none" id="allviewWorkspaceExportTableId" width="100%" cellspacing="0">
+                <thead class="thead-light">
+                    <tr>
+                         <th attr-name="stt">STT</th>
+            
+                        <th attr-name="name">Name</th>
+                    
+                        <th attr-name="active">Active</th>
+                    
+                        <th attr-name="is_product">Is_Product</th>
+                    
+                        <th attr-name="staff_only">Staff_Only</th>
+                    
+                        <th attr-name="admin_only">Admin_Only</th>
+                    
+                        <th attr-name="order">Order</th>
+                    
+                    </tr>
+                </thead>
+                <tbody id="allviewWorkspaceExportTableBodyId">
+                </tbody>
+            </table>
+                
+            
+        </div>
+        
+
+            <div class="col-md-12 col-xl-12" id="allviewWorkspaceCardAreaId">
+                <div class="card d-none allviewWorkspaceTemplateCardClass">
+                    <div class="card-header">
+                        <div class="card-header-right">
+                            <div class="btn-group card-option">
+                                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="feather icon-more-horizontal"></i>
+                                </button>
+                                <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                    <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> Tối đa</span><span style="display:none"><i class="feather icon-minimize"></i> Trở về</span></a></li>
+                                    <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> Thu gọn</span><span style="display:none"><i class="feather icon-plus"></i> Mở rộng</span></a></li>
+                                    <li class="dropdown-item reload-card"><a href="#!"><i class="feather icon-refresh-cw"></i> Tải lại</a></li>
+                                    <li class="dropdown-item close-card"><a href="#!"><i class="feather icon-trash"></i> Xóa</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title" tnv_card_content="" attr-name="name"></h5>
+                        
+                        <p class="card-text" tnv_card_content="" title="Name" attr-name="name"></p>
+                    
+                        <p class="card-text" tnv_card_content="" title="Active" attr-name="active"></p>
+                    
+                        <p class="card-text" tnv_card_content="" title="Is_Product" attr-name="is_product"></p>
+                    
+                        <p class="card-text" tnv_card_content="" title="Staff_Only" attr-name="staff_only"></p>
+                    
+                        <p class="card-text" tnv_card_content="" title="Admin_Only" attr-name="admin_only"></p>
+                    
+                        <p class="card-text" tnv_card_content="" title="Order" attr-name="order"></p>
+                    
+                        <p class="card-text" tnv_card_content="" attr-name="created_at"><small class="text-muted"></small></p>
+                    </div>
+                </div>
+            </div>
+
+            
+        <span class="page-total page-total-AllViewWorkspace text-left"></span>
+    </div>
+    <hr>
+    <nav aria-label="Page navigation">
+        <ul class="pagination pagination-AllViewWorkspace justify-content-center">
+        </ul>
+    </nav>
+    
+    </div>
+    </div>
+</div>
+
+
+            

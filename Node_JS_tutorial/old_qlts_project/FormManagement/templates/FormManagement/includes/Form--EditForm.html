@@ -1,0 +1,521 @@
+<html lang="en">
+
+{% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+
+
+<script src="{% static 'js/Const.js' %}"></script>
+<script src="{% static 'js/FormClasses.js' %}"></script>
+
+<div class="modal fade" id="fromFormEditmodalsId" tabindex="-1" data-bs-backdrop="static" data-keyboard="true"  role="dialog" aria-labelledby="formFormEditmodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <form  id="formFormEditModalsFormId" >
+                <div class="modal-header">
+                    <h3 class="modal-title">Chỉnh sửa Phiếu</h3>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- <style>
+                        .mb-2 {
+                            margin-bottom: 1rem!important;
+                        }
+                      </style> -->
+                    <div class="form-group px-lg-5 text-start">
+                        {% csrf_token %}
+                        <!-- <div class="mb-1 col-xl-6 d-none">
+                            <label class="small mb-1">Id</label>
+                                <input id="idFormFormManagementEditModal" name="id" class="form-control id-account-account-input" placeholder="Id " type="text" value="">
+                        </div> -->
+                                    
+                        <div class="mb-1 col-xl-6 d-none">
+                            <label class="small mb-1">Uuid</label>
+                            <input id="uuidFormFormManagementEditModal" name="uuid_" class="form-control uuid-account-account-input mps_required" placeholder="Uuid " type="text" value="">
+                        </div>
+
+                        <h6 class="heading-small text-muted mb-4">Nhập các thông tin cho phiếu</h6>
+                        
+                        <div class="row gx-2 mb-2">
+                            <div class=" mb-1 col-xl-12">
+                                <label class="small mb-1">Tên Phiếu</label>
+                                <input id="nameFormFormManagementEditModal"  name="name" class="form-control named-account-account-input mps_required" placeholder="Tên Phiếu" type="text" value="">
+                            </div>   
+                            <div class="form-check mt-4">
+                                        
+                                <input id="is_confirmFormModalInputId" name="is_confirm" type="checkbox" class="form-check-input" placeholder="Đã Xác Nhận" value="" >
+                                
+                                <label class="form-check-label" for="is_confirmFormModalInputId">
+                                    Đã Xác Nhận Phiếu
+                                </label>
+                            </div>                                                                   
+                        </div>
+
+                        <div class="row gx-2 mb-2">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Mã Phiếu</label>
+                                <input id="codeFormFormManagementEditModal"  name="code" class="form-control code-account-account-input mps_required" placeholder="Mã Phiếu" type="text" value="">      
+                            </div> 
+
+                            <div class=" mb-1 col-xl-6">
+                                <!-- <label class="small mb-1">Loại Phiếu</label>
+                                <select id="typeFormFormManagementEditModal"  name="typed" class="form-control coded-account-account-input mps_required" placeholder="Loại Phiếu" type="text" value="">
+                                </select>  -->
+                                <label class="small mb-1">Loại Phiếu</label>
+                                <input id="typeFormFormManagementEditModal" name="type" class="form-control" placeholder="Loại phiếu" type="text" readonly>
+                            </div>
+                            <div class=" mb-1 col-xl-6 d-none">
+                                <label class="small mb-1">UUID Loại phiếu</label>
+                                <input id="uuidtypeFormFormManagementEditModal" name="type_form" class="form-control" placeholder="Loại phiếu" type="text" readonly>
+                            </div>
+                            
+                        </div>
+                        <div class="row gx-2 mb-2">      
+                            <!-- <div class=" mb-1 col-xl-6" id="staffReceiveDivEleEdit" name="staff_receive_property">
+                                <label class="small mb-1">Nhân viên nhận tài sản</label>
+                                <input id="staffRevFormFormManagementEditModal"  name="staff_receive_property" class="form-control staff-account-account-input " placeholder="Nhân viên nhận tài sản" type="text" value="">
+                            </div> -->
+
+                            <div class=" mb-1 col-xl-6" id="staffReceiveDivEleEdit" name="staff_receive_property">
+                                <label class="small mb-1">Nhân viên nhận tài sản</label>
+                                <!-- <div class="input-group">
+                                    <span class="input-group-text bg-light"><i class="fa fa-ellipsis-v" ></i></span><div>&nbsp;</div> -->
+                                    <select id="staffRevFormFormManagementEditModal"  name="staff_receive_property" class="form-control form-select staff-account-account-input" placeholder="Nhân viên nhận tài sản" type="text" value="">
+                                        <option value="" selected>Choices...</option> 
+                                    </select>                                  
+                                <!-- </div>  -->
+                            </div>
+
+                            <div class=" mb-1 col-xl-6" id="staffRecoveryAssetDivEleEdit" name="staff_confiscated_asset">
+                                <label class="small mb-1">Nhân viên bị thu hồi tài sản</label>
+                                <select id="staffRecoveryFormFormManagementEditModal"  name="staff_confiscated_asset" class="form-control form-select coded-account-account-input" placeholder="Nhân viên bị thu tài sản" type="text" value="">
+                                    <option value="" selected>Choices</option> 
+                                </select>   
+                              </div>
+
+                            <!-- <div class="mb-1 col-xl-6 " id="staffRecoveryAssetDivEleEdit" name="staff_confiscated_asset">
+                                <label class="small mb-1">Nhân viên bị thu hồi tài sản</label>
+                                <input id="staffRecoveryFormFormManagementEditModal" name="staff_confiscated_asset" class="form-control " placeholder="Nhân viên bị thu hồi tài sản" type="text" >
+                            </div> -->
+
+                        </div>
+
+                        <div class="row gx-2 mb-2">
+                            <div class=" mb-1 col-xl-6" id="deliveredDivEleEdit" name="delivered">
+                                <label class="small mb-1">Người giao</label>
+                                <select id="deliveredFormFormManagementEditModal"  name="delivered" class="form-control form-select coded-account-account-input" placeholder="Người giao" type="text" value="">
+                                    <option value="" selected></option> 
+                                </select>   
+                              </div>
+
+                              <div class=" mb-1 col-xl-6" id="receivedUnitDivEleEdit" name="received">
+                                <label class="small mb-1">Người nhận</label>
+                                <select id="receivedFormFormManagementEditModal"  name="received" class="form-control form-select coded-account-account-input" placeholder="Người nhận" type="text" value="">
+                                    <option value="" selected></option> 
+                                </select>   
+                              </div>
+                            <!-- <div class=" mb-1 col-xl-6 " id="deliveredDivEleEdit" name="delivered">
+                                <label class="small mb-1">Người giao</label>
+                                <input id="deliveredFormFormManagementEditModal" name="delivered" class="form-control " placeholder="Người giao" type="text" >
+                            </div>
+    
+                            <div class=" mb-1 col-xl-6 " id="receivedUnitDivEleEdit" name="received">
+                                <label class="small mb-1">Người nhận</label>
+                                <input id="receivedFormFormManagementEditModal" name="received" class="form-control" placeholder="Người nhận" type="text" >
+                            </div> -->
+                        </div>
+
+                        <div  class=" row gx-2 mb-2">
+                            <div class=" mb-1 col-xl-6" id="warehouseDivEleEdit" name="warehouse">
+                              <label class="small mb-1">Kho</label>
+                              <select id="warehouseFormFormManagementEditModal"  name="warehouse" class="form-control form-select coded-account-account-input" placeholder="Kho" type="text" value="">
+                                  <option value="" selected>Lựa Chọn </option> 
+                              </select>   
+                            </div>
+        
+                              <div class=" mb-1 col-xl-6" id="supplierDivEleEdit" name="supplier">
+                                <label class="small mb-1">Nhà Cung Cấp</label>
+                                <select id="supplierFormFormManagementEditModal"  name="supplier" class="form-control form-select coded-account-account-input" placeholder="Nhà Cung Cấp" type="text" value="">
+                                    <option value="" selected>Lựa Chọn</option> 
+                                </select>   
+                              </div>
+                          </div>
+
+                        <div class="row gx-2 mb-2" >
+                            <div class=" mb-1 col-xl-12 " id="reasonAssetRecoveryDivEleEdit" name="reason_asset_recovery">
+                                <label class="small mb-1">Lý do bị thu hồi</label>
+                                <input id="reasonRecoFormFormManagementEditModal" name="reason_asset_recovery" class="form-control" placeholder="Lý do bị thu hồi" type="text" >
+                            </div>
+                        </div>
+                        
+                      <div class="row gx-2 mb-2">
+                        <div class=" mb-1 col-xl-6" id="lendingUnitDivEleEdit" name="lending_unit">
+                            <label class="small mb-1">Đơn vị cho mượn</label>
+                            <select id="xxlendingUnitFormFormManagementEditModal"  name="lending_unit" class="form-control form-select coded-account-account-input" placeholder="Đơn vị cho mượn" type="text" value="">
+                                <option value="" selected></option> 
+                            </select>   
+                          </div> 
+                          <div class=" mb-1 col-xl-6" id="borowingUnitDivEleEdit" name="unit_currently_borrowing">
+                            <label class="small mb-1">Đơn vị đang mượn</label>
+                            <select id="brrowingUnitFormFormManagementEditModal"  name="unit_currently_borrowing" class="form-control form-select coded-account-account-input" placeholder="Đơn vị đang mượn" type="text" value="">
+                                <option value="" selected></option> 
+                            </select>   
+                          </div> 
+                        <!-- <div class=" mb-1 col-xl-6 " id="lendingUnitDivEleEdit" name="lending_unit">
+                            <label class="small mb-1">Đơn vị cho mượn</label>
+                            <input id="xxlendingUnitFormFormManagementEditModal" name="lending_unit" class="form-control " placeholder="Đơn vị cho mượn" type="text" >
+                        </div> -->
+
+                        <!-- <div class=" mb-1 col-xl-6 " id="borowingUnitDivEleEdit" name="unit_currently_borrowing">
+                            <label class="small mb-1">Đơn vị đang mượn</label>
+                            <input id="brrowingUnitFormFormManagementEditModal" name="unit_currently_borrowing" class="form-control" placeholder="Đơn vị đang mượn" type="text" >
+                        </div> -->
+                    </div>
+                    <!-- <div class="row gx-2 mb-2">
+                        id="unitCompanyDivEleEdit" name="unit_company"
+                        <div class=" mb-1 col-xl-6 " id="borowingUnitDivEleEdit" name="unit_currently_borrowing">
+                            <label class="small mb-1">Đơn vị đang mượn</label>
+                            <input id="brrowingUnitFormFormManagementEditModal" name="unit_currently_borrowing" class="form-control" placeholder="Đơn vị đang mượn" type="text" >
+                        </div>
+
+                        <div class=" mb-1 col-xl-6 ">
+                            <label class="small mb-1">Đơn vị thuộc công ty</label>
+                            <input id="unitCompanyFormFormManagementEditModal" name="unit_company" class="form-control" placeholder="Đơn vị đang mượn" type="text">
+                        </div>
+                    </div> -->
+
+                    <div class="row gx-2 mb-2 ">
+                      <!-- <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Ngày thực hiện</label>
+                        <input id="exeDateFormFormManagementEditModal" name="execution_date" class="form-control" placeholder="Ngày thực hiện" type="text" readonly>
+                      </div>  -->
+                      <div class=" mb-1 col-xl-6" id="exeDateDivEleEdit" name="execution_date">
+                        <label class="small mb-1">Ngày thực hiện</label>
+                        <input id="exeDateFormFormManagementEditModal" name="execution_dated" class=" form-control date-account-account-input" placeholder="Ngày thực hiện" type="text" value="">
+                    </div>
+                      <div class=" mb-1 col-xl-6 " id="loanPeriodDivEleEdit" name="loan_period">
+                          <label class="small mb-1">Thời gian mượn đến</label>
+                          <input id="loanPeriodFormFormManagementEditModal" name="loan_period" class="form-control" placeholder="Thời gian mượn đến" type="text"  >
+                      </div>
+                  </div>
+
+                  <div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-6 " id="buyerDivEleEdit" name="buyer">
+                        <label class="small mb-1">Người mua</label>
+                        <input id="buyerFormFormManagementEditModal" name="buyer" class="form-control " placeholder="Người mua" type="text" >
+                    </div>
+
+                    <div class=" mb-1 col-xl-6 " id="priceDivEleEdit" name="price">
+                        <label class="small mb-1">Giá</label>
+                        <input id="priceFormFormManagementEditModal" name="price" class="form-control" placeholder="Giá" type="text" >
+                    </div>
+                </div>
+                <div class="row gx-2 mb-2">
+                  <div class=" mb-1 col-xl-12 " id="liquidationReasonDivEleEdit" name="liquidation_reason">
+                      <label class="small mb-1">Lý do thanh lý</label>
+                      <input id="liqReasonFormFormManagementEditModal" name="liquidation_reason" class="form-control" placeholder="Nội dung" type="text" >
+                  </div>
+              </div>        
+                        <div class="row gx-2 mb-2 d-none">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Người cập nhật</label>
+                                <input id="updateByFormFormManagementEditModal"  name="updated_by" class="form-control password-account-account-input mps_required" placeholder="Người cập nhật" type="text" value="">
+                                
+                            </div>
+                            <div class=" mb-1 col-xl-6 ">
+                                <label class="small mb-1">Ngày cập nhật</label>
+                                <input id="updateAtFormFormManagementEditModal"  name="updated_at" class="form-control password-account-account-input mps_required" placeholder="Ngày cập nhật" type="text" value="">
+                            </div>
+
+                        </div>
+                        <div class="row gx-2 mb-2 d-none">  
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Người tạo</label>
+                                <input id="createdByFormFormManagementEditModal"  name="created_by" class="form-control password-account-account-input mps_required" placeholder="Người tạo" type="text" value="">
+                            </div>   
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Ngày tạo</label>
+                                <input id="createAtFormFormManagementEditModal"  name="created_at" class="form-control password-account-account-input mps_required" placeholder="Người tạo" type="text" value="">
+                            </div>                                          
+                        </div>
+
+                        <div class="row gx-2 mb-2">
+                            <div class=" mb-1 col-xl-12" id="attachedDocumentDivEle" name="attached_document">
+                                <label class="small mb-1">Đơn đề xuất</label>
+                                <select id="attachedDocumentFormFormManagementEditModal"  name="attached_document" class="form-control form-select coded-account-account-input" placeholder="Đơn đề xuất" type="text" value="">
+                                    <option value="" selected></option> 
+                                </select>   
+                              </div> 
+                        </div>
+
+                        <div class="row gx-2 mb-2">
+                            <div class=" mb-1 col-xl-12">
+                                <label class="small mb-1">Nội dung</label>
+                                <textarea id="contentFormFormManagementEditModal" name="content" class="form-control mps_required" placeholder="Nội dung" type="text">
+                                    </textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                    <button id="" type="" class="btn btn-light btn-sm d-none" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+
+                    <button id="accountAccountSaveAndNewModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="d-none fas fa-save"></i>&nbsp;Lưu và thêm mới</button>
+                    <button id="accountAccountTestCreateModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                </div> -->
+            </form>
+
+
+            <!-- <div class="modal-footer">
+                <button id="accountAccountCancelEditModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                <button id="formFormManagementEditModalBtnId" type="button" onclick="UpdateFormFormManagement()" class="btn btn-primary btn-sm">
+                    <i class="fas fa-save"></i>
+                    &nbsp;Lưu Phiếu
+                </button>
+                <button id="ALL" type="button" onclick="reload()" class="btn btn-primary btn-sm">
+                    Hoàn Tất&nbsp;
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+            </div> -->
+            <div >
+                <script>
+                    $(function() {
+                        $("#toggle-form").click(function() {
+                            $("#formFormEditModalsFormId").slideToggle("slow");
+                        });
+                    });
+                </script>
+                <button class="align-center btn btn-primary btn-sm" id="toggle-form"> Thu gọn/ Mở rộng phiếu </button>
+            </div>
+            <form  id="assetToFormFormManagementCreateModalsFormId">
+                <!-- <script>
+                    document.getElementById("assetToFormFormManagementCreatesModalsFormId").onload = function() {getListFormStart()};
+                </script> -->   
+                <div class="modal-header">
+                    <h3 class="modal-title">Thêm tài sản vào phiếu</h3>
+                    <!-- <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="" enctype="multipart/form-data" id="assetByFormFormManagementCreateModalsFormId" data-uuid="">
+                    <div class="form-group px-lg-5 text-start">
+                        {% csrf_token %}
+                        <div class="mb-1 col-xl-6 d-none">
+                            <label class="small mb-1">Id</label>
+                                <input id="idAsFormFormManagementCreateModalInputId" name="id" class="form-control id-account-account-input" placeholder="Id " type="text" value="">
+                            </div>
+                                    
+                        <div class="mb-1 col-xl-6 d-none">
+                            <label class="small mb-1">Uuid</label>
+                            <input id="uuidAssetToFormFormManagementCreateModalInputId" name="uuid" class="form-control uuid-account-account-input" placeholder="Uuid " type="text" value="">
+                        </div>
+
+                        <!-- <h6 class="heading-small text-muted mb-4">Thêm tài sản cho phiếu</h6> -->
+                        
+                        <div class="row gx-2 mb-2 d-none">
+                            <div class=" mb-1 col-xl-12 ">
+                                <label class="small mb-1">Mã tài sản trong bảng</label>
+                                <input id="nameAsFormFormManagementCreateModalInput"  name="code" class="form-control named-account-account-input mps_required" placeholder="Tên Phiếu" type="text" value="">
+                                
+                            </div>                                                                        
+                        </div>
+
+                        <div class="row gx-2 mb-2">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Thêm tài sản</label>
+                                <select id="addAssetByFormFormManagementCreateModalInput"  name="asset" class="form-control form-select coded-account-account-input mps_required" placeholder="Loại Phiếu" type="text" value="">
+                                    <option selected>Chọn tài sản</option> 
+                                </select>  
+                                 
+                            </div>
+                          
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Thao tác</label> <br>
+                                <style>
+                                    .pd-btn {
+                                      padding: 7px 16px 7px 16px;
+                                    }
+                                </style>
+                                <button id="assetAddFormCreateModalBtnId" type="button" class="btn btn-outline-success btn-sm text-success text-gradient px-3 mb-0 pd-btn" onclick="AddAssetInUpdateForm()">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                    <!-- <a class="btn btn-link text-danger text-gradient px-3 mb-0"  onclick="DeleteAssetByForm('` + uuid_ + `', '` + uuid + `', '` + numTypeModal + `')">
+                                        <i class="far fa-trash-alt me-2" aria-hidden="true"></i>
+                                    Delete
+                                    </a> -->
+                                    &nbsp;Thêm
+                                </button>
+                            </div>  
+                        </div>
+                        <!-- <div class="row gx-2 mb-2">
+                            <select class="js-example-basic-single" name="state">
+                                <option value="AL">Alabama</option>
+                                <option value="WY">Wyoming</option>
+                                <option value="WY">HHHH</option>
+            
+                            </select>
+                            <script>
+                                // In your Javascript (external .js resource or <script> tag)
+                                $(document).ready(function() {
+                                    $('.js-example-basic-single').select2({
+                                        placeholder: 'Select an option',
+                                        dropdownParent: '#fromFormEditmodalsId'
+                                    })
+                                });
+                            </script>
+                        </div> -->
+
+                        
+
+                        <div class=" mb-1 col-xl-6 d-none">
+                            <label class="small mb-1">Mã tài sản trong kho</label>
+                            <input id="codeAsFormManagementCreateModalInput"  name="get_code_form" class="form-control code-account-account-input mps_required" placeholder="Mã Phiếu" type="text" value="">      
+                        </div> 
+                        <div class="row gx-2 mb-2 d-none">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Trạng thái tài sản</label>
+                                <input id="contentFormFormManagementCreateModalInput" name="current_status_asset" class="form-control mps_required" placeholder="Nội dung" type="text">
+                            </div>
+                        </div>
+                        <div class="row gx-2 mb-2 d-none">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1 ">Phiếu</label>
+                                <!-- <select id="formAssetListToFormCreateModalInput"  name="code_form" class="form-control coded-account-account-input mps_required" placeholder="Loại Phiếu" type="text" value="">
+                                    <option selected>Choose...</option> 
+                                </select>    -->
+                                <input id="formAssetListToFormCreateModalInput"  name="code_form" class="form-control code-account-account-input mps_required" placeholder="Loại Phiếu" type="text" value="">      
+
+                            </div>
+
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1 ">Mã phiếu</label>
+                                <input id="codeFormAsFormManagementCreateModalInput"  name="get_code_form" class="form-control code-account-account-input mps_required" placeholder="Mã Phiếu" type="text" value="">      
+                            </div> 
+                        </div>
+
+                        <div class="row gx-2 mb-2 d-none">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Người cập nhật</label>
+                                <input id="updateByFormAsFormManagementCreateModalInput"  name="updated_by" class="form-control password-account-account-input mps_required" placeholder="Người cập nhật" type="text" value="">
+                                
+                            </div>
+                            <div class=" mb-1 col-xl-6 ">
+                                <label class="small mb-1">Ngày cập nhật</label>
+                                <input id="updateAtFormAsFormManagementCreateModalInput"  name="updated_at" class="form-control password-account-account-input mps_required" placeholder="Ngày cập nhật" type="text" value="">
+                            </div>
+
+                        </div>
+                        <div class="row gx-2 mb-2 d-none">  
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Người tạo</label>
+                                <input id="createByFormAsFormManagementCreateModalInput"  name="created_by" class="form-control password-account-account-input mps_required" placeholder="Người tạo" type="text" value="">
+                            </div>   
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Ngày tạo</label>
+                                <input id="createAtFormAsFormManagementCreateModalInput"  name="created_at" class="form-control password-account-account-input mps_required" placeholder="Người tạo" type="text" value="">
+                            </div>                                          
+                        </div>
+            
+                    </div>
+                </div>
+            </form>
+             
+             <form id="assetListByFormFormManagementModals">
+                <div class="modal-header">
+                    <h4 class="mb-2">Danh sách tài sản đính kèm phiếu
+                        <!-- <a class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center" id="">
+                            <i class="fas fa-plus" aria-hidden="true"></i>
+                        </a> -->
+                    </h4>
+                    <!-- <h6 class="heading-small text-muted mb-4">Danh sách tài sản đính kèm phiếu&nbsp;<i style="color:green" class=" fas fa-plus accountAccount-createAddInlineTableBtnId"></i></h6> -->
+
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="" enctype="multipart/form-data" id="assetListByFormFormManagementModals" data-uuid="">
+                    <div class="form-group px-lg-5 text-start">
+                        <div class="card">
+                        <div class="card-header pb-0 p-3">
+                        <div class="d-flex justify-content-between">
+                            <h6 class="mb-2">Danh sách</h6>
+                        </div>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <!-- <h5 class="mb-2">Danh sách </h5> -->
+                            <style>
+                                .stt {
+                                    width: 50px;
+                                }
+                            </style>
+                        <table class="table align-items-center" id="assetListByFormTableIdInUpdate">
+                            <thead>
+                            <tr>
+                                <th attr-name="stt"  style="width: 10%;">
+                                    <div class="text-center align-items-center">
+                                        <p class="text-sm font-weight-bold mb-0">STT</p>
+                                    </div>
+                                </th>
+                                <th attr-name="asset" style="width: 40%;">
+                                    <div class="d-flex px-2 py-1 align-items-center">
+                                        <div class="ms-4">
+                                            <p class="text-sm font-weight-bold mb-0">Tên tài sản</p>
+                                        </div>
+                                    </div>
+                                </th>
+                                
+                                <th attr-name="get_code_asset_warehouse">
+                                    <div class="text-center align-items-center">
+                                        <p class="text-sm font-weight-bold mb-0">Mã tài sản</p>
+                                    </div>
+                                </th>
+                                <th attr-name="current_status_asset">
+                                    <div class="text-center align-items-center">
+                                        <p class="text-sm font-weight-bold mb-0">Trạng thái</p>
+                                    </div>
+                                </th>
+
+                                <th attr-name="del_asset">
+                                    <div class="text-center align-items-center">
+                                        <p class="text-sm font-weight-bold mb-0">Xóa tài sản</p>
+                                    </div>
+                                </th>
+                                
+                                <!-- <h6 class="text-sm mb-0">
+                                    <button id="" type="button" onclick="DeleteAssetByForm('` + uuid_ + `', '` + uuid + `', '` + numTypeModal + `')" class="btn btn-sm">
+                                            <i class="fas fa-trash"></i>
+                                    </button>
+                                    </h6> -->
+                            </tr>
+                            </thead>
+                            <tbody id="assetListByFormTableBodyIdInUpdate">
+                            </tbody>
+                        </table>
+                        </div>
+                        <span class="page-total page-total-AssetListByFormManagement text-left"></span>
+                        </div>
+                    </div>
+                    </form>
+                    <nav aria-label="Page navigation" class="d-none">
+                        <ul class="pagination pagination-AssetListByFormManagement justify-content-center">
+                        </ul>
+                    </nav>
+                </div>
+
+               <div class="modal-footer">
+                <button id="accountAccountCancelEditModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                <button id="formFormManagementEditModalBtnId" type="button" onclick="UpdateFormFormManagement()" class="btn btn-primary btn-sm">
+                    <i class="fas fa-save"></i>
+                    &nbsp;Lưu Phiếu
+                </button>
+                <button id="ALL" type="button" onclick="reload()" class="btn btn-primary btn-sm">
+                    Hoàn Tất&nbsp;
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+            </div>
+             </form> 
+
+             
+        </div>
+    </div>
+    <!-- <div class="container-xl px-4 mt-n10"> -->
+    
+            <!-- </div> -->
+</div>
+

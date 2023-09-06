@@ -1,0 +1,54 @@
+
+            {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+<div class="modal fade" id="proposalFormTypeDetailmodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="proposalFomTypeDetailmodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <form method="POST" action="" enctype="multipart/form-data" id="proposalFormTypeDetailModalsFormId" data-uuid="">
+                <div class="modal-header bg-primary">
+                    <h3 class="modal-title text-white">Xem chi tiết kiểu</h3>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group px-lg-5 text-start">
+                        <div class="row">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Mã kiểu</label>
+                                <input id="codeProposalFormTypeDetailModalInputId" name="code" class="form-control full_name-account-account-input" type="text" disabled>
+                            </div>
+
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Tên kiểu</label>
+                                <input id="nameProposalFormTypeDetailModalInputId" name="name" class="form-control username-account-account-input" type="text" disabled>
+                            </div>
+                            
+                        </div>
+                        <div class="row gx-2 mb-2">
+                            <div class="form-group">
+                                <label class="small mb-1">Select Multiple Disabled</label>
+                                <textarea id="fieldsProposalFormTypeDetailId" name="fields" class="form-control" placeholder="Mã Loại Phiếu" type="text" readonly>
+                                </textarea>
+                            </div>
+                            
+                        </div>
+
+                        <div class="row">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Thời gian tạo</label>
+                                <input id="created_atProposalFormTypeDetailModalInputId" name="created_at" class="form-control telephone-account-account-input" type="text" disabled>
+                            </div>
+    
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Thời gian cập nhật</label>
+                                <input id="updated_atProposalFormTypeDetailModalInputId" name="updated_at" class="form-control telephone-account-account-input" type="text" disabled>
+                            </div>                           
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+            

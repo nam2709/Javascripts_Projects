@@ -1,0 +1,60 @@
+{% block content %}
+<div id="modalContainer">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="card">
+                        <div class="card-header bg-transparent">
+                          <h3 class="mb-0">Timeline</h3>
+                        </div>
+                        <div class="card-body">
+                          <div
+                            class="timeline timeline-one-side"
+                            data-timeline-content="axis"
+                            data-timeline-axis-style="dashed"
+                          >
+                            <!-- <div class="timeline-block">
+                              <span class="timeline-step badge-success">
+                                <i class="fas fa-cart-plus"></i>
+                              </span>
+                              <div class="timeline-content">
+                                <small class="text-muted font-weight-bold">10:30 AM</small>
+                                <h6 class="mt-3 mb-0">Mua mới/ Lưu kho</h6>
+                                <p class="text-sm mt-1 mb-4"></p>
+                                <div class="mt-3">
+                                    <span class="badge badge-pill badge-success">uuid {{uuid}}</span>
+                                    <span class="badge badge-pill badge-success">system</span>
+                                    <span class="badge badge-pill badge-success">creative</span>
+                                  </div>
+                              </div>
+                            </div> -->
+                            <style>
+                              .ptb {
+                                  padding-bottom: 1.5rem!important;
+                              }
+                              .timeline-one-side .timeline-content {
+                                  max-width: 300rem;
+                              }
+                            </style>
+                            {% for his in history reversed %}
+                              <div class="timeline-block ">
+                                <span class="timeline-step" style="background-color: {{his.type_action.color_code}};">
+                                  <!-- <i class="fa {{his.type_action.icon}}"></i> -->
+                                  <i class="{{his.type_action.icon}}"></i>
+                                </span>
+                                <div class="timeline-content">
+                                  <small class="text-muted font-weight-bold">{{his.started_using}}</small>
+                                  <h6 class="mt-3 mb-0">{{his.type_action.name}} <i><b>{{his.asset.name}} </b> </i>  {{his.user.name}}</h6>
+                                  <!-- <p class="text-sm mt-1 mb-4"></p> -->
+                                  <div class="mt-3 mb-0 ptb">
+                                    <span>Trạng thái tài sản</span>
+                                    <span><i><b>{{his.status_current}}</b></i></span>
+                                  </div>
+                                </div>
+                              </div>
+                            {% endfor %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+{% endblock content %}

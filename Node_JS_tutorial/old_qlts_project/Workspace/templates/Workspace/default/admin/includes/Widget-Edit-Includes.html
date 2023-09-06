@@ -1,0 +1,167 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a href="{% url 'Website:Widget_EditView' slug=current_widget.uuid %}">
+            Current Widget: {{ current_widget.name|title }}
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_widget.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="WebsitewidgetEditFormId" data-uuid="{{ current_widget.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="WebsitewidgetEditFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+            
+<div class="form-group input-group d-none">
+<div class="input-group-prepend">
+<span class="input-group-text">
+Id
+</span>
+</div>
+<input id="idWidgetWebsiteInputId" name="id" class="form-control id-widget-website-input" placeholder="Id of Widget" type="text" value="{{ current_widget.id}}">
+</div>
+            
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameWidgetWebsiteInputId" name="name" class="form-control name-widget-website-input" placeholder="Name of Widget" type="text" value="{{ current_widget.name}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidWidgetWebsiteInputId" name="uuid" class="form-control uuid-widget-website-input" placeholder="Uuid of Widget" type="text" value="{{ current_widget.uuid}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Title
+        </span>
+    </div>
+    <input id="titleWidgetWebsiteInputId" name="title" class="form-control title-widget-website-input" placeholder="Title of Widget" type="text" value="{{ current_widget.title}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Url
+        </span>
+    </div>
+    <input id="urlWidgetWebsiteInputId" name="url" class="form-control url-widget-website-input" placeholder="Url of Widget" type="text" value="{{ current_widget.url}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Desc
+        </span>
+    </div>
+    <textarea id="descWidgetWebsiteInputId" name="desc" class="form-control desc-widget-website-input" placeholder="Desc of Widget" type="text">{{ current_widget.desc}}</textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Html_Code
+        </span>
+    </div>
+    <textarea id="html_codeWidgetWebsiteInputId" name="html_code" class="form-control html_code-widget-website-input" placeholder="Html_Code of Widget" type="text">{{ current_widget.html_code}}</textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Css_Code
+        </span>
+    </div>
+    <textarea id="css_codeWidgetWebsiteInputId" name="css_code" class="form-control css_code-widget-website-input" placeholder="Css_Code of Widget" type="text">{{ current_widget.css_code}}</textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Js_Code
+        </span>
+    </div>
+    <textarea id="js_codeWidgetWebsiteInputId" name="js_code" class="form-control js_code-widget-website-input" placeholder="Js_Code of Widget" type="text">{{ current_widget.js_code}}</textarea>
+</div>
+                        
+
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="positionPositionWidgetWebsiteInputId">{% trans 'Position' %}</label>
+  </div>
+  <select class="custom-select position-website-select" name="position" id="positionPositionWidgetWebsiteInputId">
+    <option selected>Choose...Position</option>
+  </select>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Order
+        </span>
+    </div>
+    <input id="orderWidgetWebsiteInputId" name="order" class="form-control order-widget-website-input" placeholder="Order of Widget" type="text" value="{{ current_widget.order}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_widget.active == True %}
+        <input id="activeWidgetWebsiteInputId" name="active" type="checkbox" class="form-check-input active-widget-website-input" placeholder="Active of Widget" value="{{ current_widget.active}}" checked>
+        {% else %}
+        <input id="activeWidgetWebsiteInputId" name="active" type="checkbox" class="form-check-input active-widget-website-input" placeholder="Active of Widget" value="{{ current_widget.active}}">
+        {% endif %}
+        <label class="form-check-label" for="activeWidgetWebsiteInputId">
+            Active
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    <input id="updated_atWidgetWebsiteInputId" name="updated_at" class="form-control updated_at-widget-website-input" placeholder="Updated_At of Widget" type="datetime-local" value="{{ current_widget.updated_at}}">
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    <input id="created_atWidgetWebsiteInputId" name="created_at" class="form-control created_at-widget-website-input" placeholder="Created_At of Widget" type="datetime-local" value="{{ current_widget.created_at}}">
+</div>
+                        
+<div class="form-group">
+    <button id="widgetWebsiteSaveBtnId" type="button" class="btn btn-primary btn-lg">Save</button>
+    <button id="widgetWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

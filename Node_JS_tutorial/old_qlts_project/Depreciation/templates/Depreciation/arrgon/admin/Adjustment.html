@@ -1,0 +1,69 @@
+
+{% extends "arrgon/layouts/base.html" %}
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <script src="{% static 'Depreciation/arrgon/admin/js/DepreciationConst.js' %}"></script>    
+    <script src="{% static 'Depreciation/arrgon/admin/js/AdjustmentClasses.js' %}"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+    
+                
+{% block overlay %}
+
+    <div class="min-height-300 bg-primary position-absolute w-100"></div>
+  {% endblock overlay %}
+  {% block content %}<!-- [ Main Content ] start -->
+    <main>
+        <!-- [ breadcrumb ] start -->
+        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+            <div class="container-xl px-4">
+                <div class="page-header-content pt-4">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto mt-4">
+                            <h1 class="page-header-title">
+                                BẢNG HỆ SỐ ĐIỀU CHỈNH 
+                            </h1>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </header>
+         <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+            <div class="container-xl px-0 mt-n10">
+
+        {% csrf_token %}
+                      <!-- Page Heading -->
+                        <a>{% include 'Depreciation/arrgon/admin/includes/Adjustment--SearchIncludes.html' %}</a>
+                        <a>{% include 'Depreciation/arrgon/admin/includes/Adjustment--Includes.html' %}</a>
+                        
+                        
+                        <br>{% include 'Depreciation/arrgon/admin/includes/Adjustment--DetailModalIncludes.html' %}
+                        <br>{% include 'Depreciation/arrgon/admin/includes/Adjustment--CreateModalIncludes.html' %}
+                        <br>{% include 'Depreciation/arrgon/admin/includes/Adjustment--EditModalIncludes.html' %}
+                       
+
+                        
+                        <!-- Detail content refer -->
+                        
+                        
+                        
+                </ul>
+                
+            </div>
+        </main>
+        
+{% endblock %}
+
+
+    

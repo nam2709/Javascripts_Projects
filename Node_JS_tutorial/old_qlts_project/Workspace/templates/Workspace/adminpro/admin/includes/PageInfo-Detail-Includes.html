@@ -1,0 +1,155 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a href="{% url 'Website:PageInfo_DetailView' slug=current_pageinfo.uuid %}">
+            Current PageInfo: {{ current_pageinfo.name|title }}
+          </a>
+          <a class="btn btn-primary" href="{% url 'Website:PageInfo_EditView' slug=current_pageinfo.uuid %}">
+            Edit
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_pageinfo.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="pageinfoWebsiteDetailFormId" data-uuid="{{ current_pageinfo.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="pageinfoWebsiteDetailFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            
+<div class="form-group input-group d-none">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Id
+        </span>
+    </div>
+    {% if current_id %}
+        <input id="idPageInfoWebsiteInputId" name="id" class="form-control id-pageinfo-website-input" placeholder="Id of PageInfo" type="text" value="{{ current_pageinfo.id}}">
+    {% else %}
+        <input id="idPageInfoWebsiteInputId" name="id" class="form-control id-pageinfo-website-input" placeholder="Id of PageInfo" type="text" value="">
+    {% endif %}
+</div>
+            
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="namePageInfoWebsiteInputId" name="name" class="form-control name-pageinfo-website-input" placeholder="Name of PageInfo" type="text" value="{{ current_pageinfo.name}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidPageInfoWebsiteInputId" name="Uuid" class="form-control uuid-pageinfo-website-input" placeholder="Uuid of PageInfo" type="text" value="{{ current_pageinfo.uuid}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Title
+        </span>
+    </div>
+    <textarea id="titlePageInfoWebsiteInputId" name="Title" class="form-control title-pageinfo-website-input" placeholder="Title of PageInfo" type="text" readonly>{{ current_pageinfo.title}}</textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Charset
+        </span>
+    </div>
+    <input id="charsetPageInfoWebsiteInputId" name="charset" class="form-control charset-pageinfo-website-input" placeholder="Charset of PageInfo" type="text" value="{{ current_pageinfo.charset}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Header
+        </span>
+    </div>
+    <textarea id="headerPageInfoWebsiteInputId" name="Header" class="form-control header-pageinfo-website-input" placeholder="Header of PageInfo" type="text" readonly>{{ current_pageinfo.header}}</textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Desc
+        </span>
+    </div>
+    <textarea id="descPageInfoWebsiteInputId" name="Desc" class="form-control desc-pageinfo-website-input" placeholder="Desc of PageInfo" type="text" readonly>{{ current_pageinfo.desc}}</textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Meta_Description
+        </span>
+    </div>
+    <textarea id="meta_descriptionPageInfoWebsiteInputId" name="Meta Description" class="form-control meta_description-pageinfo-website-input" placeholder="Meta_Description of PageInfo" type="text" readonly>{{ current_pageinfo.meta_description}}</textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Meta_Keywords
+        </span>
+    </div>
+    <textarea id="meta_keywordsPageInfoWebsiteInputId" name="Meta Keywords" class="form-control meta_keywords-pageinfo-website-input" placeholder="Meta_Keywords of PageInfo" type="text" readonly>{{ current_pageinfo.meta_keywords}}</textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_pageinfo.active == True %}
+        <input id="activePageInfoWebsiteInputId" name="active" type="checkbox" class="form-check-input active-pageinfo-website-input" placeholder="Active of PageInfo" value="{{ current_pageinfo.active}}" checked  disabled="true">
+        {% else %}
+        <input id="activePageInfoWebsiteInputId" name="active" type="checkbox" class="form-check-input active-pageinfo-website-input" placeholder="Active of PageInfo" value="{{ current_pageinfo.active}}"  disabled="true">
+        {% endif %}
+        <label class="form-check-label" for="activePageInfoWebsiteInputId">
+            Active
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    <input id="updated_atPageInfoWebsiteInputId" name="updated_at" class="form-control updated_at-pageinfo-website-input" placeholder="Updated_At of PageInfo" type="datetime-local" value="{{ current_pageinfo.updated_at}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    <input id="created_atPageInfoWebsiteInputId" name="created_at" class="form-control created_at-pageinfo-website-input" placeholder="Created_At of PageInfo" type="datetime-local" value="{{ current_pageinfo.created_at}}" readonly>
+</div>
+                        
+<div class="form-group">
+    <button id="pageinfoWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

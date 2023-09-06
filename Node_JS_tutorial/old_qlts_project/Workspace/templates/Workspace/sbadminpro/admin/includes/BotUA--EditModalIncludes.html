@@ -1,0 +1,65 @@
+
+            {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+           
+<div class="modal fade" id="botuaWorkspaceEditmodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="botuaWorkspaceEditmodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="botuaWorkspaceEditModalsFormId" data-uuid="">
+            <div class="modal-header">
+                <h3 class="modal-title">Chỉnh sửa   BotUA </h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group px-lg-5 text-start">
+            
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Id</label>
+    <input id="idBotUAWorkspaceEditModalInputId" name="id" class="form-control id-botua-workspace-input" placeholder="Điền thông tin Id of BotUA" type="text" value="">
+</div>
+            
+<div class="mb-1 col-xl-6 d-none">
+    <label class="small mb-1">Uuid</label>
+    <input id="uuidBotUAWorkspaceEditModalInputId" name="uuid" class="form-control uuid-botua-workspace-input" placeholder="Điền thông tin Uuid of BotUA" type="text" value="">
+</div>
+            
+<div class="mb-1 col-xl-6 d-none">
+    <label class="small mb-1">Uuid</label>
+    <input id="uuidBotUAWorkspaceEditModalInputId" name="uuid" class="form-control uuid-botua-workspace-input" placeholder="Điền thông tin Uuid of BotUA" type="text" value="">
+</div>
+            <div class="row gx-2 mb-2">
+        <div class=" mb-1 col-xl-12">
+                                    <label class="small mb-1">Name</label>
+                                    
+            <input id="nameBotUAWorkspaceEditModalInputId"  name="name" class=" form-control name-botua-workspace-input" placeholder="Điền thông tin Name" type="text" value="{{ current_botua.name}}">
+                                </div>
+                                </div><div class="row gx-2 mb-2">
+        <div class="mb-1 col-xl-12">
+            <div class="form-check mt-4">
+                {% if current_botua.active == True %}
+                <input id="activeBotUAWorkspaceEditModalInputId"  name="active" type="checkbox" class="  form-check-input active-botua-workspace-input" placeholder="Điền thông tin Active" value="{{ current_botua.active}}" checked>
+                {% else %}
+                <input id="activeBotUAWorkspaceEditModalInputId"  name="active" type="checkbox" class=" form-check-input active-botua-workspace-input" placeholder="Điền thông tin Active" value="{{ current_botua.active}}">
+                {% endif %}
+                <label class="form-check-label" for="activeBotUAWorkspaceEditModalInputId">
+                    Active
+                </label>
+            </div>
+        </div>
+                                </div>
+             </div> </div>
+                    <div class="modal-footer">
+                        <button id="botuaWorkspaceCancelEditModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="botuaWorkspaceUpdateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                        
+                        <button id="botuaWorkspaceTestEditModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+            </div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+            
+            

@@ -1,0 +1,110 @@
+{% load i18n %}
+{% load tz %}
+
+                {% if user.is_superuser %}
+                <a class="dropdown-item" href="{% url 'admin:index' %}">
+                  <i class="fas fa-mask fa-sm fa-fw mr-2 text-gray-400"></i>
+                  {% trans "Super Admin" %}
+                </a>
+                {% endif %}
+        {% if menu_groups %}
+
+        {% for group in menu_groups %}
+            {% if group.is_base == True or group.app.name == app_name %}
+                  <!-- Heading -->
+                {% if main_menu_items %}
+                    {% for main_menu in main_menu_items %}
+                        {% if main_menu.menu_group == group %}
+                          <!-- Nav Item - Pages Collapse Menu -->
+                          <a class="dropdown-item">
+                            {% if main_menu.url == "#" %}
+                                <a class="dropdown-item collapsed"
+                                   href="#"
+                                   data-toggle="collapse"
+                                   data-target="#collapse-{{main_menu.uuid}}"
+                                   aria-expanded="false"
+                                   aria-controls="collapse-{{main_menu.uuid}}">
+                                  {% if main_menu.icon_class %}
+                                    <i class="{{ main_menu.icon_class }}"></i>
+                                  {% else %}
+                                    <i class="fas fa-fw fa-cog"></i>
+                                  {% endif %}
+                                  <span>
+                                      {% trans main_menu.title %}
+                                  </span>
+                                </a>
+                                <div id="collapse-{{main_menu.uuid}}"
+                                     class="collapse"
+                                     aria-labelledby="heading-{{main_menu.uuid}}"
+                                     data-parent="#accordionSidebar">
+                                  <div class="bg-white py-2 collapse-inner rounded">
+
+                                    <h6 class="collapse-header">
+                                        {% trans main_menu.title %}:
+                                    </h6>
+                                      {% for sub_menu in all_menu %}
+                                          {% if sub_menu.parent_menu_id == main_menu.id %}
+                                              <!-- continue -->
+                                              {% if sub_menu.staff_only == True and not request.user.is_staff %}
+                                                    <!-- continue -->
+                                              {% else %}
+                                                  {% if sub_menu.superuser_only == True and not request.user.is_superuser %}
+                                                    <!-- continue -->
+                                                  {% else %}
+                                                    {% if sub_menu.split_marked == True %}
+                                                        {% if sub_menu.split_label %}
+                                                            <div class="collapse-divider"></div>
+                                                            <h6 class="collapse-header">
+                                                                {% trans sub_menu.split_label %}:
+                                                            </h6>
+                                                        {% endif %}
+
+                                                    {% endif %}
+                                                      {% if sub_menu.url == request.path or sub_menu.url == request.get_full_path %}
+                                                          {% if user_agent.is_pc %}
+                                                            <a class="collapse-item tnd-collapse-item active" href="{{ sub_menu.url }}">
+                                                                {% trans sub_menu.title %}
+                                                            </a>
+                                                          {% else %}
+                                                            <a class="collapse-item tnd-collapse-item" href="{{ sub_menu.url }}">
+                                                                {% trans sub_menu.title %}
+                                                            </a>
+                                                          {% endif %}
+
+                                                            {% if main_menu.uuid %}
+                                                            <span id="current-active-menu-id" style="display: none;">collapse-{{main_menu.uuid}}</span>
+                                                            {% else %}
+                                                            <span id="current-active-menu-id" style="display: none;"></span>
+                                                            {% endif %}
+                                                      {% else %}
+                                                        <a class="collapse-item tnd-collapse-item"
+                                                           target=""
+                                                           href="{{ sub_menu.url }}">{% trans sub_menu.title %}</a>
+                                                      {% endif %}
+                                                  {% endif %}
+                                              {% endif %}
+                                          {% endif %}
+                                      {% endfor %}
+                                  </div>
+                                </div>
+                            {% else %}
+                                <a class="nav-link" href="{{ main_menu.url }}">
+                                  {% if main_menu.icon_class %}
+                                    <i class="{{ main_menu.icon_class }}"></i>
+                                  {% else %}
+                                    <i class="fas fa-fw fa-cog"></i>
+                                  {% endif %}
+                                  <span>
+                                      {% trans main_menu.title %}
+                                  </span>
+                                </a>
+                            {% endif %}
+                          </a>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% else %}
+            {% endif %}
+      <!-- Divider -->
+        {% endfor %}
+        {% endif %}

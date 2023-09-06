@@ -1,0 +1,64 @@
+{% extends 'Workspace/'|add:website_template|add:'/base.html' %}
+<html lang="en">
+{% load i18n %}
+{% load tz %}
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Select Options</title>
+
+    {% include "Workspace/"|add:website_template|add:"/admin/header.html" %}
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    {% include "Workspace/"|add:website_template|add:"/admin/sidebar.html" %}
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+      <!-- Main Content -->
+      <div id="content">
+
+    {% include "Workspace/"|add:website_template|add:"/admin/topbar.html" %}
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">Select Options</h1>
+            <div class="content">
+                <select class="selectpicker" data-live-search="true">
+                  <option data-tokens="ketchup mustard">Hot Dog, Fries and a Soda</option>
+                  <option data-tokens="mustard">Burger, Shake and a Smile</option>
+                  <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+        <!-- /.container-fluid -->
+
+      <!-- Footer -->
+
+
+        {% with "Workspace/"|add:website_template|add:"/admin/footer.html" as template %}
+            {% include template %}
+        {% endwith %}
+      <!-- End of Footer -->
+
+      </div>
+      <!-- End of Main Content -->
+
+</body>
+
+</html>

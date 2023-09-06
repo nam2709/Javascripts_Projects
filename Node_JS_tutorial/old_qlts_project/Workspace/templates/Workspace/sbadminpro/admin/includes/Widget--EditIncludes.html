@@ -1,0 +1,164 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+
+<script src="/static/sbadminpro/js/jquery/dist/jquery.min.js"></script>
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WorkspaceConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+
+<div class="card shadow mb-1">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a class="btn btn-primary btn-sm" href="{% url 'Workspace:WidgetView' %}">
+            Danh sách   Widget 
+          </a>
+          <a href="{% url 'Workspace:Widget_EditView' slug=current_widget.uuid %}">
+            Hiện tại   Widget : {{ current_widget.name|title }}
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_widget.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="widgetWorkspaceEditFormId" data-uuid="{{ current_widget.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="WorkspacewidgetEditFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+            
+                    <div class="mb-1 col-xl-6 d-none">
+                 
+                   <label class="small mb-1">Id</label>
+                   
+                    <input id="idWidgetWorkspaceInputId" name="id" class="form-control id-widget-workspace-input" placeholder="Điền thông tin Id of Widget" type="text" value="{{ current_widget.id}}">
+                    </div>
+            
+                    <div class="mb-1 col-xl-6 d-none">
+                    <label class="small mb-1">Uuid</label>
+                    <input id="uuidWidgetWorkspaceInputId" name="uuid" class="form-control uuid-widget-workspace-input" placeholder="Điền thông tin Uuid of Widget" type="text" value="{{ current_widget.uuid}}">
+                    </div>
+            <div class="row gx-2 mb-2">
+        <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Name</label>
+                                    
+            <input id="nameWidgetWorkspaceInputId"  name="name" class=" form-control name-widget-workspace-input" placeholder="Điền thông tin Name" type="text" value="{{ current_widget.name}}">
+                                </div>
+                                
+        <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Title</label>
+                                    
+            <input id="titleWidgetWorkspaceInputId"  name="title" class=" form-control title-widget-workspace-input" placeholder="Điền thông tin Title" type="text" value="{{ current_widget.title}}">
+                                </div>
+                                </div><div class="row gx-2 mb-2">
+        <div class=" mb-1 col-xl-12">
+                                    <label class="small mb-1">Url</label>
+                                    
+            <input id="urlWidgetWorkspaceInputId"  name="url" class=" form-control url-widget-workspace-input" placeholder="Điền thông tin Url" type="text" value="{{ current_widget.url}}">
+                                </div>
+                                </div><div class="row gx-2 mb-2">
+
+                <div class="mb-1 col-xl-4">
+                    <label class="small mb-1">Desc</label>
+                    <textarea id="descWidgetWorkspaceInputId"  name="desc" class=" form-control desc-widget-workspace-input ckeditor-input" placeholder="Điền thông tin Desc" type="text" rows="4" cols="80">{{ current_widget.desc}}</textarea>
+
+                </div>
+                                
+
+                <div class="mb-1 col-xl-4">
+                    <label class="small mb-1">Html_Code</label>
+                    <textarea id="html_codeWidgetWorkspaceInputId"  name="html_code" class=" form-control html_code-widget-workspace-input ckeditor-input" placeholder="Điền thông tin Html_Code" type="text" rows="4" cols="80">{{ current_widget.html_code}}</textarea>
+
+                </div>
+                                
+
+                <div class="mb-1 col-xl-4">
+                    <label class="small mb-1">Css_Code</label>
+                    <textarea id="css_codeWidgetWorkspaceInputId"  name="css_code" class=" form-control css_code-widget-workspace-input ckeditor-input" placeholder="Điền thông tin Css_Code" type="text" rows="4" cols="80">{{ current_widget.css_code}}</textarea>
+
+                </div>
+                                </div><div class="row gx-2 mb-2">
+
+                <div class="mb-1 col-xl-6">
+                    <label class="small mb-1">Js_Code</label>
+                    <textarea id="js_codeWidgetWorkspaceInputId"  name="js_code" class=" form-control js_code-widget-workspace-input ckeditor-input" placeholder="Điền thông tin Js_Code" type="text" rows="4" cols="80">{{ current_widget.js_code}}</textarea>
+
+                </div>
+                                
+
+                <div class="mb-1 col-xl-6">
+                    <label class="small mb-1">Css_Code</label>
+                    <textarea id="css_codeWidgetWorkspaceInputId"  name="css_code" class=" form-control css_code-widget-workspace-input ckeditor-input" placeholder="Điền thông tin Css_Code" type="text" rows="4" cols="80">{{ current_widget.css_code}}</textarea>
+
+                </div>
+                                </div><div class="row gx-2 mb-2">
+                <div class="mb-1 col-xl-4">
+                    <label  for="positionPositionWidgetWorkspaceInputId">{% trans 'Position' %}</label>
+                    <select  style="width: 100%;" class="   form-control position-workspace-select" name="position" id="positionPositionWidgetWorkspaceInputId">
+                        <option selected value="">Lựa chọn</option>
+                    </select>
+                </div>
+                                
+
+         <div class=" mb-1 col-xl-4">
+            <label class="small mb-1">Order</label>
+            <input id="orderWidgetWorkspaceInputId"  name="order" class=" form-control order-widget-workspace-input" placeholder="Điền thông tin Order" type="text" value="{{ current_widget.order}}">
+        </div>
+                                
+        <div class="mb-1 col-xl-4">
+            <div class="form-check mt-4">
+                {% if current_widget.active == True %}
+                <input id="activeWidgetWorkspaceInputId"  name="active" type="checkbox" class="  form-check-input active-widget-workspace-input" placeholder="Điền thông tin Active" value="{{ current_widget.active}}" checked>
+                {% else %}
+                <input id="activeWidgetWorkspaceInputId"  name="active" type="checkbox" class=" form-check-input active-widget-workspace-input" placeholder="Điền thông tin Active" value="{{ current_widget.active}}">
+                {% endif %}
+                <label class="form-check-label" for="activeWidgetWorkspaceInputId">
+                    Active
+                </label>
+            </div>
+        </div>
+                                </div>
+<div class="modal-footer">
+    <button id="widgetWorkspaceCancelBtnId" type="button" class="btn btn-danger btn-sm"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+    <button id="widgetWorkspaceUpdateBtnId" type="button" class="btn btn-info btn-sm"><i class="fas fa-save"></i>&nbsp;Cập nhật</button>
+    <button id="widgetWorkspaceDeleteBtnId" type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>&nbsp;Xóa</button>
+    <button id="widgetWorkspaceTestEditBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

@@ -1,0 +1,68 @@
+
+{% extends "arrgon/layouts/base.html" %}
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="TruongNV <truongg.nv@gmail.com>">
+    <meta name="copyright" content="Copyright ©2022 TruongNV <truongg.nv@gmail.com>">
+<script src="/static/arrgon/js/jquery/dist/jquery.min.js"></script>
+<script src="{% static 'Account/'|add:website_template|add:'/admin/js/AccountConst.js' %}"></script>
+    </head>
+                
+    <script src="{% static 'Account/'|add:website_template|add:'/admin/js/AccountClasses.js' %}"></script>
+                    
+{% block content %}
+<!-- [ Main Content ] start -->
+<main>
+        <!-- [ breadcrumb ] start -->
+        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+            <div class="container-xl px-4">
+                <div class="page-header-content pt-4">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto mt-4">
+                            <h1 class="page-header-title">
+                                Thông tin người dùng 1234
+                            </h1>
+                        </div>
+                    </div>
+                    <nav class="mt-4 rounded" aria-label="breadcrumb">
+                        <ol class="breadcrumb px-3 py-2 rounded mb-0">
+                            <li class="breadcrumb-item"><a href="/"><i data-feather="home"></i></a></li>
+                            <li class="breadcrumb-item active">Thông tin nguời</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </header>
+         <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+            <div class="container-xl px-4 mt-n10">
+
+        {% csrf_token %}
+                      <!-- Page Heading -->
+                      
+                        <a>{% include 'Account/'|add:website_template|add:'/admin/includes/Account--SearchIncludes.html' %}</a>
+                        <a>{% include 'Account/'|add:website_template|add:'/admin/includes/Account--DetailIncludes.html' %}</a>
+                        
+                        <br>{% include 'Account/'|add:website_template|add:'/admin/includes/Account--CreateModalIncludes.html' %}
+                        <br>{% include 'Account/'|add:website_template|add:'/admin/includes/Account--DetailModalIncludes.html' %}
+                        <br>{% include 'Account/'|add:website_template|add:'/admin/includes/Account--EditModalIncludes.html' %}
+                
+                        
+                        <!-- Detail content refer -->
+                        
+                        
+                        
+                </ul>
+                
+            </div>
+        </main>
+    {% endblock %}
+    
+
+                

@@ -1,0 +1,211 @@
+
+{% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+
+
+<div class="modal fade" id="typeFormFormManagementCreatemodalsId" tabindex="-1" data-backdrop="static" data-keyboard="true"  role="dialog" aria-labelledby="formFormManagementCreatemodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <form  id="typeFormFormManagementCreateModalsFormId" >
+                <div class="modal-header bg-info bg-gradient">
+                    <h3 class="modal-title">Thêm loại phiếu mới</h3>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="" enctype="multipart/form-data" id="typeFormFormManagementCreateModalsFormId" data-uuid="">
+                    <div class="form-group px-lg-5 text-start">
+                        {% csrf_token %}
+                        <div class="mb-1 col-xl-6 d-none">
+                            <label class="small mb-1">Id</label>
+                                <input id="idTypeFormFormManagementCreateModalInputId" name="id" class="form-control id-account-account-input" placeholder="Id " type="text" value="">
+                            </div>
+                                    
+                        <div class="mb-1 col-xl-6 d-none">
+                            <label class="small mb-1">Uuid</label>
+                            <input id="uuidTypeFormFormManagementCreateModalInputId" name="uuid" class="form-control uuid-account-account-input" placeholder="Uuid " type="text" value="">
+                        </div>
+
+                        <h6 class="heading-small text-muted mb-4">Nhập các thông tin loại phiếu mới</h6>
+                        
+                        <div class="row gx-2 mb-2">
+                            <div class=" mb-1 col-xl-12">
+                                <label class="small mb-1">Tên phiếu</label>
+                                <input id="nameTypeFormFormManagementCreateModalInput"  name="name" class="form-control named-account-account-input mps_required" placeholder="Tên Phiếu" type="text" value="">
+                                
+                            </div>                                                                        
+                        </div>
+                                <hr>
+                        <div class="row gx-2 mb-2">
+                            <div class=" mb-1 col-xl-6 ">
+                                <label class="small mb-1">Mã loại phiếu</label>
+                                <input id="codeTypeFormFormManagementCreateModalInput"  name="code" class="form-control code-account-account-input mps_required" placeholder="Mã Phiếu" type="text" value="">      
+                            </div> 
+
+                        </div>
+
+                        <div class="row gx-2 mb-2 d-none">
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Người cập nhật</label>
+                                <input id="updateTypeFormFormManagementCreateModalInput"  name="updated_by" class="form-control password-account-account-input " placeholder="Người cập nhật" type="text" value="">
+                                
+                            </div>
+                            <div class=" mb-1 col-xl-6 ">
+                                <label class="small mb-1">Ngày cập nhật</label>
+                                <input id="updateAtTypeFormFormManagementCreateModalInput"  name="updated_at" class="form-control password-account-account-input " placeholder="Ngày cập nhật" type="text" value="">
+                            </div>
+
+                        </div>
+                        <div class="row gx-2 mb-2 d-none">  
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Người tạo</label>
+                                <input id="createByFormFormManagementCreateModalInput"  name="created_by" class="form-control password-account-account-input " placeholder="Người tạo" type="text" value="">
+                            </div>   
+                            <div class=" mb-1 col-xl-6">
+                                <label class="small mb-1">Ngày tạo</label>
+                                <input id="createAtTypeFormFormManagementCreateModalInput"  name="created_at" class="form-control password-account-account-input " placeholder="Người tạo" type="text" value="">
+                            </div>                                          
+                        </div>
+
+                        <!-- <div class="form-group">
+                            <label for="options">Fields</label>
+                              <select id="fieldOfForm" name="fields" class="form-control" multiple>
+                          
+                                <option value="name">Tên Phiêu</option>
+                              </select>
+                            </div> -->
+                        <div class="form-group gx-2 mb-2 row" >
+                            <label class="small mb-1">Chọn Trường</label>
+                            <div class="mb-1 col-xl-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="name" name="fields" id="flexCheckDefault1" checked >
+                                <label class="form-check-label" for="flexCheckDefault1">
+                                    Tên Phiếu
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="code" name="fields" id="flexCheckDefault2" checked >
+                                <label class="form-check-label" for="flexCheckDefault2">
+                                    Mã Phiếu
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="execution_date" name="fields" id="flexCheckDefault3" checked>
+                                <label class="form-check-label" for="flexCheckDefault3">
+                                    Ngày thực hiện
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="attached_document" name="fields" id="flexCheckDefault4">
+                                <label class="form-check-label" for="flexCheckDefault4">
+                                    Đơn đi kèm
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="delivered" name="fields" id="flexCheckDefault5">
+                                <label class="form-check-label" for="flexCheckDefault5">
+                                    Họ tên người giao
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="received" name="fields" id="flexCheckDefault6">
+                                <label class="form-check-label" for="flexCheckDefault6">
+                                    Họ tên người nhận
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="staff_receive_property" name="fields" id="flexCheckDefault7">
+                                <label class="form-check-label" for="flexCheckDefault7">
+                                    Nhân viên nhận tài sản được cấp
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="staff_confiscated_asset" name="fields" id="flexCheckDefault8">
+                                <label class="form-check-label" for="flexCheckDefault8">
+                                    Nhân viên bị thu hồi tài sản
+                                </label>
+                            </div>
+                        
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="reason_asset_recovery" name="fields" id="flexCheckDefault9">
+                                <label class="form-check-label" for="flexCheckDefault9">
+                                    Lý do bị thu hồi tài sản
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-1 col-xl-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="loan_period" name="fields" id="flexCheckDefault10">
+                                <label class="form-check-label" for="flexCheckDefault10">
+                                    Thời gian mượn đến
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="lending_unit" name="fields" id="flexCheckDefault11">
+                                <label class="form-check-label" for="flexCheckDefault11">
+                                    Đơn vị cho mượn
+                                </label>
+                            </div>
+
+                        
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="unit_currently_borrowing" name="fields" id="flexCheckDefault12">
+                                <label class="form-check-label" for="flexCheckDefault12">
+                                    Đơn vị đang mượn
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="warehouse" name="fields" id="flexCheckDefault13">
+                                <label class="form-check-label" for="flexCheckDefault13">
+                                    Kho
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="suplier" name="fields" id="flexCheckDefault14">
+                                <label class="form-check-label" for="flexCheckDefault14">
+                                    Nhà cung cấp
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="buyer" name="fields" id="flexCheckDefault15">
+                                <label class="form-check-label" for="flexCheckDefault15">
+                                    Người mua
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="price" name="fields" id="flexCheckDefault16">
+                                <label class="form-check-label" for="flexCheckDefault16">
+                                    Giá
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="liquidation_reason" name="fields" id="flexCheckDefault17">
+                                <label class="form-check-label" for="flexCheckDefault17">
+                                    Lý do thanh lý
+                                </label>
+                            </div>
+                        
+                            <!-- <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="content" name="fields" id="flexCheckDefault18" checked>
+                                <label class="form-check-label" for="flexCheckDefault18">
+                                    Nội dung
+                                </label>
+                            </div> -->
+                        </div>
+                                
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="modal-footer">
+                    <button id="typeformFormManagementCancelCreateModalBtnId" type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                    <button id="typeFormCreateModalBtnId" type="button" class="btn btn-primary btn-sm">&nbsp;Lưu</button>
+                    <!-- <button id="accountAccountSaveAndNewModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="d-none fas fa-save"></i>&nbsp;Lưu và thêm mới</button> -->
+                    <!-- <button id="accountAccountTestCreateModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button> -->
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+{% load i18n %}
+{% load tz %}
+
+<!-- Donate Form -->
+<div class="col-lg-12">
+    <div class="card shadow mb-4">
+      <!-- Card Header - Accordion -->
+      <a href="#collapseDonateForm" class="btn btn-warning btn-lg" data-toggle="collapse" role="button"
+         aria-expanded="true" aria-controls="collapseCardExample">
+          {% trans 'Donate' %}
+          <p>(Mỗi ủng hộ của bạn sẽ được trích 20.000VNĐ tài trợ cho trẻ em bị dị tật tim bẩm sinh)</p>
+      </a>
+          <!-- Card Content - Collapse -->
+          <div class="collapse" id="collapseDonateForm">
+              <div class="card-body">
+                    <ul class="nav nav-tabs shadow animated--grow-in">
+                        <li class="nav-item active">
+                            <a class="nav-link"
+                                                id="nav-face-images-tab"
+                                                data-toggle="tab"
+                                                href="#vcb-tab-content"
+                                                role="tab"
+                                                aria-controls="nav-face-images"
+                                                aria-selected="false">
+                            Vietcombank
+                            </a>
+                        </li>
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                                id="nav-face-images-tab"
+                                                data-toggle="tab"
+                                                href="#bidv-tab-content"
+                                                role="tab"
+                                                aria-controls="nav-face-images"
+                                                aria-selected="false">
+                            BIDV
+                            </a>
+                        </li>
+                    <div class="topbar-divider d-none d-sm-block"></div>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                                id="nav-face-images-tab"
+                                                data-toggle="tab"
+                                                href="#tcb-tab-content"
+                                                role="tab"
+                                                aria-controls="nav-face-images"
+                                                aria-selected="false">
+                            Techcombank
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                      <div id="vcb-tab-content" class="tab-pane fade in active">
+                        <img class="tnd-bank-logo" src="https://portal.vietcombank.com.vn/Resources/v3/img/logo.png"/>
+                        <hr>
+                        <p>
+                        <h5>Số tài khoản: 0491.001.672.510</h5>
+                        </p>
+                        <p>Tên tài khoản: Nguyễn Đức Tâm</p>
+                        <p>Ngân hàng: (Vietcombank) - Chi nhánh Thăng Long</p>
+                      </div>
+                      <div id="bidv-tab-content" class="tab-pane fade">
+                        <img class="tnd-bank-logo" src="https://upload.wikimedia.org/wikipedia/vi/7/79/BIDV_Logo.png"/>
+                        <hr>
+                        <p>
+                            <h5>Số tài khoản: 4271.0000.244.710</h5>
+                        </p>
+                        <p>Tên tài khoản: Nguyễn Đức Tâm</p>
+                        <p>Ngân hàng: (BIDV) - Chi nhánh Quang Minh</p>
+                      </div>
+                      <div id="tcb-tab-content" class="tab-pane fade">
+                        <img class="tnd-bank-logo" src="https://www.techcombank.com.vn/Content/images/logo.png"/>
+                        <hr>
+                          <p>
+                            <h5>Số tài khoản: 1902.1177.20.20.27</h5>
+                          </p>
+                        <p>Tên tài khoản: Nguyễn Đức Tâm</p>
+                        <p>Ngân hàng: (Techcombank)</p>
+                      </div>
+                    </div>
+              </div>
+          </div>
+    </div>
+</div>
+<!-- End Donate Form -->

@@ -1,0 +1,176 @@
+{% load static %}
+{% load i18n %} 
+{% load humanize %} 
+{% load tz %}   
+           
+<div class="modal fade" id="assetAssetCreatemodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="AssetAssetCreatemodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content" >
+            <form method="POST" action="" enctype="multipart/form-data" id="assetAssetCreateModalsFormId" data-uuid="">
+                <div class="modal-header bg-info border-primary">
+                    <h3 class="modal-title">Thêm thông tin tài sản</h3>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6 class="heading-small text-muted mb-4">Thông tin chung</h6>
+                    <div class="row gx-2 mb-2">
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Công ty sở hữu</label>
+                            <select id="owned_companyAssetAssetCreateModalInputId" name="owned_company" class="form-control password-account-account-input" type="text"></select>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Loại tài sản
+                            </label>
+                            <select id="asset_typeAssetAssetCreateModalInputId" name="asset_type" class="form-control username-account-account-input" placeholder="Nhập " type="text" ></select>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Đơn vị tiền tệ
+                            </label>
+                            <select id="currency_unitAssetAssetCreateModalInputId" name="currency_unit" class="mps_required form-control -account-account-input" type="text">
+                            </select>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Đơn vị tính</label>
+                            <select id="unitAssetAssetCreateModalInputId" name="unit" class="form-control password-account-account-input" type="text"></select>
+                        </div>
+                        <hr>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Mã tài sản
+                            </label>
+                            <input id="codeAssetAssetCreateModalInputId"  name="code" class="mps_required form-control username-account-account-input" placeholder="Nhập Code" disabled type="text">
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Tên tài sản
+                            </label>
+                            <input id="nameAssetAssetCreateModalInputId" name="name" class="mps_required form-control username-account-account-input" placeholder="Nhập " type="text">
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Giá nhập
+                            </label>
+                            <input id="price_buyAssetAssetCreateModalInputId" name="price_buy" class="mps_required form-control -account-account-input" placeholder="Nhập " type="text">
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Giá trị hiện tại
+                            </label>
+                            <input id="price_currentAssetAssetCreateModalInputId" name="price_current" class="mps_required form-control -account-account-input" placeholder="Nhập " type="text">
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Trạng thái
+                            </label>
+                            <select id="own_statusAssetAssetCreateModalInputId" name="own_status" class="form-control -account-account-input" placeholder="Nhập " type="text" ></select>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Kho</label>
+                            <select id="warehouseAssetAssetCreateModalInputId" name="warehouse" class="form-control password-account-account-input" type="text"></select>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Nhân viên đang sử dụng Tài sản</label>
+                            <select id="current_asset_userAssetAssetCreateModalInputId" name="current_asset_user" class="form-control password-account-account-input" type="text"></select>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Nhà Cung Cấp</label>
+                            <select id="supplierAssetAssetCreateModalInputId" name="supplier" class="form-control password-account-account-input" type="text"></select>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Tình Trạng Thiết Bị</label>
+                            <select id="asset_statusAssetAssetCreateModalInputId" name="asset_status" class="form-control password-account-account-input" type="text"></select>
+                        </div>
+                        <div class=" mb-1 col-xl-6">
+                            <label class="small mb-1">Ngày nhập</label>
+                            <input id="date_addedAssetAssetCreateModalInputId" name="date_added" class="form-control password-account-account-input" placeholder="Nhập Ngày nhập" type="date">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <hr>
+            <form enctype="multipart/form-data" id="AssetTemplateConfig" data-uuid="">
+                <div class="container">
+                    <h6 class="heading-small text-muted mb-4">Thông tin cấu hình</h6>
+                    <table id="AssetTemplateConfigTb" style="width: 100%">
+                        <thead class="thead-light">
+                            <tr>
+                                <th attr-name="stt" class="mb-1 col-xl-1 text-center">STT</th>
+
+                                <th attr-name="code_disabled" class="mb-1 col-xl-3 text-center d-none">Mã cấu hình</th>
+                            
+                                <th attr-name="code" class="mb-1 col-xl-2 text-center">Mã thông số</th>
+
+                                <th attr-name="name" class="mb-1 col-xl-3 text-center">Tên thông số</th>
+                            
+                                <th attr-name="value" class="mb-1 col-xl-5 text-center">Giá trị</th>
+                            </tr>
+                        </thead>
+                        <tbody id="AssetTemplateConfigTbbody" style="text-align: center">
+                        </tbody> 
+                    </table>
+                </div>
+            </form>
+            <br>{% include 'AssetManagement/argon/admin/includes/AssetDetail--CreateInlineTable.html' %}
+            <hr>
+            <form method="POST" action="" enctype="multipart/form-data" id="" data-uuid="">
+                <div style="margin-left: 15px;">
+                    <h6 class="heading-small text-muted mb-4"> Khấu Hao</h6>
+                    <div class="row gx-2 mb-2">
+                        <div class=" mb-1 col-xl-6" style="display: inline-block;">
+                            <div class=" mb-1 col-xl-12">
+                                <label class="small mb-1"> Kieu Tai San
+                                </label>
+                                <select id="typedepreciationDepreciationDepreciationCreateModalInputId" name="type_depreciation" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" ></select>
+                            </div>
+                            <div class=" mb-1 col-xl-12">
+                                    <label class="small mb-1"> Kiểu Khấu Hao  
+                                    </label>
+                                <select id="preioddetailDepreciationDepreciationCreateModalInputId" name="preiod_detail" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" ></select>
+                            </div>
+                        </div>
+                        <div class=" mb-1 col-xl-6" style="display: inline-block;">
+                            <div class=" mb-1 col-xl-12">
+                                <label class="small mb-1"> Điều chỉnh
+                                    <div class="switch-container" style="text-align: center; vertical-align: middle;">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" name="is_confirm" data-uuid="" unchecked id="rememberMe" style="width: 40.22222px; height: 20.22222px;" onclick="is_statusFormEventChangeSwitcher1(this)">
+                                        </div>
+                                    </div>
+
+                                    <div id="content1" class="content-hidden">
+                                        {% csrf_token %}
+                                        <select id="adjustmentasetDepreciationDepreciationCreateModalInputId" name="adjustment_aset" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" style="padding-right: 15.75rem;width: 100%" >
+                                        </select>
+                                    </div>
+                                </label>
+                                <script>
+                                    $(document).ready(function(){
+                                        $("#content1").toggle('hide');
+                                    });
+
+                                    function is_statusFormEventChangeSwitcher1($this) {
+                                        if ($($this).is(":checked")) {
+                                            $("#content1").toggle('show');
+                                        } else {
+                                            $("#content1").toggle('hide');
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                        <script>
+                            function myFunction11() {
+                                window.open("http://127.0.0.1:1500/depre/revaluationcreate/", "popup", "width=1024,height=786");
+                            }
+                        </script>
+                    </div> 
+                    <div class="modal-footer">
+                        <button id="assetAssetCancelModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="assetAssetCreateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+
+                        <button id="assetAssetTestModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+            
+            

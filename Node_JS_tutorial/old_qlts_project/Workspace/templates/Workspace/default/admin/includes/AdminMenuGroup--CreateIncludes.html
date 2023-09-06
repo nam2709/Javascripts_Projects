@@ -1,0 +1,192 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/tUtils.js' %}"></script>
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WebsiteConst.js' %}"></script>
+        
+
+        
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/ConfigClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllViewClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AdminMenuGroupClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAdminMenuClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PositionClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/FooterItemClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/WidgetClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/TimeZoneClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/PageInfoClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/BotUAClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/RobotsArgClasses.js' %}"></script>
+            
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/LogoImagesClasses.js' %}"></script>
+            
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6>
+          <a class="btn btn-primary" href="{% url 'Website:AdminMenuGroupView' %}">
+            All AdminMenuGroups
+          </a>
+        </h6>
+      <h6 class="m-0 font-weight-bold text-primary">
+            New AdminMenuGroup
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            
+            <form method="POST" action="" enctype="multipart/form-data" id="adminmenugroupWebsiteCreateFormId" data-uuid="">
+                {% csrf_token %}
+    
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameAdminMenuGroupWebsiteCreateInputId" name="name" class="form-control name-adminmenugroup-website-input" placeholder="Name" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidAdminMenuGroupWebsiteCreateInputId" name="uuid" class="form-control uuid-adminmenugroup-website-input" placeholder="Uuid" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Title
+        </span>
+    </div>
+    <input id="titleAdminMenuGroupWebsiteCreateInputId" name="title" class="form-control title-adminmenugroup-website-input" placeholder="Title" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Icon Class
+        </span>
+    </div>
+    <input id="icon_classAdminMenuGroupWebsiteCreateInputId" name="icon_class" class="form-control icon_class-adminmenugroup-website-input" placeholder="Icon Class" type="text" value=""  >
+</div>
+
+<div class="form-group input-group card  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Desc
+        </span>
+    </div>
+    <textarea rows="10" id="descAdminMenuGroupWebsiteCreateInputId" name="desc" class="form-control ckeditor-input desc-adminmenugroup-website-input" placeholder="Desc" type="text" value="" ></textarea>
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Order
+        </span>
+    </div>
+    <input id="orderAdminMenuGroupWebsiteCreateInputId" name="order" class="form-control order-adminmenugroup-website-input" placeholder="Order" type="text" value=""  >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="activeAdminMenuGroupWebsiteCreateInputId" name="active" type="checkbox" class="form-check-input active-adminmenugroup-website-input" placeholder="Active" >
+        <label class="form-check-label" for="activeAdminMenuGroupWebsiteCreateInputIdInputId">
+            Active
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="is_baseAdminMenuGroupWebsiteCreateInputId" name="is_base" type="checkbox" class="form-check-input is_base-adminmenugroup-website-input" placeholder="Is Base" >
+        <label class="form-check-label" for="is_baseAdminMenuGroupWebsiteCreateInputIdInputId">
+            Is Base
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="staff_onlyAdminMenuGroupWebsiteCreateInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-adminmenugroup-website-input" placeholder="Staff Only" >
+        <label class="form-check-label" for="staff_onlyAdminMenuGroupWebsiteCreateInputIdInputId">
+            Staff Only
+        </label>
+    </div>
+</div>
+        
+<div class="form-group input-group  ">
+    <div class="form-check">
+        <input id="superuser_onlyAdminMenuGroupWebsiteCreateInputId" name="superuser_only" type="checkbox" class="form-check-input superuser_only-adminmenugroup-website-input" placeholder="Superuser Only" >
+        <label class="form-check-label" for="superuser_onlyAdminMenuGroupWebsiteCreateInputIdInputId">
+            Superuser Only
+        </label>
+    </div>
+</div>
+        
+<div class="input-group mb-3  ">
+    <div class="input-group-prepend">
+        <label class="" for="appAllAppAdminMenuGroupWebsiteInputId">{% trans 'App' %}</label>
+    </div>
+    <select class="custom-select tnd-select2 app-adminmenugroup-website-option allapp-website-select autoload"  name="app" id="appAllAppAdminMenuGroupWebsiteInputId" >
+    <option selected>Choose... App</option>
+    </select>
+</div>
+
+<div class="input-group mb-3  ">
+    <div class="input-group-prepend">
+        <label class="" for="related_appsAllAppAdminMenuGroupWebsiteInputId">{% trans 'Related Apps' %}</label>
+    </div>
+    <select class="custom-select tnd-select2 related_apps-adminmenugroup-website-option allapp-website-select autoload"  name="related_apps" id="related_appsAllAppAdminMenuGroupWebsiteInputId" >
+    <option selected>Choose... Related Apps</option>
+    </select>
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    <input id="updated_atAdminMenuGroupWebsiteCreateInputId" name="updated_at" class="form-control updated_at-adminmenugroup-website-input" placeholder="Updated At" type="datetime-local" value="" >
+</div>
+
+<div class="form-group input-group  ">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    <input id="created_atAdminMenuGroupWebsiteCreateInputId" name="created_at" class="form-control created_at-adminmenugroup-website-input" placeholder="Created At" type="datetime-local" value="" >
+</div>
+
+    <div class="modal-footer">
+        <button id="adminmenugroupWebsiteCreateBtnId" type="button" class="btn btn-primary">Create</button>
+        <button id="adminmenugroupWebsiteSaveAndNewBtnId" type="button" class="btn btn-secondary">Save and New</button>
+        <button id="adminmenugroupWebsiteTestBtnId" type="button" class="btn btn-warning">Test</button>
+    </div>
+            
+        </form>
+
+        </fieldset>
+    </div>
+</div>
+            

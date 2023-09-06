@@ -1,0 +1,51 @@
+
+            {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+           
+<div class="modal fade" id="UnitUnitEditmodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="accountAccountEditmodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="UnitUnitEditModalsFormId" data-uuid="">
+            <div class="modal-header">
+                <h3 class="modal-title">Chỉnh sửa Thông tin đơn vị tính</h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group px-lg-5 text-start">
+            
+            
+        <div class="mb-1 col-xl-6 d-none">
+            <label class="small mb-1 d-none">Uuid</label>
+            <input id="uuidUnitUnitEditModalInputId" name="uuid" class="form-control uuid-account-account-input" placeholder="Nhập Uuid of Asset" type="text" value="">
+        </div>
+            
+
+            <h6 class="heading-small text-muted mb-4">Thông tin chung</h6><div class="row gx-2 mb-2">
+        <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Mã Đơn vị tính</label>
+                                    
+            <input id="dcodeUnitUnitEditModalInputId"  name="code" class="mps_required form-control username-account-account-input" placeholder="Nhập Code" type="text">
+                                </div>
+                                
+        <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Tên Đơn vị tính</label>
+                                    
+            <input id="nameUnitUnitEditModalInputId"  name="name" class="mps_required form-control full_name-account-account-input" placeholder="Nhập Name" type="text">
+                                </div>
+                                </div>
+                                <hr>
+                                
+                    <div class="modal-footer">
+                        <button id="UnitUnitCancelEditModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="UnitUnitUpdateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                        
+                        <button id="UnitUnitTestEditModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+            </div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+            
+            

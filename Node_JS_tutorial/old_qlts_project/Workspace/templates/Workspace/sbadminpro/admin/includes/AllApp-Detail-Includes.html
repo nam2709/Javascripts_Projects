@@ -1,0 +1,218 @@
+
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<script src="{% static 'Workspace/'|add:website_template|add:'/admin/js/AllAppClasses.js' %}"></script>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">
+          <a href="{% url 'Website:AllApp_DetailView' slug=current_allapp.uuid %}">
+            Current AllApp: {{ current_allapp.name|title }}
+          </a>
+          <a class="btn btn-primary" href="{% url 'Website:AllApp_EditView' slug=current_allapp.uuid %}">
+            Edit
+          </a>
+      </h6>
+    </div>
+    <div class="card-body">
+        <fieldset>
+            {% if current_allapp.uuid %}
+                <form method="POST" action="" enctype="multipart/form-data" id="allappWebsiteDetailFormId" data-uuid="{{ current_allapp.uuid }}">
+            {% else %}
+                <form method="POST" action="" enctype="multipart/form-data" id="allappWebsiteDetailFormId" data-uuid="">
+            {% endif %}
+                    {% csrf_token %}
+
+            
+<div class="form-group input-group d-none">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Id
+        </span>
+    </div>
+    {% if current_id %}
+        <input id="idAllAppWebsiteInputId" name="id" class="form-control id-allapp-website-input" placeholder="Id of AllApp" type="text" value="{{ current_allapp.id}}">
+    {% else %}
+        <input id="idAllAppWebsiteInputId" name="id" class="form-control id-allapp-website-input" placeholder="Id of AllApp" type="text" value="">
+    {% endif %}
+</div>
+            
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Name
+        </span>
+    </div>
+    <input id="nameAllAppWebsiteInputId" name="name" class="form-control name-allapp-website-input" placeholder="Name of AllApp" type="text" value="{{ current_allapp.name}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Uuid
+        </span>
+    </div>
+    <input id="uuidAllAppWebsiteInputId" name="Uuid" class="form-control uuid-allapp-website-input" placeholder="Uuid of AllApp" type="text" value="{{ current_allapp.uuid}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Short Name
+        </span>
+    </div>
+    <input id="short_nameAllAppWebsiteInputId" name="short_name" class="form-control short_name-allapp-website-input" placeholder="Short_Name of AllApp" type="text" value="{{ current_allapp.short_name}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Url
+        </span>
+    </div>
+    <input id="urlAllAppWebsiteInputId" name="url" class="form-control url-allapp-website-input" placeholder="Url of AllApp" type="text" value="{{ current_allapp.url}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Href Target
+        </span>
+    </div>
+    <input id="href_targetAllAppWebsiteInputId" name="href_target" class="form-control href_target-allapp-website-input" placeholder="Href_Target of AllApp" type="text" value="{{ current_allapp.href_target}}" readonly>
+</div>
+                        
+  <div class="form-group input-group">
+    <div class="input-group-prepend" for="iconAllAppWebsiteInputId">
+        <span class="input-group-text">
+        Icon
+        </span>
+    </div>
+    <div class="custom-file">
+        <input class="allapp-website" type="file" name="icon" class="form-control-file form-control icon-allapp-website-input" id="iconAllAppWebsiteInputId"  disabled="true">
+        <label class="custom-file-label" for="iconAllAppWebsiteInputId">{% trans 'Choose file' %}</label>
+    </div>
+    {% if current_allapp.icon %}
+    <span>(Current:
+        <a href="{{ current_allapp.icon.url }}" target="_self">
+            {{ current_allapp.icon_filename|title }}
+        </a>)
+    </span>
+    {% endif %}
+  </div>
+
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Icon_Base64
+        </span>
+    </div>
+    <textarea id="icon_base64AllAppWebsiteInputId" name="Icon Base64" class="form-control icon_base64-allapp-website-input" placeholder="Icon_Base64 of AllApp" type="text" readonly>{{ current_allapp.icon_base64}}</textarea>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_allapp.active == True %}
+        <input id="activeAllAppWebsiteInputId" name="active" type="checkbox" class="form-check-input active-allapp-website-input" placeholder="Active of AllApp" value="{{ current_allapp.active}}" checked  disabled="true">
+        {% else %}
+        <input id="activeAllAppWebsiteInputId" name="active" type="checkbox" class="form-check-input active-allapp-website-input" placeholder="Active of AllApp" value="{{ current_allapp.active}}"  disabled="true">
+        {% endif %}
+        <label class="form-check-label" for="activeAllAppWebsiteInputId">
+            Active
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_allapp.is_product == True %}
+        <input id="is_productAllAppWebsiteInputId" name="is_product" type="checkbox" class="form-check-input is_product-allapp-website-input" placeholder="Is_Product of AllApp" value="{{ current_allapp.is_product}}" checked  disabled="true">
+        {% else %}
+        <input id="is_productAllAppWebsiteInputId" name="is_product" type="checkbox" class="form-check-input is_product-allapp-website-input" placeholder="Is_Product of AllApp" value="{{ current_allapp.is_product}}"  disabled="true">
+        {% endif %}
+        <label class="form-check-label" for="is_productAllAppWebsiteInputId">
+            Is Product
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_allapp.staff_only == True %}
+        <input id="staff_onlyAllAppWebsiteInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-allapp-website-input" placeholder="Staff_Only of AllApp" value="{{ current_allapp.staff_only}}" checked  disabled="true">
+        {% else %}
+        <input id="staff_onlyAllAppWebsiteInputId" name="staff_only" type="checkbox" class="form-check-input staff_only-allapp-website-input" placeholder="Staff_Only of AllApp" value="{{ current_allapp.staff_only}}"  disabled="true">
+        {% endif %}
+        <label class="form-check-label" for="staff_onlyAllAppWebsiteInputId">
+            Staff Only
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_allapp.admin_only == True %}
+        <input id="admin_onlyAllAppWebsiteInputId" name="admin_only" type="checkbox" class="form-check-input admin_only-allapp-website-input" placeholder="Admin_Only of AllApp" value="{{ current_allapp.admin_only}}" checked  disabled="true">
+        {% else %}
+        <input id="admin_onlyAllAppWebsiteInputId" name="admin_only" type="checkbox" class="form-check-input admin_only-allapp-website-input" placeholder="Admin_Only of AllApp" value="{{ current_allapp.admin_only}}"  disabled="true">
+        {% endif %}
+        <label class="form-check-label" for="admin_onlyAllAppWebsiteInputId">
+            Admin Only
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Order
+        </span>
+    </div>
+    <input id="orderAllAppWebsiteInputId" name="order" class="form-control order-allapp-website-input" placeholder="Order of AllApp" type="text" value="{{ current_allapp.order}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="form-check">
+        {% if current_allapp.demo_mode == True %}
+        <input id="demo_modeAllAppWebsiteInputId" name="demo_mode" type="checkbox" class="form-check-input demo_mode-allapp-website-input" placeholder="Demo_Mode of AllApp" value="{{ current_allapp.demo_mode}}" checked  disabled="true">
+        {% else %}
+        <input id="demo_modeAllAppWebsiteInputId" name="demo_mode" type="checkbox" class="form-check-input demo_mode-allapp-website-input" placeholder="Demo_Mode of AllApp" value="{{ current_allapp.demo_mode}}"  disabled="true">
+        {% endif %}
+        <label class="form-check-label" for="demo_modeAllAppWebsiteInputId">
+            Demo Mode
+        </label>
+    </div>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Updated At
+        </span>
+    </div>
+    <input id="updated_atAllAppWebsiteInputId" name="updated_at" class="form-control updated_at-allapp-website-input" placeholder="Updated_At of AllApp" type="datetime-local" value="{{ current_allapp.updated_at}}" readonly>
+</div>
+                        
+<div class="form-group input-group">
+    <div class="input-group-prepend">
+        <span class="input-group-text">
+        Created At
+        </span>
+    </div>
+    <input id="created_atAllAppWebsiteInputId" name="created_at" class="form-control created_at-allapp-website-input" placeholder="Created_At of AllApp" type="datetime-local" value="{{ current_allapp.created_at}}" readonly>
+</div>
+                        
+<div class="form-group">
+    <button id="allappWebsiteTestBtnId" type="button" class="btn btn-warning btn-lg">Test</button>
+</div>
+            
+
+            </form>
+        </fieldset>
+    </div>
+</div>
+            

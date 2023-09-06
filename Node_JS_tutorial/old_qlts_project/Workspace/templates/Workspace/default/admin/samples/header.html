@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% include 'Workspace/'|add:website_template|add:'/front/header.html' %}
+
+<head>
+
+  <!-- Custom fonts for this template-->
+  <link href="{% static 'Workspace/'|add:website_template|add:'/admin/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template-->
+  <link href="{% static 'Workspace/'|add:website_template|add:'/admin/css/sb-admin-2.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this page -->
+  <link href="{% static 'Workspace/'|add:website_template|add:'/admin/vendor/datatables-v1.10.19/dataTables.bootstrap4.min.css' %}" rel="stylesheet">
+  {% if page_infos %}
+      <meta charset="UTF-8">
+      <meta name="description" content="{{ page_infos.meta_description }}">
+      <meta name="keywords" content="{{ page_infos.meta_keywords }}">
+      <title>{{ page_infos.title }}</title>
+  {% endif %}
+</head>
+

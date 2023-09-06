@@ -1,0 +1,92 @@
+
+            {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+            
+<div class="modal fade" id="pageinfoWorkspaceCreatemodalsId" tabindex="-1" data-backdrop="static" data-keyboard="true"  role="dialog" aria-labelledby="pageinfoWorkspaceCreatemodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="pageinfoWorkspaceCreateModalsFormId" data-uuid="">
+            <div class="modal-header">
+                <h3 class="modal-title">Tạo mới   PageInfo </h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group px-lg-5 text-start">
+            
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Id</label>
+    <input id="idPageInfoWorkspaceCreateModalInputId" name="id" class="form-control id-pageinfo-workspace-input" placeholder="Điền thông tin Id of PageInfo" type="text" value="">
+</div>
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Uuid</label>
+    <input id="uuidPageInfoWorkspaceCreateModalInputId" name="uuid" class="form-control uuid-pageinfo-workspace-input" placeholder="Điền thông tin Uuid of PageInfo" type="text" value="">
+</div>
+            <div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-6">
+                        <label class="small mb-1">Name</label>
+                        <input id="namePageInfoWorkspaceCreateModalInputId"  name="name" class="form-control name-pageinfo-workspace-input " placeholder="Điền thông tin Name" type="text" value="">
+                        
+                    </div>
+                    
+                        <div class="mb-1 col-xl-6">
+                        <label class="small mb-1">Title</label>
+                            <textarea id="titlePageInfoWorkspaceCreateModalInputId"  name="title" class=" form-control title-pageinfo-workspace-input ckeditor-input" placeholder="Điền thông tin Title" type="text"></textarea>
+                        </div>
+                    </div><div class="row gx-2 mb-2">
+                    <div class=" mb-1 col-xl-12">
+                        <label class="small mb-1">Charset</label>
+                        <input id="charsetPageInfoWorkspaceCreateModalInputId"  name="charset" class="form-control charset-pageinfo-workspace-input " placeholder="Điền thông tin Charset" type="text" value="">
+                        
+                    </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-6">
+                        <label class="small mb-1">Desc</label>
+                            <textarea id="descPageInfoWorkspaceCreateModalInputId"  name="desc" class=" form-control desc-pageinfo-workspace-input ckeditor-input" placeholder="Điền thông tin Desc" type="text"></textarea>
+                        </div>
+                    
+                        <div class="mb-1 col-xl-6">
+                        <label class="small mb-1">Header</label>
+                            <textarea id="headerPageInfoWorkspaceCreateModalInputId"  name="header" class=" form-control header-pageinfo-workspace-input ckeditor-input" placeholder="Điền thông tin Header" type="text"></textarea>
+                        </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-6">
+                        <label class="small mb-1">Meta_Description</label>
+                            <textarea id="meta_descriptionPageInfoWorkspaceCreateModalInputId"  name="meta_description" class=" form-control meta_description-pageinfo-workspace-input ckeditor-input" placeholder="Điền thông tin Meta_Description" type="text"></textarea>
+                        </div>
+                    
+                        <div class="mb-1 col-xl-6">
+                        <label class="small mb-1">Meta_Keywords</label>
+                            <textarea id="meta_keywordsPageInfoWorkspaceCreateModalInputId"  name="meta_keywords" class=" form-control meta_keywords-pageinfo-workspace-input ckeditor-input" placeholder="Điền thông tin Meta_Keywords" type="text"></textarea>
+                        </div>
+                    </div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <div class="form-check mt-4">
+                                {% if current_pageinfo.active == True %}
+                                <input id="activePageInfoWorkspaceCreateModalInputId"  name="active" type="checkbox" class="form-check-input active-pageinfo-workspace-input" placeholder="Điền thông tin Active of PageInfo" value="" checked>
+                                {% else %}
+                                <input id="activePageInfoWorkspaceCreateModalInputId"  name="active" type="checkbox" class="form-check-input active-pageinfo-workspace-input" placeholder="Điền thông tin Active of PageInfo" value="">
+                                {% endif %}
+                                <label class="form-check-label" for="activePageInfoWorkspaceCreateModalInputId">
+                                    Active
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+                    <div class="modal-footer">
+                        <button id="pageinfoWorkspaceCancelCreateModalBtnId" type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="pageinfoWorkspaceCreateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                        
+                        <button id="pageinfoWorkspaceSaveAndNewModalBtnId" type="button" class="d-none btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu và thêm mới</button>
+                        <button id="pageinfoWorkspaceTestCreateModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+            </div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+            
+            

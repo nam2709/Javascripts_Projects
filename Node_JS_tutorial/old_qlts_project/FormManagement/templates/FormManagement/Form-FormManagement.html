@@ -1,0 +1,57 @@
+
+{% extends "arrgon/layouts/base.html" %}
+<html lang="en">
+{% load static %}
+{% load i18n %}
+{% load tz %}
+{% load humanize %}
+
+<head>
+ 
+    <!-- <script src="static/arrgon/ckeditor5-build-classic-34.1.0/ckeditor5-build-classic/ckeditor.js"></script> -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="/static/arrgon/js/jquery/dist/jquery.min.js"></script>
+
+
+<script src="{% static 'js/Const.js' %}"></script>
+<script src="{% static 'js/FormClasses.js' %}"></script>
+<script src="{% static 'js/TypeForm.js' %}"></script>
+
+{% block overlay %}
+  <div class="min-height-300 bg-info position-absolute w-100"></div>
+{% endblock overlay %}
+{% block content %}
+<!-- [ Main Content ] start -->
+<main>
+        <!-- [ breadcrumb ] start -->
+        <header class="page-header page-header-dark pb-10">
+            <div class="container-xl px-4">
+                <div class="page-header-content pt-4">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto mt-4">
+                            <h1 class="page-header-title">
+                                Quản lý danh sách phiếu
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="container-vn px-lg-6 mt-n10">
+            {% csrf_token %}      
+                        <br>{% include 'FormManagement/includes/Form--SearchForm.html' %}
+                        <br>{% include 'FormManagement/includes/Form--ListForm.html' %}
+                        <br>{% include 'FormManagement/includes/Form--DetailModalForm.html' %}
+                        <br>{% include 'FormManagement/includes/Form--EditForm.html' %}
+                        <br>{% include 'FormManagement/includes/Form--CreateNewForm.html' %}
+                        <br>{% include 'FormManagement/includes/Form--AssetListByFormAdd.html' %}
+                        <br>{% include 'FormManagement/includes/Form--EditSimpleForm.html' %}
+                        </ul>
+                </div>
+        </main>
+    {% endblock %}
+    
+
+                

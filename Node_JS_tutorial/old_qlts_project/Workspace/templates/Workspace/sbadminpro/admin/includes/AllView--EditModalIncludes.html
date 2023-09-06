@@ -1,0 +1,135 @@
+
+            {% load static %} {% load i18n %} {% load humanize %} {% load tz %}
+            
+           
+<div class="modal fade" id="allviewWorkspaceEditmodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="allviewWorkspaceEditmodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="allviewWorkspaceEditModalsFormId" data-uuid="">
+            <div class="modal-header">
+                <h3 class="modal-title">Chỉnh sửa   Danh Sách View  django  </h3>
+<button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group px-lg-5 text-start">
+            
+            
+<div class="mb-1 col-xl-6 d-none">
+   <label class="small mb-1">Id</label>
+    <input id="idAllViewWorkspaceEditModalInputId" name="id" class="form-control id-allview-workspace-input" placeholder="Điền thông tin Id of AllView" type="text" value="">
+</div>
+            
+<div class="mb-1 col-xl-6 d-none">
+    <label class="small mb-1">Uuid</label>
+    <input id="uuidAllViewWorkspaceEditModalInputId" name="uuid" class="form-control uuid-allview-workspace-input" placeholder="Điền thông tin Uuid of AllView" type="text" value="">
+</div>
+            
+<div class="mb-1 col-xl-6 d-none">
+    <label class="small mb-1">Uuid</label>
+    <input id="uuidAllViewWorkspaceEditModalInputId" name="uuid" class="form-control uuid-allview-workspace-input" placeholder="Điền thông tin Uuid of AllView" type="text" value="">
+</div>
+            <div class="row gx-2 mb-2">
+        <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Name</label>
+                                    
+            <input id="nameAllViewWorkspaceEditModalInputId"  name="name" class=" form-control name-allview-workspace-input" placeholder="Điền thông tin Name" type="text" value="{{ current_allview.name}}">
+                                </div>
+                                
+        <div class=" mb-1 col-xl-6">
+                                    <label class="small mb-1">Short_Name</label>
+                                    
+            <input id="short_nameAllViewWorkspaceEditModalInputId"  name="short_name" class=" form-control short_name-allview-workspace-input" placeholder="Điền thông tin Short_Name" type="text" value="{{ current_allview.short_name}}">
+                                </div>
+                                </div><div class="row gx-2 mb-2"></div><div class="row gx-2 mb-2">
+                        <div class="mb-1 col-xl-12">
+                            <label for="iconAllViewWorkspaceEditModalInputId"><i class="fas fa-paperclip"></i>&nbsp;{% trans 'icon' %}</label>
+                                <input class=" allview-workspace form-control-file form-control  allview-workspace-file icon-allview-workspace-file-input"  type="file" name="icon"  class="" id="iconAllViewWorkspaceEditModalInputId">
+                            <div class="col-xl-12" id="iconAllViewWorkspaceEditModalFileAreaId">    
+                            {% if current_allview.icon %}
+  
+                                <div class="form-group row col-xl-8 table-hover mt-1" style="background-color:gainsboro;height: 25px;" id="{{ current_allview.uuid }}AttachmentDivId">
+                                    <div class="col-xl-10 " >
+                                        <span><a style="color:cornflowerblue" target="_blank"  href="{{ current_allview.icon.url }}"><p><b> {{ current_allview.icon_filename|title }}</b></p></a></span>
+                                    </div>
+                                    <div class="col-xl-2 text-end">
+                                        <i class="fas fa-times" style="color:gray" file-uuid="{{ current_allview.uuid }}" onclick="iconallviewWorkspaceDeletedAttacthment(this)"></i>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                        </div>
+
+                    </div><div class="row gx-2 mb-2">
+        <div class="mb-1 col-xl-12">
+            <div class="form-check mt-4">
+                {% if current_allview.active == True %}
+                <input id="activeAllViewWorkspaceEditModalInputId"  name="active" type="checkbox" class="  form-check-input active-allview-workspace-input" placeholder="Điền thông tin Active" value="{{ current_allview.active}}" checked>
+                {% else %}
+                <input id="activeAllViewWorkspaceEditModalInputId"  name="active" type="checkbox" class=" form-check-input active-allview-workspace-input" placeholder="Điền thông tin Active" value="{{ current_allview.active}}">
+                {% endif %}
+                <label class="form-check-label" for="activeAllViewWorkspaceEditModalInputId">
+                    Active
+                </label>
+            </div>
+        </div>
+                                </div><div class="row gx-2 mb-2">
+        <div class="mb-1 col-xl-12">
+            <div class="form-check mt-4">
+                {% if current_allview.is_product == True %}
+                <input id="is_productAllViewWorkspaceEditModalInputId"  name="is_product" type="checkbox" class="  form-check-input is_product-allview-workspace-input" placeholder="Điền thông tin Is_Product" value="{{ current_allview.is_product}}" checked>
+                {% else %}
+                <input id="is_productAllViewWorkspaceEditModalInputId"  name="is_product" type="checkbox" class=" form-check-input is_product-allview-workspace-input" placeholder="Điền thông tin Is_Product" value="{{ current_allview.is_product}}">
+                {% endif %}
+                <label class="form-check-label" for="is_productAllViewWorkspaceEditModalInputId">
+                    Is_Product
+                </label>
+            </div>
+        </div>
+                                </div><div class="row gx-2 mb-2">
+        <div class="mb-1 col-xl-12">
+            <div class="form-check mt-4">
+                {% if current_allview.staff_only == True %}
+                <input id="staff_onlyAllViewWorkspaceEditModalInputId"  name="staff_only" type="checkbox" class="  form-check-input staff_only-allview-workspace-input" placeholder="Điền thông tin Staff_Only" value="{{ current_allview.staff_only}}" checked>
+                {% else %}
+                <input id="staff_onlyAllViewWorkspaceEditModalInputId"  name="staff_only" type="checkbox" class=" form-check-input staff_only-allview-workspace-input" placeholder="Điền thông tin Staff_Only" value="{{ current_allview.staff_only}}">
+                {% endif %}
+                <label class="form-check-label" for="staff_onlyAllViewWorkspaceEditModalInputId">
+                    Staff_Only
+                </label>
+            </div>
+        </div>
+                                </div><div class="row gx-2 mb-2">
+        <div class="mb-1 col-xl-12">
+            <div class="form-check mt-4">
+                {% if current_allview.admin_only == True %}
+                <input id="admin_onlyAllViewWorkspaceEditModalInputId"  name="admin_only" type="checkbox" class="  form-check-input admin_only-allview-workspace-input" placeholder="Điền thông tin Admin_Only" value="{{ current_allview.admin_only}}" checked>
+                {% else %}
+                <input id="admin_onlyAllViewWorkspaceEditModalInputId"  name="admin_only" type="checkbox" class=" form-check-input admin_only-allview-workspace-input" placeholder="Điền thông tin Admin_Only" value="{{ current_allview.admin_only}}">
+                {% endif %}
+                <label class="form-check-label" for="admin_onlyAllViewWorkspaceEditModalInputId">
+                    Admin_Only
+                </label>
+            </div>
+        </div>
+                                </div><div class="row gx-2 mb-2">
+
+         <div class=" mb-1 col-xl-12">
+            <label class="small mb-1">Order</label>
+            <input id="orderAllViewWorkspaceEditModalInputId"  name="order" class=" form-control order-allview-workspace-input" placeholder="Điền thông tin Order" type="text" value="{{ current_allview.order}}">
+        </div>
+                                </div>
+             </div> </div>
+                    <div class="modal-footer">
+                        <button id="allviewWorkspaceCancelEditModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal" ><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+                        <button id="allviewWorkspaceUpdateModalBtnId" type="button" class="btn btn-primary btn-sm"><i class="fas fa-save"></i>&nbsp;Lưu</button>
+                        
+                        <button id="allviewWorkspaceTestEditModalBtnId" type="button" class="btn btn-warning btn-sm"><i class="fas fa-vial"></i>&nbsp;Test</button>
+                    </div>
+            
+            </div>
+                        </form>
+                        </div>
+                </div>
+            </div>
+            
+            

@@ -1,0 +1,218 @@
+
+{% load static %} {% load i18n %} {% load humanize %}  {% load tz %}
+
+<style>
+    .card-header {
+      cursor: pointer;
+    }
+
+    .table-container {
+      max-height: 0;
+      overflow: hidden;
+      /* transition: max-height 2s ease-out; */
+    }
+    .text-input {
+      border: none;
+      outline: none;
+      background: none;
+    }
+    .table-container.visible {
+      max-height: 5000px;  /* adjust the max-height value as needed */
+      transition: max-height 2s ease-in-out;
+    }
+    .cardfirst {
+      position: relative;
+      width: 2000px;
+      height: 80px;
+      background-color: #eaeaea;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .cardfirst-content {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #8cd0f7;
+      transition: top 0.5s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      opacity: 0;
+    }
+
+
+    .cardfirst-content h5 {
+      color: transparent;
+      animation: colorChange 0.5s ease-in-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes colorChange {
+      /* from{
+        color: transparent;
+      } */
+      to {
+        color: white;
+      }
+    }
+
+    .cardfirst:hover .cardfirst-content {
+      top: 0;
+      opacity: 1;
+    }
+
+</style>
+<script>
+    $(document).ready(function() {
+      $(".cardfirst").click(function() {
+        $("#table-container").toggleClass("visible");
+      });
+    });
+</script>
+
+<div class="modal fade" id="DepreciationDepreciationDetailmodalsId" data-backdrop="static" data-keyboard="true"  tabindex="-1" role="dialog" aria-labelledby="DepreciationDepreciationDetailmodalsId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+        <form method="POST" action="" enctype="multipart/form-data" id="DepreciationDepreciationDetailModalsFormId" data-uuid="">
+            <div class="modal-header border-primary">
+                <h3 class="modal-title"> Chi Tiết Tài Sản Khấu Hao </h3>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-1 col-xl-6 d-none">
+                   <label class="small mb-1">Id</label>
+                    <input id="idDepreciationDepreciationDetailModalInputId" name="id" class="form-control id-account-account-input" placeholder="Nhập Id of Account" type="text" value="">
+                </div>     
+                <div class="mb-1 col-xl-6 d-none">
+                    <label class="small mb-1">Uuid</label>
+                    <input id="uuidDepreciationDepreciationDetailModalInputId" name="uuid" class="form-control uuid-account-account-input" placeholder="Nhập Uuid of Account" type="text" value="">
+                </div>
+                <h6 class="heading-small text-muted mb-4">Thông tin chung</h6><div class="row gx-2 mb-2">
+                <div class=" mb-1 col-xl-6">
+                    <label class="small mb-1">Tài Sản</label>
+                    <input id="asetDepreciationDepreciationDetailModalInputId" name="name1" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}"  style="border: none; outline: none; background: none;"  readonly>
+                </div>
+                <div class=" mb-1 col-xl-6">
+                    <label class="small mb-1">Ngày Mua</label>
+                    <input id="asetdateaddedDepreciationDepreciationDetailModalInputId" name="name2" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}" style="border: none; outline: none; background: none;" readonly>
+                </div>
+                <br>
+                <div class=" mb-1 col-xl-6">
+                    <label class="small mb-1">Giá Nhập</label>
+                    <input id="asetpricebuyDepreciationDepreciationDetailModalInputId" name="name3" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}"  style="border: none; outline: none; background: none;"  readonly>
+                </div>
+                <div class=" mb-1 col-xl-6">
+                  <label class="small mb-1">Hệ So Dieu Chinh</label>
+                  <input id="adjustmentnumberDepreciationDepreciationDetailModalInputId" name="name3" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}"  style="border: none; outline: none; background: none;"  readonly>
+                </div>
+                <div class=" mb-1 col-xl-6">
+                    <label class="small mb-1">Kiểu Khấu Hao</label>
+                    <input id="preioddetailnameDepreciationDepreciationDetailModalInputId" name="6" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}"  style="border: none; outline: none; background: none;"  readonly>
+                </div>
+                <div class=" mb-1 col-xl-6">
+                    <label class="small mb-1">Thời Gian Khấu Hao</label>
+                    <input id="timedepreciationDepreciationDepreciationDetailModalInputId" name="7" class="form-control -account-account-input" placeholder="Nhập " type="text" value="{{ current_account.}}"  style="border: none; outline: none; background: none;"  readonly>
+                </div>
+                <div class=" mb-1 col-xl-6">
+                    <label class="small mb-1">Đánh giá lại tài sản </label>
+                    <div class="switch-container" style="text-align: center; vertical-align: middle;">
+                      <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" name="is_confirm" data-uuid="" unchecked id="rememberMe" style="width: 40.22222px; height: 20.22222px;" onclick="is_statusFormEventChangeSwitcher2(this)">
+                      </div>
+                  </div>
+              </label>
+              <script>
+                  $(document).ready(function(){
+                      $("#AssetRevaluationCardTableID").toggle('hide');
+                  });
+
+                  function is_statusFormEventChangeSwitcher2($this) {
+                      if ($($this).is(":checked")) {
+                          $("#AssetRevaluationCardTableID").toggle('show');
+                      } else {
+                          $("#AssetRevaluationCardTableID").toggle('hide');
+                      }
+                  }
+              </script>
+                </div>  
+                <hr>
+                <div class=" mb-1 col-xl-12">
+                  <table class="table align-items-center mb-0" id="AssetRevaluationCardTableID">
+                    <thead style="background-color: #c3c3f7;">
+                        <tr>
+                        
+                            <th attr-name="" class="border-gray-200"> Tên </th>
+                        
+                            <th attr-name="" class="border-gray-200"> Thời Gian Thay Đổi </th>
+                        
+                            <th attr-name="" class="border-gray-200"> Giá Trị Thêm Vào </th>
+    
+                            <th attr-name="" class="border-gray-200"> Thời Gian Tăng Lên  </th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody id="AssetRevaluationAssetRevaluationFormID"> 
+                    </tbody>
+                  </table>
+                </div>
+                <div class="card mb-4"></div>
+                    <div class="cardfirst mb-4">
+                        <h5>Bảng chi tiết khấu hao</h5>
+                        <div class="cardfirst-content">
+                            <h5>Bảng chi tiết khấu hao</h5>
+                            <!-- <div class="card-header pb-0"> -->
+                            
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                        <div class="table-container" id="table-container">
+                            <div class="card-body px-0 pt-0 pb-2">
+                                <div class="table-responsive p-0">
+                                    <table class="table align-items-center mb-0" id="DepreciationAssetDetailDepreciationAssetDetailDataTableId">
+                                    <thead style="background-color: #f3e6f5;">
+                                        <tr>
+                                          <th attr-name="count" class="border-gray-200"> STT </th>
+                                        
+                                            <th attr-name="count_depreciation" class="border-gray-200"> Số Kỳ </th>
+                                        
+                                            <th attr-name="days_depreciation" class="border-gray-200"> Thời Điểm </th>
+                                        
+                                            <th attr-name="value_start" class="border-gray-200"> Đầu Kỳ </th>
+                    
+                                            <th attr-name="value_end" class="border-gray-200"> Cuối Kỳ  </th>
+                    
+                                            <th attr-name="percent_depreciation" class="border-gray-200">Phần Trăm  </th>
+                                        
+                                            <th attr-name="value_depreciaiton" class="border-gray-200"> Giá Trị Khấu Hao</th>
+                    
+                                            <th attr-name="remain_value" class="border-gray-200"> Giá Trị Còn Lại </th>
+
+                                        </tr>
+                                        </thead>
+
+                                        <tbody id="DepreciationAssetDetailDepreciationAssetDetailTableBodyId"> 
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div> 
+            </div>
+
+            <div class="modal-footer ">
+                <button id="DepreciationDepreciationCancelDetailModalBtnId" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"></i>&nbsp;Hủy</button>
+            </div>
+            </div>
+        </form> 
+        </div>
+    </div>
+</div>
