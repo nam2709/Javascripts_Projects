@@ -11,6 +11,7 @@
     "client": "npm start --prefix client",
     "watch": "concurrently \"npm run server\" \"npm run client\"",
     "deloy": "npm run build --prefix client && npm run start --prefix server",
+    "deloy-cluster": "npm run build --prefix client && npm run cluster --prefix server",
     "test": "npm test --prefix server && npm test --prefix client"
   },
   "keywords": [],
@@ -20,6 +21,8 @@
     "concurrently": "^8.2.1"
   },
   "dependencies": {
+    "mongodb": "^6.1.0",
+    "mongoose": "^7.5.2",
     "morgan": "^1.10.0"
   }
 }
