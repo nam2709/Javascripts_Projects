@@ -1,0 +1,21 @@
+{
+  "name": "NEW",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "npm install --prefix server",
+    "server": "npm run watch --prefix server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  },
+  "dependencies": {
+    "mongodb": "^6.1.0",
+    "mongoose": "^7.5.2",
+    "morgan": "^1.10.0"
+  }
+}
